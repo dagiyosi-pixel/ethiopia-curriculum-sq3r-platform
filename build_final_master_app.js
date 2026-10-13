@@ -282,22 +282,57 @@ const stateAndLogicJsString = `
         return;
       }
 
+      const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
+      let parentUnit = null;
+      for (const u of sub.units) {
+        if (u.subtopics && u.subtopics.some(st => st.id === subtopicId)) {
+          parentUnit = u;
+          break;
+        }
+      }
+      if (parentUnit) {
+        gState.activeUnitId = parentUnit.id;
+      }
+
       soundClick();
       gState.activeSubtopicId = subtopicId;
       gState.currentStep = 'survey';
       saveState();
+      populateDropdowns();
       renderActiveUnitView();
       renderLevelMap();
     }
 
     function getActiveUnit() {
       const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
+      // If activeSubtopicId belongs to a specific unit, make sure that unit is returned
+      if (gState.activeSubtopicId) {
+        for (const u of sub.units) {
+          if (u.subtopics && u.subtopics.some(st => st.id === gState.activeSubtopicId)) {
+            gState.activeUnitId = u.id;
+            return u;
+          }
+        }
+      }
       return sub.units.find(u => u.id === gState.activeUnitId) || sub.units[0];
     }
 
     function getActiveSubtopic() {
+      const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
       const unit = getActiveUnit();
-      return unit.subtopics.find(st => st.id === gState.activeSubtopicId) || unit.subtopics[0];
+      let st = unit.subtopics ? unit.subtopics.find(s => s.id === gState.activeSubtopicId) : null;
+      if (st) return st;
+
+      for (const u of sub.units) {
+        if (u.subtopics) {
+          st = u.subtopics.find(s => s.id === gState.activeSubtopicId);
+          if (st) {
+            gState.activeUnitId = u.id;
+            return st;
+          }
+        }
+      }
+      return unit.subtopics[0];
     }
 
     function renderActiveUnitView() {
@@ -1563,7 +1598,11 @@ if (scriptTagStart !== -1) {
 fs.writeFileSync(path.join(__dirname, 'index.html'), updatedHtml, 'utf8');
 console.log('Successfully updated index.html with all 12 subjects and strict progression gate!');
 
-// 4. Also copy to Desktop standalone file
-const desktopPath = 'C:\\Users\\Dagi 3\\Desktop\\Grade_7_and_8_SQ3R_Master_Platform.html';
-fs.writeFileSync(desktopPath, updatedHtml, 'utf8');
-console.log('Successfully synced standalone copy to Desktop: ' + desktopPath);
+// 4. Also copy to Desktop standalone files
+const desktopPath1 = 'C:\\Users\\Dagi 3\\Desktop\\Grade_7_and_8_SQ3R_Master_Platform.html';
+const desktopPath2 = 'C:\\Users\\Dagi 3\\Desktop\\Grade_7_SQ3R_Master_App.html';
+fs.writeFileSync(desktopPath1, updatedHtml, 'utf8');
+fs.writeFileSync(desktopPath2, updatedHtml, 'utf8');
+console.log('Successfully synced standalone copy to Desktop: ' + desktopPath1);
+console.log('Successfully synced standalone copy to Desktop: ' + desktopPath2);
+

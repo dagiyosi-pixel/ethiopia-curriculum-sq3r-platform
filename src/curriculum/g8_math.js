@@ -6,72 +6,77 @@ module.exports = {
     {
       "id": "g8-m-u1",
       "number": "Unit 1",
-      "title": "Square Roots and Cube Roots",
-      "bigIdea": "Understand radicals, principal roots, irrational numbers, and calculating square and cube roots.",
+      "title": "Squares, Square Roots, Cubes and Cube Roots",
+      "bigIdea": "Understand perfect squares, radical notation, extraction of square roots, perfect cubes, and cube roots of rational numbers.",
       "subtopics": [
         {
           "id": "g8-m-1.1",
           "code": "1.1",
-          "title": "Squares and Square Roots",
+          "title": "Squares and Square Roots of Rational Numbers",
           "survey": {
-            "blueprint": "Perfect squares, radical symbol √, prime factorization method for roots.",
+            "blueprint": "Square of a number: a² = a × a. Perfect squares: numbers whose square roots are integers. Radical notation: √a. Properties: √(ab) = √a × √b and √(a/b) = √a / √b (b > 0). Evaluation methods: prime factorization and division algorithm.",
             "objectives": [
-              "Evaluate square roots of perfect square numbers.",
-              "Estimate square roots of non-perfect square numbers between two consecutive integers."
+              "Define the square of a rational number and identify perfect squares up to 400.",
+              "Extract exact square roots using prime factorization (halving even exponents).",
+              "Estimate square roots of non-perfect squares between consecutive integers."
             ],
-            "keyFormulas": "√a² = |a| &nbsp;|&nbsp; √(ab) = √a × √b"
+            "keyFormulas": "a² = a × a &nbsp;|&nbsp; √a² = |a| &nbsp;|&nbsp; √(ab) = √a × √b &nbsp;|&nbsp; √(a/b) = √a / √b"
           },
           "questions": [
-            "Why does every positive real number have two square roots (+ and -)?",
-            "How can prime factorization determine if a large number is a perfect square?"
+            "Why does every positive rational number have two square roots (positive and negative), but √a denotes only the principal (non-negative) root?",
+            "How can prime factorization immediately reveal if a number like 1,089 is a perfect square?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-indigo-400\">Prime Factorization for Square Roots</h4>\n                      <p>If all prime factors in the prime factorization of a number have EVEN exponents, the number is a perfect square. The square root is obtained by halving each exponent.</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>📐</span> 1. SQUARES & PRINCIPAL SQUARE ROOTS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Square of a Number:</strong> When a number <em>a</em> is multiplied by itself, the product <strong>a × a = a²</strong> is called the square of <em>a</em>.<br>\n                  • <strong>Two Square Roots:</strong> Every positive number <em>x</em> has two square roots: <strong>+√x</strong> and <strong>-√x</strong>, because (+a)² = a² and (-a)² = a².<br>\n                  • <strong>Principal Square Root:</strong> The symbol <strong>√a</strong> (radical symbol) represents <em>only the non-negative</em> (principal) square root.<br>\n                  • <em>Non-existence in Real Numbers:</em> For any negative number <em>-x</em>, √(-x) is NOT a real number, because no real number squared can produce a negative result!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔢</span> 2. PRIME FACTORIZATION METHOD\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  A whole number is a <strong>perfect square</strong> if and only if all exponents in its prime factorization are <strong>EVEN</strong>.<br>\n                  • <em>Rule for Extraction:</em> To find the square root, factorize the number completely and divide every exponent by 2.<br>\n                  • Example: 576 = 2⁶ × 3² ⟹ √576 = 2^(6/2) × 3^(2/2) = 2³ × 3¹ = 8 × 3 = <strong>24</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>⚡</span> 3. RADICAL LAWS FOR MULTIPLICATION AND DIVISION\n                </h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300 pt-1\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Product Rule:</strong> √(a × b) = √a × √b (for a, b ≥ 0). E.g., √36 = √(4 × 9) = 2 × 3 = 6.\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Quotient Rule:</strong> √(a / b) = √a / √b (for a ≥ 0, b > 0). E.g., √(49/81) = 7/9.\n                  </div>\n                </div>\n                <p class=\"text-xs text-rose-400 font-bold mt-2\">\n                  ⚠️ Critical Warning: √(a + b) is NEVER equal to √a + √b! (e.g. √(9 + 16) = √25 = 5, but √9 + √16 = 3 + 4 = 7).\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Evaluating Square Root by Prime Factorization",
-            "problem": "Find the square root of 576 using prime factorization.",
+            "title": "Worked Example: Square Root Extraction of Decimal and Fraction",
+            "problem": "Evaluate: Part A: √(144 / 625). Part B: √0.0196.",
             "steps": [
               {
-                "label": "Step 1: Factorize 576",
-                "text": "576 = 2⁶ × 3²."
+                "label": "Step 1: Apply quotient rule for Part A",
+                "text": "√(144 / 625) = √144 / √625."
               },
               {
-                "label": "Step 2: Halve the exponents",
-                "text": "√576 = 2^(6/2) × 3^(2/2) = 2³ × 3¹."
+                "label": "Step 2: Prime factorize or recall perfect squares",
+                "text": "144 = 12² ⟹ √144 = 12.<br>625 = 25² ⟹ √625 = 25.<br>Result = <strong>12 / 25 = 0.48</strong>."
               },
               {
-                "label": "Step 3: Calculate product",
-                "text": "8 × 3 = <strong>24</strong>."
+                "label": "Step 3: Convert decimal in Part B into fraction",
+                "text": "0.0196 has 4 decimal places, so: 0.0196 = 196 / 10,000."
               },
               {
-                "label": "Step 4: Check",
-                "text": "24 × 24 = 576. (Verified!)"
+                "label": "Step 4: Take square roots of numerator and denominator",
+                "text": "√196 = 14 (since 14² = 196).<br>√10,000 = 100.<br>Result = 14 / 100 = <strong>0.14</strong>."
               }
             ],
-            "proTip": "If any prime factor has an odd exponent, the number is not a perfect square!"
+            "proTip": "Notice the decimal place rule: when squaring a number with n decimal places, the square has 2n decimal places. Conversely, taking the square root cuts the number of decimal places in half!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is √225?",
-              "a": "15."
+              "q": "What is the principal square root of 289?",
+              "a": "17 (since 17² = 289)."
             },
             {
-              "q": "Between which two consecutive integers does √50 lie?",
-              "a": "Between 7 (√49) and 8 (√64)."
+              "q": "Why is √(a + b) ≠ √a + √b?",
+              "a": "Square roots do not distribute over addition; operations under the radical must be evaluated first."
+            },
+            {
+              "q": "What is √0.0004?",
+              "a": "0.02 (4 decimal places become 2 decimal places: 2/100)."
             }
           ],
           "amtQuiz": [
             {
-              "q": "What is the value of √0.0064?",
+              "q": "What is the value of √(0.0081) + √(169 / 25)?",
               "options": [
-                "0.8",
-                "0.08",
-                "0.008",
-                "0.04"
+                "2.69",
+                "2.59",
+                "3.50",
+                "2.79"
               ],
-              "correct": 1,
-              "strategy": "Convert to fraction: √(64/10000).",
-              "derivation": "√64 / √10000 = 8 / 100 = 0.08.",
-              "trap": "0.8 squared is 0.64, not 0.0064!"
+              "correct": 0,
+              "strategy": "Evaluate each radical separately: √0.0081 = 0.09; √(169/25) = 13/5 = 2.60.",
+              "derivation": "0.09 + 2.60 = 2.69.",
+              "trap": "Assuming √0.0081 = 0.9 (0.9² = 0.81, not 0.0081)!"
             }
           ]
         },
@@ -80,60 +85,69 @@ module.exports = {
           "code": "1.2",
           "title": "Cubes and Cube Roots",
           "survey": {
-            "blueprint": "Perfect cubes, cube root symbol ∛, and odd powers of negative numbers.",
+            "blueprint": "Cube of a number: a³ = a × a × a. Perfect cubes. Cube root radical notation: ∛a. Fundamental difference: cube roots of negative numbers ARE real numbers: ∛(-a) = -∛a.",
             "objectives": [
-              "Evaluate cube roots of positive and negative integers.",
-              "Differentiate between square roots of negative numbers (not real) and cube roots of negative numbers (real negative)."
+              "Evaluate cubes of rational numbers (positive, negative, and fractional).",
+              "Extract cube roots of perfect cubes using prime factorization (dividing exponents by 3).",
+              "Differentiate why √(-64) is non-real but ∛(-64) = -4 is a valid real number."
             ],
-            "keyFormulas": "∛(-a) = -∛a"
+            "keyFormulas": "a³ = a × a × a &nbsp;|&nbsp; ∛a³ = a &nbsp;|&nbsp; ∛(-a) = -∛a &nbsp;|&nbsp; ∛(ab) = ∛a × ∛b"
           },
           "questions": [
-            "Why does the cube root of a negative number exist in real numbers while the square root does not?",
-            "What is the cube root of -216?"
+            "Why does (-2)³ = -8 prove that every negative number possesses a unique real cube root?",
+            "How does dividing prime exponents by 3 extract cube roots of large numbers like 3,375?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-amber-400\">Cube Roots of Negative Numbers</h4>\n                      <p>Because an odd number of negative signs multiplies to a negative, the cube root of a negative number is ALWAYS a real negative number:<br>\n                      ∛(-8) = -2 because (-2)³ = (-2) × (-2) × (-2) = -8.</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>🧊</span> 1. CUBES OF RATIONAL NUMBERS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Definition:</strong> The cube of a number <em>a</em> is the product of three factors of <em>a</em>: <strong>a³ = a × a × a</strong>.<br>\n                  • <em>Sign Rule for Cubes:</em><br>\n                  - The cube of a positive number is always <strong>positive</strong>: (+3)³ = +27.<br>\n                  - The cube of a negative number is always <strong>negative</strong>: (-3)³ = (-3) × (-3) × (-3) = <strong>-27</strong>.<br>\n                  - The cube of zero is zero: 0³ = 0.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔍</span> 2. CUBE ROOT & NEGATIVE RADICALS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  The <strong>cube root</strong> of a number <em>b</em> is the number <em>a</em> such that <em>a³ = b</em>, written as <strong>∛b</strong>.<br>\n                  • <strong>Crucial Contrast with Square Roots:</strong><br>\n                  Square roots of negative numbers do NOT exist in real numbers. But because (-a)³ = -a³, the cube root of a negative number is <strong>ALWAYS a real negative number</strong>:<br>\n                  <strong>∛(-b) = -∛b</strong>. For example, ∛(-125) = -5, ∛(-8) = -2, ∛(-1) = -1.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>⚙️</span> 3. EXTRACTION BY PRIME FACTORIZATION\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  A whole number is a <strong>perfect cube</strong> if all exponents in its prime factorization are multiples of <strong>3</strong>.<br>\n                  • To find the cube root: divide all prime exponents by 3.<br>\n                  • Example: 3,375 = 3³ × 5³ ⟹ ∛3,375 = 3^(3/3) × 5^(3/3) = 3¹ × 5¹ = <strong>15</strong>.\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Evaluating Negative Cube Roots",
-            "problem": "Evaluate: ∛(-343) + ∛(125)",
+            "title": "Worked Example: Evaluating Composite Cube Root Expression",
+            "problem": "Evaluate: ∛(-512) + ∛(0.027) - ∛(216 / 125).",
             "steps": [
               {
-                "label": "Step 1: Evaluate ∛(-343)",
-                "text": "(-7)³ = -343, so ∛(-343) = <strong>-7</strong>."
+                "label": "Step 1: Evaluate ∛(-512)",
+                "text": "512 = 2⁹ = (2³)³ = 8³. Therefore, ∛(-512) = <strong>-8</strong>."
               },
               {
-                "label": "Step 2: Evaluate ∛(125)",
-                "text": "5³ = 125, so ∛(125) = <strong>5</strong>."
+                "label": "Step 2: Evaluate ∛(0.027)",
+                "text": "0.027 = 27 / 1,000.<br>∛(27 / 1,000) = ∛27 / ∛1,000 = 3 / 10 = <strong>0.3</strong>."
               },
               {
-                "label": "Step 3: Combine",
-                "text": "-7 + 5 = <strong>-2</strong>."
+                "label": "Step 3: Evaluate ∛(216 / 125)",
+                "text": "216 = 6³ and 125 = 5³.<br>∛(216 / 125) = 6 / 5 = <strong>1.2</strong>."
+              },
+              {
+                "label": "Step 4: Combine all terms",
+                "text": "Expression = -8 + 0.3 - 1.2 = -8 - 0.9 = <strong>-8.9</strong>."
               }
             ],
-            "proTip": "Never say the cube root of a negative is impossible—that rule only applies to even roots (like square roots)!"
+            "proTip": "For decimals under a cube root: 3 decimal places become 1 decimal place, 6 become 2, etc., because 0.1 × 0.1 × 0.1 = 0.001!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is ∛(-64)?",
-              "a": "-4."
+              "q": "What is ∛(-216)?",
+              "a": "-6 (since (-6)³ = -216)."
             },
             {
-              "q": "What is ∛(1,000)?",
-              "a": "10."
+              "q": "What is ∛(0.000064)?",
+              "a": "0.04 (6 decimal places divided by 3 gives 2 decimal places: 4/100)."
+            },
+            {
+              "q": "What is the condition on prime exponents for a number to be a perfect cube?",
+              "a": "Every prime factor exponent must be a multiple of 3."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Evaluate: ∛(-216)",
+              "q": "What is the value of ∛(-729) + ∛(1,000)?",
               "options": [
-                "-6",
-                "6",
-                "Not a real number",
-                "-16"
+                "-1",
+                "1",
+                "19",
+                "-19"
               ],
-              "correct": 0,
-              "strategy": "Find integer whose cube is -216.",
-              "derivation": "(-6)³ = -6 × -6 × -6 = 36 × -6 = -216. Therefore ∛(-216) = -6.",
-              "trap": "Assuming negative roots don't exist!"
+              "correct": 1,
+              "strategy": "Find ∛(-729) and ∛(1000): (-9)³ = -729, 10³ = 1000.",
+              "derivation": "∛(-729) = -9. ∛(1,000) = 10. -9 + 10 = 1.",
+              "trap": "Saying ∛(-729) does not exist (confusing cube roots with square roots)!"
             }
           ]
         }
@@ -142,60 +156,77 @@ module.exports = {
     {
       "id": "g8-m-u2",
       "number": "Unit 2",
-      "title": "Further on Sets",
-      "bigIdea": "Explore Cartesian products, complements, and solve three-set Venn diagram word problems.",
+      "title": "Further on Working with Variables",
+      "bigIdea": "Master operations on polynomials, algebraic term expansions, multiplication of binomials (FOIL method), and factoring using Highest Common Factors (HCF).",
       "subtopics": [
         {
           "id": "g8-m-2.1",
           "code": "2.1",
-          "title": "Cartesian Products & Set Relations",
+          "title": "Algebraic Terms, Binomial Multiplication & Factoring",
           "survey": {
-            "blueprint": "Ordered pairs (a, b), Cartesian product A × B, and cardinality n(A × B) = n(A) · n(B).",
+            "blueprint": "Polynomial structure: monomials, binomials, trinomials. Multiplication of binomials: (ax + b)(cx + d) via distributive / FOIL method. Special products: (a + b)², (a - b)², and difference of squares (a + b)(a - b) = a² - b². Factoring by HCF and grouping.",
             "objectives": [
-              "Construct ordered pairs and Cartesian products.",
-              "Apply Cartesian product cardinality formula."
+              "Multiply binomials using FOIL (First, Outer, Inner, Last).",
+              "Apply the Difference of Two Squares identity: a² - b² = (a + b)(a - b).",
+              "Factor algebraic expressions by extracting the Highest Common Factor (HCF)."
             ],
-            "keyFormulas": "n(A × B) = n(A) × n(B)"
+            "keyFormulas": "(a+b)(c+d) = ac+ad+bc+bd &nbsp;|&nbsp; (a±b)² = a² ± 2ab + b² &nbsp;|&nbsp; a² - b² = (a+b)(a-b)"
           },
           "questions": [
-            "Is the Cartesian product commutative: does A × B equal B × A?",
-            "If set A has 3 elements and set B has 4 elements, how many ordered pairs are in A × B?"
+            "Why does (x + 3)² NOT equal x² + 9, and where does the middle term 6x come from geometrically?",
+            "How can the Difference of Squares formula compute 102 × 98 in your head in 2 seconds?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-cyan-400\">Cartesian Product Definition</h4>\n                      <p>The set of all ordered pairs (a, b) such that a ∈ A and b ∈ B:<br>\n                      A × B = { (a, b) | a ∈ A and b ∈ B }.<br>\n                      In general, A × B ≠ B × A unless A = B.</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>✖️</span> 1. BINOMIAL MULTIPLICATION (THE FOIL METHOD)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  When multiplying two binomials <strong>(a + b)(c + d)</strong>, distribute every term in the first bracket to every term in the second bracket:<br>\n                  • <strong>F</strong> (First terms): a × c = <em>ac</em><br>\n                  • <strong>O</strong> (Outer terms): a × d = <em>ad</em><br>\n                  • <strong>I</strong> (Inner terms): b × c = <em>bc</em><br>\n                  • <strong>L</strong> (Last terms): b × d = <em>bd</em><br>\n                  Formula: <strong>(a + b)(c + d) = ac + ad + bc + bd</strong>. Combine any like terms!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>⚡</span> 2. THREE SACRED SPECIAL PRODUCT IDENTITIES\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>1. Square of a Sum:</strong> (a + b)² = <strong>a² + 2ab + b²</strong>.<br>\n                    <em>Common Trap:</em> Never write (a + b)² = a² + b²! The middle term +2ab is mandatory!\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>2. Square of a Difference:</strong> (a - b)² = <strong>a² - 2ab + b²</strong>.\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>3. Difference of Two Squares:</strong> (a + b)(a - b) = <strong>a² - b²</strong>.<br>\n                    <em>Mental Math Miracle:</em> 102 × 98 = (100 + 2)(100 - 2) = 100² - 2² = 10,000 - 4 = <strong>9,996</strong>!\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🧩</span> 3. FACTORING BY HIGHEST COMMON FACTOR (HCF)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Factoring is the reverse process of multiplication:<br>\n                  1. Find the numerical GCF of all coefficients.<br>\n                  2. Find the lowest power of each shared variable.<br>\n                  3. Factor out the complete HCF in front of parentheses.<br>\n                  Example: 12x³y² - 18x²y³ = <strong>6x²y²(2x - 3y)</strong>.\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Constructing Cartesian Product Pairs",
-            "problem": "Given A = {1, 2} and B = {x, y, z}. Write out A × B and state its cardinality.",
+            "title": "Worked Example: Expanding Binomials & Factoring by Grouping",
+            "problem": "Part A: Expand and simplify (3x - 4)(2x + 5). Part B: Factor completely: 5x² - 20.",
             "steps": [
               {
-                "label": "Step 1: Write all ordered pairs",
-                "text": "A × B = { (1, x), (1, y), (1, z), (2, x), (2, y), (2, z) }."
+                "label": "Step 1: Apply FOIL for Part A",
+                "text": "First: (3x)(2x) = 6x².<br>Outer: (3x)(5) = +15x.<br>Inner: (-4)(2x) = -8x.<br>Last: (-4)(5) = -20."
               },
               {
-                "label": "Step 2: Cardinality",
-                "text": "n(A × B) = n(A) × n(B) = 2 × 3 = <strong>6</strong>."
+                "label": "Step 2: Combine like terms",
+                "text": "6x² + (15x - 8x) - 20 = <strong>6x² + 7x - 20</strong>."
+              },
+              {
+                "label": "Step 3: Extract HCF for Part B",
+                "text": "Both terms 5x² and 20 are divisible by 5:<br>5x² - 20 = 5(x² - 4)."
+              },
+              {
+                "label": "Step 4: Factor the difference of squares",
+                "text": "x² - 4 = (x + 2)(x - 2).<br>Complete factorization: <strong>5(x + 2)(x - 2)</strong>."
               }
             ],
-            "proTip": "Order matters in pairs: (1, x) is NOT the same as (x, 1)!"
+            "proTip": "Always check if the expression inside parentheses can be factored further using difference of squares!"
           },
           "reciteFlashcards": [
             {
-              "q": "If n(A) = 5 and n(B) = 4, what is n(A × B)?",
-              "a": "5 × 4 = 20."
+              "q": "What is the expansion of (a - b)²?",
+              "a": "a² - 2ab + b²."
+            },
+            {
+              "q": "What is the factored form of x² - 81?",
+              "a": "(x + 9)(x - 9)."
+            },
+            {
+              "q": "What is the HCF of 16x⁴y² and 24x²y⁵?",
+              "a": "8x²y²."
             }
           ],
           "amtQuiz": [
             {
-              "q": "If n(A × B) = 24 and n(A) = 6, what is n(B)?",
+              "q": "Expand and simplify: (2x - 5)²",
               "options": [
-                "4",
-                "18",
-                "30",
-                "144"
+                "4x² - 25",
+                "4x² - 20x + 25",
+                "4x² + 25",
+                "4x² - 10x + 25"
               ],
-              "correct": 0,
-              "strategy": "Divide total cardinality by n(A).",
-              "derivation": "n(B) = 24 / 6 = 4.",
-              "trap": "Subtracting 24 - 6 = 18 instead of dividing!"
+              "correct": 1,
+              "strategy": "Apply identity (a - b)² = a² - 2ab + b² with a = 2x and b = 5.",
+              "derivation": "(2x)² - 2(2x)(5) + 5² = 4x² - 20x + 25.",
+              "trap": "Writing 4x² - 25 or 4x² + 25 forgets the middle term -2ab = -20x!"
             }
           ]
         }
@@ -204,131 +235,73 @@ module.exports = {
     {
       "id": "g8-m-u3",
       "number": "Unit 3",
-      "title": "Linear Equations & Systems in Two Variables",
-      "bigIdea": "Graph lines on the Cartesian plane, find slopes, and solve simultaneous systems of equations.",
+      "title": "Linear Equations and Inequalities in Two Variables",
+      "bigIdea": "Explore the 2D Cartesian coordinate plane, plotting points, graphing linear equations, slope-intercept form (y = mx + c), and linear inequalities.",
       "subtopics": [
         {
           "id": "g8-m-3.1",
           "code": "3.1",
-          "title": "Cartesian Coordinate System & Slope of a Line",
+          "title": "Cartesian Coordinate System & Linear Graphs",
           "survey": {
-            "blueprint": "The 4 quadrants, plotting (x, y), slope formula m = (y₂ - y₁) / (x₂ - x₁), slope-intercept form y = mx + b.",
+            "blueprint": "Cartesian plane: x-axis (abscissa), y-axis (ordinate), origin (0,0), and 4 quadrants. Linear equations in two variables: Ax + By = C. Slope-intercept form: y = mx + c (m = slope, c = y-intercept). Slope formula: m = (y₂ - y₁) / (x₂ - x₁).",
             "objectives": [
-              "Plot coordinates across all four quadrants.",
-              "Calculate slope m between two given points.",
-              "Identify parallel lines (same slope) and perpendicular lines (m₁ · m₂ = -1)."
+              "Plot ordered pairs (x, y) across all 4 quadrants of the Cartesian plane.",
+              "Calculate the slope m of a line passing through two given points.",
+              "Graph linear equations by finding the x-intercept and y-intercept."
             ],
-            "keyFormulas": "Slope m = (y₂ - y₁) / (x₂ - x₁) &nbsp;|&nbsp; y = mx + b"
+            "keyFormulas": "Slope: m = (y₂ - y₁)/(x₂ - x₁) &nbsp;|&nbsp; Slope-intercept: y = mx + c &nbsp;|&nbsp; x-intercept: set y=0; y-intercept: set x=0"
           },
           "questions": [
-            "What is the slope of a horizontal line versus a vertical line?",
-            "In the equation y = -3x + 7, what is the slope and y-intercept?"
+            "Why does a horizontal line have a slope of zero while a vertical line has an undefined slope?",
+            "How do intercepts provide the fastest way to graph 3x + 4y = 12 without creating a huge table of values?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-indigo-400\">Slope Formula & Line Types</h4>\n                      <p>• Horizontal lines have a slope of <strong>0</strong>.<br>\n                      • Vertical lines have an <strong>undefined</strong> slope (division by zero).<br>\n                      • Positive slope rises from left to right; negative slope falls.</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>🌐</span> 1. THE CARTESIAN COORDINATE PLANE\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Invented by René Descartes, the Cartesian plane consists of two perpendicular number lines intersecting at the <strong>Origin (0, 0)</strong>:<br>\n                  • <strong>Horizontal x-axis:</strong> positive to right, negative to left.<br>\n                  • <strong>Vertical y-axis:</strong> positive upward, negative downward.<br>\n                  • <strong>4 Quadrants:</strong><br>\n                  - Quadrant I: (+, +) &nbsp;|&nbsp; Quadrant II: (-, +)<br>\n                  - Quadrant III: (-, -) &nbsp;|&nbsp; Quadrant IV: (+, -).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>📈</span> 2. SLOPE OF A LINE (RATE OF STEEPNESS)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  The <strong>slope (m)</strong> measures steepness as ratio of vertical change (rise) to horizontal change (run):<br>\n                  <strong>m = (y₂ - y₁) / (x₂ - x₁)</strong> (where x₂ ≠ x₁).<br>\n                  • <em>Positive Slope (m > 0):</em> Line rises from left to right.<br>\n                  • <em>Negative Slope (m < 0):</em> Line falls from left to right.<br>\n                  • <em>Zero Slope (m = 0):</em> Horizontal line (y = c).<br>\n                  • <em>Undefined Slope:</em> Vertical line (x = k, division by zero: x₂ - x₁ = 0).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🎯</span> 3. DUAL-INTERCEPT GRAPHING METHOD\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  To graph any linear equation Ax + By = C:<br>\n                  1. <strong>Find x-intercept:</strong> Set y = 0 and solve for x ⟹ point (x, 0).<br>\n                  2. <strong>Find y-intercept:</strong> Set x = 0 and solve for y ⟹ point (0, y).<br>\n                  3. Plot these two points and draw a straight line through them!\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Calculating Slope Between Two Coordinates",
-            "problem": "Find the slope of the line passing through points A(-2, 3) and B(4, -9).",
+            "title": "Worked Example: Finding Slope and Graphing via Intercepts",
+            "problem": "Part A: Find the slope of the line passing through A(2, -3) and B(6, 5). Part B: Find the x- and y-intercepts of 3x + 2y = 12.",
             "steps": [
               {
-                "label": "Step 1: Identify coordinates",
-                "text": "x₁ = -2, y₁ = 3, x₂ = 4, y₂ = -9."
+                "label": "Step 1: Calculate slope for Part A",
+                "text": "x₁ = 2, y₁ = -3, x₂ = 6, y₂ = 5.<br>m = [5 - (-3)] / [6 - 2] = (5 + 3) / 4 = 8 / 4 = <strong>2</strong>."
               },
               {
-                "label": "Step 2: Apply slope formula",
-                "text": "m = (y₂ - y₁) / (x₂ - x₁) = (-9 - 3) / (4 - (-2))."
+                "label": "Step 2: Find x-intercept for Part B",
+                "text": "Set y = 0:<br>3x + 2(0) = 12 ⟹ 3x = 12 ⟹ x = 4.<br>x-intercept point: <strong>(4, 0)</strong>."
               },
               {
-                "label": "Step 3: Simplify",
-                "text": "m = -12 / (4 + 2) = -12 / 6 = <strong>-2</strong>."
+                "label": "Step 3: Find y-intercept for Part B",
+                "text": "Set x = 0:<br>3(0) + 2y = 12 ⟹ 2y = 12 ⟹ y = 6.<br>y-intercept point: <strong>(0, 6)</strong>."
               }
             ],
-            "proTip": "Watch out for double negatives in the denominator: 4 - (-2) = 4 + 2 = 6!"
+            "proTip": "Slope m = 2 means for every 1 step you move right horizontally, you move 2 steps up vertically!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the slope of the line y = 5x - 8?",
-              "a": "m = 5."
+              "q": "What is the slope of any horizontal line?",
+              "a": "0 (zero vertical rise)."
             },
             {
-              "q": "What is the y-intercept of y = -2x + 4?",
-              "a": "(0, 4)."
+              "q": "What is the slope of any vertical line?",
+              "a": "Undefined (division by zero horizontal run)."
+            },
+            {
+              "q": "In y = -4x + 7, what is the slope and y-intercept?",
+              "a": "Slope m = -4, y-intercept c = 7 (point (0, 7))."
             }
           ],
           "amtQuiz": [
             {
-              "q": "What is the slope of the line passing through (1, 2) and (3, 8)?",
+              "q": "What is the slope of the line passing through (-1, 4) and (3, -4)?",
               "options": [
-                "3",
+                "-2",
                 "2",
-                "4",
-                "6"
+                "-1/2",
+                "0"
               ],
               "correct": 0,
-              "strategy": "m = (8 - 2) / (3 - 1).",
-              "derivation": "m = 6 / 2 = 3.",
-              "trap": "Dividing (3 - 1) / (8 - 2) = 2/6 = 1/3 (inverted dx/dy)!"
-            }
-          ]
-        },
-        {
-          "id": "g8-m-3.2",
-          "code": "3.2",
-          "title": "Solving Systems of Linear Equations",
-          "survey": {
-            "blueprint": "Simultaneous equations with two unknowns using substitution and elimination methods.",
-            "objectives": [
-              "Solve systems using the Substitution method.",
-              "Solve systems using the Elimination (Addition) method."
-            ],
-            "keyFormulas": "ax + by = e and cx + dy = f"
-          },
-          "questions": [
-            "When is the elimination method faster than substitution?",
-            "What does the intersection point of two linear graphs represent?"
-          ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-amber-400\">The Elimination Strategy</h4>\n                      <p>Multiply one or both equations by suitable non-zero constants so that the coefficients of one variable become opposites, then add the equations to eliminate that variable.</p>\n                    </div>\n                  ",
-          "example": {
-            "title": "Grade 8 Ministry Exam Style: Solving Simultaneous Equations",
-            "problem": "Solve the system of equations:<br>2x + 3y = 13<br>4x - 3y = 5",
-            "steps": [
-              {
-                "label": "Step 1: Recognize opposite coefficients",
-                "text": "The y terms (+3y and -3y) are already additive opposites!"
-              },
-              {
-                "label": "Step 2: Add both equations",
-                "text": "(2x + 4x) + (3y - 3y) = 13 + 5<br>6x = 18<br><strong>x = 3</strong>"
-              },
-              {
-                "label": "Step 3: Substitute x = 3 into Equation 1",
-                "text": "2(3) + 3y = 13<br>6 + 3y = 13<br>3y = 7<br><strong>y = 7/3</strong>"
-              },
-              {
-                "label": "Step 4: Check in Equation 2",
-                "text": "4(3) - 3(7/3) = 12 - 7 = 5. (Match!)"
-              }
-            ],
-            "proTip": "Always verify both solutions in the SECOND equation!"
-          },
-          "reciteFlashcards": [
-            {
-              "q": "What does a system with parallel lines have as a solution?",
-              "a": "No solution (lines never intersect)."
-            }
-          ],
-          "amtQuiz": [
-            {
-              "q": "If x + y = 10 and x - y = 4, what is the value of x?",
-              "options": [
-                "7",
-                "3",
-                "6",
-                "5"
-              ],
-              "correct": 0,
-              "strategy": "Add both equations together to eliminate y.",
-              "derivation": "2x = 14 ➔ x = 7. (And y = 3).",
-              "trap": "Selecting y = 3 instead of x!"
+              "strategy": "Apply slope formula: m = (y₂ - y₁) / (x₂ - x₁).",
+              "derivation": "m = (-4 - 4) / [3 - (-1)] = -8 / (3 + 1) = -8 / 4 = -2.",
+              "trap": "Subtracting coordinates in opposite orders: e.g. (y₂ - y₁)/(x₁ - x₂) flips the sign!"
             }
           ]
         }
@@ -337,64 +310,73 @@ module.exports = {
     {
       "id": "g8-m-u4",
       "number": "Unit 4",
-      "title": "Similar Figures & Theorems on Triangles",
-      "bigIdea": "Explore scale factors, similarity criteria (AAA, SAS, SSS), and area ratios of similar polygons.",
+      "title": "Similar Figures",
+      "bigIdea": "Understand geometric similarity: scale factors (ratio of similitude), conditions for similarity of polygons, and triangle similarity criteria (AAA, SAS, SSS).",
       "subtopics": [
         {
           "id": "g8-m-4.1",
           "code": "4.1",
-          "title": "Similar Triangles & Scale Factors",
+          "title": "Geometric Similarity & Triangle Criteria",
           "survey": {
-            "blueprint": "Definition of similarity (~), proportional side ratios, and ratio of areas = k².",
+            "blueprint": "Similarity symbol: ~. Two figures are similar if: (1) Corresponding angles are equal, and (2) Corresponding sides are proportional (Ratio of Similitude k). Triangle criteria: AAA (or AA), SAS, SSS.",
             "objectives": [
-              "Apply similarity theorems (AAA, SAS, SSS) to find missing side lengths.",
-              "Calculate areas of similar figures using the square of the scale factor: Area₁ / Area₂ = k²."
+              "Distinguish between congruent figures (same shape, same size) and similar figures (same shape, proportional size).",
+              "Calculate unknown side lengths using the ratio of similitude k.",
+              "Apply AA, SAS, and SSS similarity theorems to solve practical shadow and height problems."
             ],
-            "keyFormulas": "Side Ratio = k ➔ Area Ratio = k²"
+            "keyFormulas": "AB/DE = BC/EF = AC/DF = k &nbsp;|&nbsp; Area ratio = k² &nbsp;|&nbsp; Volume ratio = k³"
           },
           "questions": [
-            "If the side lengths of a triangle are doubled, by what factor does the area increase?",
-            "What is the difference between congruent figures (≅) and similar figures (~)?"
+            "If the linear scale factor between two similar triangles is 3, why is the ratio of their areas 9 and not 3?",
+            "How did ancient Greek mathematicians measure the exact height of the Great Pyramid using only a stick and similar triangles?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-emerald-400\">The k² Area Law</h4>\n                      <p>If two figures are similar with linear scale factor k:<br>\n                      • Perimeter ratio = k<br>\n                      • Area ratio = k²<br>\n                      • Volume ratio = k³</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>📐</span> 1. DEFINITION OF SIMILAR POLYGONS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Two polygons are <strong>similar (~)</strong> if and only if:<br>\n                  1. All pairs of <strong>corresponding angles are congruent (equal)</strong>.<br>\n                  2. All pairs of <strong>corresponding sides are proportional</strong>.<br>\n                  • The constant ratio <strong>k = Side₁ / Side₂</strong> is called the <strong>Scale Factor</strong> or <em>Ratio of Similitude</em>.<br>\n                  • <em>Area Scaling Theorem:</em> If the ratio of sides is k, the ratio of their areas is <strong>k²</strong>!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔺</span> 2. TRIANGLE SIMILARITY THEOREMS\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <p>• <strong>AA (Angle-Angle) Criterion:</strong> If two angles of one triangle are equal to two angles of another, the third angles must also be equal (180° rule), and the triangles are SIMILAR.</p>\n                  <p>• <strong>SSS (Side-Side-Side) Criterion:</strong> If the three sets of corresponding sides are in the exact same ratio, the triangles are SIMILAR.</p>\n                  <p>• <strong>SAS (Side-Angle-Side) Criterion:</strong> If two pairs of corresponding sides are proportional AND their included angles are equal, the triangles are SIMILAR.</p>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Calculating Unknown Side in Similar Triangles",
-            "problem": "Triangle ABC is similar to Triangle DEF. AB = 6 cm, BC = 8 cm. If DE = 15 cm, find the length of EF.",
+            "title": "Worked Example: Thales Shadow Problem for Real Heights",
+            "problem": "A vertical pole 2.5 meters tall casts a shadow of 1.5 meters on the ground in Hawassa. At the exact same moment, a nearby telecom tower casts a shadow of 36 meters. Find the height of the telecom tower.",
             "steps": [
               {
-                "label": "Step 1: Set up proportional ratios",
-                "text": "AB / DE = BC / EF ➔ 6 / 15 = 8 / EF."
+                "label": "Step 1: Recognize similar triangles",
+                "text": "Both the pole and the tower form right angles (90°) with the ground. Sun rays strike at the identical angle of elevation. By AA similarity, the two triangles are <strong>similar</strong>."
               },
               {
-                "label": "Step 2: Cross-multiply",
-                "text": "6 × EF = 15 × 8<br>6 × EF = 120."
+                "label": "Step 2: Set up proportion of corresponding sides",
+                "text": "Height of Tower (H) / Height of Pole (2.5) = Shadow of Tower (36) / Shadow of Pole (1.5)."
               },
               {
-                "label": "Step 3: Solve",
-                "text": "EF = 120 / 6 = <strong>20 cm</strong>."
+                "label": "Step 3: Solve for H via cross-multiplication",
+                "text": "H = (36 / 1.5) × 2.5.<br>36 ÷ 1.5 = 24.<br>H = 24 × 2.5 = <strong>60 meters</strong>."
               }
             ],
-            "proTip": "Always align corresponding sides in the same numerator and denominator order!"
+            "proTip": "Always align corresponding parts: (Height / Shadow) = (Height / Shadow) ensures zero calculation mistakes!"
           },
           "reciteFlashcards": [
             {
-              "q": "If scale factor k = 3, what is the ratio of their areas?",
-              "a": "k² = 3² = 9."
+              "q": "If two similar triangles have scale factor k = 4, what is the ratio of their areas?",
+              "a": "k² = 4² = 16."
+            },
+            {
+              "q": "What is the AA similarity criterion?",
+              "a": "If two angles of one triangle equal two angles of another, the triangles are similar."
+            },
+            {
+              "q": "Are all equilateral triangles similar to each other?",
+              "a": "Yes! Every equilateral triangle has three 60° angles, satisfying AAA similarity."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Two similar triangles have a side ratio of 2 : 5. If the smaller triangle has an area of 16 cm², what is the area of the larger triangle?",
+              "q": "Triangle ABC is similar to Triangle DEF with scale factor AB/DE = 3/5. If the area of Triangle ABC is 36 cm², what is the area of Triangle DEF?",
               "options": [
-                "40 cm²",
+                "60 cm²",
                 "100 cm²",
-                "64 cm²",
-                "25 cm²"
+                "20 cm²",
+                "120 cm²"
               ],
               "correct": 1,
-              "strategy": "Area ratio is (2/5)² = 4/25. Set up 16 / Area = 4 / 25.",
-              "derivation": "4 × Area = 16 × 25 = 400 ➔ Area = 100 cm².",
-              "trap": "Using the linear ratio 2:5 to get 40 cm²!"
+              "strategy": "The ratio of areas of similar figures equals the square of the ratio of their sides: Area₁ / Area₂ = (3/5)² = 9/25.",
+              "derivation": "36 / Area₂ = 9 / 25 ⟹ Area₂ = (36 × 25) / 9 = 4 × 25 = 100 cm².",
+              "trap": "Multiplying by 5/3 directly gives 60 cm², which forgets to square the scale factor!"
             }
           ]
         }
@@ -403,65 +385,73 @@ module.exports = {
     {
       "id": "g8-m-u5",
       "number": "Unit 5",
-      "title": "Circles & Angle Properties",
-      "bigIdea": "Study central angles, inscribed angles, chords, and the tangent-radius perpendicularity theorem.",
+      "title": "Circles",
+      "bigIdea": "Explore properties of circles: chords, tangents, secants, central angles, arcs, and the inscribed angle theorem.",
       "subtopics": [
         {
           "id": "g8-m-5.1",
           "code": "5.1",
-          "title": "Central Angles, Inscribed Angles & Tangents",
+          "title": "Chords, Tangents & Inscribed Angles",
           "survey": {
-            "blueprint": "Inscribed angle theorem: Angle at circumference = ½ angle at center subtended by the same arc.",
+            "blueprint": "Circle geometry: Radius (r), Diameter (d = 2r), Chord (line segment joining two points on circle), Tangent (line touching circle at exactly 1 point, perpendicular to radius). Central angle = arc measure. Inscribed angle = ½ × intercepted arc.",
             "objectives": [
-              "Apply the Inscribed Angle Theorem: ∠Inscribed = ½ ∠Central.",
-              "Apply Thales' Theorem: Angle inscribed in a semicircle is ALWAYS 90°.",
-              "Apply Tangent Theorem: Tangent is perpendicular to radius at point of contact (90°)."
+              "Apply the Tangent-Radius theorem: a tangent is perpendicular to the radius at the point of contact (90°).",
+              "Calculate angle measures using the Inscribed Angle Theorem: ∠Inscribed = ½ × ∠Central.",
+              "Apply Thales Circle Theorem: any angle inscribed in a semicircle is a right angle (90°)."
             ],
-            "keyFormulas": "∠Inscribed = ½ ∠Central &nbsp;|&nbsp; Semicircle ∠ = 90°"
+            "keyFormulas": "∠Inscribed = ½ × ∠Central &nbsp;|&nbsp; Angle in semicircle = 90° &nbsp;|&nbsp; Tangent ⊥ Radius (90°)"
           },
           "questions": [
-            "What is the measure of an angle inscribed in a semicircle?",
-            "If a central angle is 80°, what is the measure of an inscribed angle on the same arc?"
+            "Why is any angle inscribed in a semicircle automatically a 90° right angle?",
+            "How does the perpendicular from the center of a circle to a chord always bisect that chord?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-amber-400\">Key Circle Theorems</h4>\n                      <p>• <strong>Inscribed Angle:</strong> The angle subtended by an arc at the center is TWICE the angle subtended by it at any point on the circumference.<br>\n                      • <strong>Thales' Theorem:</strong> Any angle inscribed in a semicircle is a right angle (90°).<br>\n                      • <strong>Radius-Tangent:</strong> A tangent to a circle is perpendicular to the radius at the point of tangency (90°).</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>⭕</span> 1. THE INSCRIBED ANGLE THEOREM\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Central Angle:</strong> An angle whose vertex is at the center of the circle. Its measure equals the intercepted arc: <em>∠AOB = arc(AB)</em>.<br>\n                  • <strong>Inscribed Angle:</strong> An angle whose vertex lies on the circle and whose sides are chords.<br>\n                  • <strong>Fundamental Theorem:</strong> The measure of an inscribed angle is <strong>HALF</strong> the measure of its intercepted central angle:<br>\n                  <strong>∠APB = ½ × ∠AOB</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>📐</span> 2. THALES SEMICIRCLE THEOREM & CHORD PROPERTIES\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <p>• <strong>Angle in a Semicircle:</strong> If an inscribed angle subtends a diameter, its central angle is a straight line (180°). Therefore, its inscribed angle is 180° / 2 = <strong>90°</strong>!</p>\n                  <p>• <strong>Chord Bisection:</strong> The perpendicular line dropped from the circle center to any chord bisects the chord into two equal halves.</p>\n                  <p>• <strong>Tangent Perpendicularity:</strong> A tangent to a circle is perpendicular (90°) to the radius drawn to the point of contact.</p>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Solving Circle Angle with Central and Inscribed Theorems",
-            "problem": "In a circle with center O, arc AB subtends a central angle ∠AOB = 110°. Point C lies on the circumference. Find the measure of inscribed angle ∠ACB.",
+            "title": "Worked Example: Inscribed Angles and Semicircles",
+            "problem": "In a circle with center O, AB is a diameter and C is any point on the circumference. If ∠ABC = 35°, find the measure of ∠BAC.",
             "steps": [
               {
-                "label": "Step 1: Apply inscribed angle theorem",
-                "text": "∠ACB = ½ × ∠AOB."
+                "label": "Step 1: Identify angle in semicircle",
+                "text": "Because AB is a diameter, ∠ACB is inscribed in a semicircle. By Thales theorem, <strong>∠ACB = 90°</strong>."
               },
               {
-                "label": "Step 2: Calculate",
-                "text": "∠ACB = ½ × 110° = <strong>55°</strong>."
+                "label": "Step 2: Apply triangle angle sum theorem",
+                "text": "In Triangle ABC: ∠BAC + ∠ABC + ∠ACB = 180°.<br>∠BAC + 35° + 90° = 180°.<br>∠BAC + 125° = 180°."
+              },
+              {
+                "label": "Step 3: Calculate ∠BAC",
+                "text": "∠BAC = 180° - 125° = <strong>55°</strong>."
               }
             ],
-            "proTip": "The angle at the center is always larger (double the circumference angle)!"
+            "proTip": "In any right-angled triangle inscribed in a semicircle, the two acute angles are complementary (they add to 90°): 90° - 35° = 55°!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the angle inscribed in a semicircle?",
-              "a": "90 degrees."
+              "q": "If a central angle measures 110°, what is the measure of an inscribed angle subtending the same arc?",
+              "a": "55° (half of 110°)."
             },
             {
-              "q": "At what angle does a tangent line meet the radius?",
+              "q": "What is the angle between a tangent line and the radius at the point of tangency?",
               "a": "90 degrees (perpendicular)."
+            },
+            {
+              "q": "What is the measure of an angle inscribed in a semicircle?",
+              "a": "Always 90 degrees."
             }
           ],
           "amtQuiz": [
             {
-              "q": "An inscribed angle in a circle measures 38°. What is the measure of the central angle subtending the same arc?",
+              "q": "Points A, B, and C lie on a circle centered at O. The central angle ∠AOB = 130°. What is the measure of the inscribed angle ∠ACB that subtends the same arc?",
               "options": [
-                "19°",
-                "38°",
-                "76°",
-                "90°"
+                "65°",
+                "130°",
+                "260°",
+                "50°"
               ],
-              "correct": 2,
-              "strategy": "Central angle = 2 × inscribed angle.",
-              "derivation": "Central angle = 2 × 38° = 76°.",
-              "trap": "Dividing by 2 to get 19° (confusing central with inscribed)!"
+              "correct": 0,
+              "strategy": "Apply the Inscribed Angle Theorem: ∠Inscribed = ½ × ∠Central.",
+              "derivation": "∠ACB = 130° / 2 = 65°.",
+              "trap": "Assuming inscribed angles equal central angles (130°)!"
             }
           ]
         }
@@ -471,67 +461,72 @@ module.exports = {
       "id": "g8-m-u6",
       "number": "Unit 6",
       "title": "Introduction to Probability",
-      "bigIdea": "Calculate theoretical probabilities of events, sample spaces, and compound complementary events.",
+      "bigIdea": "Understand uncertainty, experiments, outcomes, sample spaces (S), events (E), theoretical probability, and complementary events.",
       "subtopics": [
         {
           "id": "g8-m-6.1",
           "code": "6.1",
-          "title": "Sample Spaces & Probability of Simple Events",
+          "title": "The Concept of Probability & Simple Events",
           "survey": {
-            "blueprint": "Probability scale from 0 (impossible) to 1 (certain), P(E) = n(E) / n(S), complementary rule P(E') = 1 - P(E).",
+            "blueprint": "Random experiment: action with unpredictable outcomes. Sample space S: set of all possible outcomes. Event E: subset of sample space. Classical probability formula: P(E) = n(E) / n(S). Range of probability: 0 ≤ P(E) ≤ 1. Impossible event = 0, certain event = 1.",
             "objectives": [
-              "List sample space S for rolling dice and tossing coins.",
-              "Calculate probability of mutually exclusive events."
+              "List sample spaces for coin flips, dice rolls, and card draws.",
+              "Calculate theoretical probability of simple events: P(E) = n(E)/n(S).",
+              "Apply the Complement Rule: P(not E) = 1 - P(E)."
             ],
-            "keyFormulas": "P(E) = n(E) / n(S) &nbsp;|&nbsp; P(not E) = 1 - P(E)"
+            "keyFormulas": "P(E) = n(E) / n(S) &nbsp;|&nbsp; 0 ≤ P(E) ≤ 1 &nbsp;|&nbsp; P(E') = 1 - P(E)"
           },
           "questions": [
-            "Can a probability ever be negative or greater than 1?",
-            "What is the probability of rolling a prime number on a standard 6-sided die?"
+            "Why can a probability value NEVER be negative or exceed 1.0 (100%)?",
+            "How does the complement rule P(not E) = 1 - P(E) drastically speed up solving \"at least one\" problems?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-indigo-400\">Probability Axioms</h4>\n                      <p>• 0 ≤ P(E) ≤ 1 for any event E.<br>\n                      • P(S) = 1 (certain event).<br>\n                      • P(∅) = 0 (impossible event).<br>\n                      • P(E') = 1 − P(E) (complementary event).</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>🎲</span> 1. PROBABILITY FOUNDATIONS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Random Experiment:</strong> An activity where the outcome cannot be predicted with certainty in advance.<br>\n                  • <strong>Sample Space (S):</strong> The complete set of all possible outcomes. For rolling a fair 6-sided die: <em>S = {1, 2, 3, 4, 5, 6}</em>, so <em>n(S) = 6</em>.<br>\n                  • <strong>Event (E):</strong> Any subset of outcomes from the sample space. E.g., rolling an even number: <em>E = {2, 4, 6}</em>, so <em>n(E) = 3</em>.<br>\n                  • <strong>Probability Formula:</strong> <strong>P(E) = n(E) / n(S)</strong>.<br>\n                  P(even) = 3 / 6 = <strong>1/2 = 0.5 = 50%</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>⚖️</span> 2. THE THREE SACRED PROBABILITY AXIOMS\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <p><strong>1. Probability Bounds:</strong> For any event E, <strong>0 ≤ P(E) ≤ 1</strong>. A probability can never be negative (-0.2) or greater than 1 (1.5)!</p>\n                  <p><strong>2. Certain & Impossible Events:</strong> P(Impossible Event ∅) = <strong>0</strong> (e.g. rolling a 7 on a 6-sided die). P(Certain Event S) = <strong>1</strong>.</p>\n                  <p><strong>3. Complementary Event Rule:</strong> The event that E does NOT happen is denoted E' (or not E):<br>\n                  <strong>P(E') = 1 - P(E)</strong>.</p>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Die Roll Prime Number Probability",
-            "problem": "A standard fair 6-sided die is rolled once. Find the probability of getting: (a) A prime number, and (b) A number greater than 4.",
+            "title": "Worked Example: Prime Numbers on a Die and Bag of Marbles",
+            "problem": "A bag contains 5 red, 8 blue, and 7 green marbles. One marble is drawn at random. What is the probability that the marble is NOT blue?",
             "steps": [
               {
-                "label": "Step 1: Define Sample Space",
-                "text": "S = {1, 2, 3, 4, 5, 6}. Total n(S) = 6."
+                "label": "Step 1: Calculate total sample space n(S)",
+                "text": "n(S) = 5 + 8 + 7 = <strong>20 marbles</strong>."
               },
               {
-                "label": "Step 2: Prime outcomes",
-                "text": "Prime numbers are 2, 3, 5 (1 is not prime!). Favorable n(E) = 3.<br>P(Prime) = 3/6 = <strong>1/2</strong>."
+                "label": "Step 2: Find probability of drawing Blue P(B)",
+                "text": "Number of blue marbles n(B) = 8.<br>P(B) = 8 / 20 = 2 / 5 = <strong>0.40</strong>."
               },
               {
-                "label": "Step 3: Greater than 4 outcomes",
-                "text": "Numbers > 4 are 5, 6. Favorable = 2.<br>P(> 4) = 2/6 = <strong>1/3</strong>."
+                "label": "Step 3: Apply the Complement Rule",
+                "text": "P(not Blue) = 1 - P(B) = 1 - 2/5 = <strong>3/5 = 0.60 = 60%</strong>.<br>(Alternatively: Red + Green = 5 + 7 = 12; 12/20 = 3/5!)."
               }
             ],
-            "proTip": "1 is neither prime nor composite!"
+            "proTip": "When an event asks for \"NOT X\", subtracting P(X) from 1 is almost always faster than adding all other cases!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the sum of probabilities of all outcomes in a sample space?",
-              "a": "1."
+              "q": "What is the probability of an impossible event?",
+              "a": "0."
             },
             {
               "q": "If P(Rain) = 0.35, what is P(No Rain)?",
-              "a": "1 - 0.35 = 0.65."
+              "a": "1 - 0.35 = 0.65 (65%)."
+            },
+            {
+              "q": "What are the prime numbers in a standard 6-sided die sample space {1, 2, 3, 4, 5, 6}?",
+              "a": "{2, 3, 5} (1 is neither prime nor composite!)."
             }
           ],
           "amtQuiz": [
             {
-              "q": "A bag contains 5 red, 3 blue, and 2 green marbles. One marble is drawn at random. What is the probability that it is NOT red?",
+              "q": "A standard 6-sided die is rolled once. What is the probability of obtaining a prime number?",
               "options": [
                 "1/2",
-                "3/10",
-                "7/10",
-                "1/5"
+                "2/3",
+                "1/3",
+                "5/6"
               ],
               "correct": 0,
-              "strategy": "Total marbles = 10. Not red = 3 blue + 2 green = 5.",
-              "derivation": "P(Not Red) = 5 / 10 = 1/2.",
-              "trap": "Finding P(Red) = 5/10 which happens to equal 1/2 here, but always ensure correct favorable count!"
+              "strategy": "Identify prime numbers in {1, 2, 3, 4, 5, 6}: 2, 3, 5 (3 prime numbers).",
+              "derivation": "P(prime) = 3 / 6 = 1/2.",
+              "trap": "Counting 1 as a prime number (1 is NOT prime) gives 4/6 = 2/3!"
             }
           ]
         }
@@ -540,68 +535,73 @@ module.exports = {
     {
       "id": "g8-m-u7",
       "number": "Unit 7",
-      "title": "3D Solid Figures (Pyramids, Cones, Spheres)",
-      "bigIdea": "Calculate surface areas and volumes of regular pyramids, right circular cones, and spheres.",
+      "title": "Geometry and Measurements",
+      "bigIdea": "Master the Pythagorean Theorem, right triangle applications, introduction to trigonometric ratios (sin, cos, tan), and surface area & volume of 3D solids (pyramids, cones, spheres).",
       "subtopics": [
         {
           "id": "g8-m-7.1",
           "code": "7.1",
-          "title": "Pyramids, Cones & Spheres Formulas",
+          "title": "Pythagorean Theorem, Trigonometry & 3D Solids",
           "survey": {
-            "blueprint": "Volume of Pyramids & Cones = ⅓ Base Area × Height; Sphere Volume = 4/3 πr³; Sphere Surface Area = 4πr².",
+            "blueprint": "Pythagorean Theorem: a² + b² = c² (where c is hypotenuse). Pythagorean triples: (3,4,5), (5,12,13), (8,15,17). Trigonometric ratios in right triangles: sin θ = Opp/Hyp, cos θ = Adj/Hyp, tan θ = Opp/Adj (SOH CAH TOA). 3D solids: Sphere Volume = (4/3)πr³, Cone Volume = (1/3)πr²h.",
             "objectives": [
-              "Calculate volume of a cone: V = ⅓πr²h.",
-              "Calculate surface area and volume of spheres."
+              "Calculate unknown sides of right triangles using Pythagoras: c = √(a² + b²).",
+              "Set up sine, cosine, and tangent ratios using SOH CAH TOA.",
+              "Calculate surface area and volume of right pyramids, cones, and spheres."
             ],
-            "keyFormulas": "V_cone = ⅓πr²h &nbsp;|&nbsp; V_sphere = 4/3 πr³ &nbsp;|&nbsp; A_sphere = 4πr²"
+            "keyFormulas": "a² + b² = c² &nbsp;|&nbsp; sin θ = Opp/Hyp &nbsp;|&nbsp; cos θ = Adj/Hyp &nbsp;|&nbsp; tan θ = Opp/Adj &nbsp;|&nbsp; Sphere V = 4/3 πr³ &nbsp;|&nbsp; Cone V = 1/3 πr²h"
           },
           "questions": [
-            "How is the volume of a cone related to the volume of a cylinder with the same radius and height?",
-            "What is the formula for the surface area of a sphere?"
+            "How can the converse of the Pythagorean Theorem verify whether a room corner is an exact 90° right angle in construction?",
+            "What is the mnemonic SOH CAH TOA and how does it define trigonometry ratios?"
           ],
-          "coreNotes": "\n                    <div class=\"p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2\">\n                      <h4 class=\"font-bold text-amber-400\">3D Solid Volumes Summary</h4>\n                      <p>• <strong>Cone:</strong> V = ⅓πr²h (exactly one-third of cylinder).<br>\n                      • <strong>Square Pyramid:</strong> V = ⅓s²h.<br>\n                      • <strong>Sphere:</strong> V = 4/3 πr³ and Surface Area = 4πr².</p>\n                    </div>\n                  ",
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>📐</span> 1. THE PYTHAGOREAN THEOREM & ITS CONVERSE\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  In any right-angled triangle, the square of the longest side (the <strong>hypotenuse c</strong>, opposite the 90° angle) equals the sum of the squares of the other two legs (a and b):<br>\n                  <strong>a² + b² = c²</strong> ⟹ <strong>c = √(a² + b²)</strong>.<br>\n                  • <em>Converse Theorem:</em> If the side lengths of a triangle satisfy a² + b² = c², the triangle is guaranteed to be a <strong>right-angled triangle</strong>!<br>\n                  • <em>Pythagorean Triples to Memorize:</em> (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔺</span> 2. INTRODUCTION TO TRIGONOMETRIC RATIOS (SOH CAH TOA)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  For an acute angle θ in a right-angled triangle:<br>\n                  • <strong>Sine:</strong> <strong>sin θ = Opposite / Hypotenuse</strong> (SOH)<br>\n                  • <strong>Cosine:</strong> <strong>cos θ = Adjacent / Hypotenuse</strong> (CAH)<br>\n                  • <strong>Tangent:</strong> <strong>tan θ = Opposite / Adjacent</strong> (TOA)<br>\n                  • Relationship: <strong>tan θ = sin θ / cos θ</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🌐</span> 3. 3D SOLID MEASUREMENTS: SPHERES & CONES\n                </h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300 pt-1\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Right Circular Cone:</strong><br>\n                    - Slant height: l = √(r² + h²).<br>\n                    - Volume: <strong>V = ⅓ πr²h</strong>.<br>\n                    - Curved Area = πrl &nbsp;|&nbsp; Total Area = πr(l + r).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Sphere:</strong><br>\n                    - Surface Area: <strong>A = 4πr²</strong>.<br>\n                    - Volume: <strong>V = ⁴⁄₃ πr³</strong>.\n                  </div>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Calculating Volume of a Right Circular Cone",
-            "problem": "A cone has a radius of 6 cm and a vertical height of 14 cm. Calculate its volume. (Use π = 22/7).",
+            "title": "Worked Example: Pythagorean Ladder & Volume of a Cone",
+            "problem": "Part A: A 13-meter ladder leans against a vertical building wall. Its base is placed 5 meters away from the wall. How high up the wall does the ladder reach? Part B: Find the volume of a cone with radius r = 6 cm and height h = 7 cm (use π = 22/7).",
             "steps": [
               {
-                "label": "Step 1: State formula",
-                "text": "V = ⅓ × π × r² × h."
+                "label": "Step 1: Set up Pythagoras for Part A",
+                "text": "Hypotenuse c = 13 m. Base a = 5 m. Wall height = b.<br>a² + b² = c² ⟹ 5² + b² = 13².<br>25 + b² = 169."
               },
               {
-                "label": "Step 2: Substitute values",
-                "text": "V = ⅓ × (22/7) × (6²) × 14 = ⅓ × (22/7) × 36 × 14."
+                "label": "Step 2: Solve for height b",
+                "text": "b² = 169 - 25 = 144.<br>b = √144 = <strong>12 meters</strong>."
               },
               {
-                "label": "Step 3: Simplify",
-                "text": "14 / 7 = 2. And 36 / 3 = 12.<br>V = 22 × 12 × 2 = <strong>528 cm³</strong>."
+                "label": "Step 3: Calculate Cone Volume for Part B",
+                "text": "Volume V = ⅓ × π × r² × h.<br>Substitute: V = ⅓ × (22/7) × (6)² × 7.<br>Cancel the 7 with 7, and ⅓ × 36 = 12.<br>V = 12 × 22 = <strong>264 cm³</strong>."
               }
             ],
-            "proTip": "Always cancel common factors (like 14/7 and 36/3) before multiplying!"
+            "proTip": "Recognizing the (5, 12, 13) Pythagorean triple immediately gives 12 meters without squaring or subtracting!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the surface area of a sphere of radius r?",
-              "a": "4πr²."
+              "q": "What is the formula for the volume of a sphere?",
+              "a": "V = (4/3)πr³."
             },
             {
-              "q": "What fraction of a cylinder's volume is a cone with equal radius and height?",
-              "a": "1/3."
+              "q": "What is tan θ defined as in a right-angled triangle?",
+              "a": "Opposite side / Adjacent side."
+            },
+            {
+              "q": "If two legs of a right triangle are 6 cm and 8 cm, what is the hypotenuse?",
+              "a": "10 cm (scaled 3-4-5 triple: 2 × 5 = 10)."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Calculate the volume of a sphere with radius 3 cm (Leave answer in terms of π).",
+              "q": "In a right-angled triangle, the side opposite angle θ is 9 cm and the adjacent side is 12 cm. What is the value of cos θ?",
               "options": [
-                "36π cm³",
-                "12π cm³",
-                "27π cm³",
-                "108π cm³"
+                "4/5",
+                "3/5",
+                "3/4",
+                "5/4"
               ],
               "correct": 0,
-              "strategy": "V = (4/3) × π × r³.",
-              "derivation": "V = (4/3) × π × 27 = 4 × 9 × π = 36π cm³.",
-              "trap": "Squaring radius instead of cubing it gives 12π!"
+              "strategy": "First find hypotenuse using Pythagoras: c = √(9² + 12²) = √(81 + 144) = √225 = 15 cm. Then cos θ = Adjacent / Hypotenuse.",
+              "derivation": "cos θ = 12 / 15 = 4/5.",
+              "trap": "3/5 is sin θ (Opposite / Hypotenuse)!"
             }
           ]
         }
