@@ -1,418 +1,525 @@
-// Grade 7 Social Studies - Complete Ethiopian Curriculum Syllabus (Units 1 to 7)
 module.exports = {
-  id: 'social',
-  name: 'Social Studies',
-  icon: '🌍',
-  units: [
+  "id": "social",
+  "name": "Social Studies",
+  "icon": "🌍",
+  "units": [
     {
-      id: 'g7-soc-u1',
-      number: 'Unit 1',
-      title: 'Physical Geography of Africa',
-      bigIdea: 'Examine astronomical location, size, boundaries, and regional relief features of the African continent.',
-      subtopics: [
+      "id": "g7-soc-u1",
+      "number": "Unit 1",
+      "title": "Physical Characteristics of the Earth",
+      "bigIdea": "Understand the origin of the Earth, planetary motions (rotation vs revolution), four spheres (lithosphere, atmosphere, hydrosphere, biosphere), internal Earth structure, and rock types in Ethiopia.",
+      "subtopics": [
         {
-          id: 'g7-soc-1.1',
-          code: '1.1',
-          title: 'Location, Size & Boundaries of Africa',
-          survey: {
-            blueprint: 'Africa: 2nd largest continent (~30.3 million km²). Latitudes: 37°21\'N (Ras Ben Sakka) to 34°52\'S (Cape Agulhas). Equator crosses almost symmetrically.',
-            objectives: [
-              'State the absolute (latitudinal/longitudinal) location of Africa.',
-              'Identify the four water bodies bordering Africa (Mediterranean Sea, Red Sea, Indian Ocean, Atlantic Ocean).',
-              'Explain the significance of the Strait of Gibraltar and the Suez Canal.'
+          "id": "g7-soc-1.1",
+          "code": "1.1",
+          "title": "Origin, Movements & Spheres of the Earth",
+          "survey": {
+            "blueprint": "Nebular theory: solar system condensed from gas/dust cloud. Earth rotation (24h ➔ day/night) vs revolution (365¼ days ➔ seasons on 23.5° tilt). Solstices & Equinoxes. Four spheres: Lithosphere, Atmosphere, Hydrosphere, Biosphere. Three rock families: Igneous, Sedimentary, Metamorphic.",
+            "objectives": [
+              "Explain the Nebular Theory of Solar System origin.",
+              "Distinguish between Earth’s rotation (24 hours) and revolution (365¼ days).",
+              "Explain the four spheres of the Earth and the rock cycle in Ethiopia."
             ],
-            keyFormulas: 'Area ≈ 30.3 million km² (20.4% of Earth’s land surface) &nbsp;|&nbsp; 54 Sovereign Nations'
+            "keyFormulas": "Rotation: 24h ➔ Day/Night &nbsp;|&nbsp; Revolution: 365¼ days on 23.5° tilt ➔ Seasons"
           },
-          questions: [
-            'Why is Africa referred to as the most tropical of all continents?',
-            'What man-made waterway connects the Mediterranean Sea to the Red Sea?'
+          "questions": [
+            "Why does the 23.5° axial tilt cause seasons on Earth rather than distance from the Sun?",
+            "How do igneous basalt rocks formed by volcanic eruptions in the Ethiopian Highlands become rich fertile agricultural soil?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Continental Dimensions & Geopolitical Boundaries</h4>
-              <p>• <strong>Location:</strong> Africa spans from 37°21'N to 34°52'S latitude, and from 17°33'W (Cape Verde Peninsula) to 51°28'E (Ras Hafun, Somalia) longitude.<br>
-              • <strong>Surrounding Water Bodies:</strong> North: Mediterranean Sea; Northeast: Red Sea (separated from Asia by Bab-el-Mandeb and connected by Suez Canal); East: Indian Ocean; West & South: Atlantic Ocean.<br>
-              • <strong>Topography:</strong> Characterized as a plateau continent with narrow coastal plains, high plateaus, and the East African Rift System.</p>
-            </div>
-          `,
-          example: {
-            title: 'Identifying Africa’s Extreme Geographical Points',
-            problem: 'Name the northernmost and easternmost mainland points of the African continent.',
-            steps: [
-              { label: 'Step 1: Northernmost extremity', text: 'Ras Ben Sakka in Tunisia (37°21\' N).' },
-              { label: 'Step 2: Easternmost extremity', text: 'Ras Hafun in Somalia (51°28\' E, located in the Horn of Africa).' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>🌌</span> 1. ORIGIN & PLANETARY MOVEMENTS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Nebular Theory:</strong> The Solar System formed approximately 4.6 billion years ago from a rotating interstellar cloud of dust and gas (solar nebula). Gravity pulled material inward, forming the Sun at the center and planets from condensing protoplanetary disks.<br>\n                  • <strong>Rotation:</strong> Earth spins on its axis once every 24 hours from West to East. This creates the diurnal cycle of <strong>Day and Night</strong>, deflects ocean/wind currents (Coriolis Effect), and causes the apparent movement of the Sun.<br>\n                  • <strong>Revolution:</strong> Earth orbits the Sun in <strong>365¼ days</strong> (1 year). Because Earth’s axis is permanently tilted at <strong>23.5°</strong>, different hemispheres receive direct solar rays at different times of the year, producing the <strong>Four Seasons</strong> (Equinoxes: March 21 & September 23; Solstices: June 21 & December 21).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🌐</span> 2. THE FOUR INTERCONNECTED SPHERES\n                </h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300 pt-1\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>1. Lithosphere:</strong> Rigid outer rocky crust and upper mantle (~100 km thick).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>2. Atmosphere:</strong> Gaseous blanket (78% N₂, 21% O₂, 0.9% Ar, 0.04% CO₂) providing oxygen and UV protection.\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>3. Hydrosphere:</strong> All water bodies (oceans, rivers, lakes, ice caps, groundwater) covering ~71% of Earth.\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>4. Biosphere:</strong> The global zone of all living organisms interacting with the other three spheres.\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🪨</span> 3. ROCKS AND MINERALS IN ETHIOPIA\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Igneous Rocks:</strong> Formed from cooling and solidification of molten magma/lava. Basalt (Trappean volcanic rocks) covers the Ethiopian central plateau, while granite occurs in Tigray and Harar.<br>\n                  • <strong>Sedimentary Rocks:</strong> Formed by deposition, compaction, and cementation of mineral particles and fossils over millions of years. Examples: Limestone and Sandstone in the Abbay Gorge, Mekelle basin, and Ogaden.<br>\n                  • <strong>Metamorphic Rocks:</strong> Pre-existing rocks transformed by intense heat and pressure deep within Earth’s crust. Marble (Muger, Gojjam) and schist in northern and western Ethiopia.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Ethiopian Seasonal Rhythms and Equinoxes",
+            "problem": "Explain why Ethiopia experiences the equinoxes on approximately March 21 and September 23, and what happens to day length across the country on those dates.",
+            "steps": [
+              {
+                "label": "Step 1: Define Equinox",
+                "text": "An equinox occurs when Earth’s axis is neither tilted toward nor away from the Sun, causing the subsolar point (overhead Sun) to strike directly on the Equator."
+              },
+              {
+                "label": "Step 2: Day length effect",
+                "text": "On March 21 (Vernal Equinox) and September 23 (Autumnal Equinox), every location across Ethiopia and the world experiences exactly <strong>12 hours of day and 12 hours of night</strong>."
+              },
+              {
+                "label": "Step 3: Agricultural significance",
+                "text": "The March equinox heralds the Belg minor rainy season in Ethiopia, whereas the September equinox marks the end of Kiremt rains and the beginning of harvest (Meskel festival season)."
+              }
             ],
-            proTip: 'Remember that the Prime Meridian (0°) passes through Accra (Ghana) and Algeria in West Africa!'
+            "proTip": "Equinox literally translates from Latin as \"aequus\" (equal) and \"nox\" (night) = equal day and night!"
           },
-          reciteFlashcards: [
-            { q: 'What is the total land area of the African continent?', a: 'Approximately 30.3 million square kilometers.' },
-            { q: 'Which artificial waterway links the Mediterranean Sea to the Red Sea?', a: 'The Suez Canal (opened in Egypt in 1869).' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'Which body of water borders the African continent to the northeast?',
-              options: ['Atlantic Ocean', 'Mediterranean Sea', 'Red Sea', 'Baltic Sea'],
-              correct: 2,
-              strategy: 'Recall the regional compass directions bordering Africa.',
-              derivation: 'The Red Sea separates northeastern Africa (Egypt, Sudan, Eritrea) from the Arabian Peninsula.',
-              trap: 'The Mediterranean Sea is to the north, not northeast!'
+              "q": "What theory explains the origin of the Solar System from a gas and dust cloud?",
+              "a": "The Nebular Theory."
+            },
+            {
+              "q": "What is the angle of tilt of Earth’s rotational axis?",
+              "a": "23.5 degrees."
+            },
+            {
+              "q": "What type of rock is basalt, which forms the vast Ethiopian plateau?",
+              "a": "Extrusive igneous rock."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following is the primary proof of Earth’s rotation on its axis?",
+              "options": [
+                "The change of seasons from rainy to dry",
+                "The alternation of day and night every 24 hours",
+                "The varying length of shadows at different latitudes",
+                "Solar and lunar eclipses"
+              ],
+              "correct": 1,
+              "strategy": "Rotation takes 24 hours and causes the daily alternation of day and night.",
+              "derivation": "Earth’s West-to-East rotation every 24 hours causes sunrise and sunset, producing the cycle of day and night. Revolution on a tilted axis causes seasons.",
+              "trap": "Confusing rotation (causes day/night) with revolution (causes seasons)!"
             }
           ]
         }
       ]
     },
     {
-      id: 'g7-soc-u2',
-      number: 'Unit 2',
-      title: 'Drainage Systems & Climate of Africa',
-      bigIdea: 'Study major river basins (Nile, Congo, Niger, Zambezi), rift valley lakes, and continental climatic belts.',
-      subtopics: [
+      "id": "g7-soc-u2",
+      "number": "Unit 2",
+      "title": "Human Evolution and World Population",
+      "bigIdea": "Explore Ethiopia as the Cradle of Humankind (Lucy/Dinkinesh, Ardi), hominid evolutionary milestones, and world demographic dynamics.",
+      "subtopics": [
         {
-          id: 'g7-soc-2.1',
-          code: '2.1',
-          title: 'Major Rivers, Lakes & Climate Zones of Africa',
-          survey: {
-            blueprint: 'Rivers: Nile (longest in world, 6,650 km), Congo (deepest, largest discharge in Africa), Niger, Zambezi (Victoria Falls). Climates: Equatorial, Tropical Savanna, Desert, Mediterranean.',
-            objectives: [
-              'Trace the origin and course of the Blue Nile (Abay) and White Nile.',
-              'Explain why the Congo River has the highest volume of discharge in Africa.',
-              'Differentiate the four major climate zones of Africa and their vegetation.'
+          "id": "g7-soc-2.1",
+          "code": "2.1",
+          "title": "Hominid Evolution in Ethiopia & Demographics",
+          "survey": {
+            "blueprint": "Ethiopia: Cradle of Humankind. Key hominid discoveries: Ardipithecus ramidus (Ardi, 4.4 mya, Middle Awash), Australopithecus afarensis (Lucy / Dinkinesh, 3.2 mya, Hadar, Afar), Homo habilis (handyman, toolmaker), Homo erectus (bipedal, controlled fire), Homo sapiens (anatomically modern human, Omo Kibish 195,000 BP). World population trends, density, and migration.",
+            "objectives": [
+              "Identify the major hominid fossil discoveries in the Ethiopian Rift Valley.",
+              "Trace evolutionary transitions: bipedalism, tool manufacture, and brain expansion.",
+              "Calculate population density and analyze push and pull migration factors."
             ],
-            keyFormulas: 'River Nile = Blue Nile (Lake Tana, 85% flood volume) + White Nile (Lake Victoria) ➔ Khartoum confluence ➔ Mediterranean Sea'
+            "keyFormulas": "Population Density = Total Population / Total Land Area (people/km²)"
           },
-          questions: [
-            'Why does the Blue Nile provide approximately 85% of the Nile’s water during flood season?',
-            'How do the ITCZ (Inter-Tropical Convergence Zone) wind shifts determine rainfall across Ethiopia?'
+          "questions": [
+            "Why is Ethiopia scientifically recognized globally as the \"Cradle of Humankind\"?",
+            "How did the discovery of Ardi (Ardipithecus ramidus) at 4.4 million years old revolutionize our understanding of upright bipedal walking?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Hydrography & Climatological Zones</h4>
-              <p>• <strong>River Nile:</strong> The world\'s longest river (~6,650 km). The Blue Nile (Abay) originates at the Gish Abay spring feeding Lake Tana in the Ethiopian highlands and unites with the White Nile at Khartoum, Sudan.<br>
-              • <strong>Congo River Basin:</strong> Second largest river system in the world by water volume (after the Amazon), fed by year-round equatorial rainfall.<br>
-              • <strong>Climatic Belts:</strong><br>
-                - <em>Equatorial Rain Forest:</em> Hot and humid year-round with convectional rain (Congo basin).<br>
-                - <em>Savanna (Tropical Wet-and-Dry):</em> Defined wet summer and dry winter, covered by grasslands and acacia trees.<br>
-                - <em>Arid / Semi-Arid (Deserts):</em> Sahara (North) and Kalahari/Namib (South), extremely low precipitation.<br>
-                - <em>Mediterranean:</em> Mild, wet winters and warm, dry summers (northern tip of Africa and southern Cape).</p>
-            </div>
-          `,
-          example: {
-            title: 'Hydrographic Analysis of the Nile River Confluence',
-            problem: 'Explain the geographical components of the Nile river basin and why the Ethiopian highlands are termed the "Water Tower of Northeast Africa".',
-            steps: [
-              { label: 'Step 1: Identify headwaters', text: 'White Nile originates from the Lake Victoria basin in East Africa; Blue Nile (Abay), Tekeze (Atbara), and Baro originate in the Ethiopian highlands.' },
-              { label: 'Step 2: Water contribution', text: 'Due to summer monsoon rains, Ethiopian rivers contribute ~85% of the total water reaching the lower Nile valley.' },
-              { label: 'Step 3: Hydrographic conclusion', text: 'The massive elevation and rainfall capture in the Ethiopian plateau makes it the vital water tower for the downstream arid regions.' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400 flex items-center gap-2\">\n                  <span>🦴</span> 1. ETHIOPIA: CRADLE OF HUMANKIND\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  The Ethiopian Rift Valley provides the most unbroken fossil record of human evolutionary history anywhere on Earth:<br>\n                  • <strong>Ardipithecus ramidus (\"Ardi\"):</strong> Discovered by Tim White and Berhane Asfaw at Aramis, Middle Awash (Afar) in 1994, dated to <strong>4.4 million years ago</strong>. Walked upright on two legs while maintaining an opposable big toe for climbing trees.<br>\n                  • <strong>Australopithecus afarensis (\"Dinkinesh\" / Lucy):</strong> Discovered by Donald Johanson in 1974 at Hadar (Afar), dated to <strong>3.2 million years ago</strong>. 40% complete female skeleton proving habitual upright bipedalism.<br>\n                  • <strong>Homo habilis (\"Handy Man\"):</strong> Lived ~2.4 to 1.4 mya. First hominid to deliberately shape stone tools (Oldowan pebble tool culture).<br>\n                  • <strong>Homo erectus:</strong> First to master the control of fire, hunt large game, and migrate out of Africa into Eurasia (Acheulean hand axes).<br>\n                  • <strong>Homo sapiens (Modern Humans):</strong> Oldest anatomically modern human fossils discovered at Omo Kibish (Omo I and II, dated ~195,000 - 230,000 years ago) in southern Ethiopia!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>👥</span> 2. GLOBAL DEMOGRAPHY & POPULATION DENSITY\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Population Density:</strong> The number of individuals living per square kilometer of land:<br>\n                  <strong>Density = Total Population / Total Land Area (km²)</strong>.<br>\n                  • <em>Densely Populated Zones:</em> River valleys, coastal plains, fertile volcanic soils (e.g. Ethiopian Highlands, Nile River Basin, South Asia).<br>\n                  • <em>Sparsely Populated Zones:</em> Deserts (Sahara, Danakil), frozen tundra (Siberia), dense tropical rainforests (Congo basin).<br>\n                  • <strong>Migration Drivers:</strong><br>\n                  - <em>Push Factors (force people to leave):</em> Drought, famine, war, lack of land.<br>\n                  - <em>Pull Factors (attract people):</em> Better jobs, education, healthcare, peace.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Calculating Population Density of an Ethiopian Zone",
+            "problem": "The Gedeo Zone in Southern Ethiopia has an approximate population of 1,200,000 inhabitants occupying a fertile highland land area of 1,500 km². Calculate its population density and classify its settlement intensity.",
+            "steps": [
+              {
+                "label": "Step 1: State the density formula",
+                "text": "Population Density = Total Population / Total Area (km²)."
+              },
+              {
+                "label": "Step 2: Substitute values",
+                "text": "Density = 1,200,000 people / 1,500 km² = <strong>800 people per km²</strong>."
+              },
+              {
+                "label": "Step 3: Analyze settlement intensity",
+                "text": "800 people/km² represents an extremely high population density, supported by intensive agroforestry of Enset (false banana) and coffee cultivation!"
+              }
             ],
-            proTip: 'The Grand Ethiopian Renaissance Dam (GERD) is built on the Blue Nile near the Sudan border to harness this hydro-potential!'
+            "proTip": "Enset-growing regions of Ethiopia support some of the highest rural population densities in all of Africa because enset yields massive caloric food per hectare!"
           },
-          reciteFlashcards: [
-            { q: 'Where do the Blue Nile and White Nile meet?', a: 'At Khartoum, the capital of Sudan.' },
-            { q: 'Which African river carries the largest discharge volume of water?', a: 'The Congo River.' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'Where does the Blue Nile (Abay) river originate?',
-              options: ['Lake Victoria', 'Lake Tana / Ethiopian Highlands', 'Lake Tanganyika', 'Mount Kilimanjaro'],
-              correct: 1,
-              strategy: 'Recall the geography of Ethiopian river systems.',
-              derivation: 'The Blue Nile originates from springs feeding Lake Tana in the northwestern Ethiopian plateau.',
-              trap: 'Lake Victoria is the principal headwater reservoir of the White Nile, not the Blue Nile!'
+              "q": "Where and when was Lucy (Dinkinesh) discovered?",
+              "a": "At Hadar in the Afar Region of Ethiopia in 1974 (3.2 million years old)."
+            },
+            {
+              "q": "Which hominid was the first to fashion stone tools?",
+              "a": "Homo habilis (\"Handy Man\")."
+            },
+            {
+              "q": "What is the oldest fossil of anatomically modern Homo sapiens discovered in Ethiopia?",
+              "a": "Omo Kibish fossils (Omo I and II, ~195,000 - 230,000 years old)."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "The fossil hominid \"Ardi\" (Ardipithecus ramidus), discovered in the Middle Awash of Ethiopia, is scientifically significant because:",
+              "options": [
+                "It is the oldest evidence of iron smelting in Africa",
+                "It provides 4.4-million-year-old evidence of bipedal upright walking",
+                "It proved that Homo sapiens originated in Europe",
+                "It was the first hominid to produce cave paintings"
+              ],
+              "correct": 1,
+              "strategy": "Recall that Ardi is 4.4 mya and represents early bipedal hominid evolution.",
+              "derivation": "Ardipithecus ramidus (4.4 mya) showed scientists that human ancestors walked upright long before stone tools were invented.",
+              "trap": "Confusing Ardi (4.4 mya) with Lucy (3.2 mya)!"
             }
           ]
         }
       ]
     },
     {
-      id: 'g7-soc-u3',
-      number: 'Unit 3',
-      title: 'Human Population & Demography of Africa',
-      bigIdea: 'Analyze population distribution, fertility rates, demographic transition, and urban migration challenges.',
-      subtopics: [
+      "id": "g7-soc-u3",
+      "number": "Unit 3",
+      "title": "Human and Natural Resources",
+      "bigIdea": "Analyze natural resources: renewable vs non-renewable, Ethiopian drainage basins and major river systems, and soil conservation strategies.",
+      "subtopics": [
         {
-          id: 'g7-soc-3.1',
-          code: '3.1',
-          title: 'Population Distribution & Demographic Dynamics',
-          survey: {
-            blueprint: 'Africa population: Over 1.4 billion. Factors influencing distribution: rainfall, fertile soils, mineral wealth, disease vectors (tsetse fly, malaria).',
-            objectives: [
-              'Define population density and calculate crude population density.',
-              'Explain the factors leading to uneven population distribution in Africa.',
-              'Discuss socio-economic impacts of high dependency ratios and rapid urbanization.'
+          "id": "g7-soc-3.1",
+          "code": "3.1",
+          "title": "Natural Resources, Water Basins & Soil Conservation",
+          "survey": {
+            "blueprint": "Resource classification: Renewable (solar, wind, water, timber) vs Non-renewable (petroleum, coal, gold, natural gas). Ethiopia: \"Water Tower of East Africa\" with 12 river basins (Abbay/Blue Nile, Awash, Omo-Gibe, Tekeze, Baro-Akobo, Genale-Dawa, Wabe Shebelle). Soil erosion causes and conservation (terracing, afforestation, check dams).",
+            "objectives": [
+              "Distinguish between renewable and non-renewable natural resources.",
+              "Describe the major river drainage systems of Ethiopia and their transboundary flow.",
+              "Explain methods of soil conservation: terracing, contour plowing, and agroforestry."
             ],
-            keyFormulas: 'Crude Population Density = Total Population / Total Land Area (persons/km²)'
+            "keyFormulas": "Water drainage systems: Western (Mediterranean / Nile), South-Eastern (Indian Ocean), Rift Valley (Endorheic / Inland)"
           },
-          questions: [
-            'Why are the Nile valley and the Ethiopian highlands densely populated while the Sahara is virtually empty?',
-            'What is a "youth bulge" and what opportunities and challenges does it create for Africa?'
+          "questions": [
+            "Why is Ethiopia famously titled the \"Water Tower of Eastern Africa\"?",
+            "How does bench terracing on steep slopes prevent topsoil erosion during torrential Kiremt rains?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Demographic Science & Spatial Settlement</h4>
-              <p>• <strong>Densely Populated Zones:</strong> River valleys (Nile valley/delta in Egypt), fertile volcanic highlands (Ethiopian plateau, Kenyan highlands, Rwanda/Burundi), coastal trading belts (West Africa/Gulf of Guinea).<br>
-              • <strong>Sparsely Populated Zones:</strong> Hyper-arid deserts (Sahara, Kalahari), dense tropical rainforest swamps, areas prone to sleeping sickness (tsetse fly belt).<br>
-              • <strong>Demographic Characteristics:</strong> High birth rate, declining infant mortality, youthful age structure (>60% under 25 years), rapid rural-to-urban migration creating pressure on infrastructure.</p>
-            </div>
-          `,
-          example: {
-            title: 'Calculating Population Density',
-            problem: 'A region in eastern Africa has a total population of 12,000,000 people living across a land surface of 150,000 km². Calculate its crude population density.',
-            steps: [
-              { label: 'Step 1: State formula', text: 'Density = Total Population / Total Land Area.' },
-              { label: 'Step 2: Calculate', text: '12,000,000 / 150,000 = <strong>80 persons/km²</strong>.' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🌊</span> 1. ETHIOPIA’S THREE MAJOR DRAINAGE SYSTEMS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Due to high elevation and annual precipitation, Ethiopia produces over 122 billion cubic meters of surface runoff annually across <strong>Three Main Drainage Systems</strong>:<br>\n                  • <strong>1. Western (Mediterranean / Nile) System:</strong> Carries ~65% of Ethiopia’s water to the Nile and Mediterranean Sea. Rivers: <strong>Abbay (Blue Nile)</strong>, <strong>Tekeze</strong>, <strong>Baro-Akobo</strong>, and <strong>Mereb</strong>.<br>\n                  • <strong>2. South-Eastern (Indian Ocean) System:</strong> Rivers flow southeastward across the Somali plateau toward the Indian Ocean. Rivers: <strong>Wabe Shebelle</strong> (longest river in Ethiopia, ~1,340 km within Ethiopia) and <strong>Genale-Dawa</strong> (which joins to form the Juba in Somalia).<br>\n                  • <strong>3. Inland (Rift Valley / Endorheic) System:</strong> Rivers that do not reach the sea but empty into inland lakes. Rivers: <strong>Awash</strong> (terminates in Lake Abbe at Djibouti border) and <strong>Omo-Gibe</strong> (flows south into Lake Turkana).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>🌱</span> 2. SOIL DEGRADATION & CONSERVATION TECHNIQUES\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Topsoil is the primary foundation of Ethiopian agriculture. Soil erosion is accelerated by deforestation, overgrazing, and plowing steep hillsides.<br>\n                  • <strong>Terracing (Konso cultural landscape):</strong> Carving stepped level benches into hillsides to slow water runoff and trap soil.<br>\n                  • <strong>Contour Plowing:</strong> Plowing across the slope along contour lines rather than up and down.<br>\n                  • <strong>Afforestation & Reforestation:</strong> Tree roots anchor soil and foliage intercepts heavy rain drops (e.g. Ethiopia's Green Legacy Initiative).<br>\n                  • <strong>Check Dams:</strong> Building stone and wooden barriers across gullies to halt water rush and sediment loss.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Categorizing Ethiopian River Flow Directions",
+            "problem": "Classify the following Ethiopian rivers into their respective drainage systems: (a) Abbay, (b) Awash, (c) Wabe Shebelle, (d) Omo-Gibe, (e) Baro.",
+            "steps": [
+              {
+                "label": "Step 1: Western Drainage (Mediterranean / Nile)",
+                "text": "<strong>Abbay</strong> and <strong>Baro</strong> both flow westward and join the Nile basin."
+              },
+              {
+                "label": "Step 2: South-Eastern Drainage (Indian Ocean)",
+                "text": "<strong>Wabe Shebelle</strong> flows southeastward toward the Indian Ocean coast of Somalia."
+              },
+              {
+                "label": "Step 3: Inland / Rift Valley System (Endorheic)",
+                "text": "<strong>Awash</strong> drains into the desert lake Lake Abbe, and <strong>Omo-Gibe</strong> empties into Lake Turkana."
+              }
             ],
-            proTip: 'Crude density does not account for arable vs. wasteland area; physiological density measures people per unit of farmable land.'
+            "proTip": "The Grand Ethiopian Renaissance Dam (GERD) is constructed on the Abbay River in Benishangul-Gumuz, harnessing the vast Western drainage system for clean hydroelectricity!"
           },
-          reciteFlashcards: [
-            { q: 'What is the approximate total population of Africa today?', a: 'Over 1.4 billion people.' },
-            { q: 'Why do fertile volcanic highlands attract dense human settlements in East Africa?', a: 'Rich agricultural soil, cooler pleasant climate, and fewer tropical disease vectors.' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'Which of the following areas in Africa has the LOWEST population density?',
-              options: ['The Nile Delta of Egypt', 'The Sahara Desert', 'The Ethiopian Highlands', 'The Lake Victoria Basin'],
-              correct: 1,
-              strategy: 'Arid climate and lack of freshwater prevent permanent human agricultural settlement.',
-              derivation: 'The hyper-arid Sahara Desert has extreme heat and almost zero rainfall, making its population density less than 1 person per km².',
-              trap: 'The Ethiopian Highlands are one of the most densely populated regions due to fertile soils!'
+              "q": "Which is the longest river inside the territory of Ethiopia?",
+              "a": "Wabe Shebelle (~1,340 km within Ethiopia)."
+            },
+            {
+              "q": "Into which lake does the Omo-Gibe river empty?",
+              "a": "Lake Turkana."
+            },
+            {
+              "q": "Name the world-renowned UNESCO World Heritage landscape in Ethiopia famous for stone terracing.",
+              "a": "Konso Cultural Landscape."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which river in Ethiopia is unique because it flows entirely within the Rift Valley and terminates in Lake Abbe without ever reaching the ocean?",
+              "options": [
+                "Abbay River",
+                "Awash River",
+                "Tekeze River",
+                "Baro River"
+              ],
+              "correct": 1,
+              "strategy": "Identify the endorheic river of the Ethiopian Rift Valley.",
+              "derivation": "The Awash River rises in the central highlands and flows northeast through the Rift Valley, terminating in a chain of interconnected saline lakes ending at Lake Abbe.",
+              "trap": "Abbay and Tekeze reach the Nile and Mediterranean Sea!"
             }
           ]
         }
       ]
     },
     {
-      id: 'g7-soc-u4',
-      number: 'Unit 4',
-      title: 'Early Human Origins & Ancient Civilizations',
-      bigIdea: 'Explore East Africa as the Cradle of Humankind, hominid fossil discoveries, and ancient civilizations (Kush, Punt, Axum).',
-      subtopics: [
+      "id": "g7-soc-u4",
+      "number": "Unit 4",
+      "title": "Ancient Civilizations of the World",
+      "bigIdea": "Explore the foundations of human civilization: Mesopotamia (cradle), Ancient Egypt, Indus Valley, Ancient China, Classical Greece, and the Roman Empire.",
+      "subtopics": [
         {
-          id: 'g7-soc-4.1',
-          code: '4.1',
-          title: 'East Africa Cradle of Humankind & Ancient Axum',
-          survey: {
-            blueprint: 'Hominid discoveries in Afar/Awash valley: Lucy (Dinkenesh - Australopithecus afarensis, 3.2 million years old), Ardi. Ancient states: Land of Punt, Da’amat, Axumite Empire.',
-            objectives: [
-              'Explain why Ethiopia and the East African Rift are recognized as the Cradle of Humankind.',
-              'Describe the achievements of the Kingdom of Axum (stelae, coinage, Red Sea trade, Ge\'ez script).',
-              'Discuss international trade through the port of Adulis on the Red Sea.'
+          "id": "g7-soc-4.1",
+          "code": "4.1",
+          "title": "River Valley Civilizations & Classical Antiquity",
+          "survey": {
+            "blueprint": "River valley civilizations: Mesopotamia (Tigris-Euphrates: cuneiform, Hammurabi’s Code), Egypt (Nile: hieroglyphs, pyramids), Indus Valley (Harappa/Mohenjo-Daro: urban planning), China (Yellow River/Huang He: silk, paper, Great Wall). Classical antiquity: Greece (Athenian democracy, philosophy) and Rome (republic, legal system, Pax Romana).",
+            "objectives": [
+              "Explain why the earliest civilizations developed along fertile river valleys.",
+              "Describe the writing systems and engineering achievements of Mesopotamia and Egypt.",
+              "Compare direct democracy in Ancient Athens with the republican legal system of Rome."
             ],
-            keyFormulas: 'Australopithecus afarensis (Dinkenesh / Lucy, 3.2 Ma) ➔ Homo habilis (toolmaker) ➔ Homo erectus ➔ Homo sapiens'
+            "keyFormulas": "Civilization = Agriculture Surplus + Urbanization + Writing System + Centralized Government"
           },
-          questions: [
-            'What anatomical evidence proves that Australopithecus afarensis walked upright (bipedalism)?',
-            'How did the port city of Adulis connect Axum with Greco-Roman, Persian, and Indian trading networks?'
+          "questions": [
+            "Why did all the earliest primary civilizations emerge strictly along major river valleys?",
+            "What was the Code of Hammurabi and why was its principle of codified public law revolutionary?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Paleoanthropology & Ancient African Empires</h4>
-              <p>• <strong>Cradle of Humankind:</strong> Fossils discovered in the Afar Depression (Hadar) including <em>Australopithecus afarensis</em> (Dinkenesh / Lucy, discovered in 1974 by Donald Johanson) date to 3.2 million years ago, proving bipedal locomotion.<br>
-              • <strong>Land of Punt:</strong> Ancient trading partner of Pharonic Egypt known for gold, myrrh, frankincense, and ivory.<br>
-              • <strong>Axumite Civilization (1st - 7th century CE):</strong> One of the four great world empires alongside Rome, Persia, and China. Notable achievements include towering granite stelae, minting gold, silver, and bronze currency, adopting Christianity (King Ezana, ~330 CE), and developing the written Ge\'ez script.</p>
-            </div>
-          `,
-          example: {
-            title: 'Axumite Economic Innovation Analysis',
-            problem: 'Why was the minting of coins by Axumite kings like Endubis and Ezana a profound economic breakthrough in African history?',
-            steps: [
-              { label: 'Step 1: International trade facilitation', text: 'Coins bearing Greek and Ge\'ez inscriptions allowed seamless transactions with foreign merchants across the Red Sea and Mediterranean.' },
-              { label: 'Step 2: Royal sovereignty assertion', text: 'Minting currency in gold, silver, and bronze symbolized political independence and imperial prestige.' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>🏛️</span> 1. THE FOUR GREAT RIVER VALLEY CIVILIZATIONS\n                </h4>\n                <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300\">\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-amber-400\">1. Mesopotamia (Tigris & Euphrates):</strong><br>\n                    • \"Land between the rivers\" in modern Iraq.<br>\n                    • Sumerians invented the <strong>Wheel</strong>, the plow, and <strong>Cuneiform</strong> (wedge-shaped writing on clay).<br>\n                    • King Hammurabi codified the famous <em>Code of Hammurabi</em> (\"Eye for an eye\").\n                  </div>\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-cyan-400\">2. Ancient Egypt (Nile River Valley):</strong><br>\n                    • \"Gift of the Nile\": annual silt flooding enabled massive agricultural surplus.<br>\n                    • Invented <strong>Hieroglyphics</strong> (picture writing on papyrus).<br>\n                    • Monumental architecture: Pyramids of Giza, Sphinx, and mummification for the afterlife.\n                  </div>\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-emerald-400\">3. Indus Valley (Indus River):</strong><br>\n                    • Harappa and Mohenjo-Daro (modern Pakistan/India).<br>\n                    • Renowned for sophisticated <strong>grid-pattern town planning</strong>, underground drainage systems, and public brick baths.\n                  </div>\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-rose-400\">4. Ancient China (Huang He / Yellow River):</strong><br>\n                    • Four Great Inventions: <strong>Paper</strong>, <strong>Printing</strong>, <strong>Gunpowder</strong>, and the <strong>Compass</strong>.<br>\n                    • Construction of the Great Wall of China and the Silk Road trade network.\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>⚔️</span> 2. CLASSICAL GREECE & THE ROMAN EMPIRE\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Classical Greece:</strong> City-states (Polis) like Athens and Sparta. Athens pioneered <strong>Direct Democracy</strong> (citizens voted directly on laws). Birthplace of Western philosophy (Socrates, Plato, Aristotle), mathematics (Pythagoras, Euclid), and the Olympic Games.<br>\n                  • <strong>The Roman Republic & Empire:</strong> Originated along the Tiber River in Italy. Developed representative Senate, codified civil law (Twelve Tables), monumental civil engineering (Aqueducts, Colosseum, paved roads), and the Pax Romana (Roman Peace).\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Comparing Athenian Democracy with Roman Republic",
+            "problem": "Contrast how citizens exercised political authority in Ancient Athens versus Ancient Rome.",
+            "steps": [
+              {
+                "label": "Step 1: Athenian System",
+                "text": "Athens practiced <strong>Direct Democracy</strong>: every free adult male citizen gathered in the Ecclesia (Popular Assembly) to vote directly on every law and policy decision."
+              },
+              {
+                "label": "Step 2: Roman System",
+                "text": "Rome practiced a <strong>Representative Republic</strong>: citizens elected magistrates and representatives (Consuls, Tribunes, Senators) to govern, pass legislation, and manage state finances on their behalf."
+              }
             ],
-            proTip: 'Axum was the first African state south of the Sahara to mint its own gold coinage!'
+            "proTip": "Most modern democracies (including Ethiopia’s House of Peoples’ Representatives) are based on the representative republican model rather than direct Athenian democracy!"
           },
-          reciteFlashcards: [
-            { q: 'What is the Ethiopian name given to the fossil Australopithecus afarensis?', a: 'Dinkenesh ("You are marvelous").' },
-            { q: 'Which ancient Red Sea port served as the commercial gateway for the Kingdom of Axum?', a: 'Adulis (near modern Zula).' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'Which Axumite king officially declared Christianity as the state religion in the 4th century CE?',
-              options: ['King Kaleb', 'King Ezana', 'King Endubis', 'King Lalibela'],
-              correct: 1,
-              strategy: 'Recall the conversion of Axum during the 330s CE.',
-              derivation: 'King Ezana converted to Christianity through the teachings of Frumentius (Abba Selama) and struck the cross on his coins.',
-              trap: 'King Lalibela ruled during the later Zagwe Dynasty, not the Axumite period!'
+              "q": "What is the oldest known writing system, invented by the Sumerians in Mesopotamia?",
+              "a": "Cuneiform."
+            },
+            {
+              "q": "Which civilization was famous for sophisticated underground covered sewer systems and grid-planned cities?",
+              "a": "The Indus Valley Civilization (Harappa & Mohenjo-Daro)."
+            },
+            {
+              "q": "Name the four great inventions of Ancient China.",
+              "a": "Paper, Printing, Gunpowder, and the Magnetic Compass."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which ancient civilization is credited with creating the first comprehensive written legal code, inscribed on stone stelae and known for the principle \"an eye for an eye\"?",
+              "options": [
+                "Ancient Egypt",
+                "Babylon (Mesopotamia)",
+                "Ancient Greece",
+                "Indus Valley"
+              ],
+              "correct": 1,
+              "strategy": "The Code of Hammurabi was enacted by King Hammurabi of Babylon, Mesopotamia.",
+              "derivation": "Hammurabi’s Code (c. 1750 BCE) was enacted in Babylon, Mesopotamia, establishing written codified standards for civil and criminal justice.",
+              "trap": "Assuming it was Roman Law (Twelve Tables came 1,300 years later)!"
             }
           ]
         }
       ]
     },
     {
-      id: 'g7-soc-u5',
-      number: 'Unit 5',
-      title: 'Medieval Kingdoms & Ethiopian History',
-      bigIdea: 'Study the Zagwe dynasty, architectural wonder of rock-hewn churches of Roha (Lalibela), and the Solomonic period.',
-      subtopics: [
+      "id": "g7-soc-u5",
+      "number": "Unit 5",
+      "title": "Ancient History of Africa",
+      "bigIdea": "Examine ancient African kingdoms and empires: Kush/Meroe (iron smelting, pyramids), Carthage (maritime power), and the Nok Culture of Nigeria.",
+      "subtopics": [
         {
-          id: 'g7-soc-5.1',
-          code: '5.1',
-          title: 'The Zagwe Dynasty & The Rock-Hewn Churches',
-          survey: {
-            blueprint: 'Zagwe dynasty (capital at Roha / Lalibela, Bugna). Monolithic architecture: 11 monolithic and semi-monolithic churches carved out of living volcanic tuff rock.',
-            objectives: [
-              'Explain the political origins and cultural achievements of the Zagwe Dynasty.',
-              'Describe the architecture and engineering techniques of King Lalibela’s rock-cut churches.',
-              'Understand the peaceful restoration of the Solomonic Dynasty under Yekuno Amlak in 1270 CE.'
+          "id": "g7-soc-5.1",
+          "code": "5.1",
+          "title": "Kingdom of Kush, Carthage & The Nok Culture",
+          "survey": {
+            "blueprint": "Kingdom of Kush/Nubia: Kerma, Napata, Meroe. Pharaonic 25th Dynasty. Meroe: \"Birmingham of Ancient Africa\" for massive iron smelting, Meroitic script, and step pyramids. Carthage: Phoenician naval empire founded in 814 BCE in modern Tunisia, Punic Wars against Rome led by Hannibal Barca. Nok Culture of Nigeria (500 BCE - 200 CE): terracotta sculptures and early iron metallurgy.",
+            "objectives": [
+              "Trace the historical rise and shifts of Kush capitals from Kerma to Napata and Meroe.",
+              "Explain Meroe’s technological dominance as an iron-smelting center of Africa.",
+              "Analyze the rivalry between Carthage and the Roman Republic during the Punic Wars.",
+              "Identify the artistic and metallurgical significance of the Nok terracotta sculptures."
             ],
-            keyFormulas: 'Monolithic Church = Chiseled completely free from solid surrounding bedrock (e.g., Bete Giyorgis)'
+            "keyFormulas": "Meroe = Iron Metallurgy + Meroitic Script + Nile-Red Sea Trade Hub"
           },
-          questions: [
-            'What differentiates a monolithic rock church from a cave or semi-monolithic church?',
-            'Why did King Lalibela design Roha as a "New Jerusalem"?'
+          "questions": [
+            "Why did the Kushite rulers move their capital south from Napata to Meroe in the 6th century BCE?",
+            "How did Hannibal Barca of Carthage nearly defeat the Roman Republic during the Second Punic War?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Medieval Ethiopian Statehood & Stone Architecture</h4>
-              <p>• <strong>The Zagwe Dynasty:</strong> Emerged in the 10th-11th century CE centered in Lasta Bugna. King Lalibela (r. late 12th - early 13th c.) is credited with excavating eleven churches.<br>
-              • <strong>Architectural Typology:</strong><br>
-                - <em>Monolithic:</em> Completely carved inside and outside from monolithic basalt bedrock (e.g., Bete Medhane Alem, Bete Giyorgis).<br>
-                - <em>Semi-monolithic:</em> Partially connected to the rock face.<br>
-              • <strong>Solomonic Transition:</strong> In 1270 CE, power shifted to Yekuno Amlak of Amhara, claiming direct lineage from the Axumite Solomonic dynasty with the mediation of Abuna Tekle Haymanot.</p>
-            </div>
-          `,
-          example: {
-            title: 'Engineering Classification of Bete Giyorgis',
-            problem: 'Describe the structural excavation method used to build Bete Giyorgis (Church of St. George) in Lalibela.',
-            steps: [
-              { label: 'Step 1: Trench excavation', text: 'Craftsmen excavated a 12-meter deep rectangular perimeter trench into the red volcanic scoria bedrock.' },
-              { label: 'Step 2: Exterior cruciform shaping', text: 'The isolated central stone block was carved from the top down into an equal-armed Greek cross shape.' },
-              { label: 'Step 3: Interior hollowing', text: 'Doors, windows, and inner pillars were hollowed out from within the solid rock without using mortar or cement.' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>🏛️</span> 1. THE KINGDOM OF KUSH (NUBIA)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Located along the Nile Valley south of Egypt (modern Sudan):<br>\n                  • <strong>Rise of Napata:</strong> In the 8th century BCE, Kushite King Piye conquered Egypt, establishing the <strong>25th Dynasty (\"Black Pharaohs\")</strong> who ruled both Egypt and Nubia.<br>\n                  • <strong>The Golden Age of Meroe:</strong> The capital moved south to Meroe c. 590 BCE because of abundant iron ore deposits and hardwood acacia forests for smelting furnaces. Termed the <em>\"Birmingham of Ancient Africa\"</em>, Meroe manufactured iron weapons, tools, and jewelry, traded with India and Rome, developed their own <strong>Meroitic script</strong>, and built over 200 steep-sided royal pyramids.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>⚓</span> 2. CARTHAGE: MARITIME SUPERPOWER\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • Founded in 814 BCE by Phoenician settlers in modern-day Tunisia.<br>\n                  • Controlled Mediterranean maritime trade networks with a powerful navy and commercial empire.<br>\n                  • <strong>The Punic Wars (264 - 146 BCE):</strong> Three monumental wars fought against the expanding Roman Republic. General <strong>Hannibal Barca</strong> executed an epic invasion of Italy through Spain and the snowy Alps with war elephants, annihilating Roman armies at Cannae (216 BCE).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🗿</span> 3. THE NOK CULTURE OF NIGERIA\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • Flourished between 500 BCE and 200 CE on the Jos Plateau of northern Nigeria.<br>\n                  • Famous for producing life-sized, highly expressive <strong>Terracotta Sculptures</strong> with distinctive pierced triangular or oval pupils, elaborate hairstyles, and flared nostrils.<br>\n                  • Pioneers of early sub-Saharan <strong>iron smelting furnaces</strong> without passing through an intermediate copper or bronze age!\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Why Meroe Was the Technological Engine of Africa",
+            "problem": "Explain two environmental and geographic factors that made Meroe the premier iron-smelting metropolis of ancient Africa.",
+            "steps": [
+              {
+                "label": "Step 1: Geological resources",
+                "text": "The hills surrounding Meroe contained rich, accessible surface deposits of high-grade <strong>iron ore</strong> (hematite)."
+              },
+              {
+                "label": "Step 2: Energy supply for smelting",
+                "text": "Unlike the arid north, Meroe lay in a savanna woodland belt with vast reserves of acacia trees, providing charcoal fuel to power blast furnaces to 1,200°C."
+              },
+              {
+                "label": "Step 3: Strategic trading crossroads",
+                "text": "Meroe commanded the intersection of the Nile River waterway and overland camel caravan routes connecting the Red Sea coast (Punt/Axum) to the African interior."
+              }
             ],
-            proTip: 'Bete Giyorgis is celebrated worldwide as the pinnacle of medieval Ethiopian monolithic engineering!'
+            "proTip": "Massive hills of black iron slag still stand beside the Meroe pyramids today as living archaeological testimony to ancient African metallurgical genius!"
           },
-          reciteFlashcards: [
-            { q: 'How many rock-hewn churches were carved in Roha (Lalibela)?', a: 'Eleven (11) churches.' },
-            { q: 'Who founded the Solomonic dynasty in 1270 CE following the Zagwe era?', a: 'Yekuno Amlak.' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'The rock-hewn church of Bete Giyorgis in Lalibela is famous for having what structural shape when viewed from above?',
-              options: ['Octagonal dome', 'Cruciform (Greek cross)', 'Circular rotunda', 'Hexagonal prism'],
-              correct: 1,
-              strategy: 'Recall the iconic cross plan of St. George’s church.',
-              derivation: 'Bete Giyorgis is carved in the shape of a symmetrical equal-armed Greek cross.',
-              trap: 'Bete Medhane Alem is a rectangular basilica, but Bete Giyorgis is cruciform!'
+              "q": "Which ancient African city was known as the \"Birmingham of Ancient Africa\" for iron smelting?",
+              "a": "Meroe (Kingdom of Kush)."
+            },
+            {
+              "q": "Who was the famous Carthaginian general who crossed the Alps with war elephants to attack Rome?",
+              "a": "Hannibal Barca."
+            },
+            {
+              "q": "What material was used by the Nok Culture of Nigeria to craft their famous sculptures?",
+              "a": "Terracotta (baked clay)."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "The Kingdom of Kush moved its capital from Napata to Meroe primarily to capitalize on:",
+              "options": [
+                "Vast iron ore deposits and abundant timber for smelting fuel",
+                "Gold mines discovered in the Sahara desert",
+                "Direct access to the Atlantic Ocean",
+                "Alliances formed with the Roman Republic"
+              ],
+              "correct": 0,
+              "strategy": "Meroe’s primary technological advantage was iron ore and timber for smelting.",
+              "derivation": "Meroe possessed rich iron ore deposits and extensive acacia forests needed to produce charcoal for blast furnaces.",
+              "trap": "Saying Atlantic Ocean access (Meroe is in East Africa along the Nile)!"
             }
           ]
         }
       ]
     },
     {
-      id: 'g7-soc-u6',
-      number: 'Unit 6',
-      title: 'Economic Activities in Africa',
-      bigIdea: 'Explore primary economic sectors: subsistence vs commercial agriculture, pastoralism, mining, and continental trade.',
-      subtopics: [
+      "id": "g7-soc-u6",
+      "number": "Unit 6",
+      "title": "States and Peoples of Ancient and Medieval Ethiopia",
+      "bigIdea": "Explore Ethiopia’s monumental historical states: Punt, Da’amat, the Aksumite Empire, the Zagwe Dynasty, Medieval Solomonic kingdom, Muslim Sultanates, and the democratic Gadaa System of the Oromo.",
+      "subtopics": [
         {
-          id: 'g7-soc-6.1',
-          code: '6.1',
-          title: 'Agriculture, Mining & African Trade',
-          survey: {
-            blueprint: 'Sectors: Primary (farming, mining, fishing) ➔ Secondary (manufacturing) ➔ Tertiary (services). Major cash crops: coffee, cocoa, tea, cotton.',
-            objectives: [
-              'Differentiate subsistence farming from commercial plantation agriculture.',
-              'Identify Africa’s major mineral deposits (gold, diamonds, copper, petroleum, cobalt).',
-              'Explain the objectives of the African Continental Free Trade Area (AfCFTA).'
+          "id": "g7-soc-6.1",
+          "code": "6.1",
+          "title": "Aksum, Lalibela, Medieval States & The Gadaa System",
+          "survey": {
+            "blueprint": "Punt (\"Land of the Gods\") & Da’amat (Yeha temple). Aksumite Empire: international trade (Adulis), coinage, King Ezana (Christianity 330 CE), monumental stelae, Ge’ez script. Zagwe Dynasty (1137-1270): King Lalibela & 11 monolithic rock-hewn churches. Medieval Solomonic Dynasty: Yekuno Amlak, mobile royal courts. Muslim Sultanates: Ifat, Adal, Ahmad Gragn. The Gadaa System: Oromo democratic age-grade governance.",
+            "objectives": [
+              "Analyze the commercial, political, and architectural achievements of the Aksumite Empire.",
+              "Explain the engineering and spiritual significance of the 11 rock-hewn churches of Lalibela.",
+              "Describe the democratic structures, 8-year cycles, and offices (Abba Gadaa) of the Oromo Gadaa system."
             ],
-            keyFormulas: 'AfCFTA = Creating a single unified market of 1.4 billion consumers across Africa'
+            "keyFormulas": "Gadaa Cycle = 5 Gadaa parties × 8 years = 40-year full generation cycle"
           },
-          questions: [
-            'Why does the dependence on exporting raw unprocessed agricultural products leave African economies vulnerable to global price shocks?',
-            'What is the agricultural significance of the Ethiopian high-plateau "Enset and Teff" farming complexes?'
+          "questions": [
+            "How did the port of Adulis enable the Aksumite Empire to become one of the four great world powers of the 3rd century CE?",
+            "What makes the Gadaa system of the Oromo a masterwork of indigenous democratic governance recognized by UNESCO?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Economic Systems & Mineral Wealth</h4>
-              <p>• <strong>Agriculture:</strong> Employs over 60% of Africa\'s labor force. Includes shifting cultivation, nomadic pastoralism, sedentary mixed farming, and commercial export plantations (cocoa in Ghana/Ivory Coast, coffee in Ethiopia/Kenya).<br>
-              • <strong>Mining Wealth:</strong> Africa holds ~30% of the world\'s mineral reserves. Copper belt (Zambia/DRC), Coltan and Cobalt for batteries (DRC), Gold and Platinum (South Africa), Oil/Gas (Nigeria, Angola, Algeria).<br>
-              • <strong>AfCFTA:</strong> Flagship initiative of African Union Agenda 2063 designed to boost intra-African trade by eliminating tariffs and border bottlenecks.</p>
-            </div>
-          `,
-          example: {
-            title: 'Value Addition Economic Analysis',
-            problem: 'Why does exporting processed roast coffee or chocolate generate far more national revenue than exporting raw green coffee beans or raw cocoa beans?',
-            steps: [
-              { label: 'Step 1: Industrial value chain', text: 'Roasting, packaging, branding, and retailing capture over 80% of final consumer market value.' },
-              { label: 'Step 2: Employment and technology', text: 'Processing creates domestic manufacturing jobs, industrial skills, and reduces currency flight.' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>🏛️</span> 1. THE AKSUMITE EMPIRE\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Ranked by Persian prophet Mani as one of the four greatest world empires alongside Rome, Persia, and China:<br>\n                  • <strong>Commerce & Navy:</strong> Controlled maritime trade through the port of <strong>Adulis</strong> on the Red Sea, trading frankincense, ivory, gold, and spices with the Roman Empire, India, and Arabia.<br>\n                  • <strong>Coinage & Script:</strong> First sub-Saharan state to mint its own gold, silver, and bronze coins. Refined the <strong>Ge’ez script</strong> by adding vowel marks (vocalization).<br>\n                  • <strong>King Ezana (c. 320 - 360 CE):</strong> Converted to Christianity c. 330 CE; carved trilingual inscriptions (Greek, Sabaean, Ge’ez).<br>\n                  • <strong>Monumental Stelae:</strong> Monolithic granite obelisks, the tallest standing over 33 meters (weighing over 500 tons), marking royal underground tombs.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>⛪</span> 2. THE ZAGWE DYNASTY & KING LALIBELA (1137 - 1270 CE)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • Capital located at <strong>Adefa (Roha)</strong> in Lasta (Wollo).<br>\n                  • <strong>King Lalibela:</strong> Commissioned the miraculous carving of <strong>11 monolithic rock-hewn churches</strong> out of solid volcanic basalt tuff in the 12th/13th century (including <em>Bete Giyorgis</em>, carved in the shape of a Greek cross).<br>\n                  • Constructed as a \"New Jerusalem\" after Muslim conquest of Jerusalem in 1187 CE. Designated a UNESCO World Heritage site.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🗳️</span> 3. THE GADAA SYSTEM OF THE OROMO\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  An indigenous egalitarian democratic system of socio-political organization practiced by the Oromo people for centuries (inscribed on the UNESCO Intangible Cultural Heritage list):<br>\n                  • <strong>8-Year Fixed Term:</strong> Leaders are elected and hold power for strictly <strong>8 years</strong>, after which power must be peacefully transferred to the next Gadaa class.<br>\n                  • <strong>Five Gadaa Parties (Gogeessa):</strong> Rotate in a 40-year generation cycle.<br>\n                  • <strong>Key Offices & Structures:</strong><br>\n                  - <em>Abba Gadaa:</em> The elected leader and spokesman of the Gadaa assembly.<br>\n                  - <em>Chaffe:</em> The supreme legislative and judicial general assembly.<br>\n                  - <em>Siqqee:</em> An institutional women’s authority and stick symbol used to protect female rights, mediate disputes, and maintain social harmony.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Mathematical Structure of the Gadaa System",
+            "problem": "The Gadaa system organizes life into successive 8-year age-grades (Dabballee, Gaammee, Foollee, Qondaala, Gadaa, Yuba). If a boy enters the first stage (Dabballee) at age 0, at what exact age range will he assume executive leadership as Abba Gadaa?",
+            "steps": [
+              {
+                "label": "Step 1: Calculate cumulative age-grades",
+                "text": "Stage 1 (Dabballee): Ages 0 - 8.<br>Stage 2 (Gaammee Didiko / Junior): Ages 8 - 16.<br>Stage 3 (Gaammee Gurguddo / Senior): Ages 16 - 24.<br>Stage 4 (Foollee / Military training): Ages 24 - 32.<br>Stage 5 (Qondaala / Prep for office): Ages 32 - 40."
+              },
+              {
+                "label": "Step 2: Identify the Gadaa executive leadership stage",
+                "text": "Stage 6 is the <strong>Gadaa Stage</strong>, lasting strictly 8 years: <strong>Ages 40 to 48</strong>."
+              },
+              {
+                "label": "Step 3: State retirement into advisory role",
+                "text": "At age 48, leaders step down permanently and enter the <em>Yuba</em> stage as elder advisors."
+              }
             ],
-            proTip: 'Agro-processing industrial parks in Ethiopia are designed specifically to achieve this value addition!'
+            "proTip": "The 8-year term limit prevents any leader from clinging to power or becoming a dictator!"
           },
-          reciteFlashcards: [
-            { q: 'Which African country is renowned as the primary birthplace of Arabica coffee?', a: 'Ethiopia (Kaffa region).' },
-            { q: 'What does the acronym AfCFTA stand for?', a: 'African Continental Free Trade Area.' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'The Democratic Republic of the Congo (DRC) produces over 70% of the world’s supply of which essential mineral used in electric vehicle and smartphone batteries?',
-              options: ['Bauxite', 'Cobalt', 'Limestone', 'Potash'],
-              correct: 1,
-              strategy: 'Associate modern battery technology metals with Central African mining.',
-              derivation: 'The DRC holds the majority of global cobalt reserves, critical for rechargeable lithium-ion batteries.',
-              trap: 'Bauxite is mined for aluminum primarily in Guinea!'
+              "q": "Which Aksumite king made Christianity the official state religion c. 330 CE?",
+              "a": "King Ezana."
+            },
+            {
+              "q": "How many monolithic rock-hewn churches did King Lalibela carve in Roha?",
+              "a": "11 churches."
+            },
+            {
+              "q": "What is the term length of an elected Abba Gadaa in the Oromo Gadaa system?",
+              "a": "Strictly 8 years."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "In the democratic Gadaa system of the Oromo, the supreme legislative general assembly that enacts customary laws and mediates disputes is called the:",
+              "options": [
+                "Chaffe",
+                "Siqqee",
+                "Abba Dula",
+                "Yuba"
+              ],
+              "correct": 0,
+              "strategy": "Chaffe is the supreme Oromo legislative and decision-making assembly.",
+              "derivation": "The Chaffe serves as the supreme parliamentary assembly where all Gadaa laws are reviewed, proclaimed, and amended.",
+              "trap": "Siqqee is the women’s socio-legal institution, not the legislative assembly!"
             }
           ]
         }
       ]
     },
     {
-      id: 'g7-soc-u7',
-      number: 'Unit 7',
-      title: 'Environmental Issues & Resource Conservation',
-      bigIdea: 'Study soil degradation, deforestation, desertification, wildlife conservation, and sustainable development.',
-      subtopics: [
+      "id": "g7-soc-u7",
+      "number": "Unit 7",
+      "title": "Contemporary Global Issues",
+      "bigIdea": "Analyze global and regional challenges: climate change, desertification, drought in the Horn of Africa, HIV/AIDS, and international organizations (IGAD, AU, UN).",
+      "subtopics": [
         {
-          id: 'g7-soc-7.1',
-          code: '7.1',
-          title: 'Deforestation, Soil Conservation & National Parks',
-          survey: {
-            blueprint: 'Challenges: Overgrazing, slash-and-burn, gully erosion. Solutions: Terracing, afforestation, check-dams, national park biodiversity conservation.',
-            objectives: [
-              'Identify primary drivers of soil erosion in steep highland topographies.',
-              'Explain physical and biological soil conservation measures (contour bunds, vetiver grass, terracing).',
-              'Highlight endemic Ethiopian wildlife protected in national parks (Walia Ibex, Ethiopian Wolf, Gelada Baboon).'
+          "id": "g7-soc-7.1",
+          "code": "7.1",
+          "title": "Climate Change, Regional Drought & International Organizations",
+          "survey": {
+            "blueprint": "Global challenges: Greenhouse effect, global warming, desertification, deforestation in Ethiopia. Regional drought in the Horn of Africa and climate resilience. Regional organizations: IGAD (Djibouti headquarters) and the African Union (Addis Ababa headquarters). United Nations specialized agencies.",
+            "objectives": [
+              "Explain the greenhouse effect and human drivers of global climate change.",
+              "Analyze the recurrent causes of drought and famine in the Horn of Africa.",
+              "Describe the foundational role of Ethiopia in the African Union (AU) and IGAD."
             ],
-            keyFormulas: 'Conservation Methods = Terracing + Contour Plowing + Strip Cropping + Reforestation'
+            "keyFormulas": "Greenhouse Gases: CO₂ + CH₄ + N₂O + H₂O vapor ➔ Thermal radiation trapped in lower atmosphere"
           },
-          questions: [
-            'How does contour plowing reduce surface runoff velocity on sloping farmland?',
-            'Where is the endemic Walia Ibex protected in Ethiopia?'
+          "questions": [
+            "Why is Addis Ababa designated as the diplomatic capital of the African continent?",
+            "How does the Green Legacy Initiative in Ethiopia serve as a national model for combating climate change and soil desertification?"
           ],
-          coreNotes: `
-            <div class="space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300">
-              <h4 class="font-bold text-amber-400">Ecology, Conservation & Wildlife Protection</h4>
-              <p>• <strong>Soil Degradation:</strong> Removal of fertile topsoil by torrential water runoff or wind. Exacerbated by deforestation for fuelwood and overgrazing.<br>
-              • <strong>Conservation Methods:</strong><br>
-                - <em>Terracing:</em> Stepping hillsides to flatten slope gradients.<br>
-                - <em>Afforestation / Reforestation:</em> Planting trees to bind soil with root systems.<br>
-                - <em>Check Dams:</em> Stone structures built across gullies to trap silt.<br>
-              • <strong>Protected Parks & Endemic Species:</strong><br>
-                - <em>Simien Mountains National Park:</em> Walia Ibex, Ethiopian Wolf (Simien Fox), Gelada Baboon.<br>
-                - <em>Bale Mountains National Park:</em> Ethiopian Wolf, Mountain Nyala.<br>
-                - <em>Awash National Park:</em> Beisa Oryx and bird sanctuaries.</p>
-            </div>
-          `,
-          example: {
-            title: 'Selecting an Anti-Erosion Strategy on Highland Slopes',
-            problem: 'A farmer in Wollo cultivates teff on a 25% steep slope facing heavy rainfall. Which soil conservation measures should be combined?',
-            steps: [
-              { label: 'Step 1: Physical engineering', text: 'Construct stone-faced terracing or soil bunds along the topographic contour lines.' },
-              { label: 'Step 2: Biological stabilization', text: 'Plant deep-rooting grasses (such as vetiver or elephant grass) along bund edges.' },
-              { label: 'Step 3: Farm management', text: 'Practice contour plowing perpendicular to the slope rather than up-and-down.' }
+          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400 flex items-center gap-2\">\n                  <span>🌡️</span> 1. CLIMATE CHANGE & THE GREENHOUSE EFFECT\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>The Greenhouse Effect:</strong> Natural atmospheric gases (carbon dioxide CO₂, methane CH₄, nitrous oxide N₂O) allow sunlight to penetrate but absorb outgoing infrared heat, keeping Earth warm. Human burning of fossil fuels and deforestation have drastically increased greenhouse concentrations, driving <strong>Global Warming</strong>.<br>\n                  • <strong>Impacts on Ethiopia:</strong> Unpredictable rainfall patterns, shortened Kiremt rainy seasons, prolonged droughts in the pastoral lowlands (Somali, Afar, Borana), and shrinking glaciers on East African peaks.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>🤝</span> 2. REGIONAL & GLOBAL ORGANIZATIONS\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <p>• <strong>African Union (AU):</strong> Founded originally as the Organization of African Unity (OAU) in 1963 in Addis Ababa under the leadership of Emperor Haile Selassie and Pan-African leaders. Addis Ababa is the permanent continental headquarters.</p>\n                  <p>• <strong>IGAD (Intergovernmental Authority on Development):</strong> Regional economic and security community of 8 Horn of Africa nations (Djibouti, Ethiopia, Kenya, Somalia, South Sudan, Sudan, Uganda, Eritrea) focused on drought control, food security, and conflict resolution.</p>\n                  <p>• <strong>United Nations (UN):</strong> Ethiopia was one of only four African founding member nations that signed the original UN Charter in San Francisco in 1945.</p>\n                </div>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: The Green Legacy Initiative Impact",
+            "problem": "Explain how Ethiopia’s massive tree-planting campaign (Green Legacy) directly addresses both climate change mitigation and rural food security.",
+            "steps": [
+              {
+                "label": "Step 1: Carbon sequestration (Mitigation)",
+                "text": "Billions of growing trees absorb atmospheric carbon dioxide (CO₂) through photosynthesis, acting as a major terrestrial carbon sink."
+              },
+              {
+                "label": "Step 2: Soil and watershed restoration (Adaptation)",
+                "text": "Tree roots hold fragile highland topsoil in place, preventing silting of hydroelectric dams (GERD) and recharging depleted groundwater aquifers for irrigation."
+              },
+              {
+                "label": "Step 3: Agroforestry food yield",
+                "text": "Planting fruit-bearing trees (avocado, mango, papaya) provides immediate nutrition and income for rural farming households."
+              }
             ],
-            proTip: 'Never plow up-and-down a hill slope, as furrows act as artificial channels accelerating destructive gully erosion!'
+            "proTip": "Planting indigenous trees (like Acacia, Cordia africana/Wanza, and Hagenia/Kosso) is crucial because they support native biodiversity and require far less groundwater than imported eucalyptus!"
           },
-          reciteFlashcards: [
-            { q: 'In which national park is the endangered Walia Ibex found?', a: 'Simien Mountains National Park.' },
-            { q: 'What is the term for planting trees in an area where forests were previously destroyed?', a: 'Reforestation.' }
-          ],
-          amtQuiz: [
+          "reciteFlashcards": [
             {
-              q: 'Which Ethiopian animal is an endemic species found naturally ONLY in the Ethiopian highlands?',
-              options: ['African Elephant', 'Mountain Nyala', 'Cheetah', 'Giraffe'],
-              correct: 1,
-              strategy: 'Endemic means restricted exclusively to a specific geographic habitat.',
-              derivation: 'The Mountain Nyala (Tragelaphus buxtoni) is endemic to the high-altitude forests of the Bale Mountains and Arsi highlands of Ethiopia.',
-              trap: 'Elephants and cheetahs are indigenous to broad regions across Africa, not endemic to Ethiopia!'
+              "q": "In which city is the headquarters of the African Union (AU) located?",
+              "a": "Addis Ababa, Ethiopia."
+            },
+            {
+              "q": "What does the regional organization acronym IGAD stand for?",
+              "a": "Intergovernmental Authority on Development."
+            },
+            {
+              "q": "What are the two most potent greenhouse gases driving modern climate change?",
+              "a": "Carbon dioxide (CO₂) and Methane (CH₄)."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "In 1963, 32 independent African heads of state convened to establish the Organization of African Unity (OAU, now the African Union). Where was this historic charter signed?",
+              "options": [
+                "Cairo, Egypt",
+                "Addis Ababa, Ethiopia",
+                "Accra, Ghana",
+                "Nairobi, Kenya"
+              ],
+              "correct": 1,
+              "strategy": "Addis Ababa has been the permanent headquarters of the OAU/AU since its founding in 1963.",
+              "derivation": "The OAU was founded in Addis Ababa in May 1963, cementing Ethiopia’s role as the diplomatic capital of the African continent.",
+              "trap": "Assuming Cairo or Accra because of their early independence leaders!"
             }
           ]
         }
