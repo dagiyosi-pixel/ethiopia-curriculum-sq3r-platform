@@ -1,0 +1,14 @@
+{
+  "name": "sq3r-academy-grade7-8",
+  "version": "1.0.0",
+  "description": "Ethiopian Grade 7 & 8 Full Curriculum SQ3R Learning Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 .",
+    "build:apk-info": "echo 'Run npx @capacitor/cli init to wrap as native Android/iOS app!'"
+  },
+  "keywords": ["ethiopia", "curriculum", "grade7", "grade8", "sq3r", "education", "pwa"],
+  "author": "Dagi",
+  "license": "MIT"
+}
