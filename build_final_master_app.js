@@ -328,14 +328,9 @@ const stateAndLogicJsString = `
     const STAGE_ORDER = ['survey', 'question', 'read', 'recite', 'review'];
 
     function isStepUnlocked(stepName) {
-      if (gState.gateBypass) return true;
-      if (stepName === 'survey') return true;
-
-      const stId = gState.activeSubtopicId;
-      const completed = gState.completedSteps[stId] || [];
-      const targetIdx = STAGE_ORDER.indexOf(stepName);
-      const prevStep = STAGE_ORDER[targetIdx - 1];
-      return completed.includes(prevStep);
+      // Intra-level study steps (Survey, Question, Read, Recite, Review) are ALWAYS accessible
+      // so students can freely study notes, review worked examples, and practice recall!
+      return true;
     }
 
     function updateStageLockIcons() {
@@ -538,6 +533,28 @@ const stateAndLogicJsString = `
                     </code>
                   </div>
                 \` : ''}
+              </div>
+
+              <!-- 📖 Skimmable Textbook Overview Notes (Read & Skim in 2 Minutes) -->
+              <div class="mt-6 pt-5 border-t border-slate-800/80 relative z-10 space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-base">📖</span>
+                    <h4 class="text-xs font-black text-amber-400 uppercase tracking-wider">SKIMMABLE TEXTBOOK OVERVIEW & KEY CONCEPTS:</h4>
+                  </div>
+                  <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">Active Skim Zone</span>
+                </div>
+
+                <div class="p-4 rounded-xl bg-space-950/80 border border-slate-800 space-y-3 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  \${st.coreNotes}
+                </div>
+
+                <div class="pt-2 flex justify-between items-center flex-wrap gap-2 text-xs">
+                  <span class="text-slate-400">Want the in-depth working examples & proofs?</span>
+                  <button onclick="setSq3rStep('read')" class="px-3.5 py-1.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-cyan-300 font-bold text-xs transition flex items-center gap-1.5">
+                    <span>Open Deep Read & Worked Examples (R1)</span> <span>➔</span>
+                  </button>
+                </div>
               </div>
 
               <!-- Interactive Recon Scout Checklist -->

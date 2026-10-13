@@ -8,7 +8,18 @@
     "dev": "npx serve -l 3000 .",
     "build:apk-info": "echo 'Run npx @capacitor/cli init to wrap as native Android/iOS app!'"
   },
-  "keywords": ["ethiopia", "curriculum", "grade7", "grade8", "sq3r", "education", "pwa"],
+  "keywords": [
+    "ethiopia",
+    "curriculum",
+    "grade7",
+    "grade8",
+    "sq3r",
+    "education",
+    "pwa"
+  ],
   "author": "Dagi",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "pdf-parse": "^2.4.5"
+  }
 }
