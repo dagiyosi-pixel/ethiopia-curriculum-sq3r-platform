@@ -1,120 +1,96 @@
-# ⚡ SQ3R Master Platform • Grade 7 & 8 Ethiopian Curriculum
+# ⚡ SQ3R Master Platform • Grade 7 & 8 Ethiopian National Curriculum
 
-> **An interactive, highly motivating, step-by-step learning platform built for Ethiopian middle school students (Grade 7 & Grade 8).**  
-> Powered by the evidence-based **SQ3R Study Method** (Survey, Question, Read, Recite, Review), packed with exhaustive worked examples, gamified rewards, active recall flashcards, and offline-first PWA architecture.
+> **An expansive, galactic-level web platform & offline-ready app covering the complete Grade 7 & Grade 8 Ethiopian National Curriculum across all subjects.**  
+> Built strictly on the evidence-based **SQ3R Study Methodology** (Survey, Question, Read, Recite, Review), featuring **AMT Exam-style hidden derivations**, a **Strict 80% Mastery Gate**, an **Interactive Expedition Roadmap**, and **Zero-Dependency Web Audio & Confetti physics**.
 
 ---
 
 <div align="center">
 
-![Grade 7 & 8 Curriculum](https://img.shields.io/badge/Curriculum-Ethiopia_Grade_7_%26_8-4338CA?style=for-the-badge&logo=book&logoColor=white)
-![SQ3R Method](https://img.shields.io/badge/Methodology-SQ3R_Active_Recall-F59E0B?style=for-the-badge&logo=sparkles&logoColor=black)
-![PWA Ready](https://img.shields.io/badge/Platform-PWA_%26_Offline_Ready-10B981?style=for-the-badge&logo=pwa&logoColor=white)
-![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero_External_Audio-6366F1?style=for-the-badge&logo=javascript&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-0EA5E9?style=for-the-badge)
+[![Live Web App](https://img.shields.io/badge/Live_App-GitHub_Pages-6366F1?style=for-the-badge&logo=githubpages&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+![Curriculum Scope](https://img.shields.io/badge/Scope-76_Units_•_85_Subtopics-10B981?style=for-the-badge&logo=book&logoColor=white)
+![Mastery Gate](https://img.shields.io/badge/Progression-Strict_80%25_Mastery_Gate-F59E0B?style=for-the-badge&logo=security&logoColor=black)
+![Offline PWA](https://img.shields.io/badge/PWA-100%25_Offline_Ready-06B6D4?style=for-the-badge&logo=pwa&logoColor=white)
+![Zero Dependencies](https://img.shields.io/badge/Audio-Synthesized_Web_Audio_API-8B5CF6?style=for-the-badge)
 
 </div>
 
 ---
 
-## 🌟 Key Highlights
+## 🌟 Key Highlights & Engineering Features
 
-- **Dual Grade Switcher:** Instant, seamless toggle between **Grade 7** and **Grade 8** full national curriculum syllabi.
-- **Complete Subject Coverage:**
-  - 📐 **Mathematics:** Sets, Integers, Linear Equations & Inequalities, Ratios & Percentages, Rational Numbers, Square Roots & the Pythagorean Theorem.
-  - 🔬 **General Science:** Cell biology & organelles, human body systems, chemical classification (Acids, Bases, Salts, pH scale), forces & energy.
-  - 📚 **English:** Traffic safety, modal auxiliaries (*Must, Should, Have to*), active-to-passive voice transformation, conditional clauses.
-  - 🌍 **Social Studies:** Physical geography of Ethiopia, the Great East African Rift Valley, agro-climatic zones (*Dega, Weyna Dega, Kolla*), African continental drainage basins.
-  - ⚖️ **Citizenship Education:** Principles of democracy, the Rule of Law, restorative conflict resolution, and the 3 branches of government (*Separation of Powers*).
-  - 💻 **Information Technology (IT):** Hardware & the IPOS cycle, storage memory conversions (GB to MB), spreadsheet formulas (`=SUM`, `=AVERAGE`), and cyber ethics.
-- **The SQ3R Guided Studio:**
-  1. 🔭 **Survey (S):** 2-minute countdown timer, heading roadmap, diagram scout, and big-idea summary bullet points.
-  2. ❓ **Question (Q):** Converts chapter headings into inquiry questions with prediction inputs and custom curiosity journals.
-  3. 📖 **Read (R1):** Chunked concept notes + **Multi-step Verified Working Examples** (Problem, conceptual strategy, step-by-step arithmetic, checks, and common traps).
-  4. 🗣️ **Recite (R2):** 3D interactive flip flashcards for active recall (`✔ I Knew This!`) + Feynman Explanation challenge notepad.
-  5. ⭐ **Review (R3):** Self-grading mastery mini-quizzes with real-time feedback, detailed explanation breakdowns, and trophy claims.
-- **Gamification & Motivation Engine:**
-  - 🔥 **Study Streaks:** Animated flame counter with XP multipliers.
-  - 💎 **Knowledge Gems & Trophy Room:** Earn gems through quiz mastery and unlock avatar skins (*Ethiopian Lion Scholar, Wisdom Owl, Cosmic Polymath*) and prestigious titles.
-  - 🎖️ **20 Unlockable Badges:** Milestones for streaks, equation solving, organelle mastery, and quiz perfection.
-  - ⏳ **Pomodoro Focus Timer:** Built-in 25-minute focus session with audible chimes.
-  - 🔊 **Zero-Dependency Synthesized Audio:** Web Audio API sound effects for clicks, flips, successes, and level-ups.
-  - 🎊 **Confetti Engine:** Celebratory canvas particle physics upon completing study stages.
+### 1. 🌌 100% Exhaustive National Curriculum (Grade 7 & Grade 8)
+- **76 Units & 85 Subtopics** covering the official Ethiopian Ministry of Education curriculum without leaving a single topic or subtopic behind:
+  - 📐 **Mathematics:** Rational Numbers, Linear Equations & Inequalities, Ratios & Percentages, Data Handling, 2D/3D Geometry, Square/Cube Roots, Sets & Venn Diagrams, Coordinate Slopes, Similar Figures, Circle Theorems, and Probability.
+  - 🔬 **General Science:** Scientific Inquiry & SI Units, Cell Theory & Organelles, Human Digestive & Circulatory Systems, Floral Reproduction, Kinetic States of Matter, Chemical Formulas, Earth Tectonics & Rift Systems, Precision & Error Analysis, Atomic Structure & Isotopes, Periodic Trends & Chemical Bonds, Newton's Laws of Motion, Work/Energy/Power, Endocrine & Renal Coordination, and Trophic Energy Pyramids.
+  - 📚 **English:** Rural vs Urban Adjectives, Past Simple vs Past Continuous narrative grammar, Countable/Uncountable nutrition nouns, Present Perfect climate structures, Passive Voice craft technology, Road Safety imperatives, First & Second Conditionals, Relative Clauses, Modal Deductions, and Subject-Verb Agreement.
+  - 🌍 **Social Studies:** Physical geography of Africa, Nile River basin & African drainage, Continental demography & population pyramids, East Africa as the Cradle of Humankind (Lucy / Dinkenesh), the Kingdom of Axum, the Zagwe Dynasty & Lalibela Rock-Hewn Churches, African Continental Free Trade Area (AfCFTA), Soil Conservation, Global Wind Systems, Industrial Revolution, and the Historic Victory of Adwa (1896).
+  - ⚖️ **Citizenship Education:** Principles of Democracy & Constitutional Supremacy, Universal Human & Child Rights, Gender Equality & Affirmative Action, Distributive & Procedural Justice, Democratic Patriotism & National Symbols, Good Governance & Combating Corruption, Separation of Powers, Judicial Independence, Digital Netiquette & Combating Disinformation, and the Dignity of Labor.
+  - 💻 **Information Technology:** Foundations of ICT & IPOS Cycle, CPU Architecture & RAM vs ROM memory hierarchy, Operating Systems & File Organization, Word Processing & Table layout, Internet Protocols & Cyber Hygiene, Absolute Cell Referencing ($) & Spreadsheet Functions, Slide Master design, Star/Bus/Ring Network Topologies, Algorithms & Flowchart logic, and Malware Defense (Viruses, Worms, Ransomware, 2FA).
+
+### 2. 🔒 Strict 80% Mastery Gate & Level-Up Progression
+- Students **cannot skip ahead** or browse locked topics freely.
+- Each level ends with an **AMT-Style Diagnostic Mastery Test**.
+- **Score < 80%:** The mastery gate remains locked (`🔒`). The student is guided to study the hidden derivations, review errors, and retry the test.
+- **Score ≥ 80%:** Triggers victory fanfare, confetti explosion, awards XP and Diamond Gems, stamps the level as `⭐ Mastered`, and unlocks the next mission along the sequential expedition roadmap!
+- Includes an optional **Free-Roam Mode toggle** for teachers and parents to review all content without prerequisites.
+
+### 3. 🎯 AMT Exam-Style Hidden Step-by-Step Derivations
+- Options A, B, C, D are presented with derivations strictly hidden until attempted.
+- Upon answering, an interactive breakdown expands revealing:
+  - 🧠 **Way to Do It (Strategy):** The conceptual problem-solving blueprint.
+  - 📐 **Mathematical / Conceptual Derivation:** Rigorous step-by-step working.
+  - ⚠️ **Common Trap & Pitfall:** The exact misconceptions and distractor tricks students must avoid in national exams.
+
+### 4. 🛰️ Cosmic Holo-Scanner "S" Stage (Survey)
+- High-tech tactical HUD with animated radar sweeps.
+- **2-Minute Tactical Scout Countdown Timer** with Start, Pause, and Reset controls.
+- Interactive **Mission Scouting Checklist** requiring verification of all 3 learning objectives before advancing to the Question phase.
+
+### 5. 🗺️ Visual Galactic Expedition Roadmap
+- Renders an interactive node path showing student progress across all subtopics in real time:
+  - ⭐ **Gold Star:** Level Mastered (with score %)
+  - 🚀 **Neon Rocket:** Active Mission
+  - 🔓 **Unlocked:** Ready to begin
+  - 🔒 **Locked Padlock:** Prerequisite test required
+
+### 6. 📱 100% Offline-Ready Progressive Web App (PWA)
+- Fully installable on Android, iOS, Windows, and macOS.
+- Zero external audio files: all sound effects (clicks, flips, fanfare, errors) are synthesized dynamically via the **Web Audio API**.
+- Offline caching powered by `sw.js` service worker.
 
 ---
 
-## 📂 Project Structure
+## 🚀 Live App & Local Setup
 
-```text
-ethiopia-curriculum-sq3r-platform/
-├── index.html            # Standalone single-page master web application
-├── manifest.json         # PWA Manifest for mobile & desktop installation
-├── sw.js                 # Service Worker for offline network caching
-├── package.json          # Node scripts for hosting & packaging
-├── .gitignore            # Git ignore rules
-├── README.md             # Comprehensive documentation
-└── public/
-    └── icons/
-        ├── icon-192.png  # 192x192 PWA App Icon
-        └── icon-512.png  # 512x512 PWA Splash Icon
-```
+### 🌐 Live Deployment
+The platform is live on GitHub Pages:  
+👉 **[https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)**
+
+### 💻 Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dagiyosi-pixel/ethiopia-curriculum-sq3r-platform.git
+   cd ethiopia-curriculum-sq3r-platform
+   ```
+2. Open `index.html` directly in any web browser, or launch with any local HTTP server:
+   ```bash
+   npx serve .
+   ```
 
 ---
 
-## 🚀 Quick Start
+## 🛠️ Data Compilation & Build Commands
 
-### Option 1: Open Directly in Browser
-Simply double-click `index.html` in your file explorer. No server or build setup is required.
-
-### Option 2: Run with Local Server (PWA Mode)
 ```bash
-# Clone the repository
-git clone https://github.com/dagiyosi-pixel/ethiopia-curriculum-sq3r-platform.git
-cd ethiopia-curriculum-sq3r-platform
+# Verify and compile all 12 curriculum subject modules into master_curriculum.json:
+node compile_master_platform.js
 
-# Start local server
-npm start
-# Opens at http://localhost:3000
+# Build the complete standalone web app and sync to Desktop:
+node build_final_master_app.js
 ```
-
----
-
-## 📱 Mobile App Packaging (.APK & iOS)
-
-Because this platform is designed as an offline-first Progressive Web App, converting it to a native mobile app is seamless:
-
-```bash
-# 1. Install Capacitor
-npm install @capacitor/core @capacitor/cli @capacitor/android
-
-# 2. Initialize Capacitor
-npx cap init "SQ3R Academy" "com.dagiyosi.sq3r" --web-dir "."
-
-# 3. Add Android platform
-npx cap add android
-
-# 4. Open in Android Studio to build APK
-npx cap open android
-```
-
----
-
-## 💻 Desktop Packaging (.EXE)
-
-To bundle into a standalone Windows `.exe` application:
-```bash
-npx nativefier --name "SQ3R Master Platform" "http://localhost:3000" --icon "public/icons/icon-512.png"
-```
-
----
-
-## 👤 Author
-
-**Dagiyosi**  
-- GitHub: [@dagiyosi-pixel](https://github.com/dagiyosi-pixel)  
-- Email: [dagiyosi5321@gmail.com](mailto:dagiyosi5321@gmail.com)
 
 ---
 
 ## 📄 License
-This project is open-source under the [MIT License](LICENSE).
+MIT License • Developed with passion for Ethiopian education and students.
