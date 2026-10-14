@@ -1,17 +1,18 @@
-# ⚡ SQ3R Master Platform • Grade 7 & 8 Ethiopian National Curriculum
+# 🇪🇹 Ethiopian National Curriculum Platform • Grade 7 & 8 Examination Mastery (SQ3R)
 
-> **An expansive, galactic-level web platform & offline-ready app covering the complete Grade 7 & Grade 8 Ethiopian National Curriculum across all subjects.**  
-> Built strictly on the evidence-based **SQ3R Study Methodology** (Survey, Question, Read, Recite, Review), featuring **AMT Exam-style hidden derivations**, a **Strict 80% Mastery Gate**, an **Interactive Expedition Roadmap**, and **Zero-Dependency Web Audio & Confetti physics**.
+> **An expansive, authentic web platform & offline-ready application covering the complete Grade 7 & Grade 8 Ethiopian National Curriculum across all 12 subjects.**  
+> Built strictly on the evidence-based **SQ3R Study Methodology** (Survey, Question, Read, Recite, Review), featuring a timed **Ministry Exam Hall Simulator**, shareable **Canvas Honors Certificate Generator**, **High-Accuracy Reference Library**, **1-Page Printable Formula Sheets**, **AMT Exam-style baby-step derivations**, and **Military-Grade Security Fortification**.
 
 ---
 
 <div align="center">
 
-[![Live Web App](https://img.shields.io/badge/Live_App-GitHub_Pages-6366F1?style=for-the-badge&logo=githubpages&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
-![Curriculum Scope](https://img.shields.io/badge/Scope-76_Units_•_85_Subtopics-10B981?style=for-the-badge&logo=book&logoColor=white)
-![Mastery Gate](https://img.shields.io/badge/Progression-Strict_80%25_Mastery_Gate-F59E0B?style=for-the-badge&logo=security&logoColor=black)
-![Offline PWA](https://img.shields.io/badge/PWA-100%25_Offline_Ready-06B6D4?style=for-the-badge&logo=pwa&logoColor=white)
-![Zero Dependencies](https://img.shields.io/badge/Audio-Synthesized_Web_Audio_API-8B5CF6?style=for-the-badge)
+[![Live Web App](https://img.shields.io/badge/Live_App-GitHub_Pages-0D529C?style=for-the-badge&logo=githubpages&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+[![Curriculum Scope](https://img.shields.io/badge/Scope-96_Units_•_184_Subtopics-009A44?style=for-the-badge&logo=book&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+[![AMT Questions](https://img.shields.io/badge/AMT_Exam_Questions-577_Verified-FED100?style=for-the-badge&logo=checkmarx&logoColor=black)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+[![Mastery Gate](https://img.shields.io/badge/Progression-Strict_80%25_Mastery_Gate-EF3340?style=for-the-badge&logo=security&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+[![Offline PWA](https://img.shields.io/badge/PWA-100%25_Offline_Ready-06B6D4?style=for-the-badge&logo=pwa&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+[![Security Policy](https://img.shields.io/badge/Security-Fortified_CSP_&_NoSniff-10B981?style=for-the-badge&logo=shieldsdotio&logoColor=white)](.github/SECURITY.md)
 
 </div>
 
@@ -19,78 +20,77 @@
 
 ## 🌟 Key Highlights & Engineering Features
 
-### 1. 🌌 100% Exhaustive National Curriculum (Grade 7 & Grade 8)
-- **76 Units & 85 Subtopics** covering the official Ethiopian Ministry of Education curriculum without leaving a single topic or subtopic behind:
-  - 📐 **Mathematics:** Rational Numbers, Linear Equations & Inequalities, Ratios & Percentages, Data Handling, 2D/3D Geometry, Square/Cube Roots, Sets & Venn Diagrams, Coordinate Slopes, Similar Figures, Circle Theorems, and Probability.
-  - 🔬 **General Science:** Scientific Inquiry & SI Units, Cell Theory & Organelles, Human Digestive & Circulatory Systems, Floral Reproduction, Kinetic States of Matter, Chemical Formulas, Earth Tectonics & Rift Systems, Precision & Error Analysis, Atomic Structure & Isotopes, Periodic Trends & Chemical Bonds, Newton's Laws of Motion, Work/Energy/Power, Endocrine & Renal Coordination, and Trophic Energy Pyramids.
-  - 📚 **English:** Rural vs Urban Adjectives, Past Simple vs Past Continuous narrative grammar, Countable/Uncountable nutrition nouns, Present Perfect climate structures, Passive Voice craft technology, Road Safety imperatives, First & Second Conditionals, Relative Clauses, Modal Deductions, and Subject-Verb Agreement.
-  - 🌍 **Social Studies:** Physical geography of Africa, Nile River basin & African drainage, Continental demography & population pyramids, East Africa as the Cradle of Humankind (Lucy / Dinkenesh), the Kingdom of Axum, the Zagwe Dynasty & Lalibela Rock-Hewn Churches, African Continental Free Trade Area (AfCFTA), Soil Conservation, Global Wind Systems, Industrial Revolution, and the Historic Victory of Adwa (1896).
-  - ⚖️ **Citizenship Education:** Principles of Democracy & Constitutional Supremacy, Universal Human & Child Rights, Gender Equality & Affirmative Action, Distributive & Procedural Justice, Democratic Patriotism & National Symbols, Good Governance & Combating Corruption, Separation of Powers, Judicial Independence, Digital Netiquette & Combating Disinformation, and the Dignity of Labor.
-  - 💻 **Information Technology:** Foundations of ICT & IPOS Cycle, CPU Architecture & RAM vs ROM memory hierarchy, Operating Systems & File Organization, Word Processing & Table layout, Internet Protocols & Cyber Hygiene, Absolute Cell Referencing ($) & Spreadsheet Functions, Slide Master design, Star/Bus/Ring Network Topologies, Algorithms & Flowchart logic, and Malware Defense (Viruses, Worms, Ransomware, 2FA).
+### 1. 🏛️ Ministry Exam Hall Simulator (የፈተና አዳራሽ)
+- **Official Mock Exam Environment:** Replicates real regional and national MoE examination conditions.
+- **Configurable Sprints:** 10 Questions (Quick 10-Min Sprint), 20 Questions (Standard Mock), 40 Questions (Full Ministry Simulation), or 60 Questions (Comprehensive Grand Mock across all subjects).
+- **Live HUD & Question Palette Navigator:** Real-time countdown timer with color alerts (turns pulsing red under 3 minutes), color-coded question palette (1 to N) tracking Answered, Flagged (🚩), and Current states.
+- **Diagnostic Post-Exam Audit:** Predicted Regional Letter Grade (*Distinction A+ [≥90%]*, *Very Good A*, *Good B*, *Satisfactory C*, *Needs Remediation F*), chapter-by-chapter diagnostic weakness matrix with one-click **"በSQ3R ከልስ ➔"** jump buttons, and full baby-step review accordions.
 
-### 2. 🔒 Strict 80% Mastery Gate & Level-Up Progression
-- Students **cannot skip ahead** or browse locked topics freely.
-- Each level ends with an **AMT-Style Diagnostic Mastery Test**.
-- **Score < 80%:** The mastery gate remains locked (`🔒`). The student is guided to study the hidden derivations, review errors, and retry the test.
-- **Score ≥ 80%:** Triggers victory fanfare, confetti explosion, awards XP and Diamond Gems, stamps the level as `⭐ Mastered`, and unlocks the next mission along the sequential expedition roadmap!
-- Includes an optional **Free-Roam Mode toggle** for teachers and parents to review all content without prerequisites.
+### 2. 🎓 Shareable "Ministry Honors Certificate" Generator (የምስክር ወረቀት ሰሪ)
+- **High-Resolution Canvas Engine (`1200 x 840` px):** Renders official MoE Coat of Arms, Ethiopian tricolor ribbon border, golden hairline flourishes, student name, school/region, verified exam score percentage, and academic title.
+- **Instant Virality & Sharing:**
+  - **📥 HD PNG Export:** One-click download directly to phone gallery or computer.
+  - **✈️ 1-Click Telegram Share:** Pre-formatted challenge messages to motivate classmates and study groups.
+  - Automatically unlocked when achieving $\ge 80\%$ in the Ministry Exam Hall or from the National Hall of Honors.
 
-### 3. 🎯 AMT Exam-Style Hidden Step-by-Step Derivations
-- Options A, B, C, D are presented with derivations strictly hidden until attempted.
-- Upon answering, an interactive breakdown expands revealing:
-  - 🧠 **Way to Do It (Strategy):** The conceptual problem-solving blueprint.
-  - 📐 **Mathematical / Conceptual Derivation:** Rigorous step-by-step working.
-  - ⚠️ **Common Trap & Pitfall:** The exact misconceptions and distractor tricks students must avoid in national exams.
+### 3. 📚 High-Accuracy Reference Library & Curriculum Archive (ማጣቀሻ እና መዛግብት)
+- **Official MoE Textbook Citations:** Exhaustive publication details, curriculum framework citations (CBA), and unit breakdown for all 12 subjects across Grade 7 and 8.
+- **High-Precision Mathematical Formulas:** Number sets ($\mathbb{N}, \mathbb{W}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}$), Perfect Squares Table ($1^2$ to $25^2$), Cube Roots ($1^3$ to $10^3$), geometric perimeter, area & volume, and exponent laws.
+- **Science Constants & Periodic Table:** Speed of light ($c = 3.0 \times 10^8\text{ m/s}$), gravitational acceleration ($g = 9.8\text{ m/s}^2$), water density, atmospheric pressure, SI units table, and the First 20 Chemical Elements ($Z$, Symbol, Mass, Valency).
+- **Ethiopian National Heritage Concordance:** Chronology of hominid discoveries (Lucy/Dinkinesh, Ardi, Selam, Omo), Great Rift Valley geology, Erta Ale active lava lake, Zagwe/Lalibela rock-hewn churches, Gadaa system, and the Battle of Adwa (1896).
+- **The SQ3R Methodological Guide:** Scientific background, cognitive memory retention principles, and phase distribution timings.
+- **Instant Search & Category Filter Pills:** Real-time search across all reference categories.
 
-### 4. 🛰️ Cosmic Holo-Scanner "S" Stage (Survey)
-- High-tech tactical HUD with animated radar sweeps.
-- **2-Minute Tactical Scout Countdown Timer** with Start, Pause, and Reset controls.
-- Interactive **Mission Scouting Checklist** requiring verification of all 3 learning objectives before advancing to the Question phase.
+### 4. 🖨️ Printable 1-Page Summary & Formula Sheets (የ1-ገጽ ማጠቃለያ ሉህ)
+- One-click print-optimized sheet generator for any active unit in the SQ3R studio.
+- Automatically formats clean A4 black-and-white layouts with MoE headers, definitions, formulas, worked examples, and key pitfall alerts.
+- Allows students and teachers to generate PDF study packets or physical printouts for studying without electricity or internet connectivity.
 
-### 5. 🗺️ Visual Galactic Expedition Roadmap
-- Renders an interactive node path showing student progress across all subtopics in real time:
-  - ⭐ **Gold Star:** Level Mastered (with score %)
-  - 🚀 **Neon Rocket:** Active Mission
-  - 🔓 **Unlocked:** Ready to begin
-  - 🔒 **Locked Padlock:** Prerequisite test required
+### 5. 🎯 577+ AMT Exam-Style Verified Questions
+- Options A, B, C, D with baby-step solutions strictly hidden until attempted.
+- **Step 1 • Tactical Approach:** Conceptual roadmap.
+- **Step 2 • Verified Baby-Step Derivation:** Step-by-step arithmetic and scientific reasoning.
+- **Step 3 • Distractor Autopsy:** Option-by-option diagnosis explaining why incorrect choices are wrong.
+- **Step 4 • Ministry Exam Pitfall:** Highlights the exact traps examiners use on regional tests.
 
-### 6. 📱 100% Offline-Ready Progressive Web App (PWA)
-- Fully installable on Android, iOS, Windows, and macOS.
-- Zero external audio files: all sound effects (clicks, flips, fanfare, errors) are synthesized dynamically via the **Web Audio API**.
-- Offline caching powered by `sw.js` service worker.
+### 6. 🔒 Strict 80% Mastery Gate & Level-Up Progression
+- Sequential unlocks require students to achieve $\ge 80\%$ before progressing to subsequent curriculum levels.
+- Awards XP and Knowledge Gems, triggers victory fanfare and confetti physics.
+- Includes an optional **Free-Roam Mode toggle** for exploratory review.
+
+### 7. 🛡️ Military-Grade Security Fortification
+- **Strict Content Security Policy (CSP):** Restricts script, style, font, and frame execution strictly to vetted origins.
+- **Permissions Policy:** Revokes camera, microphone, geolocation, payment, and USB device APIs.
+- **Input Sanitization:** Multi-layer text sanitization and length bounds on student inputs to prevent XSS.
+- **Prototype Pollution Defense:** LocalStorage parser sanitizes and purges `__proto__`, `constructor`, and `prototype` keys.
+- **Reverse Tabnabbing Mitigation:** Severed `window.opener = null` on all pop-up print windows.
+- **Audio Rate-Limiting:** Concurrency cap preventing oscillator exhaustion DOS attacks.
+
+### 8. 📱 100% Offline Progressive Web App (PWA)
+- Installable on Android, iOS, Windows, and Mac with zero data cost once cached.
+- Synthesized audio generated entirely via the **Web Audio API** with zero external audio assets.
 
 ---
 
-## 🚀 Live App & Local Setup
+## 🚀 Live App & Repository
 
-### 🌐 Live Deployment
-The platform is live on GitHub Pages:  
+### 🌐 Official Live Deployment
 👉 **[https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)**
 
+### 📁 Source Code
+👉 **[https://github.com/dagiyosi-pixel/ethiopia-curriculum-sq3r-platform](https://github.com/dagiyosi-pixel/ethiopia-curriculum-sq3r-platform)**
+
 ### 💻 Run Locally
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dagiyosi-pixel/ethiopia-curriculum-sq3r-platform.git
-   cd ethiopia-curriculum-sq3r-platform
-   ```
-2. Open `index.html` directly in any web browser, or launch with any local HTTP server:
-   ```bash
-   npx serve .
-   ```
-
----
-
-## 🛠️ Data Compilation & Build Commands
-
 ```bash
-# Verify and compile all 12 curriculum subject modules into master_curriculum.json:
-node compile_master_platform.js
+# 1. Clone repository
+git clone https://github.com/dagiyosi-pixel/ethiopia-curriculum-sq3r-platform.git
+cd ethiopia-curriculum-sq3r-platform
 
-# Build the complete standalone web app and sync to Desktop:
-node build_final_master_app.js
+# 2. Open index.html directly in any browser or launch local server
+npx serve .
 ```
 
 ---
 
-## 📄 License
-MIT License • Developed with passion for Ethiopian education and students.
+## 📜 Attribution & Legal Notice
+Aligned with the Federal Democratic Republic of Ethiopia Ministry of Education (FDRE MoE) General Education Curriculum Framework. Built as a 100% free, accessible educational public good for Ethiopian students, teachers, and schools worldwide.
