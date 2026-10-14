@@ -1862,6 +1862,8 @@ const SUBJECT_METADATA = {
         'amt-exam': 'view-amt-exam',
         'amt': 'view-amt-exam',
         'vault': 'view-vault',
+        'reference': 'view-reference',
+        'ref': 'view-reference',
         'rewards': 'view-rewards',
         'analytics': 'view-analytics'
       };
@@ -1875,18 +1877,20 @@ const SUBJECT_METADATA = {
         'amt-exam': 'tabBtn-amt-exam',
         'amt': 'tabBtn-amt-exam',
         'vault': 'tabBtn-vault',
+        'reference': 'tabBtn-reference',
+        'ref': 'tabBtn-reference',
         'rewards': 'tabBtn-rewards',
         'analytics': 'tabBtn-analytics'
       };
 
       const activeViewId = tabMap[tabId] || 'view-sq3r';
 
-      ['view-sq3r', 'view-exam-hall', 'view-curriculum', 'view-amt-exam', 'view-vault', 'view-rewards', 'view-analytics'].forEach(vId => {
+      ['view-sq3r', 'view-exam-hall', 'view-curriculum', 'view-amt-exam', 'view-vault', 'view-reference', 'view-rewards', 'view-analytics'].forEach(vId => {
         const el = document.getElementById(vId);
         if (el) el.style.display = vId === activeViewId ? 'block' : 'none';
       });
 
-      ['tabBtn-sq3r', 'tabBtn-exam-hall', 'tabBtn-curriculum', 'tabBtn-amt-exam', 'tabBtn-vault', 'tabBtn-rewards', 'tabBtn-analytics'].forEach(bId => {
+      ['tabBtn-sq3r', 'tabBtn-exam-hall', 'tabBtn-curriculum', 'tabBtn-amt-exam', 'tabBtn-vault', 'tabBtn-reference', 'tabBtn-rewards', 'tabBtn-analytics'].forEach(bId => {
         const btn = document.getElementById(bId);
         if (btn) {
           if (bId === btnMap[tabId]) {
@@ -2602,11 +2606,11 @@ const SUBJECT_METADATA = {
       const nameInput = document.getElementById('certStudentName');
       const schoolInput = document.getElementById('certSchoolName');
       if (nameInput && nameInput.value.trim()) {
-        currentCertData.studentName = nameInput.value.trim();
+        currentCertData.studentName = sanitizeText(nameInput.value, 60);
         localStorage.setItem('ethiopia_cert_student_name', currentCertData.studentName);
       }
       if (schoolInput && schoolInput.value.trim()) {
-        currentCertData.schoolName = schoolInput.value.trim();
+        currentCertData.schoolName = sanitizeText(schoolInput.value, 80);
         localStorage.setItem('ethiopia_cert_school_name', currentCertData.schoolName);
       }
       drawCertificateCanvas();
@@ -3052,6 +3056,7 @@ const SUBJECT_METADATA = {
 
       const printWindow = window.open('', '_blank', 'width=850,height=900');
       if (printWindow) {
+        try { printWindow.opener = null; } catch(e) {}
         printWindow.document.write(printHtml);
         printWindow.document.close();
       } else {
@@ -3096,6 +3101,93 @@ const SUBJECT_METADATA = {
       const banner = document.getElementById('pwaInstallBanner');
       if (banner) banner.classList.add('hidden');
       localStorage.setItem('ethiopia_pwa_dismissed', 'true');
+    }
+
+
+    // =========================================================================
+    // SECURITY FORTIFICATION & DEFENSIVE RUNTIME GUARDS
+    // =========================================================================
+    function sanitizeText(str, maxLength = 80) {
+      if (typeof str !== 'string') return '';
+      return str
+        .trim()
+        .slice(0, maxLength)
+        .replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
+    }
+
+    function sanitizeHtml(str) {
+      if (typeof str !== 'string') return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function safeGetLocalStorage(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return fallback;
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+          delete parsed.__proto__;
+          delete parsed.constructor;
+          delete parsed.prototype;
+        }
+        return parsed;
+      } catch (e) {
+        console.warn('Storage security fallback:', e);
+        return fallback;
+      }
+    }
+
+    // Audio rate-limiting to prevent oscillator exhaustion DOS
+    let activeOscillators = 0;
+    const MAX_OSCILLATORS = 6;
+
+    // =========================================================================
+    // HIGH-ACCURACY REFERENCE COMPENDIUM LOGIC
+    // =========================================================================
+    let activeRefCategory = 'all';
+
+    function filterRefCategory(category) {
+      soundClick();
+      activeRefCategory = category;
+      
+      const buttons = document.querySelectorAll('.ref-cat-btn');
+      buttons.forEach(btn => {
+        btn.className = 'ref-cat-btn px-3 py-1.5 rounded-xl text-xs font-bold transition bg-space-850 text-slate-300 hover:text-white border border-slate-800 whitespace-nowrap cursor-pointer';
+      });
+
+      const activeBtn = document.getElementById(`refCatBtn-${category}`);
+      if (activeBtn) {
+        activeBtn.className = 'ref-cat-btn active px-3 py-1.5 rounded-xl text-xs font-bold transition bg-emerald-600 text-white shadow-sm whitespace-nowrap cursor-pointer';
+      }
+
+      applyRefFilters();
+    }
+
+    function filterReference(searchQuery) {
+      applyRefFilters(searchQuery);
+    }
+
+    function applyRefFilters(query = null) {
+      const q = (query !== null ? query : (document.getElementById('refSearchInput')?.value || '')).toLowerCase().trim();
+      const items = document.querySelectorAll('.ref-item');
+
+      items.forEach(item => {
+        const cat = item.getAttribute('data-cat');
+        const matchesCategory = activeRefCategory === 'all' || cat === activeRefCategory;
+        const text = item.innerText.toLowerCase();
+        const matchesQuery = !q || text.includes(q);
+
+        if (matchesCategory && matchesQuery) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
     }
 
     window.addEventListener('DOMContentLoaded', () => {
