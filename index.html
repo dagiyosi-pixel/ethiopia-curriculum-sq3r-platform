@@ -19143,7 +19143,7 @@ const SUBJECT_METADATA = {
     const SHOP_ITEMS = [
       { id: 'av_lion', type: 'avatar', item: '🦁', name: 'Lion of Judah Crest', cost: 100, desc: 'Symbol of national strength and wisdom' },
       { id: 'av_eagle', type: 'avatar', item: '🦅', name: 'Highland Tawny Eagle', cost: 150, desc: 'Keen vision and aerial intellect' },
-      { id: 'av_scroll', type: 'avatar', item: '📜', name: 'Ge'ez Ancient Parchment', cost: 120, desc: 'Scholar of ancient manuscripts and history' },
+      { id: 'av_scroll', type: 'avatar', item: '📜', name: "Ge'ez Ancient Parchment", cost: 120, desc: 'Scholar of ancient manuscripts and history' },
       { id: 'av_crown', type: 'avatar', item: '👑', name: 'Imperial Laureate Crown', cost: 250, desc: 'Highest standard of regional exam mastery' },
       { id: 'av_star', type: 'avatar', item: '⭐', name: 'Radiant National Star', cost: 80, desc: 'Brilliance in science and mathematics' },
       { id: 'av_walia', type: 'avatar', item: '🐐', name: 'Semien Mountain Walia', cost: 200, desc: 'Climbing to the highest academic peaks' }
@@ -22119,11 +22119,7 @@ const SUBJECT_METADATA = {
     የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ የትምህርት ሚኒስቴር • SQ3R Pedagogical Mastery Platform • 100% Free Educational Resource
   </div>
 
-  <script>
-    window.onload = function() {
-      setTimeout(function() { window.print(); }, 250);
-    };
-  </script>
+
 </body>
 </html>`;
 
@@ -22132,6 +22128,10 @@ const SUBJECT_METADATA = {
         try { printWindow.opener = null; } catch(e) {}
         printWindow.document.write(printHtml);
         printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+          try { printWindow.print(); } catch(e) {}
+        }, 300);
       } else {
         showToast('⚠️ ብቅ-ባይ (Pop-up) ታግዷል። እባክዎ ብቅ-ባይን ይፍቀዱ።');
       }
