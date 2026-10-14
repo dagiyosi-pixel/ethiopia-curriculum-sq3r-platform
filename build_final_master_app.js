@@ -1140,8 +1140,8 @@ const stateAndLogicJsString = `
         const nextSubtopic = allSubtopics[curIdx + 1];
         showToast(\`🌟 Level Mastered! Advancing to \${nextSubtopic.code} \${nextSubtopic.title}!\`);
         setTimeout(() => {
-          changeUnit(nextSubtopic.unitId);
           changeSubtopic(nextSubtopic.id);
+          window.scrollTo({ top: 120, behavior: 'smooth' });
         }, 600);
       } else {
         triggerConfetti();
