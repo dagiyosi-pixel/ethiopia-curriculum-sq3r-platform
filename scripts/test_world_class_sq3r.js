@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('Running World-Class SQ3R Acceptance Suite on index.html...\n');
+console.log('Running World-Class SQ3R Acceptance Suite (Grade 7 & 8 Ministry Exam)...\n');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 
@@ -20,7 +20,7 @@ const tests = [
   { name: '12. Stage 3 Typography Controls & Personal Scratchpad', pass: html.includes('setReadingFontSize') && html.includes('id="lessonUserNotes"') },
   { name: '13. Stage 3 Step-by-Step Worked Example with Amharic Details', pass: html.includes('ደረጃ በደረጃ የተሰራ መደበኛ ምሳሌ') && html.includes('id="readingNotesBody"') },
   { name: '14. Stage 4 3D Leitner Flashcards & Free Recall Journal', pass: html.includes('rateFlashcardLeitner') && html.includes('id="freeRecallInput"') && html.includes('compareFreeRecall') },
-  { name: '15. Stage 5 577-Question AMT Exam Gate with 4-Step Baby-Step Derivations', pass: html.includes('buildBabyStepSolutionHtml') && html.includes('scorePct >= 80') },
+  { name: '15. Stage 5 577-Question Ministry Exam Gate with 4-Step Baby-Step Derivations', pass: html.includes('buildBabyStepSolutionHtml') && html.includes('scorePct >= 80') },
   { name: '16. Floating Smart Study Assistant (Dr. Desta AI Guide)', pass: html.includes('id="studyAssistantFab"') && html.includes('toggleStudyAssistant') && html.includes('askAssistant') },
   { name: '17. One-Click Continue Learning Resumption', pass: html.includes('resumeLastActivity') }
 ];

@@ -1588,7 +1588,7 @@ const SUBJECT_METADATA = {
               ← ወደ ንባብ ተመለስ (Back to Read)
             </button>
             <button onclick="finishReciteStep()" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2 cursor-pointer">
-              <span>ወደ AMT ብቃት ፈተና እለፍ (+45 XP)</span> <span>👉</span>
+              <span>ወደ ሚኒስቴር ፈተና እለፍ (+45 XP)</span> <span>👉</span>
             </button>
           </div>
 
@@ -1652,7 +1652,7 @@ const SUBJECT_METADATA = {
     }
 
     // =========================================================================
-    // STAGE 5: REVIEW ENGINE (AMT EXAM WITH HIDDEN BABY-STEP DERIVATIONS & 80% GATE)
+    // STAGE 5: REVIEW ENGINE (MINISTRY EXAM WITH HIDDEN BABY-STEP DERIVATIONS & 80% GATE)
     // =========================================================================
     function renderReviewStep(st, container) {
       if (currentQuizAnswersSubtopicId !== st.id) {
@@ -1670,7 +1670,7 @@ const SUBJECT_METADATA = {
           <!-- Header Banner -->
           <div class="border-b border-slate-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <span class="text-xs uppercase font-black text-amber-400 tracking-wider">ደረጃ 5 ከ 5 • የብቃት ፈተና (STAGE 5: REVIEW & AMT MASTERY GATE)</span>
+              <span class="text-xs uppercase font-black text-amber-400 tracking-wider">ደረጃ 5 ከ 5 • የብቃት ፈተና (STAGE 5: REVIEW & MINISTRY MASTERY GATE)</span>
               <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">⭐ የኢትዮጵያ ሚኒስቴር ፈተናዎች እና ዝርዝር የደረጃ በደረጃ መፍትሔ</h3>
               <p class="text-xs sm:text-sm text-slate-300">በመጀመሪያ ምርጫህን ምረጥ! ትክክለኛው መልስ፣ የተሟላ የደረጃ በደረጃ ስሌት እና የወጥመድ ማብራሪያ ምርጫህን ከወሰንክ በኋላ ይከፈታል። ማለፊያ ነጥብ፦ <strong>≥80%</strong></p>
             </div>
@@ -1848,7 +1848,7 @@ const SUBJECT_METADATA = {
     }
 
     // =========================================================================
-    // AMT EXAM MODE: GRADING, EXTREME BABY-STEP REVEAL, AND 80% GATE
+    // GRADE 7 & 8 MINISTRY EXAM MODE: GRADING, EXTREME BABY-STEP REVEAL, AND 80% GATE)
     // =========================================================================
     let currentQuizAnswers = {};
     let currentQuizAnswersSubtopicId = null;
@@ -2397,7 +2397,7 @@ const SUBJECT_METADATA = {
     }
 
     // =========================================================================
-    // AMT EXAM SIMULATOR TAB
+    // GRADE 7 & 8 MINISTRY EXAM SIMULATOR TAB
     // =========================================================================
     let allSimQuestions = [];
 
@@ -2427,7 +2427,7 @@ const SUBJECT_METADATA = {
         <div class="p-5 sm:p-6 rounded-2xl glass-card border border-emerald-500/30 space-y-4">
           <div class="flex items-center justify-between flex-wrap gap-2">
             <div>
-              <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">NATIONAL CURRICULUM AMT EXAM ENGINE</span>
+              <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">NATIONAL CURRICULUM GRADE 7 & 8 EXAM ENGINE</span>
               <h3 class="text-lg sm:text-xl font-black text-white">${sub.name} Diagnostic & Preparation Arena</h3>
             </div>
             <span class="text-xs font-mono text-emerald-400 font-bold bg-space-950 px-3 py-1 rounded-lg border border-slate-800">
@@ -2444,7 +2444,7 @@ const SUBJECT_METADATA = {
             <div class="p-5 sm:p-6 rounded-2xl bg-space-900 border border-slate-800 space-y-4" id="amtSimCard-${idx}">
               <div class="flex items-center justify-between flex-wrap gap-2">
                 <span class="text-xs font-mono font-bold text-slate-400">${qItem.unitNumber} • ${qItem.subCode} ${qItem.topicTitle}</span>
-                <span class="text-xs font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">AMT Question #${idx+1}</span>
+                <span class="text-xs font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">Exam Question #${idx+1}</span>
               </div>
               <h4 class="text-sm sm:text-base font-bold text-white leading-relaxed">${qItem.q}</h4>
 
@@ -2493,7 +2493,7 @@ const SUBJECT_METADATA = {
 
       if (optIdx === correctIdx) {
         soundSuccess();
-        addXp(25, 'AMT Solver');
+        addXp(25, 'Ministry Exam Solver');
       } else {
         soundError();
       }
@@ -4039,8 +4039,8 @@ const SUBJECT_METADATA = {
             <div class="flex items-center gap-3">
               <span class="text-xl">🎯</span>
               <div>
-                <h5 class="text-xs sm:text-sm font-bold text-white">ተልዕኮ 3፦ በAMT ፈተና ≥80% በማምጣት ማለፍ</h5>
-                <p class="text-[11px] text-slate-400">Score ≥80% on an AMT Mastery Exam Gate (+80 XP)</p>
+                <h5 class="text-xs sm:text-sm font-bold text-white">ተልዕኮ 3፦ በሚኒስቴር ፈተና ≥80% በማምጣት ማለፍ</h5>
+                <p class="text-[11px] text-slate-400">Score ≥80% on a Ministry Mastery Exam Gate (+80 XP)</p>
               </div>
             </div>
             <div class="flex items-center gap-3">

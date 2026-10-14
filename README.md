@@ -1,7 +1,7 @@
 # 🇪🇹 Ethiopian National Curriculum Platform • Grade 7 & 8 Examination Mastery (SQ3R)
 
 > **An expansive, authentic web platform & offline-ready application covering the complete Grade 7 & Grade 8 Ethiopian National Curriculum across all 12 subjects.**  
-> Built strictly on the evidence-based **SQ3R Study Methodology** (Survey, Question, Read, Recite, Review), featuring a timed **Ministry Exam Hall Simulator**, shareable **Canvas Honors Certificate Generator**, **High-Accuracy Reference Library**, **1-Page Printable Formula Sheets**, **AMT Exam-style baby-step derivations**, and **Military-Grade Security Fortification**.
+> Built strictly on the evidence-based **SQ3R Study Methodology** (Survey, Question, Read, Recite, Review), featuring a timed **Ministry Exam Hall Simulator**, shareable **Canvas Honors Certificate Generator**, **High-Accuracy Reference Library**, **1-Page Printable Formula Sheets**, **Ministry Exam-style baby-step derivations**, and **Military-Grade Security Fortification**.
 
 ---
 
@@ -9,7 +9,7 @@
 
 [![Live Web App](https://img.shields.io/badge/Live_App-GitHub_Pages-0D529C?style=for-the-badge&logo=githubpages&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
 [![Curriculum Scope](https://img.shields.io/badge/Scope-96_Units_•_184_Subtopics-009A44?style=for-the-badge&logo=book&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
-[![AMT Questions](https://img.shields.io/badge/AMT_Exam_Questions-577_Verified-FED100?style=for-the-badge&logo=checkmarx&logoColor=black)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
+[![AMT Questions](https://img.shields.io/badge/Ministry_Exam_Questions-577_Verified-FED100?style=for-the-badge&logo=checkmarx&logoColor=black)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
 [![Mastery Gate](https://img.shields.io/badge/Progression-Strict_80%25_Mastery_Gate-EF3340?style=for-the-badge&logo=security&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
 [![Offline PWA](https://img.shields.io/badge/PWA-100%25_Offline_Ready-06B6D4?style=for-the-badge&logo=pwa&logoColor=white)](https://dagiyosi-pixel.github.io/ethiopia-curriculum-sq3r-platform/)
 [![Security Policy](https://img.shields.io/badge/Security-Fortified_CSP_&_NoSniff-10B981?style=for-the-badge&logo=shieldsdotio&logoColor=white)](.github/SECURITY.md)
@@ -46,7 +46,7 @@
 - Automatically formats clean A4 black-and-white layouts with MoE headers, definitions, formulas, worked examples, and key pitfall alerts.
 - Allows students and teachers to generate PDF study packets or physical printouts for studying without electricity or internet connectivity.
 
-### 5. 🎯 577+ AMT Exam-Style Verified Questions
+### 5. 🎯 577+ Ministry Exam-Style (Grade 7 & 8) Verified Questions
 - Options A, B, C, D with baby-step solutions strictly hidden until attempted.
 - **Step 1 • Tactical Approach:** Conceptual roadmap.
 - **Step 2 • Verified Baby-Step Derivation:** Step-by-step arithmetic and scientific reasoning.
