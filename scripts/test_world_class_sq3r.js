@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('Running World-Class SQ3R Acceptance Suite (Grade 7 & 8 Ministry Exam)...\n');
+console.log('Running Gizmo-Style SQ3R Acceptance Suite (Mobile-First, No AI, Grade 7 & 8)...\n');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 
@@ -19,10 +19,12 @@ const tests = [
   { name: '11. Stage 2 Custom Inquiry Board & Amharic Starters', pass: html.includes('insertQuestionStarter') && html.includes('addCustomQuestion') },
   { name: '12. Stage 3 Typography Controls & Personal Scratchpad', pass: html.includes('setReadingFontSize') && html.includes('id="lessonUserNotes"') },
   { name: '13. Stage 3 Step-by-Step Worked Example with Amharic Details', pass: html.includes('ደረጃ በደረጃ የተሰራ መደበኛ ምሳሌ') && html.includes('id="readingNotesBody"') },
-  { name: '14. Stage 4 3D Leitner Flashcards & Free Recall Journal', pass: html.includes('rateFlashcardLeitner') && html.includes('id="freeRecallInput"') && html.includes('compareFreeRecall') },
+  { name: '14. Stage 4 Gizmo 3D Flashcards & Type-In Recall & Speed Match', pass: html.includes('rateFlashcardLeitner') && html.includes('checkTypeRecallAnswer') && html.includes('initMatchGame') },
   { name: '15. Stage 5 577-Question Ministry Exam Gate with 4-Step Baby-Step Derivations', pass: html.includes('buildBabyStepSolutionHtml') && html.includes('scorePct >= 80') },
-  { name: '16. Floating Smart Study Assistant (Dr. Desta AI Guide)', pass: html.includes('id="studyAssistantFab"') && html.includes('toggleStudyAssistant') && html.includes('askAssistant') },
-  { name: '17. One-Click Continue Learning Resumption', pass: html.includes('resumeLastActivity') }
+  { name: '16. Gizmo-Style Mobile Bottom Navigation Bar (#gizmoBottomNav)', pass: html.includes('id="gizmoBottomNav"') && html.includes('bottomNav-dashboard') },
+  { name: '17. One-Click Continue Learning Resumption', pass: html.includes('resumeLastActivity') },
+  { name: '18. No AI Chatbot/Assistant Present (Pure Deterministic Fast Pedagogy)', pass: !html.includes('id="studyAssistantFab"') && !html.includes('id="studyAssistantModal"') },
+  { name: '19. No AMT References in User-Facing Content', pass: !html.includes('577 የAMT') && !html.includes('AMT Question Bank') }
 ];
 
 let allPassed = true;
@@ -33,7 +35,7 @@ tests.forEach(function(t) {
 });
 
 console.log('\n======================================================');
-console.log(allPassed ? 'ALL 17 ACCEPTANCE CRITERIA PASSED 100%!' : 'SOME CRITERIA FAILED!');
+console.log(allPassed ? 'ALL 19 GIZMO & MOBILE SUITE ACCEPTANCE CRITERIA PASSED 100%!' : 'SOME CRITERIA FAILED!');
 console.log('======================================================');
 
 if (!allPassed) process.exit(1);

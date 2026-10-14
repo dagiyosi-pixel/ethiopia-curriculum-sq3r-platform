@@ -184,6 +184,37 @@
       box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
     }
 
+  
+    /* === GIZMO APP INTERACTION STYLES === */
+    .gizmo-card {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .gizmo-card:active {
+      transform: scale(0.97);
+    }
+    .gizmo-match-tile {
+      user-select: none;
+      -webkit-user-select: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .gizmo-match-tile:hover {
+      transform: translateY(-2px);
+    }
+    .gizmo-match-tile.selected {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.2);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+    .gizmo-match-tile.matched {
+      opacity: 0.15;
+      pointer-events: none;
+      transform: scale(0.95);
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+    }
+
   </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-slate-950">
@@ -360,7 +391,7 @@
     </section>
 
     <!-- Dynamic Main Content Views -->
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6">
+    <main class="flex-1 max-w-7xl mx-auto w-full px-3 sm:px-6 py-4 sm:py-6 pb-28 md:pb-8">
 
       <!-- =============================================================== -->
       <!-- VIEW 0: PERSONAL LEARNING COMMAND CENTER (HOME DASHBOARD)       -->
@@ -1506,65 +1537,32 @@
   </script>
 
 
-  <!-- Floating Smart Study Assistant (Dr. Desta • AI Study Guide) -->
-  <button id="studyAssistantFab" onclick="toggleStudyAssistant()" class="fixed bottom-6 left-6 z-40 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-bold text-xs sm:text-sm shadow-xl shadow-emerald-600/40 hover:scale-105 active:scale-95 transition flex items-center gap-2 border border-emerald-400/40 cursor-pointer">
-    <span class="text-lg">🤖</span>
-    <span>ዶ/ር ደስታ (AI Study Guide)</span>
-  </button>
 
-  <!-- Study Assistant Interactive Modal Drawer -->
-  <div id="studyAssistantModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-space-950/80 backdrop-blur-md">
-    <div class="glass-card max-w-xl w-full p-6 sm:p-7 rounded-3xl border border-emerald-500/40 space-y-5 relative bg-space-900 shadow-2xl">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-2xl">
-            🎓
-          </div>
-          <div>
-            <h3 class="text-base sm:text-lg font-black text-white font-display">ዶ/ር ደስታ • ብልህ የጥናት ረዳት (Curriculum Guide)</h3>
-            <p class="text-xs text-slate-400">Contextual pedagogical explanation grounded strictly in the Ethiopian Curriculum.</p>
-          </div>
-        </div>
-        <button onclick="toggleStudyAssistant()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer">
-          ✕
-        </button>
-      </div>
-
-      <!-- Quick Action Prompt Chips -->
-      <div class="space-y-1.5">
-        <label class="block text-[11px] font-black text-slate-400 uppercase tracking-widest">ምን ማወቅ ትፈልጋለህ? (Choose Prompt):</label>
-        <div class="grid grid-cols-2 gap-2 text-xs">
-          <button onclick="askAssistant('simpler')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            💡 ቀለል አድርገህ አስረዳ (Explain Simpler)
-          </button>
-          <button onclick="askAssistant('example')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            🌍 የዕለት ተዕለት ምሳሌ (Everyday Example)
-          </button>
-          <button onclick="askAssistant('hint')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            🎯 የፈተና ፍንጭ ስጠኝ (Exam Pitfall Hint)
-          </button>
-          <button onclick="askAssistant('recap')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            📝 ዋና ዋና ነጥቦች (3-Point Recap)
-          </button>
-        </div>
-      </div>
-
-      <!-- Dynamic Response Box -->
-      <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 space-y-2 min-h-[140px] max-h-[260px] overflow-y-auto">
-        <div class="text-xs uppercase font-black text-emerald-400 tracking-wider flex items-center gap-1.5">
-          <span>📖</span> <span id="assistantTopicBadge">Target: Active Lesson</span>
-        </div>
-        <div id="assistantResponseText" class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-          ሰላም! እኔ ዶ/ር ደስታ ነኝ። ከላይ ካሉት አማራጮች አንዱን በመምረጥ የትምህርቱን ፅንሰ-ሀሳብ በቀላሉ መረዳት ትችላለህ።
-        </div>
-      </div>
-
-      <div class="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-800">
-        <span>Grounded in Ethiopian MoE Curriculum</span>
-        <button onclick="toggleStudyAssistant()" class="px-4 py-1.5 rounded-lg bg-space-850 hover:bg-space-800 text-slate-300 font-bold transition cursor-pointer">ተመለስ (Close)</button>
-      </div>
-    </div>
-  </div>
+  <!-- ========================================================================= -->
+  <!-- GIZMO-STYLE MOBILE BOTTOM NAVIGATION BAR (Thumb-Friendly on all devices)  -->
+  <!-- ========================================================================= -->
+  <nav id="gizmoBottomNav" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-space-950/95 backdrop-blur-2xl border-t border-slate-800/90 px-3 py-2 flex items-center justify-around shadow-2xl">
+    <button onclick="switchTab('dashboard')" id="bottomNav-dashboard" class="flex flex-col items-center gap-1 text-emerald-400 font-black transition cursor-pointer p-1">
+      <span class="text-xl">🏠</span>
+      <span class="text-[10px] tracking-tight">መነሻ</span>
+    </button>
+    <button onclick="switchTab('sq3r')" id="bottomNav-sq3r" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">📖</span>
+      <span class="text-[10px] tracking-tight">SQ3R</span>
+    </button>
+    <button onclick="switchTab('exam-hall')" id="bottomNav-exam-hall" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">🏛️</span>
+      <span class="text-[10px] tracking-tight">ፈተና</span>
+    </button>
+    <button onclick="switchTab('reference')" id="bottomNav-reference" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">📚</span>
+      <span class="text-[10px] tracking-tight">ማጣቀሻ</span>
+    </button>
+    <button onclick="switchTab('rewards')" id="bottomNav-rewards" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">🏆</span>
+      <span class="text-[10px] tracking-tight">ሽልማት</span>
+    </button>
+  </nav>
 
   <!-- Complete Exhaustive Curriculum Database & Engine -->
   <script>

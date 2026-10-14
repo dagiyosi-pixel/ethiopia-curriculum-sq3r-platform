@@ -184,6 +184,37 @@
       box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
     }
 
+  
+    /* === GIZMO APP INTERACTION STYLES === */
+    .gizmo-card {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .gizmo-card:active {
+      transform: scale(0.97);
+    }
+    .gizmo-match-tile {
+      user-select: none;
+      -webkit-user-select: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .gizmo-match-tile:hover {
+      transform: translateY(-2px);
+    }
+    .gizmo-match-tile.selected {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.2);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+    .gizmo-match-tile.matched {
+      opacity: 0.15;
+      pointer-events: none;
+      transform: scale(0.95);
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+    }
+
   </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-slate-950">
@@ -360,7 +391,7 @@
     </section>
 
     <!-- Dynamic Main Content Views -->
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6">
+    <main class="flex-1 max-w-7xl mx-auto w-full px-3 sm:px-6 py-4 sm:py-6 pb-28 md:pb-8">
 
       <!-- =============================================================== -->
       <!-- VIEW 0: PERSONAL LEARNING COMMAND CENTER (HOME DASHBOARD)       -->
@@ -1506,65 +1537,32 @@
   </script>
 
 
-  <!-- Floating Smart Study Assistant (Dr. Desta • AI Study Guide) -->
-  <button id="studyAssistantFab" onclick="toggleStudyAssistant()" class="fixed bottom-6 left-6 z-40 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-bold text-xs sm:text-sm shadow-xl shadow-emerald-600/40 hover:scale-105 active:scale-95 transition flex items-center gap-2 border border-emerald-400/40 cursor-pointer">
-    <span class="text-lg">🤖</span>
-    <span>ዶ/ር ደስታ (AI Study Guide)</span>
-  </button>
 
-  <!-- Study Assistant Interactive Modal Drawer -->
-  <div id="studyAssistantModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-space-950/80 backdrop-blur-md">
-    <div class="glass-card max-w-xl w-full p-6 sm:p-7 rounded-3xl border border-emerald-500/40 space-y-5 relative bg-space-900 shadow-2xl">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-2xl">
-            🎓
-          </div>
-          <div>
-            <h3 class="text-base sm:text-lg font-black text-white font-display">ዶ/ር ደስታ • ብልህ የጥናት ረዳት (Curriculum Guide)</h3>
-            <p class="text-xs text-slate-400">Contextual pedagogical explanation grounded strictly in the Ethiopian Curriculum.</p>
-          </div>
-        </div>
-        <button onclick="toggleStudyAssistant()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer">
-          ✕
-        </button>
-      </div>
-
-      <!-- Quick Action Prompt Chips -->
-      <div class="space-y-1.5">
-        <label class="block text-[11px] font-black text-slate-400 uppercase tracking-widest">ምን ማወቅ ትፈልጋለህ? (Choose Prompt):</label>
-        <div class="grid grid-cols-2 gap-2 text-xs">
-          <button onclick="askAssistant('simpler')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            💡 ቀለል አድርገህ አስረዳ (Explain Simpler)
-          </button>
-          <button onclick="askAssistant('example')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            🌍 የዕለት ተዕለት ምሳሌ (Everyday Example)
-          </button>
-          <button onclick="askAssistant('hint')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            🎯 የፈተና ፍንጭ ስጠኝ (Exam Pitfall Hint)
-          </button>
-          <button onclick="askAssistant('recap')" class="p-2.5 rounded-xl bg-space-950 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/40 text-slate-200 font-bold transition text-left cursor-pointer">
-            📝 ዋና ዋና ነጥቦች (3-Point Recap)
-          </button>
-        </div>
-      </div>
-
-      <!-- Dynamic Response Box -->
-      <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 space-y-2 min-h-[140px] max-h-[260px] overflow-y-auto">
-        <div class="text-xs uppercase font-black text-emerald-400 tracking-wider flex items-center gap-1.5">
-          <span>📖</span> <span id="assistantTopicBadge">Target: Active Lesson</span>
-        </div>
-        <div id="assistantResponseText" class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-          ሰላም! እኔ ዶ/ር ደስታ ነኝ። ከላይ ካሉት አማራጮች አንዱን በመምረጥ የትምህርቱን ፅንሰ-ሀሳብ በቀላሉ መረዳት ትችላለህ።
-        </div>
-      </div>
-
-      <div class="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-800">
-        <span>Grounded in Ethiopian MoE Curriculum</span>
-        <button onclick="toggleStudyAssistant()" class="px-4 py-1.5 rounded-lg bg-space-850 hover:bg-space-800 text-slate-300 font-bold transition cursor-pointer">ተመለስ (Close)</button>
-      </div>
-    </div>
-  </div>
+  <!-- ========================================================================= -->
+  <!-- GIZMO-STYLE MOBILE BOTTOM NAVIGATION BAR (Thumb-Friendly on all devices)  -->
+  <!-- ========================================================================= -->
+  <nav id="gizmoBottomNav" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-space-950/95 backdrop-blur-2xl border-t border-slate-800/90 px-3 py-2 flex items-center justify-around shadow-2xl">
+    <button onclick="switchTab('dashboard')" id="bottomNav-dashboard" class="flex flex-col items-center gap-1 text-emerald-400 font-black transition cursor-pointer p-1">
+      <span class="text-xl">🏠</span>
+      <span class="text-[10px] tracking-tight">መነሻ</span>
+    </button>
+    <button onclick="switchTab('sq3r')" id="bottomNav-sq3r" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">📖</span>
+      <span class="text-[10px] tracking-tight">SQ3R</span>
+    </button>
+    <button onclick="switchTab('exam-hall')" id="bottomNav-exam-hall" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">🏛️</span>
+      <span class="text-[10px] tracking-tight">ፈተና</span>
+    </button>
+    <button onclick="switchTab('reference')" id="bottomNav-reference" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">📚</span>
+      <span class="text-[10px] tracking-tight">ማጣቀሻ</span>
+    </button>
+    <button onclick="switchTab('rewards')" id="bottomNav-rewards" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">🏆</span>
+      <span class="text-[10px] tracking-tight">ሽልማት</span>
+    </button>
+  </nav>
 
   <!-- Complete Exhaustive Curriculum Database & Engine -->
   <script>
@@ -20853,109 +20851,191 @@ const SUBJECT_METADATA = {
     }
 
     // =========================================================================
-    // STAGE 4: RECITE ENGINE (3D LEITNER FLASHCARDS & FREE RECALL JOURNAL)
+    // STAGE 4: GIZMO-STYLE ACTIVE RECALL SUITE (NO AI - FAST, TACTILE & RESPONSIVE)
     // =========================================================================
-    let activeReciteMode = 'flashcards'; // 'flashcards' | 'journal' | 'self-check'
+    let activeReciteMode = 'flashcards'; // 'flashcards' | 'type' | 'match' | 'journal'
+    let matchSelectedTile = null;
+    let matchPairsLeft = 0;
 
     function renderReciteStep(st, container) {
       currentCardIndex = 0;
       isCardFlipped = false;
 
       container.innerHTML = `
-        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-7 animate-fadeIn shadow-2xl">
+        <div class="glass-card p-5 sm:p-8 rounded-3xl border border-slate-800 space-y-6 animate-fadeIn shadow-2xl">
           
-          <!-- Recite Header -->
+          <!-- Recite Header & Gizmo Mode Selector -->
           <div class="border-b border-slate-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <span class="text-xs uppercase font-black text-purple-400 tracking-wider">ደረጃ 4 ከ 5 • ንቁ ማስታወስ (STAGE 4: RECITE & RETRIEVAL PRACTICE)</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">ያለ ማስታወሻ እውቀትህን ከአዕምሮህ አውጣ</h3>
-              <p class="text-xs sm:text-sm text-slate-300">ማስታወሻህን ዝጋ! መልሱን ከማየትህ በፊት ቀመሩን ወይም ህጉን በቃልህ ለመናገር ሞክር።</p>
+              <span class="text-xs uppercase font-black text-purple-400 tracking-wider">ደረጃ 4 ከ 5 • ንቁ ማስታወስ (STAGE 4: ACTIVE RECALL ARENA)</span>
+              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">GIZMO የጥናት ስልቶች (Study Modes)</h3>
+              <p class="text-xs sm:text-sm text-slate-300">ካርዶችን በመገልበጥ፣ ጽፈህ በማረጋገጥ ወይም በማዛመድ እውቀትህን በቋሚነት በአዕምሮህ ቅረፅ።</p>
             </div>
 
-            <!-- Recite Mode Selector Tabs -->
-            <div class="shrink-0 flex items-center gap-1.5 bg-space-950 p-1.5 rounded-2xl border border-slate-800">
-              <button onclick="setReciteMode('flashcards')" id="reciteTab-flashcards" class="px-3 py-1.5 rounded-xl text-xs font-black transition ${activeReciteMode === 'flashcards' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
-                🃏 ፍላሽ ካርዶች
+            <!-- 4 Gizmo-Style Segmented Control Pills -->
+            <div class="shrink-0 flex items-center gap-1 bg-space-950 p-1.5 rounded-2xl border border-slate-800 overflow-x-auto no-scrollbar">
+              <button onclick="setReciteMode('flashcards')" id="reciteTab-flashcards" class="px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap ${activeReciteMode === 'flashcards' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
+                🃏 ካርድ ገልብጥ (Flip)
               </button>
-              <button onclick="setReciteMode('journal')" id="reciteTab-journal" class="px-3 py-1.5 rounded-xl text-xs font-black transition ${activeReciteMode === 'journal' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
-                ✍️ የራስ አገላለጽ
+              <button onclick="setReciteMode('type')" id="reciteTab-type" class="px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap ${activeReciteMode === 'type' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
+                ✍️ ጽፈህ መልስ (Type)
+              </button>
+              <button onclick="setReciteMode('match')" id="reciteTab-match" class="px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap ${activeReciteMode === 'match' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
+                🧩 አዛምድ (Match)
+              </button>
+              <button onclick="setReciteMode('journal')" id="reciteTab-journal" class="px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap ${activeReciteMode === 'journal' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
+                📝 የራስ አገላለጽ
               </button>
             </div>
           </div>
 
-          <!-- Mode 1: 3D Leitner Flashcards Arena -->
+          <!-- GIZMO MODE 1: TACTILE 3D FLASHCARDS -->
           <div id="reciteMode-flashcards" class="${activeReciteMode === 'flashcards' ? '' : 'hidden'} space-y-6">
-            <div class="max-w-xl mx-auto py-2">
-              <div onclick="flipFlashcard()" id="activeFlashcard" class="glass-crest h-60 sm:h-64 rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer border border-emerald-500/40 relative shadow-2xl transition hover:border-emerald-400">
-                <span id="flashcardSideLabel" class="text-[10px] uppercase font-black text-emerald-400 tracking-widest absolute top-4 left-4">QUESTION (ጥያቄ)</span>
-                <span class="text-xs text-slate-400 absolute top-4 right-4">ካርዱን ግለጥ ↺ (Spacebar)</span>
+            <div class="max-w-xl mx-auto py-2 space-y-4">
+              
+              <!-- Progress Indicator -->
+              <div class="flex items-center justify-between text-xs text-slate-400 px-1">
+                <span id="flashcardCounter" class="font-mono text-amber-400 font-bold">Card 1 of ${st.reciteFlashcards.length}</span>
+                <span class="text-emerald-400 font-bold">Leitner Spaced Repetition</span>
+              </div>
 
-                <div class="my-auto text-center px-4">
-                  <h4 id="flashcardContent" class="text-base sm:text-lg font-black text-white leading-relaxed font-display">
+              <!-- Big Tactile Card -->
+              <div onclick="flipFlashcard()" id="activeFlashcard" class="gizmo-card glass-crest h-64 sm:h-72 rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer border border-emerald-500/40 relative shadow-2xl transition hover:border-emerald-400">
+                <span id="flashcardSideLabel" class="text-[10px] uppercase font-black text-emerald-400 tracking-widest absolute top-4 left-4">QUESTION (ጥያቄ)</span>
+                <span class="text-xs text-slate-400 absolute top-4 right-4 flex items-center gap-1">
+                  <span>ካርዱን ግለጥ</span> <span>↺</span>
+                </span>
+
+                <div class="my-auto text-center px-2">
+                  <h4 id="flashcardContent" class="text-base sm:text-xl font-black text-white leading-relaxed font-display">
                     ${st.reciteFlashcards[0].q}
                   </h4>
                 </div>
 
                 <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/60 pt-3">
-                  <span id="flashcardCounter" class="font-mono text-amber-400 font-bold">Card 1 of ${st.reciteFlashcards.length}</span>
-                  <span class="text-emerald-400 font-bold">Leitner Active Recall</span>
+                  <span class="text-[11px] text-slate-500">Tap anywhere on card to flip</span>
+                  <span class="text-emerald-400 font-bold flex items-center gap-1"><span>🧠</span> Active Recall</span>
                 </div>
               </div>
 
-              <!-- 4 Leitner Spaced Repetition Rating Buttons -->
-              <div class="mt-5 space-y-2">
+              <!-- 4 Leitner Confidence Rating Buttons -->
+              <div class="space-y-2 pt-2">
                 <div class="text-[10px] font-black uppercase text-slate-400 text-center tracking-widest">
-                  ይህንን ጥያቄ እንዴት አስታወስከው? (Rate Your Recall):
+                  ምን ያህል አስታወስከው? (RATE YOUR CONFIDENCE):
                 </div>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <button onclick="rateFlashcardLeitner('again')" class="p-2.5 rounded-xl bg-space-950 hover:bg-rose-950/60 border border-slate-800 hover:border-rose-500 text-xs font-bold text-rose-300 transition cursor-pointer">
-                    🔴 እንደገና (1 day)
+                  <button onclick="rateFlashcardLeitner('again')" class="p-3 rounded-2xl bg-space-950 hover:bg-rose-950/60 border border-slate-800 hover:border-rose-500 text-xs font-bold text-rose-300 transition cursor-pointer flex flex-col items-center gap-0.5">
+                    <span>🔴 እንደገና</span>
+                    <span class="text-[9px] text-slate-500 font-mono">1 day</span>
                   </button>
-                  <button onclick="rateFlashcardLeitner('hard')" class="p-2.5 rounded-xl bg-space-950 hover:bg-amber-950/60 border border-slate-800 hover:border-amber-500 text-xs font-bold text-amber-300 transition cursor-pointer">
-                    🟠 ከባድ (3 days)
+                  <button onclick="rateFlashcardLeitner('hard')" class="p-3 rounded-2xl bg-space-950 hover:bg-amber-950/60 border border-slate-800 hover:border-amber-500 text-xs font-bold text-amber-300 transition cursor-pointer flex flex-col items-center gap-0.5">
+                    <span>🟠 ከባድ</span>
+                    <span class="text-[9px] text-slate-500 font-mono">3 days</span>
                   </button>
-                  <button onclick="rateFlashcardLeitner('good')" class="p-2.5 rounded-xl bg-space-950 hover:bg-emerald-950/60 border border-slate-800 hover:border-emerald-500 text-xs font-bold text-emerald-300 transition cursor-pointer">
-                    🟢 ጥሩ (7 days)
+                  <button onclick="rateFlashcardLeitner('good')" class="p-3 rounded-2xl bg-space-950 hover:bg-emerald-950/60 border border-slate-800 hover:border-emerald-500 text-xs font-bold text-emerald-300 transition cursor-pointer flex flex-col items-center gap-0.5">
+                    <span>🟢 ጥሩ</span>
+                    <span class="text-[9px] text-slate-500 font-mono">7 days</span>
                   </button>
-                  <button onclick="rateFlashcardLeitner('easy')" class="p-2.5 rounded-xl bg-space-950 hover:bg-cyan-950/60 border border-slate-800 hover:border-cyan-500 text-xs font-bold text-cyan-300 transition cursor-pointer">
-                    🔵 ቀላል (14 days)
+                  <button onclick="rateFlashcardLeitner('easy')" class="p-3 rounded-2xl bg-space-950 hover:bg-cyan-950/60 border border-slate-800 hover:border-cyan-500 text-xs font-bold text-cyan-300 transition cursor-pointer flex flex-col items-center gap-0.5">
+                    <span>🔵 ቀላል</span>
+                    <span class="text-[9px] text-slate-500 font-mono">14 days</span>
                   </button>
                 </div>
               </div>
 
               <!-- Flashcard Navigation Controls -->
-              <div class="flex items-center justify-center gap-3 mt-4 flex-wrap">
-                <button onclick="prevFlashcard()" class="px-4 py-2 rounded-xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white cursor-pointer">
-                  ← Previous
+              <div class="flex items-center justify-center gap-3 pt-2 flex-wrap">
+                <button onclick="prevFlashcard()" class="px-5 py-2.5 rounded-2xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white cursor-pointer transition">
+                  ← የቀደመው (Prev)
                 </button>
-                <button onclick="flipFlashcard()" class="px-4 py-2 rounded-xl bg-space-850 border border-emerald-500/30 text-xs font-bold text-emerald-300 hover:text-white cursor-pointer">
-                  Flip Card ↺
+                <button onclick="flipFlashcard()" class="px-5 py-2.5 rounded-2xl bg-space-850 border border-emerald-500/30 text-xs font-bold text-emerald-300 hover:text-white cursor-pointer transition">
+                  ግለጥ (Flip ↺)
                 </button>
-                <button onclick="nextFlashcard()" class="px-4 py-2 rounded-xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white cursor-pointer">
-                  Next →
+                <button onclick="nextFlashcard()" class="px-5 py-2.5 rounded-2xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white cursor-pointer transition">
+                  ቀጣይ (Next →)
                 </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- GIZMO MODE 2: WRITE / TYPE RECALL -->
+          <div id="reciteMode-type" class="${activeReciteMode === 'type' ? '' : 'hidden'} space-y-6">
+            <div class="max-w-xl mx-auto py-2 space-y-5">
+              <div class="p-6 rounded-3xl bg-space-950 border border-slate-800 space-y-4">
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                  <span class="text-purple-400 font-black uppercase tracking-wider">✍️ GIZMO TYPE-IN CHALLENGE</span>
+                  <span id="typeRecallCardCounter" class="font-mono text-amber-400 font-bold">Question 1 of ${st.reciteFlashcards.length}</span>
+                </div>
+
+                <h4 id="typeRecallQuestion" class="text-base sm:text-lg font-black text-white leading-relaxed font-display">
+                  ${st.reciteFlashcards[0].q}
+                </h4>
+
+                <div class="space-y-3 pt-2">
+                  <input type="text" id="typeRecallInput" onkeydown="if(event.key==='Enter') checkTypeRecallAnswer()" placeholder="ትክክለኛውን ቃል ወይም መልስ እዚህ ጻፍ..." class="w-full bg-space-900 border border-slate-700 text-slate-100 text-sm rounded-2xl px-4 py-3.5 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                  
+                  <div class="flex items-center justify-between gap-3">
+                    <button onclick="checkTypeRecallAnswer()" class="flex-1 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-xs sm:text-sm shadow-lg shadow-purple-600/30 transition cursor-pointer">
+                      መልሴን አረጋግጥ (Check Answer) ➔
+                    </button>
+                    <button onclick="revealTypeRecallAnswer()" class="px-4 py-3 rounded-2xl bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white font-bold text-xs transition cursor-pointer">
+                      መልሱን እይ
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Type Recall Feedback Box -->
+                <div id="typeRecallFeedback" class="hidden p-4 rounded-2xl border transition"></div>
               </div>
             </div>
           </div>
 
-          <!-- Mode 2: Free Recall Journal -->
+          <!-- GIZMO MODE 3: SPEED MATCH PAIRS GAME -->
+          <div id="reciteMode-match" class="${activeReciteMode === 'match' ? '' : 'hidden'} space-y-6">
+            <div class="max-w-2xl mx-auto py-2 space-y-4">
+              <div class="flex items-center justify-between flex-wrap gap-2 text-xs">
+                <div>
+                  <span class="text-emerald-400 font-black uppercase tracking-wider">🧩 GIZMO SPEED MATCH GAME</span>
+                  <p class="text-slate-400">ጥያቄውን እና ትክክለኛ መልሱን ጠቅ በማድረግ አዛምድ!</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span id="matchGameScore" class="font-mono text-amber-400 font-bold bg-space-950 px-3 py-1 rounded-xl border border-slate-800">0 / 0 Matched</span>
+                  <button onclick="initMatchGame()" class="px-3 py-1 rounded-xl bg-space-850 hover:bg-space-800 text-slate-300 text-xs font-bold transition cursor-pointer">↺ ዳግም ጀምር</button>
+                </div>
+              </div>
+
+              <!-- Shuffled Grid of Match Tiles -->
+              <div id="matchTilesGrid" class="grid grid-cols-2 gap-3 pt-2">
+                <!-- Dynamically populated match tiles -->
+              </div>
+
+              <div id="matchVictoryBanner" class="hidden p-6 rounded-3xl bg-gradient-to-r from-emerald-950 via-space-900 to-emerald-950 border border-emerald-500/50 text-center space-y-2">
+                <span class="text-3xl">🎉</span>
+                <h4 class="text-lg font-black text-white font-display">ድንቅ ነው! ሁሉንም አዛምደሃል!</h4>
+                <p class="text-xs text-emerald-300">+35 XP ተጨምሯል ✔</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- GIZMO MODE 4: FREE RECALL JOURNAL -->
           <div id="reciteMode-journal" class="${activeReciteMode === 'journal' ? '' : 'hidden'} space-y-5">
-            <div class="p-5 sm:p-6 rounded-2xl bg-space-950 border border-slate-800 space-y-4">
+            <div class="p-5 sm:p-6 rounded-3xl bg-space-950 border border-slate-800 space-y-4">
               <div class="flex items-center justify-between border-b border-slate-850 pb-3">
                 <span class="text-xs sm:text-sm font-black text-white flex items-center gap-2 font-display">
                   <span>✍️</span> የራስ አገላለጽ ማህደር (FREE RECALL JOURNAL)
                 </span>
                 <span class="text-xs font-bold text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
-                  Memory Retrieval
+                  Active Retrieval
                 </span>
               </div>
               <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                ያለ ምንም እርዳታ፣ የዚህን ርዕስ ዋና ዋና ነጥቦች፣ ቀመሮች እና ትርጓሜዎች በራስህ አባባል ጻፍ። ከጻፍክ በኋላ "ከመደበኛው ጋር አነጻጽር" የሚለውን ቁልፍ በመንካት ትክክለኛነትህን አረጋግጥ!
+                ያለ ምንም እርዳታ፣ የዚህን ርዕስ ዋና ዋና ነጥቦች፣ ቀመሮች እና ትርጓሜዎች በራስህ አባባል ጻፍ። ከጻፍክ በኋላ "ከመደበኛው ጋር አነጻጽር" የሚለውን በመንካት ትክክለኛነትህን አረጋግጥ!
               </p>
-              <textarea id="freeRecallInput" placeholder="ያስታወስካቸውን ዋና ዋና ነጥቦች እዚህ ጻፍ..." class="w-full bg-space-900 border border-slate-800 rounded-xl p-4 text-xs sm:text-sm text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none h-36 resize-none leading-relaxed"></textarea>
+              <textarea id="freeRecallInput" placeholder="ያስታወስካቸውን ዋና ዋና ነጥቦች እዚህ ጻፍ..." class="w-full bg-space-900 border border-slate-800 rounded-2xl p-4 text-xs sm:text-sm text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none h-36 resize-none leading-relaxed"></textarea>
               
               <div class="flex items-center justify-between">
-                <button onclick="compareFreeRecall()" class="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-black text-xs transition flex items-center gap-2 cursor-pointer shadow-md shadow-purple-600/30">
+                <button onclick="compareFreeRecall()" class="px-6 py-3 rounded-2xl bg-purple-600 hover:bg-purple-500 text-white font-black text-xs transition flex items-center gap-2 cursor-pointer shadow-md shadow-purple-600/30">
                   <span>🔍 ከመደበኛው ማስታወሻ ጋር አነጻጽር (+25 XP)</span>
                 </button>
               </div>
@@ -20963,7 +21043,7 @@ const SUBJECT_METADATA = {
               <!-- Side-by-Side Comparison Drawer -->
               <div id="freeRecallComparisonDrawer" class="hidden p-5 rounded-2xl bg-space-900 border border-purple-500/30 space-y-3">
                 <div class="text-xs font-black text-purple-300 uppercase tracking-wider">
-                  የስርዓተ-ትምህርቱ መደበኛ መልስ (Official Ministry Key Idea):
+                  የስርዓተ-ትምህርቱ መደበኛ መልስ (Official Ministry Standard):
                 </div>
                 <div class="text-xs sm:text-sm text-slate-200 bg-space-950 p-4 rounded-xl border border-slate-800 leading-relaxed">
                   ${st.survey.blueprint}
@@ -20987,61 +21067,186 @@ const SUBJECT_METADATA = {
 
         </div>
       `;
+
+      if (activeReciteMode === 'match') {
+        initMatchGame();
+      }
     }
 
     function setReciteMode(mode) {
       soundClick();
       activeReciteMode = mode;
-      const elCards = document.getElementById('reciteMode-flashcards');
-      const elJournal = document.getElementById('reciteMode-journal');
-      const tabCards = document.getElementById('reciteTab-flashcards');
-      const tabJournal = document.getElementById('reciteTab-journal');
+      ['flashcards', 'type', 'match', 'journal'].forEach(m => {
+        const el = document.getElementById('reciteMode-' + m);
+        const tab = document.getElementById('reciteTab-' + m);
+        if (el) {
+          if (m === mode) el.classList.remove('hidden');
+          else el.classList.add('hidden');
+        }
+        if (tab) {
+          if (m === mode) tab.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap bg-purple-600 text-white shadow-md cursor-pointer';
+          else tab.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap text-slate-400 hover:text-white cursor-pointer';
+        }
+      });
 
-      if (mode === 'flashcards') {
-        if (elCards) elCards.classList.remove('hidden');
-        if (elJournal) elJournal.classList.add('hidden');
-        if (tabCards) tabCards.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition bg-purple-600 text-white shadow-md cursor-pointer';
-        if (tabJournal) tabJournal.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-400 hover:text-white cursor-pointer';
-      } else {
-        if (elCards) elCards.classList.add('hidden');
-        if (elJournal) elJournal.classList.remove('hidden');
-        if (tabJournal) tabJournal.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition bg-purple-600 text-white shadow-md cursor-pointer';
-        if (tabCards) tabCards.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-400 hover:text-white cursor-pointer';
-      }
+      if (mode === 'match') initMatchGame();
     }
 
-    function rateFlashcardLeitner(rating) {
-      soundSuccess();
+    // --- Gizmo Type Recall Logic ---
+    let currentTypeIndex = 0;
+
+    function checkTypeRecallAnswer() {
+      const input = document.getElementById('typeRecallInput');
+      const feedback = document.getElementById('typeRecallFeedback');
+      if (!input || !feedback) return;
+
+      const userAns = input.value.trim().toLowerCase();
       const st = getActiveSubtopic();
-      const card = st.reciteFlashcards[currentCardIndex];
-      const cardKey = `${st.id}-c${currentCardIndex}`;
+      const card = st.reciteFlashcards[currentTypeIndex];
+      const correctAns = card.a.trim().toLowerCase();
 
-      const intervals = { again: 1, hard: 3, good: 7, easy: 14 };
-      const days = intervals[rating] || 7;
+      // Check fuzzy matching or inclusion
+      const isCorrect = userAns.length > 2 && (correctAns.includes(userAns) || userAns.includes(correctAns));
 
-      gState.flashcardIntervals[cardKey] = {
-        days: days,
-        nextReview: Date.now() + days * 86400000,
-        rating: rating
-      };
-      gState.totalCardsMastered++;
-      saveState();
-
-      addXp(20, `Flashcard Mastered (${rating})`);
-      showToast(`ካርዱ በ${days} ቀን ውስጥ ለክለሳ ይመጣል! 🧠`);
-      nextFlashcard();
+      feedback.classList.remove('hidden');
+      if (isCorrect) {
+        soundSuccess();
+        triggerConfetti();
+        addXp(20, 'Type-In Match Correct');
+        feedback.className = 'p-4 rounded-2xl bg-emerald-950/80 border border-emerald-500/60 text-xs sm:text-sm text-emerald-200 font-bold space-y-1';
+        feedback.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span>🎉</span> <span>ትክክል ነው! ድንቅ ማስታወስ!</span>
+          </div>
+          <div class="text-xs text-emerald-300/80 font-normal">መደበኛ መልስ፦ ${card.a}</div>
+        `;
+        setTimeout(() => {
+          currentTypeIndex = (currentTypeIndex + 1) % st.reciteFlashcards.length;
+          updateTypeRecallView();
+        }, 1800);
+      } else {
+        soundError();
+        feedback.className = 'p-4 rounded-2xl bg-rose-950/80 border border-rose-500/60 text-xs sm:text-sm text-rose-200 font-bold space-y-1';
+        feedback.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span>✖</span> <span>ትንሽ ተሳስተሃል፤ ትክክለኛው መልስ፦</span>
+          </div>
+          <div class="text-xs sm:text-sm text-white font-mono bg-space-950 p-2.5 rounded-xl border border-rose-500/30">${card.a}</div>
+        `;
+      }
     }
 
-    function compareFreeRecall() {
-      const text = document.getElementById('freeRecallInput')?.value || '';
-      if (!text.trim()) {
-        showToast('በቅድሚያ ያስታወስካቸውን ነጥቦች በሳጥኑ ውስጥ ጻፍ!');
-        return;
+    function revealTypeRecallAnswer() {
+      soundClick();
+      const st = getActiveSubtopic();
+      const card = st.reciteFlashcards[currentTypeIndex];
+      const feedback = document.getElementById('typeRecallFeedback');
+      if (feedback) {
+        feedback.classList.remove('hidden');
+        feedback.className = 'p-4 rounded-2xl bg-space-900 border border-amber-500/40 text-xs sm:text-sm text-amber-200 font-bold space-y-1';
+        feedback.innerHTML = `
+          <div class="text-xs text-amber-400 uppercase font-black">ትክክለኛው መልስ፦</div>
+          <div class="text-xs sm:text-sm text-white font-mono bg-space-950 p-2.5 rounded-xl border border-slate-800">${card.a}</div>
+        `;
       }
-      soundSuccess();
-      addXp(25, 'Free Recall Practiced');
-      const drawer = document.getElementById('freeRecallComparisonDrawer');
-      if (drawer) drawer.classList.remove('hidden');
+    }
+
+    function updateTypeRecallView() {
+      const st = getActiveSubtopic();
+      const card = st.reciteFlashcards[currentTypeIndex];
+      const qEl = document.getElementById('typeRecallQuestion');
+      const counterEl = document.getElementById('typeRecallCardCounter');
+      const input = document.getElementById('typeRecallInput');
+      const feedback = document.getElementById('typeRecallFeedback');
+
+      if (qEl) qEl.innerText = card.q;
+      if (counterEl) counterEl.innerText = 'Question ' + (currentTypeIndex + 1) + ' of ' + st.reciteFlashcards.length;
+      if (input) { input.value = ''; input.focus(); }
+      if (feedback) feedback.classList.add('hidden');
+    }
+
+    // --- Gizmo Speed Match Game Logic ---
+    function initMatchGame() {
+      const st = getActiveSubtopic();
+      const cards = st.reciteFlashcards.slice(0, 4); // Take up to 4 pairs
+      matchPairsLeft = cards.length;
+      matchSelectedTile = null;
+
+      const scoreEl = document.getElementById('matchGameScore');
+      if (scoreEl) scoreEl.innerText = '0 / ' + cards.length + ' Matched';
+
+      const victoryBanner = document.getElementById('matchVictoryBanner');
+      if (victoryBanner) victoryBanner.classList.add('hidden');
+
+      const items = [];
+      cards.forEach((c, idx) => {
+        items.push({ id: 'q-' + idx, pairId: idx, type: 'q', text: c.q });
+        items.push({ id: 'a-' + idx, pairId: idx, type: 'a', text: c.a.length > 80 ? c.a.substring(0, 77) + '...' : c.a });
+      });
+
+      // Fisher-Yates shuffle
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = items[i];
+        items[i] = items[j];
+        items[j] = temp;
+      }
+
+      const grid = document.getElementById('matchTilesGrid');
+      if (!grid) return;
+
+      grid.innerHTML = items.map(item => `
+        <div onclick="tapMatchTile(this, ${item.pairId})" id="tile-${item.id}" class="gizmo-match-tile p-4 rounded-2xl bg-space-950 border border-slate-800 text-xs sm:text-sm text-slate-200 font-bold flex items-center justify-center text-center min-h-[72px] shadow-sm">
+          <span>${item.text}</span>
+        </div>
+      `).join('');
+    }
+
+    function tapMatchTile(tileEl, pairId) {
+      if (tileEl.classList.contains('matched') || tileEl === matchSelectedTile?.el) return;
+
+      soundClick();
+
+      if (!matchSelectedTile) {
+        // First tile selected
+        matchSelectedTile = { el: tileEl, pairId: pairId };
+        tileEl.classList.add('selected');
+      } else {
+        // Second tile selected - check if they match!
+        if (matchSelectedTile.pairId === pairId) {
+          // MATCH!
+          soundSuccess();
+          tileEl.classList.add('matched');
+          matchSelectedTile.el.classList.add('matched');
+          matchSelectedTile.el.classList.remove('selected');
+          matchSelectedTile = null;
+          matchPairsLeft--;
+
+          const st = getActiveSubtopic();
+          const totalPairs = Math.min(4, st.reciteFlashcards.length);
+          const scoreEl = document.getElementById('matchGameScore');
+          if (scoreEl) scoreEl.innerText = (totalPairs - matchPairsLeft) + ' / ' + totalPairs + ' Matched';
+
+          if (matchPairsLeft <= 0) {
+            triggerConfetti();
+            addXp(35, 'Gizmo Speed Match Completed');
+            const victoryBanner = document.getElementById('matchVictoryBanner');
+            if (victoryBanner) victoryBanner.classList.remove('hidden');
+          }
+        } else {
+          // MISMATCH!
+          soundError();
+          tileEl.classList.add('border-rose-500', 'bg-rose-950/40');
+          matchSelectedTile.el.classList.add('border-rose-500', 'bg-rose-950/40');
+          setTimeout(() => {
+            tileEl.classList.remove('selected', 'border-rose-500', 'bg-rose-950/40');
+            if (matchSelectedTile) {
+              matchSelectedTile.el.classList.remove('selected', 'border-rose-500', 'bg-rose-950/40');
+              matchSelectedTile = null;
+            }
+          }, 450);
+        }
+      }
     }
 
     // =========================================================================
@@ -22041,6 +22246,28 @@ const SUBJECT_METADATA = {
             btn.className = 'tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap cursor-pointer';
           } else {
             btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap cursor-pointer';
+          }
+        }
+      });
+
+      // Synchronize Gizmo Mobile Bottom Navigation Bar
+      const bottomNavMapping = {
+        'dashboard': 'bottomNav-dashboard',
+        'sq3r': 'bottomNav-sq3r',
+        'exam-hall': 'bottomNav-exam-hall',
+        'exam': 'bottomNav-exam-hall',
+        'reference': 'bottomNav-reference',
+        'ref': 'bottomNav-reference',
+        'rewards': 'bottomNav-rewards'
+      };
+
+      ['dashboard', 'sq3r', 'exam-hall', 'reference', 'rewards'].forEach(navKey => {
+        const bNavBtn = document.getElementById('bottomNav-' + navKey);
+        if (bNavBtn) {
+          if (bottomNavMapping[tabId] === 'bottomNav-' + navKey) {
+            bNavBtn.className = 'flex flex-col items-center gap-1 text-emerald-400 font-black transition cursor-pointer p-1 scale-105';
+          } else {
+            bNavBtn.className = 'flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition cursor-pointer p-1';
           }
         }
       });
@@ -23550,72 +23777,6 @@ const SUBJECT_METADATA = {
     }
 
     // =========================================================================
-    // FLOATING SMART STUDY ASSISTANT (DR. DESTA • PEDAGOGICAL AI GUIDE)
-    // =========================================================================
-    function toggleStudyAssistant() {
-      soundClick();
-      const modal = document.getElementById('studyAssistantModal');
-      if (!modal) return;
-      modal.classList.toggle('hidden');
-
-      if (!modal.classList.contains('hidden')) {
-        const st = getActiveSubtopic();
-        const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
-        const meta = SUBJECT_METADATA[gState.activeSubject] || { am: '', name: sub.name };
-        const badge = document.getElementById('assistantTopicBadge');
-        if (badge) badge.innerText = `ዒላማ: ${meta.name} (${meta.am}) • ${st.code} ${st.title}`;
-      }
-    }
-
-    function askAssistant(promptType) {
-      soundClick();
-      const st = getActiveSubtopic();
-      const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
-      const meta = SUBJECT_METADATA[gState.activeSubject] || { am: '', name: sub.name };
-      const resEl = document.getElementById('assistantResponseText');
-      if (!resEl) return;
-
-      resEl.innerHTML = '<span class="text-emerald-400 animate-pulse">ዶ/ር ደስታ እያሰበ ነው... 🤖</span>';
-
-      setTimeout(() => {
-        let answer = '';
-
-        if (promptType === 'simpler') {
-          answer = `
-            <strong class="text-emerald-300 font-bold">💡 ቀለል ያለ የአማርኛ ማብራሪያ፦</strong><br><br>
-            ሰላም! የ${st.title} ዋና ፅንሰ-ሀሳብ በቀላሉ ሲገለጽ፦ <em>${st.survey.blueprint}</em> ማለት ነው።<br><br>
-            ይህ ማለት ውስብስብ የሆኑ የፈተና ጥያቄዎች ቢመጡም፣ መሰረታዊ ህጉ አንድ ብቻ ነው። ይህንን ህግ አንዴ ከጨበጥክ የትኛውም ጥያቄ አያደናግርህም!
-          `;
-        } else if (promptType === 'example') {
-          answer = `
-            <strong class="text-amber-300 font-bold">🌍 የዕለት ተዕለት የኢትዮጵያ ነባራዊ ምሳሌ፦</strong><br><br>
-            ይህንን ፅንሰ-ሀሳብ በዕለት ተዕለት ኑሮአችን ውስጥ በቀላሉ ለመረዳት፦<br>
-            ${getCurriculumIntel(st, 'anchor')}
-          `;
-        } else if (promptType === 'hint') {
-          answer = `
-            <strong class="text-rose-300 font-bold">🎯 የሚኒስቴር ፈተና ወጥመድ ፍንጭ፦</strong><br><br>
-            ተማሪዎች በዚህ ርዕስ ስር በብዛት የሚሳሳቱባቸው ነጥቦች፦<br>
-            ${getCurriculumIntel(st, 'pitfall')}<br><br>
-            <strong>ዶ/ር ደስታ የሚሰጥህ ምክር፦</strong> ጥያቄውን ስታነብ ሁልጊዜ የተሰጡትን መረጃዎች እና የሚጠየቀውን ጥያቄ በደብተርህ ላይ ለይተህ ጻፍ!
-          `;
-        } else if (promptType === 'recap') {
-          answer = `
-            <strong class="text-cyan-300 font-bold">📝 የትምህርቱ 3 ዋና ዋና ነጥቦች (3-Point Recap):</strong><br><br>
-            <ol class="list-decimal list-inside space-y-1.5 text-slate-200">
-              <li><strong>ዋና ሕግ፦</strong> ${st.survey.keyFormulas || st.survey.blueprint.substring(0, 70)}</li>
-              <li><strong>የስሌት ወይም የትንታኔ ደረጃ፦</strong> ${st.example.title}</li>
-              <li><strong>የፈተና ስልት፦</strong> በStage 5 የተሰጡትን 4 አማራጮች ደረጃ በደረጃ በመተንተን ትክክለኛውን መለየት።</li>
-            </ol>
-          `;
-        }
-
-        resEl.innerHTML = answer;
-        soundSuccess();
-      }, 350);
-    }
-
-
     window.addEventListener('DOMContentLoaded', () => {
       const bypass = document.getElementById('gateBypassToggle');
       if (bypass) bypass.checked = gState.gateBypass;
