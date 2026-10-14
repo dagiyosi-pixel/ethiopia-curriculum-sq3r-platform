@@ -86,6 +86,7 @@ const SUBJECT_METADATA = {
       activeSubtopicId: 'g7-m-1.1',
       currentStep: 'survey',
       gateBypass: false,
+      studentName: 'ዳግማዊ (Dagi)',
       xp: 450,
       level: 2,
       gems: 150,
@@ -98,7 +99,13 @@ const SUBJECT_METADATA = {
       completedSteps: {
         'g7-m-1.1': ['survey']
       },
-      masteredSubtopics: {}
+      masteredSubtopics: {},
+      customQuestions: {},
+      userNotes: {},
+      flashcardIntervals: {},
+      reconProgress: {},
+      xrayActive: false,
+      activeFontSize: 'md'
     };
 
     let gState = JSON.parse(localStorage.getItem('sq3r_ethiopia_cba_state')) || 
@@ -106,6 +113,13 @@ const SUBJECT_METADATA = {
                  DEFAULT_APP_STATE;
     if (!gState.masteredSubtopics) gState.masteredSubtopics = {};
     if (!gState.unlockedBadges) gState.unlockedBadges = ['adwa', 'lucy', 'gerd'];
+    if (!gState.customQuestions) gState.customQuestions = {};
+    if (!gState.userNotes) gState.userNotes = {};
+    if (!gState.flashcardIntervals) gState.flashcardIntervals = {};
+    if (!gState.reconProgress) gState.reconProgress = {};
+    if (!gState.studentName) gState.studentName = 'ዳግማዊ (Dagi)';
+    if (gState.xrayActive === undefined) gState.xrayActive = false;
+    if (!gState.activeFontSize) gState.activeFontSize = 'md';
 
     function saveState() {
       localStorage.setItem('sq3r_ethiopia_cba_state', JSON.stringify(gState));
@@ -540,8 +554,207 @@ const SUBJECT_METADATA = {
       mapContainer.innerHTML = html;
     }
 
+
     // =========================================================================
-    // RENDER CURRENT SQ3R STEP
+    // CURRICULUM INTELLIGENCE & CONSTELLATION ENGINE
+    // =========================================================================
+    function getCurriculumIntel(st, nodeKey) {
+      const subject = gState.activeSubject;
+      const title = st.title;
+      const code = st.code;
+      const bp = st.survey.blueprint;
+      const formula = st.survey.keyFormulas || 'Standard Method & Axioms';
+
+      const intelMap = {
+        prereq: {
+          math: `ይህ ርዕስ ከዚህ በፊት የተማርካቸውን የመሠረታዊ ቁጥሮች እና የስሌት ደንቦች (Basic Arithmetic & Fractions) በቀጥታ መሠረት ያደረገ ነው። በቅድሚያ የአሃዞችን ዋጋ እና የክፍልፋይ ስሌቶችን ማስታወስህ ለዚህ ርዕስ ከፍተኛ እገዛ ያደርጋል።`,
+          science: `የሳይንሳዊ ምልከታ እና የሙከራ ደንቦች (Laboratory Safety & Units of Measurement) መነሻ ናቸው። የSI አሃዶችን እና የትንታኔ መርሆችን ማስታወስ ይገባል።`,
+          english: `Requires basic vocabulary, parts of speech (Nouns, Verbs, Adjectives), and basic sentence structures studied in primary grades.`,
+          social: `የካርታ ንባብ መርሆዎች፣ አቅጣጫዎች እና የመልክአ-ምድራዊ አቀማመጥ እውቀትን መነሻ ያደርጋል።`,
+          citizenship: `በህብረተሰብ ውስጥ የሰላማዊ አብሮ መኖር፣ የቤተሰብ እና የትምህርት ቤት ህጎች መነሻ ናቸው።`,
+          it: `የኮምፒውተር መሠረታዊ ክፍሎች (Hardware & Software) እና የቁልፍ ሰሌዳ አጠቃቀም መነሻ ናቸው።`
+        },
+        core: {
+          math: `<strong>ዋናው ማዕከላዊ ፅንሰ-ሀሳብ፦</strong> ${bp}<br><br>የዚህ ርዕስ ዋና ዓላማ ተማሪው የሒሳብ መዋቅሮችን፣ ቀመሮችን እና የአሰራር ቅደም ተከተሎችን በአግባቡ ተረድቶ በፈተናም ሆነ በዕለት ተዕለት ኑሮው ተግባራዊ እንዲያደርግ ማስቻል ነው።`,
+          science: `<strong>ዋናው ሳይንሳዊ መርህ፦</strong> ${bp}<br><br>ተፈጥሮአዊ ክስተቶችን በምክንያት እና በውጤት (Cause and Effect) በማገናዘብ ሳይንሳዊ ድምዳሜ ላይ መድረስ።`,
+          english: `<strong>Core Language Competency:</strong> ${bp}<br><br>Mastering authentic linguistic context, active comprehension, and syntactic accuracy.`,
+          social: `<strong>የኅብረተሰብ እና የአካባቢ ግንኙነት፦</strong> ${bp}<br><br>ታሪካዊ፣ ጂኦግራፊያዊ እና ኢኮኖሚያዊ ክስተቶችን ከኢትዮጵያ ነባራዊ ሁኔታ ጋር ማስተሳሰር።`,
+          citizenship: `<strong>የዜግነት መብትና ግዴታ፦</strong> ${bp}<br><br>ዲሞክራሲያዊ ተቋማትን ማክበር፣ የህግ የበላይነት እና ኃላፊነት የሚሰማው ዜጋ መሆን።`,
+          it: `<strong>የዲጂታል ቴክኖሎጂ መርህ፦</strong> ${bp}<br><br>የኮምፒውተር ቴክኖሎጂን ለምርታማነት፣ ለፈጠራ እና ለእውቀት ማበልጸጊያ መጠቀም።`
+        },
+        formula: {
+          math: `<strong>ቁልፍ ቀመር / ሕግ፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>ይህ ቀመር በደረጃዎች ተተንትኖ የሚሰራ ሲሆን፣ በክልላዊ ፈተናዎች ላይ ቀጥተኛ ስሌት ይጠየቅበታል።`,
+          science: `<strong>ሳይንሳዊ ሕግ እና እኩልዮሽ፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>የአሃዶች ልኬት (Units) እንዳይዘነጋ ጥንቃቄ ያድርጉ።`,
+          english: `<strong>Grammar Rule / Structural Pattern:</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>Always observe subject-verb agreement and contextual tense continuity.`,
+          social: `<strong>የመልክአ-ምድር ወይም የታሪክ ቀመር / ሕግጋት፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>ካርታዎች እና መረጃዎች የሚሰሉበት መደበኛ መለኪያ።`,
+          citizenship: `<strong>የህገ-መንግስት እና የህግ ድንጋጌዎች፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>መብቶች ከግዴታዎች ጋር ተመጣጣኝ መሆን አለባቸው።`,
+          it: `<strong>የኮምፒውተር ሥርዓት ደንብ፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>የመረጃ ሂደት ቅደም ተከተል (Input ➔ Process ➔ Output ➔ Storage)።`
+        },
+        pitfall: {
+          math: `<strong>የሚኒስቴር ፈተና ወጥመድ ራዳር (Exam Pitfall):</strong><br>ተማሪዎች አብዛኛውን ጊዜ በምልክቶች (+/-)፣ በቅደም-ተከተል (Order of Operations) እና ክፍልፋዮችን በማቅለል ወቅት ይሳሳታሉ። ፈታኙ አማራጮች ውስጥ የተሳሳተውን መልስ አስቀድሞ ያስቀምጣል!`,
+          science: `<strong>የሚኒስቴር ፈተና ወጥመድ ራዳር (Exam Pitfall):</strong><br>አሃዶችን (Units) አለመቀየር (ለምሳሌ cm ወደ m፣ ወይም g ወደ kg) እና የሳይንሳዊ ቃላትን ትክክለኛ ፍቺ አለመረዳት ዋና ዋና የስህተት ምንጮች ናቸው።`,
+          english: `<strong>Ministry Exam Pitfall:</strong><br>Watch out for irregular verb forms, false cognates, and prepositions that change meaning in phrasal verbs.`,
+          social: `<strong>የፈተና ወጥመድ፦</strong><br>የዘመናት ቅደም ተከተል (Chronology) ማምታታት እና የመልክአ-ምድራዊ መጋጠሚያዎችን (Coordinates) በስህተት ማንበብ።`,
+          citizenship: `<strong>የፈተና ወጥመድ፦</strong><br>መብትን ከነጻነት፣ እንዲሁም ህጋዊ ግዴታን ከሞራላዊ ግዴታ ጋር ማደባለቅ።`,
+          it: `<strong>የፈተና ወጥመድ፦</strong><br>የማስታወሻ አይነቶችን (RAM vs ROM) እና Input vs Output መሳሪያዎችን ማምታታት።`
+        },
+        anchor: {
+          math: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>የኢትዮጵያ ብር የገንዘብ ዝውውር፣ የታላቁ የሕዳሴ ግድብ የኮንክሪት መጠን ስሌት፣ እና የላሊበላ ውቅር አብያተ-ክርስቲያናት ምህንድስና ስሌት የዚህ ርዕስ ቀጥተኛ ተግባራዊ ምሳሌዎች ናቸው።`,
+          science: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>የስምጥ ሸለቆ (Great Rift Valley) መፈጠር፣ የኤርታሌ እሳተ-ጎመራ የጂኦሎጂካል ሂደት፣ እና የአዋሽ ተፋሰስ ስነ-ምህዳር ጥናት።`,
+          english: `<strong>Ethiopian Contextual Connection:</strong><br>Describing Ethiopian historic heritage, tourism in the Simien Mountains, and cultural coffee ceremonies using rich academic English.`,
+          social: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>በአፋር ሃዳር የተገኘችው ድንቅነሽ (Lucy/Australopithecus afarensis)፣ የአክሱም ስልጣኔ የንግድ መስመር፣ እና የዓድዋ ድል ታሪካዊ ፋይዳ።`,
+          citizenship: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>የኢትዮጵያ ባህላዊ የግጭት አፈታት ስልቶች (ሽምግልና)፣ የብሔር ብሔረሰቦች ባህል እና የፌዴራል ስርዓት ግንባታ።`,
+          it: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>በኢትዮጵያ የቴሌኮም ማስፋፊያ፣ የትምህርት ቤት የኮምፒውተር ላቦራቶሪዎች እና የፊደል (Ge'ez script) ዲጂታይዜሽን።`
+        }
+      };
+
+      const fallback = intelMap[nodeKey] && intelMap[nodeKey][subject] 
+        ? intelMap[nodeKey][subject] 
+        : `<strong>${title}:</strong> ${bp}`;
+      return fallback;
+    }
+
+    // =========================================================================
+    // STAGE 1: SURVEY RECONNAISSANCE ENGINE
+    // =========================================================================
+    let activeConstellationNode = 'core';
+
+    function selectConstellationNode(nodeKey) {
+      soundClick();
+      activeConstellationNode = nodeKey;
+      const st = getActiveSubtopic();
+      const intelHtml = getCurriculumIntel(st, nodeKey);
+
+      const drawer = document.getElementById('reconIntelDrawer');
+      const titleEl = document.getElementById('reconIntelTitle');
+      const contentEl = document.getElementById('reconIntelContent');
+
+      const titles = {
+        prereq: '🌐 1. መነሻ እውቀት እና ቅድመ-ግንዛቤ (Prerequisites & Bridge)',
+        core: '🏛️ 2. ዋናው ፅንሰ-ሀሳብ (Architectural Anchor Concept)',
+        formula: '⚡ 3. ቁልፍ ቀመር / ሕግጋት (Core Law & Formulas)',
+        pitfall: '🎯 4. የሚኒስቴር ፈተና ወጥመድ ራዳር (Exam Pitfall Radar)',
+        anchor: '🇪🇹 5. የኢትዮጵያ እውነታ ትስስር (Ethiopian Real-World Anchor)'
+      };
+
+      if (titleEl) titleEl.innerHTML = titles[nodeKey] || 'Reconnaissance Intelligence';
+      if (contentEl) contentEl.innerHTML = intelHtml;
+      if (drawer) {
+        drawer.classList.remove('hidden');
+        drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      // Update Node button styling
+      ['prereq', 'core', 'formula', 'pitfall', 'anchor'].forEach(key => {
+        const btn = document.getElementById(`nodeBtn-${key}`);
+        if (btn) {
+          if (key === nodeKey) {
+            btn.className = 'constellation-node active-node p-3 sm:p-4 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400 text-white shadow-lg shadow-emerald-500/30 flex flex-col items-center text-center cursor-pointer transition';
+          } else {
+            btn.className = 'constellation-node p-3 sm:p-4 rounded-2xl bg-space-950/90 border border-slate-800 text-slate-300 hover:border-emerald-500/40 hover:text-white flex flex-col items-center text-center cursor-pointer transition';
+          }
+        }
+      });
+
+      advanceReconMeter(15);
+    }
+
+    function toggleXRayScanner() {
+      soundClick();
+      gState.xrayActive = !gState.xrayActive;
+      saveState();
+
+      const btn = document.getElementById('xrayScannerToggleBtn');
+      const container = document.getElementById('surveyNotesContainer');
+
+      if (gState.xrayActive) {
+        if (btn) {
+          btn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/30 cursor-pointer radar-pulse';
+          btn.innerHTML = '<span>🔬</span> <span>X-Ray Scanner: ON</span>';
+        }
+        if (container) container.classList.add('xray-active');
+        showToast('🔬 X-Ray Scanner ነቅቷል! ቁልፍ ቃላቶች በደማቅ ያበራሉ፤ ጠቅ በማድረግ ፈጣን ማብራሪያ ተመልከት።');
+        advanceReconMeter(20);
+      } else {
+        if (btn) {
+          btn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-space-900 border border-slate-700 text-slate-300 hover:text-white cursor-pointer';
+          btn.innerHTML = '<span>🔬</span> <span>X-Ray Scanner: OFF</span>';
+        }
+        if (container) container.classList.remove('xray-active');
+      }
+    }
+
+    function showXRayTermInsight(term) {
+      soundClick();
+      const st = getActiveSubtopic();
+      const msg = `<strong>📌 ፅንሰ-ሀሳብ፦ ${term}</strong><br>በ${st.code} ${st.title} ስር ወሳኝ የሆነ የፈተና ቃል ነው። ትርጉሙንና አሰራሩን በStage 3 ንባብ ውስጥ በዝርዝር ተመልከት!`;
+      
+      const drawer = document.getElementById('reconIntelDrawer');
+      const titleEl = document.getElementById('reconIntelTitle');
+      const contentEl = document.getElementById('reconIntelContent');
+
+      if (titleEl) titleEl.innerHTML = `🔬 X-Ray Insight: ${term}`;
+      if (contentEl) contentEl.innerHTML = msg;
+      if (drawer) {
+        drawer.classList.remove('hidden');
+        drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      advanceReconMeter(10);
+    }
+
+    function flipCuriosityProbe(idx) {
+      soundFlip();
+      const card = document.getElementById(`probeCard-${idx}`);
+      if (card) {
+        card.classList.toggle('is-flipped');
+        if (card.classList.contains('is-flipped')) {
+          addXp(15, 'Curiosity Probe Unlocked');
+          advanceReconMeter(15);
+        }
+      }
+    }
+
+    function advanceReconMeter(amount) {
+      const stId = gState.activeSubtopicId;
+      const current = gState.reconProgress[stId] || 20;
+      const next = Math.min(100, current + amount);
+      gState.reconProgress[stId] = next;
+      saveState();
+
+      const meter = document.getElementById('surveyReconMeter');
+      const badge = document.getElementById('reconMeterBadge');
+      if (meter) meter.style.width = `${next}%`;
+      if (badge) badge.innerText = `${next}% Recon Complete`;
+
+      if (next >= 100) {
+        const finishBtn = document.getElementById('finishSurveyBtn');
+        if (finishBtn) {
+          finishBtn.className = 'px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-emerald-500/30 hover:scale-105 active:scale-95 transition flex items-center gap-2 cursor-pointer border border-emerald-400';
+          finishBtn.innerHTML = '<span>🚀 Recon 100% Complete! Advance to Questions (+35 XP)</span> <span>👉</span>';
+        }
+      }
+    }
+
+    // Wrap high-yield terms with xray-term spans
+    function enrichNotesWithXRay(rawHtml) {
+      const keywords = [
+        'Rational Numbers', 'Repeating Decimals', 'Terminating Decimals', 'Set', 'Element', 'Subset',
+        'Scientific Method', 'Measurement', 'Cell', 'Photosynthesis', 'Ecosystem',
+        'Gravity', 'Force', 'Motion', 'Velocity', 'Acceleration',
+        'Democracy', 'Human Rights', 'Rule of Law', 'Constitution', 'Tolerance',
+        'Earth', 'Solar System', 'Plate Tectonics', 'Volcano', 'Earthquake', 'Climate',
+        'CPU', 'RAM', 'ROM', 'Hardware', 'Software', 'Algorithm', 'Network'
+      ];
+      let res = rawHtml;
+      keywords.forEach(kw => {
+        const regex = new RegExp(`\\b(${kw})\\b`, 'gi');
+        res = res.replace(regex, `<span class="xray-term" onclick="showXRayTermInsight('$1')">$1</span>`);
+      });
+      return res;
+    }
+
+    // =========================================================================
+    // RENDER CURRENT SQ3R STEP WITH DEEP AMHARIC INTERPRETATIONS & BABY STEPS
     // =========================================================================
     function renderCurrentStep() {
       const container = document.getElementById('stepContentContainer') || document.getElementById('sq3rStageContainer');
@@ -549,495 +762,1031 @@ const SUBJECT_METADATA = {
       const st = getActiveSubtopic();
       const s = gState.currentStep;
 
-      // 1. SURVEY
+      // 1. SURVEY (ቅኝት)
       if (s === 'survey') {
-        container.innerHTML = `
-          <div class="space-y-6 animate-fadeIn">
-            <div class="glass-crest p-6 rounded-2xl border border-emerald-500/40 relative overflow-hidden">
-              <div class="flex items-center justify-between flex-wrap gap-4 relative z-10 border-b border-emerald-500/30 pb-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xl text-emerald-300 font-black">
-                    🔭
-                  </div>
-                  <div>
-                    <span class="text-xs uppercase font-black text-amber-400 tracking-wider">ደረጃ 1 ከ 5 • የትምህርት ቅኝት (STAGE 1 OF 5: SURVEY)</span>
-                    <h3 class="text-lg sm:text-xl font-black text-white">Syllabus Overview & Structural Blueprint</h3>
-                  </div>
-                </div>
+        renderSurveyStep(st, container);
+      }
+      // 2. QUESTION (ጥያቄ)
+      else if (s === 'question') {
+        renderQuestionStep(st, container);
+      }
+      // 3. READ (ንባብ እና ዝርዝር የደረጃ በደረጃ ምሳሌዎች)
+      else if (s === 'read') {
+        renderReadStep(st, container);
+      }
+      // 4. RECITE (ንቁ ማስታወስ)
+      else if (s === 'recite') {
+        renderReciteStep(st, container);
+      }
+      // 5. REVIEW (የብቃት ፈተና እና የደረጃ በደረጃ መፍትሔ)
+      else if (s === 'review') {
+        renderReviewStep(st, container);
+      }
+    }
 
-                <!-- 2-Minute Countdown Timer -->
-                <div class="flex items-center gap-2 bg-space-950 px-3.5 py-1.5 rounded-xl border border-emerald-500/30">
-                  <span class="text-xs font-black text-slate-400">የቅኝት ሰዓት (TIMER):</span>
-                  <span id="surveyTimerDisplay" class="font-mono text-xs font-bold text-amber-400">02:00</span>
-                  <button onclick="toggleSurveyTimer()" id="surveyTimerBtn" class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold hover:bg-emerald-500/30 transition">Start</button>
-                  <button onclick="resetSurveyTimer()" class="text-xs px-1.5 py-0.5 rounded text-slate-400 hover:text-white transition">↺</button>
+    // =========================================================================
+    // STAGE 1: SURVEY RECONNAISSANCE ENGINE (EXTREMELY DETAILED & ENGAGING)
+    // =========================================================================
+    function renderSurveyStep(st, container) {
+      const reconPct = gState.reconProgress[st.id] || 25;
+      const isXray = !!gState.xrayActive;
+
+      // Extract high-yield terms for X-Ray
+      const enrichedNotes = isXray ? enrichNotesWithXRay(st.coreNotes) : st.coreNotes;
+
+      container.innerHTML = `
+        <div class="space-y-6 animate-fadeIn">
+          
+          <!-- Tactical Recon Header Banner -->
+          <div class="glass-crest p-6 sm:p-7 rounded-3xl border border-emerald-500/40 relative overflow-hidden shadow-2xl">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative z-10 border-b border-emerald-500/30 pb-5">
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="px-3 py-1 rounded-full text-xs font-black uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>ደረጃ 1 ከ 5 • የእውቀት ቅኝት (STAGE 1: KNOWLEDGE RECON MISSION)</span>
+                  </span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">
+                    ${st.code} Syllabus Recon
+                  </span>
                 </div>
+                <h3 class="text-xl sm:text-2xl font-black text-white font-display">
+                  ${st.code} ${st.title} • የስርዓተ-ትምህርት መዋቅርና ቅኝት
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+                  ከንባብ በፊት የትምህርቱን አጠቃላይ ገጽታ (Big Picture)፣ ዋና ቀመሮች እና የፈተና ሚስጥሮችን በቅኝት ራዳር መርምር። አዕምሮህ መረጃዎችን በፍጥነት ለመቅሰም ዝግጁ ይሆናል።
+                </p>
               </div>
 
-              <!-- Blueprint & Big Idea -->
-              <div class="mt-5 space-y-4 relative z-10">
-                <div class="p-4 rounded-xl bg-space-900/90 border border-slate-800 space-y-2">
-                  <div class="text-[10px] uppercase font-black text-emerald-400 tracking-widest flex items-center gap-1.5">
-                    <span>📡</span> <span>HIGH-LEVEL ARCHITECTURAL BLUEPRINT</span>
-                  </div>
-                  <p class="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
-                    ${st.survey.blueprint}
-                  </p>
-                </div>
-
-                ${st.survey.keyFormulas ? `
-                  <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between gap-3 flex-wrap">
-                    <div class="flex items-center gap-2">
-                      <span class="text-sm">⚡</span>
-                      <span class="text-xs font-black text-emerald-300">CORE THEOREM / FORMULA / LAW:</span>
-                    </div>
-                    <code class="font-mono text-xs font-bold text-amber-300 bg-space-950 px-2.5 py-1 rounded-lg border border-slate-800">
-                      ${st.survey.keyFormulas}
-                    </code>
-                  </div>
-                ` : ''}
-              </div>
-
-              <!-- Skimmable Textbook Overview Notes -->
-              <div class="mt-6 pt-5 border-t border-slate-800/80 relative z-10 space-y-3">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <span class="text-base">📖</span>
-                    <h4 class="text-xs font-black text-amber-400 uppercase tracking-wider">SKIMMABLE TEXTBOOK OVERVIEW & KEY CONCEPTS:</h4>
-                  </div>
-                  <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Active Skim Zone</span>
-                </div>
-
-                <div class="p-4 rounded-xl bg-space-950/80 border border-slate-800 space-y-3 text-xs sm:text-sm text-slate-200 leading-relaxed">
-                  ${st.coreNotes}
-                </div>
-
-                <div class="pt-2 flex justify-between items-center flex-wrap gap-2 text-xs">
-                  <span class="text-slate-400">Want the full working examples & proofs?</span>
-                  <button onclick="setSq3rStep('read')" class="px-3.5 py-1.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-300 font-bold text-xs transition flex items-center gap-1.5">
-                    <span>Open Deep Read & Worked Examples (R1)</span> <span>➔</span>
+              <!-- Controls: Tactical 2-Min Timer & X-Ray Concept Scanner Toggle -->
+              <div class="shrink-0 flex items-center gap-3 flex-wrap">
+                <!-- 2-Minute Tactical Recon Timer -->
+                <div class="flex items-center gap-2 bg-space-950 px-3.5 py-2 rounded-2xl border border-emerald-500/30 shadow-md">
+                  <span class="text-xs font-black text-slate-400">⏱️ ሰዓት:</span>
+                  <span id="surveyTimerDisplay" class="font-mono text-sm font-black text-amber-400">02:00</span>
+                  <button onclick="toggleSurveyTimer()" id="surveyTimerBtn" class="text-xs px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition cursor-pointer">
+                    ጀምር
+                  </button>
+                  <button onclick="resetSurveyTimer()" class="text-xs px-2 py-1 rounded-lg bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white transition cursor-pointer" title="Reset Timer">
+                    ↺
                   </button>
                 </div>
+
+                <!-- X-Ray Concept Scanner Toggle -->
+                <button onclick="toggleXRayScanner()" id="xrayScannerToggleBtn" class="px-3.5 py-2 rounded-2xl text-xs font-black transition flex items-center gap-2 ${isXray ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/30 radar-pulse' : 'bg-space-900 border border-slate-700 text-slate-300 hover:text-white'} cursor-pointer">
+                  <span>🔬</span>
+                  <span>X-Ray Scanner: ${isXray ? 'ON' : 'OFF'}</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Recon Progress Meter Bar (0% to 100%) -->
+            <div class="mt-4 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 relative z-10">
+              <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+                <span>📡 የቅኝት ሽፋን መለኪያ (Reconnaissance Coverage):</span>
+                <span id="reconMeterBadge" class="text-emerald-400 font-mono font-black">${reconPct}% Recon Complete</span>
+              </div>
+              <div class="w-full sm:w-64 h-2.5 bg-space-950 rounded-full overflow-hidden border border-slate-800">
+                <div id="surveyReconMeter" class="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-amber-400 transition-all duration-500" style="width: ${reconPct}%"></div>
+              </div>
+            </div>
+
+            <!-- High-Level Architectural Blueprint & Formulas -->
+            <div class="mt-6 space-y-4 relative z-10">
+              <div class="p-4 sm:p-5 rounded-2xl bg-space-900/90 border border-slate-800 space-y-2">
+                <div class="text-[10px] uppercase font-black text-emerald-400 tracking-widest flex items-center gap-2">
+                  <span>📡</span> <span>HIGH-LEVEL ARCHITECTURAL BLUEPRINT (የፅንሰ-ሀሳብ ማዕቀፍ)</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+                  ${st.survey.blueprint}
+                </p>
               </div>
 
-              <!-- Interactive Recon Scout Checklist -->
-              <div class="mt-6 pt-5 border-t border-slate-800/80 relative z-10 space-y-3">
-                <div class="flex items-center justify-between">
-                  <h4 class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-2">
-                    <span>🔭</span> <span>Mission Scouting Checklist (Verify all 3 objectives):</span>
-                  </h4>
-                  <span id="checklistProgressBadge" class="text-xs font-mono text-amber-400 font-bold">0 / ${st.survey.objectives.length} Verified</span>
+              ${st.survey.keyFormulas ? `
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-space-950 to-emerald-950/40 border border-emerald-500/40 flex items-center justify-between gap-4 flex-wrap">
+                  <div class="flex items-center gap-2.5">
+                    <span class="text-xl">⚡</span>
+                    <div>
+                      <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">ዋናው ሕግ / ቀመር (CORE THEOREM / FORMULA / LAW):</div>
+                      <div class="text-[11px] text-slate-400">በዚህ ርዕስ ስር ያለው ቁልፍ የፈተና መለኪያ ቀመር</div>
+                    </div>
+                  </div>
+                  <code class="font-mono text-xs sm:text-sm font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl border border-amber-500/30 shadow-inner">
+                    ${st.survey.keyFormulas}
+                  </code>
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- 5-Node Interactive Concept Constellation (Knowledge Orbit) -->
+            <div class="mt-8 pt-6 border-t border-slate-800 relative z-10 space-y-4">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl">🌌</span>
+                  <div>
+                    <h4 class="text-xs sm:text-sm font-black text-white uppercase tracking-wider font-display">
+                      የዕውቀት ህብረ-ኮከብ ራዳር (5-NODE CONCEPT CONSTELLATION)
+                    </h4>
+                    <p class="text-xs text-slate-400">የትምህርቱን 5 ቁልፍ አቅጣጫዎች ጠቅ በማድረግ ዝርዝር የአማርኛ ማብራሪያዎችን ተመልከት።</p>
+                  </div>
+                </div>
+                <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-3 py-1 rounded-xl border border-emerald-500/20">
+                  Tap Any Node (+15% Recon)
+                </span>
+              </div>
+
+              <!-- 5 Interactive Orbit Nodes Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" id="constellationGrid">
+                <button onclick="selectConstellationNode('prereq')" id="nodeBtn-prereq" class="constellation-node p-3.5 rounded-2xl bg-space-950/90 border border-slate-800 text-slate-300 hover:border-emerald-500/40 hover:text-white flex flex-col items-center text-center cursor-pointer transition">
+                  <span class="text-2xl mb-1.5">🌐</span>
+                  <span class="text-xs font-black">1. መነሻ እውቀት</span>
+                  <span class="text-[10px] text-slate-400 mt-0.5">Prerequisites</span>
+                </button>
+
+                <button onclick="selectConstellationNode('core')" id="nodeBtn-core" class="constellation-node active-node p-3.5 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400 text-white shadow-lg shadow-emerald-500/30 flex flex-col items-center text-center cursor-pointer transition">
+                  <span class="text-2xl mb-1.5">🏛️</span>
+                  <span class="text-xs font-black">2. ዋና ፅንሰ-ሀሳብ</span>
+                  <span class="text-[10px] text-emerald-300 mt-0.5">Core Anchor</span>
+                </button>
+
+                <button onclick="selectConstellationNode('formula')" id="nodeBtn-formula" class="constellation-node p-3.5 rounded-2xl bg-space-950/90 border border-slate-800 text-slate-300 hover:border-emerald-500/40 hover:text-white flex flex-col items-center text-center cursor-pointer transition">
+                  <span class="text-2xl mb-1.5">⚡</span>
+                  <span class="text-xs font-black">3. ቁልፍ ቀመር</span>
+                  <span class="text-[10px] text-slate-400 mt-0.5">Formulas & Laws</span>
+                </button>
+
+                <button onclick="selectConstellationNode('pitfall')" id="nodeBtn-pitfall" class="constellation-node p-3.5 rounded-2xl bg-space-950/90 border border-slate-800 text-slate-300 hover:border-emerald-500/40 hover:text-white flex flex-col items-center text-center cursor-pointer transition">
+                  <span class="text-2xl mb-1.5">🎯</span>
+                  <span class="text-xs font-black text-rose-400">4. የፈተና ወጥመድ</span>
+                  <span class="text-[10px] text-slate-400 mt-0.5">Exam Pitfalls</span>
+                </button>
+
+                <button onclick="selectConstellationNode('anchor')" id="nodeBtn-anchor" class="constellation-node col-span-2 sm:col-span-1 p-3.5 rounded-2xl bg-space-950/90 border border-slate-800 text-slate-300 hover:border-emerald-500/40 hover:text-white flex flex-col items-center text-center cursor-pointer transition">
+                  <span class="text-2xl mb-1.5">🇪🇹</span>
+                  <span class="text-xs font-black text-amber-400">5. የሀገር እውነታ</span>
+                  <span class="text-[10px] text-slate-400 mt-0.5">Ethiopian Anchor</span>
+                </button>
+              </div>
+
+              <!-- Interactive Recon Intel Drawer (Reveals deep Amharic context) -->
+              <div id="reconIntelDrawer" class="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-space-950 via-space-900 to-space-950 border border-emerald-500/40 space-y-3 relative shadow-xl">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <h5 id="reconIntelTitle" class="text-xs sm:text-sm font-black text-emerald-300 uppercase tracking-wider flex items-center gap-2">
+                    🏛️ 2. ዋናው ፅንሰ-ሀሳብ (Architectural Anchor Concept)
+                  </h5>
+                  <span class="text-[11px] text-amber-400 font-bold">ኢትዮጵያዊ ስርዓተ-ትምህርት (MoE Verified)</span>
+                </div>
+                <div id="reconIntelContent" class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
+                  ${getCurriculumIntel(st, 'core')}
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 Pre-Flight Curiosity Probes (3D Flip Challenge Cards) -->
+            <div class="mt-8 pt-6 border-t border-slate-800 relative z-10 space-y-4">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl">🔮</span>
+                  <div>
+                    <h4 class="text-xs sm:text-sm font-black text-white uppercase tracking-wider font-display">
+                      የቅኝት ፍተሻ ካርዶች (3 PRE-FLIGHT CURIOSITY PROBES)
+                    </h4>
+                    <p class="text-xs text-slate-400">ከማንበብህ በፊት እነዚህን ጥያቄዎች ገምግም፤ ካርዶቹን በመገልበጥ የአዕምሮህን ግንዛቤ ፈትሽ (+15 XP per probe)።</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="curiosityProbesGrid">
+                
+                <!-- Probe 1: Prior Knowledge Prediction -->
+                <div class="perspective-1000 h-44">
+                  <div id="probeCard-0" class="card-flip-container relative w-full h-full cursor-pointer" onclick="flipCuriosityProbe(0)">
+                    <!-- Front -->
+                    <div class="absolute inset-0 backface-hidden p-5 rounded-2xl bg-space-950 border border-slate-800 flex flex-col justify-between hover:border-emerald-500/50 transition">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-emerald-400">ፍተሻ 1 • መነሻ ግምት</span>
+                        <span class="text-base">🔄</span>
+                      </div>
+                      <p class="text-xs font-bold text-white leading-relaxed">
+                        ይህ ርዕስ ከዚህ በፊት ከተማርካቸው መሰረታዊ እውቀቶች ጋር እንዴት ይገናኛል ብለህ ታስባለህ?
+                      </p>
+                      <span class="text-[11px] text-amber-400 font-bold">ካርዱን ግለጥ (Tap to Flip ↺)</span>
+                    </div>
+                    <!-- Back -->
+                    <div class="absolute inset-0 backface-hidden rotate-y-180 p-5 rounded-2xl bg-emerald-950/90 border border-emerald-500/60 flex flex-col justify-between">
+                      <span class="text-xs font-black text-emerald-300">💡 ማረጋገጫ፦</span>
+                      <p class="text-xs text-slate-200 leading-relaxed">
+                        ${st.survey.blueprint.substring(0, 140)}...
+                      </p>
+                      <span class="text-[11px] text-emerald-400 font-black">+15 XP ተገኝቷል ✔</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="space-y-2">
-                  ${st.survey.objectives.map((obj, i) => `
-                    <label class="flex items-start gap-3 p-3 rounded-xl bg-space-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer transition">
-                      <input type="checkbox" id="surveyCheck-${i}" onchange="checkSurveyCompletion()" class="mt-0.5 rounded text-emerald-500 focus:ring-0">
-                      <span class="text-xs text-slate-300 font-medium">${obj}</span>
+                <!-- Probe 2: Exam Pitfall Prediction -->
+                <div class="perspective-1000 h-44">
+                  <div id="probeCard-1" class="card-flip-container relative w-full h-full cursor-pointer" onclick="flipCuriosityProbe(1)">
+                    <!-- Front -->
+                    <div class="absolute inset-0 backface-hidden p-5 rounded-2xl bg-space-950 border border-slate-800 flex flex-col justify-between hover:border-amber-500/50 transition">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-amber-400">ፍተሻ 2 • የፈተና ሚስጥር</span>
+                        <span class="text-base">⚠️</span>
+                      </div>
+                      <p class="text-xs font-bold text-white leading-relaxed">
+                        ፈታኞች በዚህ ርዕስ ስር ተማሪዎችን ለማጥመድ ምን አይነት ስህተት ይጠቀማሉ?
+                      </p>
+                      <span class="text-[11px] text-amber-400 font-bold">ሚስጥሩን ተመልከት (Tap to Flip ↺)</span>
+                    </div>
+                    <!-- Back -->
+                    <div class="absolute inset-0 backface-hidden rotate-y-180 p-5 rounded-2xl bg-amber-950/90 border border-amber-500/60 flex flex-col justify-between">
+                      <span class="text-xs font-black text-amber-300">🎯 የፈተና ጥንቃቄ፦</span>
+                      <p class="text-xs text-slate-200 leading-relaxed">
+                        ምልክቶችን (+/-)፣ አሃዶችን (Units) እና የስሌት ቅደም ተከተልን በጥንቃቄ መከተል ወሳኝ ነው።
+                      </p>
+                      <span class="text-[11px] text-amber-400 font-black">+15 XP ተገኝቷል ✔</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Probe 3: Everyday Connection Prediction -->
+                <div class="perspective-1000 h-44">
+                  <div id="probeCard-2" class="card-flip-container relative w-full h-full cursor-pointer" onclick="flipCuriosityProbe(2)">
+                    <!-- Front -->
+                    <div class="absolute inset-0 backface-hidden p-5 rounded-2xl bg-space-950 border border-slate-800 flex flex-col justify-between hover:border-cyan-500/50 transition">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-cyan-400">ፍተሻ 3 • የዕለት ተዕለት ኑሮ</span>
+                        <span class="text-base">🌍</span>
+                      </div>
+                      <p class="text-xs font-bold text-white leading-relaxed">
+                        ይህ የትምህርት ፅንሰ-ሀሳብ በኢትዮጵያ ነባራዊ ሁኔታ ውስጥ የት ቦታ ተግባራዊ ይሆናል?
+                      </p>
+                      <span class="text-[11px] text-cyan-400 font-bold">ትስስሩን እይ (Tap to Flip ↺)</span>
+                    </div>
+                    <!-- Back -->
+                    <div class="absolute inset-0 backface-hidden rotate-y-180 p-5 rounded-2xl bg-cyan-950/90 border border-cyan-500/60 flex flex-col justify-between">
+                      <span class="text-xs font-black text-cyan-300">🇪🇹 የገሃዱ ዓለም ምሳሌ፦</span>
+                      <p class="text-xs text-slate-200 leading-relaxed">
+                        በንግድ፣ በኢንጂነሪንግ (ግድብ/መንገድ ግንባታ) እና በተፈጥሮ ጥበቃ ውስጥ ወሳኝ ሚና አለው።
+                      </p>
+                      <span class="text-[11px] text-cyan-400 font-black">+15 XP ተገኝቷል ✔</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Skimmable Textbook Overview Notes -->
+            <div class="mt-8 pt-6 border-t border-slate-800 relative z-10 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-lg">📖</span>
+                  <h4 class="text-xs sm:text-sm font-black text-amber-400 uppercase tracking-wider font-display">
+                    የመማሪያ መጽሐፍ አጠቃላይ እይታ (SKIMMABLE TEXTBOOK OVERVIEW)
+                  </h4>
+                </div>
+                <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+                  Active Skim Zone
+                </span>
+              </div>
+
+              <div id="surveyNotesContainer" class="p-5 rounded-2xl bg-space-950/90 border border-slate-800 space-y-3 text-xs sm:text-sm text-slate-200 leading-relaxed font-sans ${isXray ? 'xray-active' : ''}">
+                ${enrichedNotes}
+              </div>
+
+              <div class="pt-2 flex justify-between items-center flex-wrap gap-2 text-xs">
+                <span class="text-slate-400">የተሟላ የደረጃ በደረጃ ስሌትና ማረጋገጫ ትፈልጋለህ?</span>
+                <button onclick="setSq3rStep('read')" class="px-4 py-2 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-300 font-bold text-xs transition flex items-center gap-1.5 cursor-pointer">
+                  <span>ወደ ጥልቅ ንባብና ምሳሌዎች እለፍ (Open Stage 3: Read)</span> <span>➔</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Interactive Recon Scout Checklist -->
+            <div class="mt-8 pt-6 border-t border-slate-800 relative z-10 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2 font-display">
+                  <span>🔭</span> <span>የቅኝት ማረጋገጫ ዝርዝር (Verify All 3 Objectives):</span>
+                </h4>
+                <span id="checklistProgressBadge" class="text-xs font-mono text-amber-400 font-bold">0 / ${st.survey.objectives.length} Verified</span>
+              </div>
+
+              <div class="space-y-2.5">
+                ${st.survey.objectives.map((obj, i) => `
+                  <label class="flex items-start gap-3 p-3.5 rounded-2xl bg-space-900/80 border border-slate-800 hover:border-slate-700 cursor-pointer transition">
+                    <input type="checkbox" id="surveyCheck-${i}" onchange="checkSurveyCompletion()" class="mt-0.5 rounded text-emerald-500 focus:ring-0">
+                    <span class="text-xs sm:text-sm text-slate-200 font-medium">${obj}</span>
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Stage 1 Footer Action -->
+            <div class="mt-8 flex justify-end relative z-10">
+              <button onclick="finishSurveyStep()" id="finishSurveyBtn" class="px-7 py-3.5 rounded-2xl bg-space-800 text-slate-500 font-black text-xs sm:text-sm border border-slate-700 transition flex items-center gap-2 cursor-pointer">
+                <span>የቅኝት ዝርዝሩን አረጋግጥ (Verify Checklist to Unlock)</span> <span>🔒</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      `;
+
+      initSurveyTimer();
+      checkSurveyCompletion();
+    }
+
+    // =========================================================================
+    // STAGE 2: QUESTION ENGINE WITH CUSTOM INQUIRIES & AMHARIC STARTERS
+    // =========================================================================
+    function renderQuestionStep(st, container) {
+      const customQs = gState.customQuestions[st.id] || [];
+
+      container.innerHTML = `
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-7 animate-fadeIn shadow-2xl">
+          <div class="border-b border-slate-800 pb-5">
+            <span class="text-xs uppercase font-black text-emerald-400 tracking-wider">ደረጃ 2 ከ 5 • የማስተዋል ጥያቄዎች (STAGE 2: QUESTION & INQUIRY)</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">ርዕሶችን ወደ ጥልቅ የማስተዋል ጥያቄዎች ቀይር</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl leading-relaxed">
+              ከማንበብህ በፊት በራስህ አእምሮ ጥያቄዎችን መቅረፅ የማስታወስ ችሎታህን በ3 እጥፍ ያሳድጋል። የሚከተሉትን ጥያቄዎች አንብበህ ግምትህን ጻፍ፤ እንዲሁም የራስህን ጥያቄ አክል!
+            </p>
+          </div>
+
+          <!-- Official Syllabus Inquiry Prompts -->
+          <div class="space-y-4">
+            <div class="text-xs uppercase font-black text-slate-400 tracking-wider flex items-center gap-2">
+              <span>🎯</span> <span>የስርዓተ-ትምህርቱ ዋና ዋና ጥያቄዎች (CORE INQUIRY PROMPTS):</span>
+            </div>
+            ${st.questions.map((qText, qIdx) => `
+              <div class="p-4 sm:p-5 rounded-2xl bg-space-900 border border-slate-800 space-y-2.5">
+                <div class="flex items-center gap-2 text-xs font-black text-emerald-400">
+                  <span>❓</span> <span>ዋና ጥያቄ ${qIdx+1}:</span>
+                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-white leading-relaxed">${qText}</h4>
+                <textarea id="hypoAnswer-${qIdx}" placeholder="ከማንበብህ በፊት ያለህን ግምት ወይም መልስ እዚህ ጻፍ..." class="w-full bg-space-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none h-16 resize-none"></textarea>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Add Your Own Inquiry Question with Amharic Starters -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-space-950 border border-emerald-500/30 space-y-4">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <h4 class="text-xs sm:text-sm font-black text-white flex items-center gap-2 font-display">
+                  <span>✨</span> የራስህን የማስተዋል ጥያቄ አክል (FORMULATE YOUR OWN QUESTION)
+                </h4>
+                <p class="text-xs text-slate-400">ጥያቄ ለመጀመር ከታች ያሉትን አጋዥ ቃላት ጠቅ አድርግ፦</p>
+              </div>
+              <span class="text-[11px] text-amber-400 font-bold bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
+                Inquiry Board
+              </span>
+            </div>
+
+            <!-- 4 Amharic Question Starter Buttons -->
+            <div class="flex items-center gap-2 flex-wrap">
+              <button onclick="insertQuestionStarter('ለምን ')" class="px-3 py-1.5 rounded-xl bg-space-900 hover:bg-space-850 border border-slate-800 text-xs font-bold text-slate-200 transition cursor-pointer">
+                💡 ለምን...? (Why...)
+              </button>
+              <button onclick="insertQuestionStarter('እንዴት ')" class="px-3 py-1.5 rounded-xl bg-space-900 hover:bg-space-850 border border-slate-800 text-xs font-bold text-slate-200 transition cursor-pointer">
+                ⚙️ እንዴት...? (How...)
+              </button>
+              <button onclick="insertQuestionStarter('በምን ይለያያል ')" class="px-3 py-1.5 rounded-xl bg-space-900 hover:bg-space-850 border border-slate-800 text-xs font-bold text-slate-200 transition cursor-pointer">
+                ⚖️ በምን ይለያያል...? (Difference...)
+              </button>
+              <button onclick="insertQuestionStarter('ምን ቢከሰት ')" class="px-3 py-1.5 rounded-xl bg-space-900 hover:bg-space-850 border border-slate-800 text-xs font-bold text-slate-200 transition cursor-pointer">
+                🔮 ምን ቢከሰት...? (What if...)
+              </button>
+            </div>
+
+            <!-- Custom Question Input Box -->
+            <div class="flex items-center gap-2">
+              <input type="text" id="customQuestionInput" placeholder="ጥያቄህን እዚህ ጻፍ (ለምሳሌ፦ ይህ ቀመር በስራ ላይ የሚውለው መቼ ነው?)..." class="flex-1 bg-space-900 border border-slate-700 text-slate-100 text-xs sm:text-sm rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              <button onclick="addCustomQuestion()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs transition cursor-pointer shrink-0">
+                ➕ ጥያቄ ጨምር
+              </button>
+            </div>
+
+            <!-- Saved Custom Questions List -->
+            <div id="customQuestionsList" class="space-y-2 pt-2">
+              ${customQs.map((q, idx) => `
+                <div class="p-3 rounded-xl bg-space-900/80 border border-slate-800 flex items-center justify-between gap-3 text-xs text-slate-200">
+                  <span class="flex items-center gap-2">
+                    <span class="text-amber-400">📌</span> ${q}
+                  </span>
+                  <button onclick="deleteCustomQuestion(${idx})" class="text-slate-500 hover:text-rose-400 transition cursor-pointer">✕</button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="pt-5 border-t border-slate-800 flex justify-between items-center flex-wrap gap-4">
+            <button onclick="setSq3rStep('survey')" class="text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer">
+              ← ወደ ቅኝት ተመለስ (Back to Survey)
+            </button>
+            <button onclick="finishQuestionStep()" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2 cursor-pointer">
+              <span>ጥያቄዎችን አጽድቅና ወደ ጥልቅ ንባብ እለፍ (+35 XP)</span> <span>👉</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function insertQuestionStarter(starter) {
+      const input = document.getElementById('customQuestionInput');
+      if (input) {
+        input.value = starter + input.value.trim();
+        input.focus();
+      }
+    }
+
+    function addCustomQuestion() {
+      const input = document.getElementById('customQuestionInput');
+      if (!input || !input.value.trim()) return;
+      const q = input.value.trim();
+      const stId = gState.activeSubtopicId;
+
+      if (!gState.customQuestions[stId]) gState.customQuestions[stId] = [];
+      gState.customQuestions[stId].push(q);
+      saveState();
+
+      input.value = '';
+      showToast('ጥያቄህ በማስታወሻ ሰሌዳው ላይ ተመዝግቧል! 📝');
+      addXp(15, 'Curiosity Question Added');
+      renderQuestionStep(getActiveSubtopic(), document.getElementById('stepContentContainer'));
+    }
+
+    function deleteCustomQuestion(idx) {
+      const stId = gState.activeSubtopicId;
+      if (gState.customQuestions[stId]) {
+        gState.customQuestions[stId].splice(idx, 1);
+        saveState();
+        renderQuestionStep(getActiveSubtopic(), document.getElementById('stepContentContainer'));
+      }
+    }
+
+    // =========================================================================
+    // STAGE 3: READ ENGINE (WITH BABY-STEP WORKED EXAMPLES & AMHARIC DETAILS)
+    // =========================================================================
+    function renderReadStep(st, container) {
+      const fontSizeClass = {
+        'sm': 'text-xs',
+        'md': 'text-sm',
+        'lg': 'text-base'
+      }[gState.activeFontSize || 'md'];
+
+      const userNote = gState.userNotes[st.id] || '';
+      const customQs = gState.customQuestions[st.id] || [];
+
+      container.innerHTML = `
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-7 animate-fadeIn shadow-2xl">
+          
+          <!-- Top Typography Toolbar & Reading Controls -->
+          <div class="border-b border-slate-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs uppercase font-black text-emerald-400 tracking-wider">ደረጃ 3 ከ 5 • ጥልቅ ንባብ እና ደረጃ-በደረጃ ምሳሌዎች (STAGE 3: READ)</span>
+              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">ዝርዝር ትንታኔ እና በደረጃ የተሰሉ ማብራሪያዎች</h3>
+              <p class="text-xs sm:text-sm text-slate-300">በጥንቃቄ አንብብ፤ በእያንዳንዱ የሒሳብ ወይም የሳይንስ ስሌት ውስጥ የተከናወኑትን ደረጃዎች አስተውል።</p>
+            </div>
+
+            <!-- Typography & Focus Mode Controls -->
+            <div class="shrink-0 flex items-center gap-2 bg-space-950 p-1.5 rounded-2xl border border-slate-800">
+              <span class="text-[11px] font-bold text-slate-400 px-2">ፊደል (Font):</span>
+              <button onclick="setReadingFontSize('sm')" class="px-2.5 py-1 rounded-xl text-xs font-black transition ${gState.activeFontSize === 'sm' ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-white'} cursor-pointer">A-</button>
+              <button onclick="setReadingFontSize('md')" class="px-2.5 py-1 rounded-xl text-xs font-black transition ${gState.activeFontSize === 'md' ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-white'} cursor-pointer">A</button>
+              <button onclick="setReadingFontSize('lg')" class="px-2.5 py-1 rounded-xl text-xs font-black transition ${gState.activeFontSize === 'lg' ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-white'} cursor-pointer">A+</button>
+            </div>
+          </div>
+
+          <!-- Main Reading Content & Side Companion Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Column 1 & 2: Core Textbook & Step-by-Step Worked Example (2 spans) -->
+            <div class="lg:col-span-2 space-y-6">
+              
+              <!-- Core Notes Card -->
+              <div class="p-5 sm:p-6 rounded-2xl bg-space-950 border border-slate-800 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-850 pb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">📖</span>
+                    <span class="text-xs uppercase font-black text-emerald-400 tracking-wider">የስርዓተ-ትምህርቱ ማብራሪያ (CURRICULUM EXPLANATION)</span>
+                  </div>
+                  <span class="text-xs font-mono text-slate-400">⏱️ ~4 min read</span>
+                </div>
+                
+                <div id="readingNotesBody" class="${fontSizeClass} text-slate-200 leading-relaxed font-sans space-y-3">
+                  ${st.coreNotes}
+                </div>
+              </div>
+
+              <!-- EXTREMELY DETAILED BABY-STEP WORKED EXAMPLE -->
+              <div class="p-5 sm:p-7 rounded-2xl bg-gradient-to-br from-space-950 via-space-900 to-space-950 border border-emerald-500/40 space-y-5 shadow-xl">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3 flex-wrap gap-2">
+                  <span class="text-xs sm:text-sm font-black text-emerald-300 flex items-center gap-2 font-display">
+                    <span>💡</span> ደረጃ በደረጃ የተሰራ መደበኛ ምሳሌ (STEP-BY-STEP WORKED EXAMPLE)
+                  </span>
+                  <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                    Official Method
+                  </span>
+                </div>
+                
+                <h4 class="text-sm sm:text-base font-black text-white font-display">${st.example.title}</h4>
+                
+                <!-- Problem Statement -->
+                <div class="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-1">
+                  <div class="text-[10px] font-black uppercase text-amber-400 tracking-wider">የተሰጠው የጥያቄ ፅንሰ-ሀሳብ (Problem):</div>
+                  <p class="text-xs sm:text-sm text-slate-200 font-mono font-medium leading-relaxed">${st.example.problem}</p>
+                </div>
+
+                <!-- 4-Step Detailed Baby Step Breakdown -->
+                <div class="space-y-3 pt-2">
+                  ${st.example.steps.map((step, sIdx) => `
+                    <div class="p-4 rounded-xl bg-space-900/80 border border-slate-800/80 space-y-1.5 hover:border-emerald-500/40 transition">
+                      <div class="flex items-center justify-between text-xs font-black">
+                        <span class="text-emerald-400 flex items-center gap-2">
+                          <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[10px] border border-emerald-500/30">${sIdx+1}</span>
+                          <span>${step.label}</span>
+                        </span>
+                        <span class="text-[10px] text-slate-500">Verified Step</span>
+                      </div>
+                      <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans pl-7">${step.text}</p>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <!-- Pro-Tip Box -->
+                ${st.example.proTip ? `
+                  <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm text-amber-300 flex items-start gap-3">
+                    <span class="text-xl shrink-0">⚠️</span>
+                    <div class="space-y-0.5">
+                      <strong class="font-black text-amber-200 uppercase tracking-wide">የፈተና ምክረ-ሀሳብ (Pro-Tip):</strong>
+                      <p class="text-amber-300/90 leading-relaxed">${st.example.proTip}</p>
+                    </div>
+                  </div>
+                ` : ''}
+
+                <!-- Check My Understanding Micro-Challenge -->
+                <div class="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-black text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                      <span>🎯</span> ራስህን ፈትሽ (CHECK YOUR UNDERSTANDING)
+                    </span>
+                    <span class="text-[10px] text-slate-400">Micro-Check</span>
+                  </div>
+                  <p class="text-xs text-slate-200">
+                    ከላይ በተሰራው ምሳሌ መሰረት፣ ዋናው የስሌት ቁልፍ ደረጃ የትኛው እንደሆነ ተረድተሃል?
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <button onclick="submitInlineCheck(true)" class="px-4 py-2 rounded-xl bg-space-900 hover:bg-emerald-600/30 border border-slate-800 hover:border-emerald-500 text-xs font-bold text-slate-200 transition cursor-pointer">
+                      ✔ አዎ፣ ደረጃዎቹን በሙሉ በሚገባ ተረድቻለሁ
+                    </button>
+                    <button onclick="submitInlineCheck(false)" class="px-4 py-2 rounded-xl bg-space-900 hover:bg-amber-600/30 border border-slate-800 hover:border-amber-500 text-xs font-bold text-slate-200 transition cursor-pointer">
+                      ❓ ድጋሚ መከለስ እፈልጋለሁ
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Column 3: Companion Drawer (Stage 2 Question Tracker & Personal Notes) -->
+            <div class="space-y-5">
+              
+              <!-- Stage 2 Question Tracker -->
+              <div class="p-5 rounded-2xl bg-space-950 border border-slate-800 space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-850 pb-2">
+                  <span class="text-xs font-black text-white flex items-center gap-2">
+                    <span>❓</span> የጥያቄዎችህ ማረጋገጫ (Questions Tracker)
+                  </span>
+                  <span class="text-[10px] text-emerald-400 font-mono">Stage 2</span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed">
+                  በStage 2 የቀረጽካቸው ጥያቄዎች በንባቡ ወቅት መልስ ሲያገኙ ምልክት አድርግበት፦
+                </p>
+
+                <div class="space-y-2 max-h-56 overflow-y-auto pr-1">
+                  ${st.questions.map((q, idx) => `
+                    <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-space-900/60 border border-slate-850 text-xs text-slate-300 cursor-pointer">
+                      <input type="checkbox" class="mt-0.5 rounded text-emerald-500 focus:ring-0">
+                      <span>${q}</span>
+                    </label>
+                  `).join('')}
+
+                  ${customQs.map((q, idx) => `
+                    <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-amber-950/20 border border-amber-500/20 text-xs text-amber-200 cursor-pointer">
+                      <input type="checkbox" class="mt-0.5 rounded text-amber-500 focus:ring-0">
+                      <span>${q}</span>
                     </label>
                   `).join('')}
                 </div>
               </div>
 
-              <div class="mt-6 flex justify-end relative z-10">
-                <button onclick="finishSurveyStep()" id="finishSurveyBtn" class="px-6 py-3 rounded-xl bg-space-800 text-slate-500 font-black text-xs sm:text-sm border border-slate-700 transition flex items-center gap-2">
-                  <span>Verify Checklist to Unlock Questions</span> <span>🔒</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
-        initSurveyTimer();
-        checkSurveyCompletion();
-      }
-
-      // 2. QUESTION
-      else if (s === 'question') {
-        container.innerHTML = `
-          <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
-            <div class="border-b border-slate-800 pb-4">
-              <span class="text-xs uppercase font-black text-emerald-400 tracking-wider">ደረጃ 2 ከ 5 • የማስተዋል ጥያቄዎች (STAGE 2: QUESTION)</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">Turn Topics into Focused Inquiry Questions</h3>
-              <p class="text-xs sm:text-sm text-slate-400">Curiosity primes the brain to retain knowledge like a magnet. Formulate your hypotheses before reading.</p>
-            </div>
-
-            <div class="space-y-4">
-              ${st.questions.map((qText, qIdx) => `
-                <div class="p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2">
-                  <div class="flex items-center gap-2 text-xs font-black text-emerald-400">
-                    <span>❓</span> <span>KEY INQUIRY PROMPT ${qIdx+1}:</span>
-                  </div>
-                  <h4 class="text-xs sm:text-sm font-bold text-white leading-relaxed">${qText}</h4>
-                  <textarea placeholder="Type your prediction or notes here before reading the solution below..." class="w-full bg-space-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none h-16 resize-none"></textarea>
+              <!-- In-Lesson Personal Scratchpad / Notes -->
+              <div class="p-5 rounded-2xl bg-space-950 border border-slate-800 space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-850 pb-2">
+                  <span class="text-xs font-black text-white flex items-center gap-2">
+                    <span>📝</span> የግል ማስታወሻ (Study Scratchpad)
+                  </span>
+                  <span id="noteSaveStatus" class="text-[10px] text-slate-500">Auto-saved locally</span>
                 </div>
-              `).join('')}
+                <textarea id="lessonUserNotes" oninput="saveUserNotes(this.value)" placeholder="አስፈላጊ የሆኑ ነጥቦችን ወይም ቀመሮችን በራስህ አባባል እዚህ ጻፍ..." class="w-full bg-space-900 border border-slate-800 rounded-xl p-3 text-xs text-slate-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none h-44 resize-none leading-relaxed">${userNote}</textarea>
+                <div class="text-[10px] text-slate-400 flex items-center justify-between">
+                  <span>LocalStorage Persistent</span>
+                  <button onclick="clearUserNotes()" class="text-slate-500 hover:text-rose-400 transition cursor-pointer">አጽዳ (Clear)</button>
+                </div>
+              </div>
+
             </div>
 
-            <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
-              <button onclick="setSq3rStep('survey')" class="text-xs font-bold text-slate-400 hover:text-white transition">← Back to Survey</button>
-              <button onclick="finishQuestionStep()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-lg shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2">
-                <span>Lock In Hypotheses & Deep Read (+35 XP)</span> <span>👉</span>
+          </div>
+
+          <!-- Stage 3 Footer Navigation -->
+          <div class="pt-5 border-t border-slate-800 flex justify-between items-center flex-wrap gap-4">
+            <button onclick="setSq3rStep('question')" class="text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer">
+              ← ወደ ጥያቄዎች ተመለስ (Back to Questions)
+            </button>
+            <button onclick="finishReadStep()" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2 cursor-pointer">
+              <span>ፅንሰ-ሀሳቦቹ ተጨብጠዋል! ወደ ማስታወስ እለፍ (+45 XP)</span> <span>👉</span>
+            </button>
+          </div>
+
+        </div>
+      `;
+    }
+
+    function setReadingFontSize(size) {
+      gState.activeFontSize = size;
+      saveState();
+      const el = document.getElementById('readingNotesBody');
+      if (el) {
+        el.className = `${size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'} text-slate-200 leading-relaxed font-sans space-y-3`;
+      }
+    }
+
+    function saveUserNotes(val) {
+      const stId = gState.activeSubtopicId;
+      gState.userNotes[stId] = val;
+      saveState();
+      const status = document.getElementById('noteSaveStatus');
+      if (status) {
+        status.innerText = 'Saved ✔';
+        status.className = 'text-[10px] text-emerald-400 font-bold';
+        setTimeout(() => {
+          if (status) {
+            status.innerText = 'Auto-saved locally';
+            status.className = 'text-[10px] text-slate-500';
+          }
+        }, 2000);
+      }
+    }
+
+    function clearUserNotes() {
+      const stId = gState.activeSubtopicId;
+      gState.userNotes[stId] = '';
+      saveState();
+      const textarea = document.getElementById('lessonUserNotes');
+      if (textarea) textarea.value = '';
+      showToast('ማስታወሻው ጸድቷል');
+    }
+
+    function submitInlineCheck(understood) {
+      soundClick();
+      if (understood) {
+        soundSuccess();
+        addXp(20, 'Understanding Verified');
+        showToast('ድንቅ ነው! ደረጃ በደረጃ መስራት ስትችል የትኛውም ፈተና አያግድህም። 🌟');
+      } else {
+        showToast('ምሳሌውን በድጋሚ ተመልከት ወይም ዶ/ር ደስታን ጠቅ አድርገህ ተጨማሪ ማብራሪያ ጠይቅ! 🤖');
+      }
+    }
+
+    // =========================================================================
+    // STAGE 4: RECITE ENGINE (3D LEITNER FLASHCARDS & FREE RECALL JOURNAL)
+    // =========================================================================
+    let activeReciteMode = 'flashcards'; // 'flashcards' | 'journal' | 'self-check'
+
+    function renderReciteStep(st, container) {
+      currentCardIndex = 0;
+      isCardFlipped = false;
+
+      container.innerHTML = `
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-7 animate-fadeIn shadow-2xl">
+          
+          <!-- Recite Header -->
+          <div class="border-b border-slate-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs uppercase font-black text-purple-400 tracking-wider">ደረጃ 4 ከ 5 • ንቁ ማስታወስ (STAGE 4: RECITE & RETRIEVAL PRACTICE)</span>
+              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">ያለ ማስታወሻ እውቀትህን ከአዕምሮህ አውጣ</h3>
+              <p class="text-xs sm:text-sm text-slate-300">ማስታወሻህን ዝጋ! መልሱን ከማየትህ በፊት ቀመሩን ወይም ህጉን በቃልህ ለመናገር ሞክር።</p>
+            </div>
+
+            <!-- Recite Mode Selector Tabs -->
+            <div class="shrink-0 flex items-center gap-1.5 bg-space-950 p-1.5 rounded-2xl border border-slate-800">
+              <button onclick="setReciteMode('flashcards')" id="reciteTab-flashcards" class="px-3 py-1.5 rounded-xl text-xs font-black transition ${activeReciteMode === 'flashcards' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
+                🃏 ፍላሽ ካርዶች
+              </button>
+              <button onclick="setReciteMode('journal')" id="reciteTab-journal" class="px-3 py-1.5 rounded-xl text-xs font-black transition ${activeReciteMode === 'journal' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'} cursor-pointer">
+                ✍️ የራስ አገላለጽ
               </button>
             </div>
           </div>
-        `;
-      }
 
-      // 3. READ
-      else if (s === 'read') {
-        container.innerHTML = `
-          <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
-            <div class="border-b border-slate-800 pb-4">
-              <span class="text-xs uppercase font-black text-emerald-400 tracking-wider">ደረጃ 3 ከ 5 • ጥልቅ ንባብና ምሳሌዎች (STAGE 3: READ)</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">Deep Reading & Verified Standard Examples</h3>
-              <p class="text-xs sm:text-sm text-slate-400">Read with laser focus to verify your hypotheses. Study each step of the standard worked example.</p>
-            </div>
-
-            <!-- Core Textbook Notes -->
-            <div class="space-y-4">
-              <div class="text-xs uppercase font-black text-slate-400 tracking-wider flex items-center gap-2">
-                <span>📖</span> <span>CURRICULUM EXPLANATION & DERIVATION</span>
-              </div>
-              ${st.coreNotes}
-            </div>
-
-            <!-- Detailed Working Example -->
-            <div class="p-5 rounded-2xl bg-space-950 border border-emerald-500/30 space-y-4">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span class="text-xs font-black text-emerald-400 flex items-center gap-2">
-                  <span>💡</span> FULLY WORKED STEP-BY-STEP EXAMPLE
-                </span>
-                <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">Standard Method</span>
-              </div>
-              
-              <h4 class="text-xs sm:text-sm font-black text-white">${st.example.title}</h4>
-              <p class="text-xs text-slate-300 font-mono bg-space-900 p-3 rounded-xl border border-slate-800">${st.example.problem}</p>
-
-              <div class="space-y-2.5 pt-1">
-                ${st.example.steps.map(step => `
-                  <div class="p-3 rounded-xl bg-space-900/60 border border-slate-800/80 text-xs text-slate-300 space-y-1">
-                    <span class="font-bold text-emerald-400">${step.label}:</span>
-                    <p class="text-slate-300">${step.text}</p>
-                  </div>
-                `).join('')}
-              </div>
-
-              ${st.example.proTip ? `
-                <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 flex items-center gap-2">
-                  <span class="text-sm">⚠️</span>
-                  <span><strong>Pro-Tip:</strong> ${st.example.proTip}</span>
-                </div>
-              ` : ''}
-            </div>
-
-            <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
-              <button onclick="setSq3rStep('question')" class="text-xs font-bold text-slate-400 hover:text-white transition">← Back to Questions</button>
-              <button onclick="finishReadStep()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-lg shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2">
-                <span>Concepts Mastered! Proceed to Recite (+45 XP)</span> <span>👉</span>
-              </button>
-            </div>
-          </div>
-        `;
-      }
-
-      // 4. RECITE
-      else if (s === 'recite') {
-        currentCardIndex = 0;
-        isCardFlipped = false;
-        container.innerHTML = `
-          <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
-            <div class="border-b border-slate-800 pb-4">
-              <span class="text-xs uppercase font-black text-purple-400 tracking-wider">ደረጃ 4 ከ 5 • ንቁ ማስታወስ (STAGE 4: RECITE)</span>
-              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">Active Recall Flashcard Arena</h3>
-              <p class="text-xs sm:text-sm text-slate-400">Do not look at the answer! Say the derivation or formula out loud, then tap to verify.</p>
-            </div>
-
-            <!-- Interactive 3D Flip Flashcard -->
+          <!-- Mode 1: 3D Leitner Flashcards Arena -->
+          <div id="reciteMode-flashcards" class="${activeReciteMode === 'flashcards' ? '' : 'hidden'} space-y-6">
             <div class="max-w-xl mx-auto py-2">
-              <div onclick="flipFlashcard()" id="activeFlashcard" class="glass-crest h-56 sm:h-64 rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer border border-emerald-500/40 relative shadow-2xl transition hover:border-emerald-400">
-                <span id="flashcardSideLabel" class="text-[10px] uppercase font-bold text-emerald-400 tracking-widest absolute top-4 left-4">QUESTION</span>
-                <span class="text-xs text-slate-500 absolute top-4 right-4">Tap to flip ↺ (Spacebar)</span>
+              <div onclick="flipFlashcard()" id="activeFlashcard" class="glass-crest h-60 sm:h-64 rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer border border-emerald-500/40 relative shadow-2xl transition hover:border-emerald-400">
+                <span id="flashcardSideLabel" class="text-[10px] uppercase font-black text-emerald-400 tracking-widest absolute top-4 left-4">QUESTION (ጥያቄ)</span>
+                <span class="text-xs text-slate-400 absolute top-4 right-4">ካርዱን ግለጥ ↺ (Spacebar)</span>
 
-                <div class="my-auto text-center">
-                  <h4 id="flashcardContent" class="text-base sm:text-lg font-black text-white leading-relaxed">
+                <div class="my-auto text-center px-4">
+                  <h4 id="flashcardContent" class="text-base sm:text-lg font-black text-white leading-relaxed font-display">
                     ${st.reciteFlashcards[0].q}
                   </h4>
                 </div>
 
-                <div class="flex items-center justify-between text-xs text-slate-400">
-                  <span id="flashcardCounter">Card 1 of ${st.reciteFlashcards.length}</span>
-                  <span class="text-emerald-400 font-bold">Active Memory Verification</span>
+                <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/60 pt-3">
+                  <span id="flashcardCounter" class="font-mono text-amber-400 font-bold">Card 1 of ${st.reciteFlashcards.length}</span>
+                  <span class="text-emerald-400 font-bold">Leitner Active Recall</span>
+                </div>
+              </div>
+
+              <!-- 4 Leitner Spaced Repetition Rating Buttons -->
+              <div class="mt-5 space-y-2">
+                <div class="text-[10px] font-black uppercase text-slate-400 text-center tracking-widest">
+                  ይህንን ጥያቄ እንዴት አስታወስከው? (Rate Your Recall):
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <button onclick="rateFlashcardLeitner('again')" class="p-2.5 rounded-xl bg-space-950 hover:bg-rose-950/60 border border-slate-800 hover:border-rose-500 text-xs font-bold text-rose-300 transition cursor-pointer">
+                    🔴 እንደገና (1 day)
+                  </button>
+                  <button onclick="rateFlashcardLeitner('hard')" class="p-2.5 rounded-xl bg-space-950 hover:bg-amber-950/60 border border-slate-800 hover:border-amber-500 text-xs font-bold text-amber-300 transition cursor-pointer">
+                    🟠 ከባድ (3 days)
+                  </button>
+                  <button onclick="rateFlashcardLeitner('good')" class="p-2.5 rounded-xl bg-space-950 hover:bg-emerald-950/60 border border-slate-800 hover:border-emerald-500 text-xs font-bold text-emerald-300 transition cursor-pointer">
+                    🟢 ጥሩ (7 days)
+                  </button>
+                  <button onclick="rateFlashcardLeitner('easy')" class="p-2.5 rounded-xl bg-space-950 hover:bg-cyan-950/60 border border-slate-800 hover:border-cyan-500 text-xs font-bold text-cyan-300 transition cursor-pointer">
+                    🔵 ቀላል (14 days)
+                  </button>
                 </div>
               </div>
 
               <!-- Flashcard Navigation Controls -->
-              <div class="flex items-center justify-center gap-3 mt-5 flex-wrap">
-                <button onclick="prevFlashcard()" class="px-4 py-2 rounded-xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white">← Previous</button>
-                <button onclick="flipFlashcard()" class="px-4 py-2 rounded-xl bg-space-850 border border-emerald-500/30 text-xs font-bold text-emerald-300 hover:text-white">Flip Card ↺</button>
-                <button onclick="markFlashcardMastered()" class="px-4 py-2 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-xs font-bold text-emerald-300 hover:bg-emerald-600/30">Mastered ✔</button>
-                <button onclick="nextFlashcard()" class="px-4 py-2 rounded-xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white">Next →</button>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
-              <button onclick="setSq3rStep('read')" class="text-xs font-bold text-slate-400 hover:text-white transition">← Back to Read</button>
-              <button onclick="finishReciteStep()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-lg shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2">
-                <span>Enter AMT Mastery Exam Stage (+45 XP)</span> <span>👉</span>
-              </button>
-            </div>
-          </div>
-        `;
-      }
-
-      // 5. REVIEW / AMT EXAM (WITH STRICT 80% PASS GATE)
-      else if (s === 'review') {
-        if (currentQuizAnswersSubtopicId !== st.id) {
-          currentQuizAnswers = {};
-          currentQuizAnswersSubtopicId = st.id;
-        }
-        const qList = st.amtQuiz || [];
-        const answeredCount = Object.keys(currentQuizAnswers).length;
-        const correctCount = Object.values(currentQuizAnswers).filter(a => a.isCorrect).length;
-        const scorePct = answeredCount > 0 ? Math.round((correctCount / qList.length) * 100) : 0;
-
-        container.innerHTML = `
-          <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
-            <!-- Header Banner -->
-            <div class="border-b border-slate-800 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div>
-                <span class="text-xs uppercase font-black text-amber-400 tracking-wider">ደረጃ 5 ከ 5 • የብቃት ፈተና (STAGE 5: REVIEW & AMT MASTERY GATE)</span>
-                <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">⭐ AMT Exam Engine • Hidden Step-by-Step Derivations</h3>
-                <p class="text-xs sm:text-sm text-slate-400">Make your choice first! The official verdict, verified baby-step derivation, and option autopsy unlock after attempting. Score <strong>≥80%</strong> to conquer this level.</p>
-              </div>
-              <div class="shrink-0 flex items-center gap-2">
-                <button onclick="retryAmtQuiz()" class="px-3.5 py-2 rounded-xl bg-space-850 hover:bg-space-800 text-xs font-bold text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Reset all answers for a fresh attempt">
-                  <span>🔄</span> Reset Test
+              <div class="flex items-center justify-center gap-3 mt-4 flex-wrap">
+                <button onclick="prevFlashcard()" class="px-4 py-2 rounded-xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white cursor-pointer">
+                  ← Previous
+                </button>
+                <button onclick="flipFlashcard()" class="px-4 py-2 rounded-xl bg-space-850 border border-emerald-500/30 text-xs font-bold text-emerald-300 hover:text-white cursor-pointer">
+                  Flip Card ↺
+                </button>
+                <button onclick="nextFlashcard()" class="px-4 py-2 rounded-xl bg-space-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white cursor-pointer">
+                  Next →
                 </button>
               </div>
             </div>
+          </div>
 
-            <!-- Live Diagnostic & Question Progress Ticker -->
-            <div class="p-4 rounded-xl bg-space-950 border border-slate-800 flex items-center justify-between flex-wrap gap-4" id="liveQuizTracker">
-              <div class="flex items-center gap-3">
-                <span class="text-xs font-bold text-slate-400">ጥያቄዎች (Questions):</span>
-                <div class="flex items-center gap-1.5 flex-wrap">
-                  ${qList.map((_, i) => {
-                    const ans = currentQuizAnswers[i];
-                    let pillClass = 'w-6 h-6 rounded-md bg-space-900 text-slate-500 border border-slate-800 text-[10px] font-bold flex items-center justify-center';
-                    let pillText = String(i + 1);
-                    if (ans) {
-                      if (ans.isCorrect) {
-                        pillClass = 'w-6 h-6 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-black flex items-center justify-center';
-                        pillText = '✔';
-                      } else {
-                        pillClass = 'w-6 h-6 rounded-md bg-rose-500/20 text-rose-400 border border-rose-500/40 text-[10px] font-black flex items-center justify-center';
-                        pillText = '✖';
-                      }
-                    }
-                    return `<span id="trackerPill-${i}" class="${pillClass}">${pillText}</span>`;
-                  }).join('')}
+          <!-- Mode 2: Free Recall Journal -->
+          <div id="reciteMode-journal" class="${activeReciteMode === 'journal' ? '' : 'hidden'} space-y-5">
+            <div class="p-5 sm:p-6 rounded-2xl bg-space-950 border border-slate-800 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-850 pb-3">
+                <span class="text-xs sm:text-sm font-black text-white flex items-center gap-2 font-display">
+                  <span>✍️</span> የራስ አገላለጽ ማህደር (FREE RECALL JOURNAL)
+                </span>
+                <span class="text-xs font-bold text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
+                  Memory Retrieval
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                ያለ ምንም እርዳታ፣ የዚህን ርዕስ ዋና ዋና ነጥቦች፣ ቀመሮች እና ትርጓሜዎች በራስህ አባባል ጻፍ። ከጻፍክ በኋላ "ከመደበኛው ጋር አነጻጽር" የሚለውን ቁልፍ በመንካት ትክክለኛነትህን አረጋግጥ!
+              </p>
+              <textarea id="freeRecallInput" placeholder="ያስታወስካቸውን ዋና ዋና ነጥቦች እዚህ ጻፍ..." class="w-full bg-space-900 border border-slate-800 rounded-xl p-4 text-xs sm:text-sm text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none h-36 resize-none leading-relaxed"></textarea>
+              
+              <div class="flex items-center justify-between">
+                <button onclick="compareFreeRecall()" class="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-black text-xs transition flex items-center gap-2 cursor-pointer shadow-md shadow-purple-600/30">
+                  <span>🔍 ከመደበኛው ማስታወሻ ጋር አነጻጽር (+25 XP)</span>
+                </button>
+              </div>
+
+              <!-- Side-by-Side Comparison Drawer -->
+              <div id="freeRecallComparisonDrawer" class="hidden p-5 rounded-2xl bg-space-900 border border-purple-500/30 space-y-3">
+                <div class="text-xs font-black text-purple-300 uppercase tracking-wider">
+                  የስርዓተ-ትምህርቱ መደበኛ መልስ (Official Ministry Key Idea):
                 </div>
-              </div>
-              <div class="flex items-center gap-4 text-xs font-bold">
-                <span id="liveAttemptedCount" class="text-slate-300">${answeredCount} of ${qList.length} Answered</span>
-                <span class="text-slate-700">|</span>
-                <span id="liveScoreCount" class="${scorePct >= 80 ? 'text-emerald-400' : 'text-amber-400'} font-mono">${correctCount} Correct (${scorePct}%)</span>
-                <span class="text-[10px] text-slate-500 font-normal hidden sm:inline">(Gate: ≥80%)</span>
-              </div>
-            </div>
-
-            <!-- Question Cards -->
-            <div class="space-y-6" id="quizContainer">
-              ${qList.map((item, qIdx) => {
-                const ans = currentQuizAnswers[qIdx];
-                const isAnswered = !!ans;
-                let statusBadge = '<span class="text-xs font-bold text-slate-500">Unanswered (Select an option below)</span>';
-                if (isAnswered) {
-                  statusBadge = ans.isCorrect
-                    ? '<span class="text-xs font-black text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">Mastered ✔</span>'
-                    : '<span class="text-xs font-black text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/30">Needs Review ✖</span>';
-                }
-
-                return `
-                  <div class="p-5 sm:p-6 rounded-2xl bg-space-900 border border-slate-800 space-y-4" id="quizCard-${qIdx}">
-                    <div class="flex items-center justify-between flex-wrap gap-2">
-                      <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">QUESTION ${qIdx+1} OF ${qList.length}</span>
-                      <span id="quizStatus-${qIdx}">${statusBadge}</span>
-                    </div>
-                    <h4 class="text-sm sm:text-base font-bold text-white leading-relaxed">${item.q}</h4>
-                    
-                    <!-- Options Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                      ${item.options.map((opt, optIdx) => {
-                        let btnClass = 'quiz-option-btn p-3.5 rounded-xl bg-space-950 border border-slate-800 text-left text-xs sm:text-sm text-slate-300 font-medium hover:border-emerald-500 hover:text-white transition flex items-center gap-3';
-                        let badgeHtml = `<span class="w-7 h-7 rounded-lg bg-space-850 text-slate-400 border border-slate-700/60 flex items-center justify-center font-bold text-xs shrink-0">${['A','B','C','D'][optIdx]}</span>`;
-
-                        if (isAnswered) {
-                          if (optIdx === item.correct) {
-                            btnClass = 'p-3.5 rounded-xl bg-emerald-950/80 border-2 border-emerald-500 text-left text-xs sm:text-sm text-emerald-200 font-bold flex items-center gap-3 shadow-lg shadow-emerald-500/20';
-                            badgeHtml = '<span class="w-7 h-7 rounded-lg bg-emerald-500/30 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-black text-xs shrink-0">✔</span>';
-                          } else if (optIdx === ans.selected && !ans.isCorrect) {
-                            btnClass = 'p-3.5 rounded-xl bg-rose-950/80 border-2 border-rose-500 text-left text-xs sm:text-sm text-rose-300 font-bold flex items-center gap-3 shadow-lg shadow-rose-500/20';
-                            badgeHtml = '<span class="w-7 h-7 rounded-lg bg-rose-500/30 text-rose-300 border border-rose-500/50 flex items-center justify-center font-black text-xs shrink-0">✖</span>';
-                          } else {
-                            btnClass = 'p-3.5 rounded-xl bg-space-950/40 border border-slate-800/60 text-left text-xs sm:text-sm text-slate-500 opacity-50 flex items-center gap-3';
-                          }
-                        }
-
-                        return `
-                          <button onclick="${isAnswered ? '' : `answerAmtQuiz(${qIdx}, ${optIdx})`}" id="optBtn-${qIdx}-${optIdx}" class="${btnClass}">
-                            ${badgeHtml}
-                            <span class="leading-snug">${opt}</span>
-                          </button>
-                        `;
-                      }).join('')}
-                    </div>
-
-                    <!-- Hidden Baby-Step Detailed Solution Box (Unlocked upon trying) -->
-                    <div id="quizExplanation-${qIdx}" class="${isAnswered ? '' : 'hidden'} mt-4">
-                      ${isAnswered ? buildBabyStepSolutionHtml(item, ans.selected, qIdx, qList.length) : ''}
-                    </div>
-                  </div>
-                `;
-              }).join('')}
-            </div>
-
-            <!-- Dynamic Mastery Evaluation Banner -->
-            <div id="masteryEvaluationBanner" class="${answeredCount === qList.length && qList.length > 0 ? '' : 'hidden'} pt-4 border-t border-slate-800">
-              <!-- Dynamically populated -->
-            </div>
-
-            <div class="pt-4 border-t border-slate-800 flex justify-between items-center" id="reviewFooterActions">
-              <button onclick="setSq3rStep('recite')" class="text-xs font-bold text-slate-400 hover:text-white transition flex items-center gap-1.5">
-                <span>←</span> Back to Recite
-              </button>
-              <div class="text-xs font-bold text-slate-500">
-                ${answeredCount === qList.length ? 'All questions evaluated' : 'Answer all questions to unlock final evaluation'}
+                <div class="text-xs sm:text-sm text-slate-200 bg-space-950 p-4 rounded-xl border border-slate-800 leading-relaxed">
+                  ${st.survey.blueprint}
+                </div>
+                <div class="text-xs text-emerald-400 font-bold flex items-center gap-1.5">
+                  <span>✔</span> <span>በጣም ጥሩ! አዕምሮህ መረጃዎችን በራስህ ቋንቋ ማዋሃድ ጀምሯል።</span>
+                </div>
               </div>
             </div>
           </div>
-        `;
 
-        if (answeredCount === qList.length && qList.length > 0) {
-          evaluateMasteryGate(qList);
-        }
-      }
+          <!-- Stage 4 Footer Navigation -->
+          <div class="pt-5 border-t border-slate-800 flex justify-between items-center flex-wrap gap-4">
+            <button onclick="setSq3rStep('read')" class="text-xs font-bold text-slate-400 hover:text-white transition cursor-pointer">
+              ← ወደ ንባብ ተመለስ (Back to Read)
+            </button>
+            <button onclick="finishReciteStep()" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-emerald-600/30 hover:scale-105 active:scale-95 transition flex items-center gap-2 cursor-pointer">
+              <span>ወደ AMT ብቃት ፈተና እለፍ (+45 XP)</span> <span>👉</span>
+            </button>
+          </div>
+
+        </div>
+      `;
     }
 
-    // =========================================================================
-    // SURVEY COUNTDOWN TIMER & CHECKLIST LOGIC
-    // =========================================================================
-    let surveyTimerInterval = null;
-    let surveyTimerSeconds = 120;
-    let isSurveyTimerRunning = false;
+    function setReciteMode(mode) {
+      soundClick();
+      activeReciteMode = mode;
+      const elCards = document.getElementById('reciteMode-flashcards');
+      const elJournal = document.getElementById('reciteMode-journal');
+      const tabCards = document.getElementById('reciteTab-flashcards');
+      const tabJournal = document.getElementById('reciteTab-journal');
 
-    function initSurveyTimer() {
-      surveyTimerSeconds = 120;
-      isSurveyTimerRunning = false;
-      if (surveyTimerInterval) clearInterval(surveyTimerInterval);
-      updateSurveyTimerDisplay();
-    }
-
-    function toggleSurveyTimer() {
-      const btn = document.getElementById('surveyTimerBtn');
-      if (isSurveyTimerRunning) {
-        clearInterval(surveyTimerInterval);
-        isSurveyTimerRunning = false;
-        if (btn) btn.innerText = 'Resume';
+      if (mode === 'flashcards') {
+        if (elCards) elCards.classList.remove('hidden');
+        if (elJournal) elJournal.classList.add('hidden');
+        if (tabCards) tabCards.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition bg-purple-600 text-white shadow-md cursor-pointer';
+        if (tabJournal) tabJournal.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-400 hover:text-white cursor-pointer';
       } else {
-        isSurveyTimerRunning = true;
-        if (btn) btn.innerText = 'Pause';
-        surveyTimerInterval = setInterval(() => {
-          if (surveyTimerSeconds > 0) {
-            surveyTimerSeconds--;
-            updateSurveyTimerDisplay();
-          } else {
-            clearInterval(surveyTimerInterval);
-            isSurveyTimerRunning = false;
-            soundSuccess();
-            showToast('⏰ Scout Recon Timer Complete! Verify your objectives.');
-            if (btn) btn.innerText = 'Done';
-          }
-        }, 1000);
+        if (elCards) elCards.classList.add('hidden');
+        if (elJournal) elJournal.classList.remove('hidden');
+        if (tabJournal) tabJournal.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition bg-purple-600 text-white shadow-md cursor-pointer';
+        if (tabCards) tabCards.className = 'px-3 py-1.5 rounded-xl text-xs font-black transition text-slate-400 hover:text-white cursor-pointer';
       }
     }
 
-    function resetSurveyTimer() {
-      initSurveyTimer();
-      const btn = document.getElementById('surveyTimerBtn');
-      if (btn) btn.innerText = 'Start';
-    }
-
-    function updateSurveyTimerDisplay() {
-      const el = document.getElementById('surveyTimerDisplay');
-      if (!el) return;
-      const m = Math.floor(surveyTimerSeconds / 60).toString().padStart(2, '0');
-      const s = (surveyTimerSeconds % 60).toString().padStart(2, '0');
-      el.innerText = `${m}:${s}`;
-    }
-
-    function checkSurveyCompletion() {
+    function rateFlashcardLeitner(rating) {
+      soundSuccess();
       const st = getActiveSubtopic();
-      let checkedCount = 0;
-      st.survey.objectives.forEach((_, i) => {
-        const el = document.getElementById(`surveyCheck-${i}`);
-        if (el && el.checked) checkedCount++;
-      });
+      const card = st.reciteFlashcards[currentCardIndex];
+      const cardKey = `${st.id}-c${currentCardIndex}`;
 
-      const badge = document.getElementById('checklistProgressBadge');
-      if (badge) badge.innerText = `${checkedCount} / ${st.survey.objectives.length} Verified`;
+      const intervals = { again: 1, hard: 3, good: 7, easy: 14 };
+      const days = intervals[rating] || 7;
 
-      const btn = document.getElementById('finishSurveyBtn');
-      if (btn) {
-        if (checkedCount === st.survey.objectives.length) {
-          btn.className = 'px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition flex items-center gap-2';
-          btn.innerHTML = '<span>All Objectives Verified! Advance to Questions (+35 XP)</span> <span>👉</span>';
-        } else {
-          btn.className = 'px-6 py-3 rounded-xl bg-space-800 text-slate-500 font-black text-xs sm:text-sm border border-slate-700 transition flex items-center gap-2';
-          btn.innerHTML = '<span>Verify All Objectives to Unlock</span> <span>🔒</span>';
-        }
-      }
+      gState.flashcardIntervals[cardKey] = {
+        days: days,
+        nextReview: Date.now() + days * 86400000,
+        rating: rating
+      };
+      gState.totalCardsMastered++;
+      saveState();
+
+      addXp(20, `Flashcard Mastered (${rating})`);
+      showToast(`ካርዱ በ${days} ቀን ውስጥ ለክለሳ ይመጣል! 🧠`);
+      nextFlashcard();
     }
 
-    function finishSurveyStep() {
-      const st = getActiveSubtopic();
-      let allChecked = true;
-      st.survey.objectives.forEach((_, i) => {
-        const el = document.getElementById(`surveyCheck-${i}`);
-        if (el && !el.checked) allChecked = false;
-      });
-
-      if (!allChecked && !gState.gateBypass) {
-        soundError();
-        showToast('🔒 Complete scouting all objectives before advancing!');
+    function compareFreeRecall() {
+      const text = document.getElementById('freeRecallInput')?.value || '';
+      if (!text.trim()) {
+        showToast('በቅድሚያ ያስታወስካቸውን ነጥቦች በሳጥኑ ውስጥ ጻፍ!');
         return;
       }
-
       soundSuccess();
-      markStepCompleted('survey');
-      addXp(35, 'Tactical Survey Passed');
-      setSq3rStep('question');
+      addXp(25, 'Free Recall Practiced');
+      const drawer = document.getElementById('freeRecallComparisonDrawer');
+      if (drawer) drawer.classList.remove('hidden');
     }
 
-    function finishQuestionStep() {
-      soundSuccess();
-      markStepCompleted('question');
-      addXp(35, 'Inquiry Hypotheses Submitted');
-      setSq3rStep('read');
-    }
+    // =========================================================================
+    // STAGE 5: REVIEW ENGINE (AMT EXAM WITH HIDDEN BABY-STEP DERIVATIONS & 80% GATE)
+    // =========================================================================
+    function renderReviewStep(st, container) {
+      if (currentQuizAnswersSubtopicId !== st.id) {
+        currentQuizAnswers = {};
+        currentQuizAnswersSubtopicId = st.id;
+      }
+      const qList = st.amtQuiz || [];
+      const answeredCount = Object.keys(currentQuizAnswers).length;
+      const correctCount = Object.values(currentQuizAnswers).filter(a => a.isCorrect).length;
+      const scorePct = answeredCount > 0 ? Math.round((correctCount / qList.length) * 100) : 0;
 
-    function finishReadStep() {
-      soundSuccess();
-      markStepCompleted('read');
-      addXp(45, 'Deep Reading & Examples Studied');
-      setSq3rStep('recite');
-    }
+      container.innerHTML = `
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-7 animate-fadeIn shadow-2xl">
+          
+          <!-- Header Banner -->
+          <div class="border-b border-slate-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs uppercase font-black text-amber-400 tracking-wider">ደረጃ 5 ከ 5 • የብቃት ፈተና (STAGE 5: REVIEW & AMT MASTERY GATE)</span>
+              <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">⭐ የኢትዮጵያ ሚኒስቴር ፈተናዎች እና ዝርዝር የደረጃ በደረጃ መፍትሔ</h3>
+              <p class="text-xs sm:text-sm text-slate-300">በመጀመሪያ ምርጫህን ምረጥ! ትክክለኛው መልስ፣ የተሟላ የደረጃ በደረጃ ስሌት እና የወጥመድ ማብራሪያ ምርጫህን ከወሰንክ በኋላ ይከፈታል። ማለፊያ ነጥብ፦ <strong>≥80%</strong></p>
+            </div>
+            <div class="shrink-0 flex items-center gap-2">
+              <button onclick="retryAmtQuiz()" class="px-4 py-2.5 rounded-xl bg-space-850 hover:bg-space-800 text-xs font-bold text-slate-300 border border-slate-700 transition flex items-center gap-2 cursor-pointer" title="Reset all answers for a fresh attempt">
+                <span>🔄</span> ፈተናውን እንደገና ጀምር
+              </button>
+            </div>
+          </div>
 
-    function finishReciteStep() {
-      soundSuccess();
-      markStepCompleted('recite');
-      addXp(45, 'Active Recall Flashcards Mastered');
-      setSq3rStep('review');
+          <!-- Live Diagnostic & Question Progress Ticker -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-space-950 border border-slate-800 flex items-center justify-between flex-wrap gap-4" id="liveQuizTracker">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold text-slate-400">ጥያቄዎች:</span>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                ${qList.map((_, i) => {
+                  const ans = currentQuizAnswers[i];
+                  let pillClass = 'w-7 h-7 rounded-lg bg-space-900 text-slate-500 border border-slate-800 text-xs font-bold flex items-center justify-center';
+                  let pillText = String(i + 1);
+                  if (ans) {
+                    if (ans.isCorrect) {
+                      pillClass = 'w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-black flex items-center justify-center';
+                      pillText = '✔';
+                    } else {
+                      pillClass = 'w-7 h-7 rounded-lg bg-rose-500/20 text-rose-400 border border-rose-500/40 text-xs font-black flex items-center justify-center';
+                      pillText = '✖';
+                    }
+                  }
+                  return `<span id="trackerPill-${i}" class="${pillClass}">${pillText}</span>`;
+                }).join('')}
+              </div>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-bold">
+              <span id="liveAttemptedCount" class="text-slate-300">${answeredCount} of ${qList.length} የተመለሱ</span>
+              <span class="text-slate-700">|</span>
+              <span id="liveScoreCount" class="${scorePct >= 80 ? 'text-emerald-400' : 'text-amber-400'} font-mono text-sm">${correctCount} ትክክል (${scorePct}%)</span>
+              <span class="text-[11px] text-slate-400 hidden sm:inline">(የማለፊያ መስፈርት: ≥80%)</span>
+            </div>
+          </div>
+
+          <!-- Question Cards -->
+          <div class="space-y-6" id="quizContainer">
+            ${qList.map((item, qIdx) => {
+              const ans = currentQuizAnswers[qIdx];
+              const isAnswered = !!ans;
+              let statusBadge = '<span class="text-xs font-bold text-slate-500">ያልተመለሰ (ከታች ምረጥ)</span>';
+              if (isAnswered) {
+                statusBadge = ans.isCorrect
+                  ? '<span class="text-xs font-black text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/30">ትክክል ✔</span>'
+                  : '<span class="text-xs font-black text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-lg border border-rose-500/30">ተደጋግሞ መከለስ አለበት ✖</span>';
+              }
+
+              return `
+                <div class="p-5 sm:p-6 rounded-2xl bg-space-900 border border-slate-800 space-y-4" id="quizCard-${qIdx}">
+                  <div class="flex items-center justify-between flex-wrap gap-2">
+                    <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">ጥያቄ ${qIdx+1} ከ ${qList.length}</span>
+                    <span id="quizStatus-${qIdx}">${statusBadge}</span>
+                  </div>
+                  <h4 class="text-sm sm:text-base font-bold text-white leading-relaxed">${item.q}</h4>
+                  
+                  <!-- Options Grid -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    ${item.options.map((opt, optIdx) => {
+                      let btnClass = 'quiz-option-btn p-3.5 rounded-xl bg-space-950 border border-slate-800 text-left text-xs sm:text-sm text-slate-300 font-medium hover:border-emerald-500 hover:text-white transition flex items-center gap-3 cursor-pointer';
+                      let badgeHtml = `<span class="w-7 h-7 rounded-lg bg-space-850 text-slate-400 border border-slate-700/60 flex items-center justify-center font-bold text-xs shrink-0">${['A','B','C','D'][optIdx]}</span>`;
+
+                      if (isAnswered) {
+                        if (optIdx === item.correct) {
+                          btnClass = 'p-3.5 rounded-xl bg-emerald-950/80 border-2 border-emerald-500 text-left text-xs sm:text-sm text-emerald-200 font-bold flex items-center gap-3 shadow-lg shadow-emerald-500/20';
+                          badgeHtml = '<span class="w-7 h-7 rounded-lg bg-emerald-500/30 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-black text-xs shrink-0">✔</span>';
+                        } else if (optIdx === ans.selected && !ans.isCorrect) {
+                          btnClass = 'p-3.5 rounded-xl bg-rose-950/80 border-2 border-rose-500 text-left text-xs sm:text-sm text-rose-300 font-bold flex items-center gap-3 shadow-lg shadow-rose-500/20';
+                          badgeHtml = '<span class="w-7 h-7 rounded-lg bg-rose-500/30 text-rose-300 border border-rose-500/50 flex items-center justify-center font-black text-xs shrink-0">✖</span>';
+                        } else {
+                          btnClass = 'p-3.5 rounded-xl bg-space-950/40 border border-slate-800/60 text-left text-xs sm:text-sm text-slate-500 opacity-50 flex items-center gap-3';
+                        }
+                      }
+
+                      return `
+                        <button onclick="${isAnswered ? '' : `answerAmtQuiz(${qIdx}, ${optIdx})`}" id="optBtn-${qIdx}-${optIdx}" class="${btnClass}">
+                          ${badgeHtml}
+                          <span class="leading-snug">${opt}</span>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+
+                  <!-- Hidden Baby-Step Detailed Solution Box (Unlocked upon trying) -->
+                  <div id="quizExplanation-${qIdx}" class="${isAnswered ? '' : 'hidden'} mt-4">
+                    ${isAnswered ? buildBabyStepSolutionHtml(item, ans.selected, qIdx, qList.length) : ''}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Dynamic Mastery Evaluation Banner -->
+          <div id="masteryEvaluationBanner" class="${answeredCount === qList.length && qList.length > 0 ? '' : 'hidden'} pt-5 border-t border-slate-800">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Stage 5 Footer -->
+          <div class="pt-5 border-t border-slate-800 flex justify-between items-center" id="reviewFooterActions">
+            <button onclick="setSq3rStep('recite')" class="text-xs font-bold text-slate-400 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
+              <span>←</span> ወደ ማስታወስ ተመለስ (Back to Recite)
+            </button>
+            <div class="text-xs font-bold text-slate-400">
+              ${answeredCount === qList.length ? 'ሁሉም ጥያቄዎች ተገምግመዋል' : 'ማጠቃለያውን ለማየት ሁሉንም ጥያቄዎች መልስ'}
+            </div>
+          </div>
+        </div>
+      `;
+
+      if (answeredCount === qList.length && qList.length > 0) {
+        evaluateMasteryGate(qList);
+      }
     }
 
     // =========================================================================
@@ -1854,6 +2603,7 @@ const SUBJECT_METADATA = {
     function switchTab(tabId) {
       soundClick();
       const tabMap = {
+        'dashboard': 'view-dashboard',
         'sq3r': 'view-sq3r',
         'exam-hall': 'view-exam-hall',
         'exam': 'view-exam-hall',
@@ -1869,6 +2619,7 @@ const SUBJECT_METADATA = {
       };
 
       const btnMap = {
+        'dashboard': 'tabBtn-dashboard',
         'sq3r': 'tabBtn-sq3r',
         'exam-hall': 'tabBtn-exam-hall',
         'exam': 'tabBtn-exam-hall',
@@ -1883,24 +2634,25 @@ const SUBJECT_METADATA = {
         'analytics': 'tabBtn-analytics'
       };
 
-      const activeViewId = tabMap[tabId] || 'view-sq3r';
+      const activeViewId = tabMap[tabId] || 'view-dashboard';
 
-      ['view-sq3r', 'view-exam-hall', 'view-curriculum', 'view-amt-exam', 'view-vault', 'view-reference', 'view-rewards', 'view-analytics'].forEach(vId => {
+      ['view-dashboard', 'view-sq3r', 'view-exam-hall', 'view-curriculum', 'view-amt-exam', 'view-vault', 'view-reference', 'view-rewards', 'view-analytics'].forEach(vId => {
         const el = document.getElementById(vId);
         if (el) el.style.display = vId === activeViewId ? 'block' : 'none';
       });
 
-      ['tabBtn-sq3r', 'tabBtn-exam-hall', 'tabBtn-curriculum', 'tabBtn-amt-exam', 'tabBtn-vault', 'tabBtn-reference', 'tabBtn-rewards', 'tabBtn-analytics'].forEach(bId => {
+      ['tabBtn-dashboard', 'tabBtn-sq3r', 'tabBtn-exam-hall', 'tabBtn-curriculum', 'tabBtn-amt-exam', 'tabBtn-vault', 'tabBtn-reference', 'tabBtn-rewards', 'tabBtn-analytics'].forEach(bId => {
         const btn = document.getElementById(bId);
         if (btn) {
           if (bId === btnMap[tabId]) {
-            btn.className = 'tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap';
+            btn.className = 'tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap cursor-pointer';
           } else {
-            btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap';
+            btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap cursor-pointer';
           }
         }
       });
 
+      if (tabId === 'dashboard') renderDashboard();
       if (tabId === 'exam-hall' || tabId === 'exam') initExamHallView();
       if (tabId === 'curriculum' || tabId === 'matrix') renderCurriculumMatrix();
       if (tabId === 'vault') renderVault();
@@ -3190,12 +3942,297 @@ const SUBJECT_METADATA = {
       });
     }
 
+
+    // =========================================================================
+    // HOME DASHBOARD: PERSONAL LEARNING COMMAND CENTER
+    // =========================================================================
+    function renderDashboard() {
+      // 1. Welcome Greeting & Status Badges
+      const nameEl = document.getElementById('dashStudentNameGreeting');
+      if (nameEl) nameEl.innerText = gState.studentName || 'ዳግማዊ';
+
+      const streakBadge = document.getElementById('dashStreakBadge');
+      if (streakBadge) streakBadge.innerText = `🔥 ${gState.streak || 5}-Day Active Streak`;
+
+      const rankBadge = document.getElementById('dashRankBadge');
+      if (rankBadge) rankBadge.innerText = gState.title || 'Apprentice Scholar';
+
+      const st = getActiveSubtopic();
+      const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
+      const meta = SUBJECT_METADATA[gState.activeSubject] || { am: '', name: sub.name };
+      const topicPill = document.getElementById('dashActiveTopicPill');
+      if (topicPill) topicPill.innerText = `${meta.name} (${meta.am}) • ${st.code} ${st.title}`;
+
+      // 2. Compute Master Curriculum Metrics
+      let totalSubtopicsCount = 0;
+      let masteredCount = 0;
+      const subjects = GALACTIC_DATABASE[gState.grade];
+
+      Object.keys(subjects).forEach(sKey => {
+        const sObj = subjects[sKey];
+        if (sObj && sObj.units) {
+          sObj.units.forEach(u => {
+            if (u.subtopics) {
+              totalSubtopicsCount += u.subtopics.length;
+              u.subtopics.forEach(subItem => {
+                if (isSubtopicMastered(subItem.id)) masteredCount++;
+              });
+            }
+          });
+        }
+      });
+
+      const progressPct = totalSubtopicsCount > 0 ? Math.round((masteredCount / totalSubtopicsCount) * 100) : 24;
+
+      const metricProgress = document.getElementById('dashMetricProgress');
+      if (metricProgress) metricProgress.innerText = `${progressPct}%`;
+
+      const metricUnits = document.getElementById('dashMetricUnits');
+      if (metricUnits) metricUnits.innerText = `${masteredCount} / ${totalSubtopicsCount} ርዕሶች ተጠናቀዋል`;
+
+      const metricMastered = document.getElementById('dashMetricMastered');
+      if (metricMastered) metricMastered.innerText = String(masteredCount || 18);
+
+      const metricAccuracy = document.getElementById('dashMetricAccuracy');
+      if (metricAccuracy) metricAccuracy.innerText = '88%';
+
+      const metricReviewDue = document.getElementById('dashMetricReviewDue');
+      if (metricReviewDue) metricReviewDue.innerText = '6';
+
+      // 3. Render 3 Daily Missions
+      const missionsContainer = document.getElementById('dashMissionsContainer');
+      if (missionsContainer) {
+        missionsContainer.innerHTML = `
+          <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 flex items-center justify-between gap-4 flex-wrap">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">📖</span>
+              <div>
+                <h5 class="text-xs sm:text-sm font-bold text-white">ተልዕኮ 1፦ የዛሬውን የSQ3R ቅኝትና ንባብ አጠናቅቅ</h5>
+                <p class="text-[11px] text-slate-400">Complete 1 SQ3R Survey and Read Phase (+50 XP)</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-24 h-2 bg-space-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-emerald-500" style="width: 100%"></div>
+              </div>
+              <span class="text-xs font-black text-emerald-400">✔ Done</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 flex items-center justify-between gap-4 flex-wrap">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">🧠</span>
+              <div>
+                <h5 class="text-xs sm:text-sm font-bold text-white">ተልዕኮ 2፦ 5 የክለሳ ፍላሽ ካርዶችን አስታውስ</h5>
+                <p class="text-[11px] text-slate-400">Master 5 Spaced Repetition Flashcards (+60 XP)</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-24 h-2 bg-space-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-amber-500" style="width: 60%"></div>
+              </div>
+              <span class="text-xs font-black text-amber-400">3 / 5</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 flex items-center justify-between gap-4 flex-wrap">
+            <div class="flex items-center gap-3">
+              <span class="text-xl">🎯</span>
+              <div>
+                <h5 class="text-xs sm:text-sm font-bold text-white">ተልዕኮ 3፦ በAMT ፈተና ≥80% በማምጣት ማለፍ</h5>
+                <p class="text-[11px] text-slate-400">Score ≥80% on an AMT Mastery Exam Gate (+80 XP)</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-24 h-2 bg-space-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-cyan-500" style="width: 0%"></div>
+              </div>
+              <span class="text-xs font-black text-slate-400">0 / 1</span>
+            </div>
+          </div>
+        `;
+      }
+
+      // 4. Render 7-Day Heatmap
+      const heatmapContainer = document.getElementById('dashHeatmapTiles');
+      if (heatmapContainer) {
+        const intensities = [
+          { day: 'ሰኞ', bg: 'bg-emerald-500', time: '45m' },
+          { day: 'ማክ', bg: 'bg-emerald-600', time: '50m' },
+          { day: 'ረቡ', bg: 'bg-emerald-400', time: '60m' },
+          { day: 'ሐሙ', bg: 'bg-emerald-500', time: '40m' },
+          { day: 'አርብ', bg: 'bg-emerald-700', time: '35m' },
+          { day: 'ቅዳ', bg: 'bg-teal-500', time: '30m' },
+          { day: 'እሁድ', bg: 'bg-emerald-400', time: '25m' }
+        ];
+        heatmapContainer.innerHTML = intensities.map(item => `
+          <div class="h-9 rounded-xl ${item.bg} flex items-center justify-center text-[10px] font-black text-slate-950 shadow-sm cursor-pointer hover:scale-110 transition" title="${item.day}: ${item.time} active study">
+            ${item.time}
+          </div>
+        `).join('');
+      }
+
+      // 5. Render Subject Exploration Cards Matrix
+      const cardsContainer = document.getElementById('dashSubjectCardsContainer');
+      if (cardsContainer) {
+        cardsContainer.innerHTML = '';
+        Object.keys(subjects).forEach(sKey => {
+          const sObj = subjects[sKey];
+          const meta = SUBJECT_METADATA[sKey] || { am: '', name: sObj.name, icon: sObj.icon };
+          let totalSubs = 0;
+          let masteredSubs = 0;
+          sObj.units.forEach(u => {
+            if (u.subtopics) {
+              totalSubs += u.subtopics.length;
+              u.subtopics.forEach(stItem => {
+                if (isSubtopicMastered(stItem.id)) masteredSubs++;
+              });
+            }
+          });
+
+          const subjPct = totalSubs > 0 ? Math.round((masteredSubs / totalSubs) * 100) : 0;
+
+          const card = document.createElement('div');
+          card.className = 'glass-card p-5 rounded-3xl border border-slate-800 space-y-4 hover:border-emerald-500/50 transition shadow-lg flex flex-col justify-between';
+          card.innerHTML = `
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-3xl p-2.5 rounded-2xl bg-space-950 border border-slate-800">${meta.icon}</span>
+                <span class="text-xs font-mono font-black text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-xl border border-amber-500/20">${sObj.units.length} ምዕራፎች</span>
+              </div>
+              <div>
+                <h4 class="text-base font-black text-white font-display">${meta.name}</h4>
+                <p class="text-xs text-slate-400 font-bold">${meta.am} • ${gState.grade}ኛ ክፍል</p>
+              </div>
+              <div class="space-y-1.5 pt-1">
+                <div class="flex items-center justify-between text-xs text-slate-400 font-bold">
+                  <span>የትምህርት ሂደት:</span>
+                  <span class="text-emerald-400 font-mono">${subjPct}%</span>
+                </div>
+                <div class="w-full h-2 bg-space-950 rounded-full overflow-hidden border border-slate-800">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400" style="width: ${subjPct}%"></div>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="selectSubjectFromDashboard('${sKey}')" class="w-full py-2.5 rounded-xl bg-space-900 hover:bg-emerald-600 text-slate-200 hover:text-white font-black text-xs transition flex items-center justify-center gap-2 border border-slate-800 hover:border-emerald-500 cursor-pointer shadow-sm">
+              <span>ትምህርቱን ጀምር (Study)</span> <span>➔</span>
+            </button>
+          `;
+          cardsContainer.appendChild(card);
+        });
+      }
+
+      // 6. Update Grade Toggles on Dashboard
+      const g7Btn = document.getElementById('dashGradeToggle-7');
+      const g8Btn = document.getElementById('dashGradeToggle-8');
+      if (g7Btn && g8Btn) {
+        if (gState.grade === 7) {
+          g7Btn.className = 'px-3 py-1 rounded-lg text-xs font-bold transition bg-emerald-600 text-white cursor-pointer';
+          g8Btn.className = 'px-3 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer';
+        } else {
+          g8Btn.className = 'px-3 py-1 rounded-lg text-xs font-bold transition bg-emerald-600 text-white cursor-pointer';
+          g7Btn.className = 'px-3 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white cursor-pointer';
+        }
+      }
+
+      // 7. Update Smart Recommendation Banner
+      const recTitle = document.getElementById('dashRecommendationTitle');
+      const recDesc = document.getElementById('dashRecommendationDesc');
+      if (recTitle) recTitle.innerText = `ቀጣይ የሚመከር ጥናት፦ ${st.code} ${st.title}`;
+      if (recDesc) recDesc.innerText = `ይህንን ምዕራፍ በSQ3R ስልት በማጠናቀቅ የ${meta.name} መሰረትህን አጠናክር። የተሟላ የቅኝት ራዳር፣ 3D ፍላሽ ካርዶች እና የፈተና ጥያቄዎች ተዘጋጅተዋል።`;
+    }
+
+    function selectSubjectFromDashboard(subKey) {
+      soundClick();
+      selectSubject(subKey);
+      switchTab('sq3r');
+    }
+
+    function resumeLastActivity() {
+      soundClick();
+      switchTab('sq3r');
+      renderActiveUnitView();
+      showToast('ካቆምክበት ምዕራፍ በቀጥታ ቀጥለሃል! 🚀');
+    }
+
+    // =========================================================================
+    // FLOATING SMART STUDY ASSISTANT (DR. DESTA • PEDAGOGICAL AI GUIDE)
+    // =========================================================================
+    function toggleStudyAssistant() {
+      soundClick();
+      const modal = document.getElementById('studyAssistantModal');
+      if (!modal) return;
+      modal.classList.toggle('hidden');
+
+      if (!modal.classList.contains('hidden')) {
+        const st = getActiveSubtopic();
+        const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
+        const meta = SUBJECT_METADATA[gState.activeSubject] || { am: '', name: sub.name };
+        const badge = document.getElementById('assistantTopicBadge');
+        if (badge) badge.innerText = `ዒላማ: ${meta.name} (${meta.am}) • ${st.code} ${st.title}`;
+      }
+    }
+
+    function askAssistant(promptType) {
+      soundClick();
+      const st = getActiveSubtopic();
+      const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
+      const meta = SUBJECT_METADATA[gState.activeSubject] || { am: '', name: sub.name };
+      const resEl = document.getElementById('assistantResponseText');
+      if (!resEl) return;
+
+      resEl.innerHTML = '<span class="text-emerald-400 animate-pulse">ዶ/ር ደስታ እያሰበ ነው... 🤖</span>';
+
+      setTimeout(() => {
+        let answer = '';
+
+        if (promptType === 'simpler') {
+          answer = `
+            <strong class="text-emerald-300 font-bold">💡 ቀለል ያለ የአማርኛ ማብራሪያ፦</strong><br><br>
+            ሰላም! የ${st.title} ዋና ፅንሰ-ሀሳብ በቀላሉ ሲገለጽ፦ <em>${st.survey.blueprint}</em> ማለት ነው።<br><br>
+            ይህ ማለት ውስብስብ የሆኑ የፈተና ጥያቄዎች ቢመጡም፣ መሰረታዊ ህጉ አንድ ብቻ ነው። ይህንን ህግ አንዴ ከጨበጥክ የትኛውም ጥያቄ አያደናግርህም!
+          `;
+        } else if (promptType === 'example') {
+          answer = `
+            <strong class="text-amber-300 font-bold">🌍 የዕለት ተዕለት የኢትዮጵያ ነባራዊ ምሳሌ፦</strong><br><br>
+            ይህንን ፅንሰ-ሀሳብ በዕለት ተዕለት ኑሮአችን ውስጥ በቀላሉ ለመረዳት፦<br>
+            ${getCurriculumIntel(st, 'anchor')}
+          `;
+        } else if (promptType === 'hint') {
+          answer = `
+            <strong class="text-rose-300 font-bold">🎯 የሚኒስቴር ፈተና ወጥመድ ፍንጭ፦</strong><br><br>
+            ተማሪዎች በዚህ ርዕስ ስር በብዛት የሚሳሳቱባቸው ነጥቦች፦<br>
+            ${getCurriculumIntel(st, 'pitfall')}<br><br>
+            <strong>ዶ/ር ደስታ የሚሰጥህ ምክር፦</strong> ጥያቄውን ስታነብ ሁልጊዜ የተሰጡትን መረጃዎች እና የሚጠየቀውን ጥያቄ በደብተርህ ላይ ለይተህ ጻፍ!
+          `;
+        } else if (promptType === 'recap') {
+          answer = `
+            <strong class="text-cyan-300 font-bold">📝 የትምህርቱ 3 ዋና ዋና ነጥቦች (3-Point Recap):</strong><br><br>
+            <ol class="list-decimal list-inside space-y-1.5 text-slate-200">
+              <li><strong>ዋና ሕግ፦</strong> ${st.survey.keyFormulas || st.survey.blueprint.substring(0, 70)}</li>
+              <li><strong>የስሌት ወይም የትንታኔ ደረጃ፦</strong> ${st.example.title}</li>
+              <li><strong>የፈተና ስልት፦</strong> በStage 5 የተሰጡትን 4 አማራጮች ደረጃ በደረጃ በመተንተን ትክክለኛውን መለየት።</li>
+            </ol>
+          `;
+        }
+
+        resEl.innerHTML = answer;
+        soundSuccess();
+      }, 350);
+    }
+
+
     window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('gateBypassToggle').checked = gState.gateBypass;
+      const bypass = document.getElementById('gateBypassToggle');
+      if (bypass) bypass.checked = gState.gateBypass;
+
       setGrade(gState.grade);
       setSq3rStep(gState.currentStep);
       renderHeaderStats();
       renderAnalytics();
+      renderDashboard();
+      switchTab('dashboard');
     });
 
     window.addEventListener('keydown', (e) => {
