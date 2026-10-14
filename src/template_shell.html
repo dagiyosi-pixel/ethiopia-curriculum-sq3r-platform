@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ethiopian National Curriculum Platform • Grade 7 & 8 Examination Mastery (SQ3R)</title>
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#070b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+Ethiopic:wght@400;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans Ethiopic"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['"Space Grotesk"', '"Noto Sans Ethiopic"', 'sans-serif']
+          },
+          colors: {
+            ethiopia: {
+              green: '#009A44',
+              gold: '#FED100',
+              red: '#EF3340',
+              blue: '#0D529C'
+            },
+            space: {
+              950: '#060911',
+              900: '#090e1a',
+              850: '#0e1526',
+              800: '#151f38',
+              700: '#1e2d4f'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', system-ui, sans-serif;
+      background: #060911;
+      color: #f1f5f9;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(0, 154, 68, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(254, 209, 0, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(239, 51, 64, 0.05) 0%, transparent 55%);
+    }
+    .flag-ribbon {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, #009A44 0% 33.3%, #FED100 33.3% 66.6%, #EF3340 66.6% 100%);
+    }
+    .glass-card {
+      background: rgba(14, 21, 38, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-crest {
+      background: linear-gradient(135deg, rgba(13, 82, 156, 0.25) 0%, rgba(0, 154, 68, 0.15) 50%, rgba(14, 21, 38, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(254, 209, 0, 0.35);
+      box-shadow: 0 10px 40px -10px rgba(13, 82, 156, 0.3);
+    }
+    .gold-glow {
+      box-shadow: 0 0 25px -5px rgba(254, 209, 0, 0.35), inset 0 0 15px rgba(254, 209, 0, 0.1);
+    }
+    .green-glow {
+      box-shadow: 0 0 25px -5px rgba(0, 154, 68, 0.35), inset 0 0 15px rgba(0, 154, 68, 0.1);
+    }
+    .confetti-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .quiz-option-btn {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .quiz-option-btn:hover {
+      transform: translateY(-1.5px);
+    }
+    .quiz-option-btn:active {
+      transform: scale(0.98);
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #060911; }
+    ::-webkit-scrollbar-thumb { background: #1e2d4f; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334a75; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-slate-950">
+  <!-- Official Ethiopian National Tricolor Top Ribbon -->
+  <div class="flag-ribbon sticky top-0 z-50"></div>
+
+  <!-- PWA Offline Install Prompt Banner -->
+  <div id="pwaInstallBanner" class="hidden bg-gradient-to-r from-emerald-950/90 via-space-900 to-emerald-950/90 border-b border-emerald-500/40 px-4 py-2 flex items-center justify-between gap-3 text-xs z-40 sticky top-1">
+    <div class="flex items-center gap-2">
+      <span class="text-base">📲</span>
+      <span class="text-white font-medium">
+        <strong class="text-amber-400">ያለ ኢንተርኔት በስልክዎ ላይ ይጫኑ (Install App Free)</strong> — 100% ነጻ እና ያለ ዳታ ይሰራል (Works 100% Offline with Zero Data)
+      </span>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="installPwaApp()" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition shadow-sm">
+        ጫን (Install)
+      </button>
+      <button onclick="dismissPwaBanner()" class="text-slate-400 hover:text-white px-1.5 py-0.5 rounded transition">
+        ✕
+      </button>
+    </div>
+  </div>
+
+  <!-- Particle Confetti Canvas -->
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <!-- Interactive Toast Notification Stack -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Master App Container -->
+  <div class="min-h-screen flex flex-col">
+
+    <!-- Top Universal National Header -->
+    <header class="glass-card border-b border-slate-800/80 px-4 sm:px-6 py-2.5">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+        
+        <!-- Authentic Ministry Branding & Vector Crest -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-[#0D529C] via-[#009A44] to-[#FED100] p-0.5 shadow-lg shadow-blue-900/40 flex items-center justify-center shrink-0">
+            <div class="w-full h-full rounded-[14px] bg-space-950 flex items-center justify-center">
+              <!-- High-Definition Official Ethiopian Crest Emblem -->
+              <svg viewBox="0 0 100 100" class="w-7 h-7 sm:w-8 sm:h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="#0D529C" stroke="#FED100" stroke-width="3"/>
+                <!-- Rays -->
+                <line x1="50" y1="50" x2="50" y2="10" stroke="#FED100" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="88" y2="38" stroke="#FED100" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="74" y2="86" stroke="#FED100" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="26" y2="86" stroke="#FED100" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="12" y2="38" stroke="#FED100" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Central Star -->
+                <polygon points="50,16 59,38 82,38 64,52 71,74 50,60 29,74 36,52 18,38 41,38" fill="#FED100" stroke="#D97706" stroke-width="1"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-xs sm:text-sm font-black tracking-tight text-white flex items-center gap-1.5 font-display">
+                <span>የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ የትምህርት ሚኒስቴር</span>
+              </h1>
+              <span class="text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold border border-emerald-500/30 uppercase tracking-widest hidden sm:inline">CBA ALIGNED</span>
+            </div>
+            <p class="text-[11px] text-amber-400 font-bold tracking-tight">FDRE MINISTRY OF EDUCATION • Grade 7 & 8 National Examination Mastery (SQ3R)</p>
+          </div>
+        </div>
+
+        <!-- Grade Selector Pill (Grade 7 ⟷ Grade 8) -->
+        <div class="flex items-center bg-space-950 border border-slate-700/80 p-1 rounded-2xl shadow-inner">
+          <button onclick="setGrade(7)" id="gradeToggle-7" class="px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-md shadow-emerald-600/30">
+            <span>📗</span> 7ኛ ክፍል (GRADE 7)
+          </button>
+          <button onclick="setGrade(8)" id="gradeToggle-8" class="px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 text-slate-400 hover:text-white">
+            <span>📘</span> 8ኛ ክፍል (GRADE 8)
+          </button>
+        </div>
+
+        <!-- Student HUD (Rank, XP, Gems, Streak, Pomodoro, Sound) -->
+        <div class="flex items-center flex-wrap gap-2 sm:gap-3">
+          <!-- Streak -->
+          <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-xs" title="Consecutive Active Study Days">
+            <span class="text-sm">🔥</span>
+            <span id="streakCount">5</span>
+            <span class="text-[10px] text-amber-300/80 hidden sm:inline">Days</span>
+          </div>
+
+          <!-- Gems -->
+          <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold text-xs cursor-pointer hover:bg-emerald-500/20 transition" onclick="switchTab('rewards')" title="Knowledge Gems (Click to open Gem Store)">
+            <span>💎</span>
+            <span id="gemCount">340</span>
+          </div>
+
+          <!-- Level & Academic Rank Indicator -->
+          <div class="flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-space-900 border border-slate-700">
+            <div class="flex flex-col">
+              <div class="flex justify-between items-center text-xs mb-1 gap-2">
+                <span class="font-bold text-emerald-300 flex items-center gap-1 text-[11px]">
+                  <span id="userAvatarIcon">🦁</span> <span id="levelTitle">Lvl 2 • Apprentice Scholar (ጀማሪ ተማሪ)</span>
+                </span>
+                <span class="font-mono text-slate-400 text-[10px]" id="xpDisplay">450 / 500 XP</span>
+              </div>
+              <div class="w-24 sm:w-32 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div id="xpProgressBar" class="h-full bg-gradient-to-r from-emerald-500 via-amber-400 to-emerald-400 rounded-full transition-all duration-500" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pomodoro Timer -->
+          <button id="pomoBtn" onclick="togglePomodoro()" class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-200 text-xs font-semibold transition" title="25-min Focused Study Session">
+            <span id="pomoIcon">⏳</span>
+            <span id="pomoTime" class="font-mono text-[11px]">25:00</span>
+          </button>
+
+          <!-- Audio FX -->
+          <button id="soundToggleBtn" onclick="toggleSound()" class="p-1.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-300 transition" title="Toggle Sound FX">
+            <span id="soundIcon">🔊</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Hub Tabs (All 7 Views including Exam Hall Simulator) -->
+    <nav class="bg-space-900/95 border-b border-slate-800 px-4 sm:px-6 sticky top-1 z-30">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto py-2 no-scrollbar">
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('sq3r')" id="tabBtn-sq3r" class="tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 whitespace-nowrap">
+            <span>📖</span> SQ3R የጥናት ስልት (Study Studio)
+          </button>
+          <button onclick="switchTab('exam-hall')" id="tabBtn-exam-hall" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition bg-amber-500/20 text-amber-300 hover:bg-amber-500/30 border border-amber-500/40 whitespace-nowrap shadow-md shadow-amber-500/10">
+            <span>🏛️</span> የፈተና አዳራሽ (Ministry Exam Hall)
+          </button>
+          <button onclick="switchTab('curriculum')" id="tabBtn-curriculum" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap">
+            <span>📚</span> የትምህርት ማውጫ (Syllabus Matrix)
+          </button>
+          <button onclick="switchTab('amt-exam')" id="tabBtn-amt-exam" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap">
+            <span>🎯</span> የጥያቄዎች ባንክ (AMT Question Bank)
+          </button>
+          <button onclick="switchTab('vault')" id="tabBtn-vault" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap">
+            <span>💡</span> የተሰሩ ምሳሌዎች (Worked Examples Vault)
+          </button>
+          <button onclick="switchTab('rewards')" id="tabBtn-rewards" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap">
+            <span>🏆</span> የክብር ሜዳሊያዎች እና የምስክር ወረቀት (Honors)
+          </button>
+          <button onclick="switchTab('analytics')" id="tabBtn-analytics" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition bg-space-850 text-slate-300 hover:bg-space-800 hover:text-white border border-slate-800 whitespace-nowrap">
+            <span>📊</span> የውጤት መከታተያ (Analytics)
+          </button>
+        </div>
+
+        <!-- Master Override Gate Toggle -->
+        <div class="flex items-center gap-2 shrink-0">
+          <label class="flex items-center gap-1.5 cursor-pointer text-[11px] font-bold text-slate-400 bg-space-950 px-3 py-1.5 rounded-xl border border-slate-800" title="Bypass the 80% passing gate for exploratory learning">
+            <input type="checkbox" id="gateBypassToggle" onchange="toggleGateBypass(this.checked)" class="rounded text-emerald-500 focus:ring-0">
+            <span>ነጻ አሰሳ (Free-Roam Mode)</span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Subject Selector Bar (Bilingual English + Amharic) -->
+    <section class="bg-space-950/90 border-b border-slate-800/80 py-2.5 px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
+        <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
+          <span id="activeGradeLabel" class="text-amber-400 font-black">7ኛ ክፍል (Grade 7)</span> <span>የትምህርት አይነቶች (Subjects):</span>
+        </div>
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 no-scrollbar" id="subjectPillsContainer">
+          <!-- Dynamically populated bilingual subject buttons -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Main Content Views -->
+    <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6">
+
+      <!-- =============================================================== -->
+      <!-- VIEW 1: SQ3R MASTERY STUDIO                                     -->
+      <!-- =============================================================== -->
+      <section id="view-sq3r" class="tab-view block space-y-6">
+        
+        <!-- Active Topic Banner & Navigation -->
+        <div class="glass-crest p-6 sm:p-7 rounded-2xl relative overflow-hidden border border-emerald-500/30">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span id="activeSubjectBadge" class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">MATHEMATICS (ሒሳብ)</span>
+                <span id="activeGradeBadge" class="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-amber-400 font-bold border border-slate-700">7ኛ ክፍል (Grade 7)</span>
+                <span id="activeUnitNumber" class="text-xs font-bold text-slate-300">ምዕራፍ 1 (Unit 1)</span>
+                <span id="activeSubtopicBadge" class="text-[11px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">ርዕስ 1.1</span>
+              </div>
+              <h2 id="activeUnitTitle" class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight font-display">
+                Rational Numbers • 1.1 The Concept of Rational Numbers
+              </h2>
+              <p id="activeUnitBigIdea" class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+                Examine fractions, terminating and repeating decimals, and understand why every rational number can be written as a/b (where b ≠ 0).
+              </p>
+            </div>
+
+            <!-- Complete Unit & Subtopic Jump Dropdowns -->
+            <div class="shrink-0 flex flex-col gap-2">
+              <div>
+                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">ምዕራፍ ምረጥ (Select Unit):</label>
+                <select id="unitSelector" onchange="changeUnit(this.value)" class="bg-space-900 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none cursor-pointer w-full sm:w-72 truncate">
+                  <!-- Dynamically populated with all units -->
+                </select>
+              </div>
+              <div>
+                <label class="block text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-1">ንዑስ ርዕስ ምረጥ (Select Subtopic):</label>
+                <select id="subtopicSelector" onchange="changeSubtopic(this.value)" class="bg-space-900 border border-emerald-500/40 text-emerald-300 text-xs font-bold rounded-xl px-3.5 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none cursor-pointer w-full sm:w-72 truncate">
+                  <!-- Dynamically populated with all subtopics -->
+                </select>
+              </div>
+              <button onclick="printCurrentUnitSummary()" class="w-full sm:w-72 px-3 py-1.5 rounded-xl bg-space-850 hover:bg-space-800 text-amber-300 border border-amber-500/30 text-xs font-black flex items-center justify-center gap-2 transition shadow-sm hover:shadow-amber-500/10 cursor-pointer">
+                <span>🖨️</span> ማስታወሻ አትም (Print 1-Page Sheet)
+              </button>
+            </div>
+          </div>
+
+          <!-- Unit Mastery Progress Meter -->
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-4 flex-wrap relative z-10">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold text-slate-400">SQ3R የደረጃዎች ሂደት (Stages):</span>
+              <div class="flex items-center gap-1.5">
+                <span id="gateIndicator-survey" class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black bg-emerald-600 text-white shadow-sm" title="Survey (ቅኝት)">S</span>
+                <span class="text-slate-600 text-xs">➔</span>
+                <span id="gateIndicator-question" class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black bg-space-800 text-slate-500 border border-slate-700" title="Question (ጥያቄ)">Q</span>
+                <span class="text-slate-600 text-xs">➔</span>
+                <span id="gateIndicator-read" class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black bg-space-800 text-slate-500 border border-slate-700" title="Read (ንባብ)">R1</span>
+                <span class="text-slate-600 text-xs">➔</span>
+                <span id="gateIndicator-recite" class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black bg-space-800 text-slate-500 border border-slate-700" title="Recite (ማስታወስ)">R2</span>
+                <span class="text-slate-600 text-xs">➔</span>
+                <span id="gateIndicator-review" class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black bg-space-800 text-slate-500 border border-slate-700" title="Review (ፈተና)">R3</span>
+              </div>
+            </div>
+            <div class="text-xs font-mono font-bold text-amber-400" id="unitProgressPercent">
+              Progress: 20% Complete
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual National Curriculum Expedition Map (Interactive Roadmap) -->
+        <div id="levelMapContainer">
+          <!-- Dynamically populated sequential nodes -->
+        </div>
+
+        <!-- 5-Phase SQ3R Navigation Buttons with Bilingual Titles -->
+        <div class="glass-card p-3 rounded-2xl">
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+            <button onclick="setSq3rStep('survey')" id="stepBtn-survey" class="sq3r-step-btn active p-2.5 sm:p-3 rounded-xl flex flex-col items-center justify-center gap-1 transition bg-emerald-600 text-white font-bold shadow-md shadow-emerald-600/30">
+              <span class="text-lg sm:text-xl">🔭</span>
+              <span class="text-[11px] sm:text-xs font-black">1. SURVEY (ቅኝት)</span>
+              <span class="text-[9px] opacity-80 hidden sm:inline">Reconnaissance</span>
+            </button>
+            <button onclick="setSq3rStep('question')" id="stepBtn-question" class="sq3r-step-btn p-2.5 sm:p-3 rounded-xl flex flex-col items-center justify-center gap-1 transition bg-space-850 text-slate-300 font-bold hover:bg-space-800 border border-slate-800">
+              <span class="text-lg sm:text-xl" id="stepIcon-question">❓</span>
+              <span class="text-[11px] sm:text-xs font-black">2. QUESTION (ጥያቄ)</span>
+              <span class="text-[9px] opacity-80 hidden sm:inline">Inquiry Prompts</span>
+            </button>
+            <button onclick="setSq3rStep('read')" id="stepBtn-read" class="sq3r-step-btn p-2.5 sm:p-3 rounded-xl flex flex-col items-center justify-center gap-1 transition bg-space-850 text-slate-300 font-bold hover:bg-space-800 border border-slate-800">
+              <span class="text-lg sm:text-xl" id="stepIcon-read">📖</span>
+              <span class="text-[11px] sm:text-xs font-black">3. READ (ንባብ)</span>
+              <span class="text-[9px] opacity-80 hidden sm:inline">Notes & Examples</span>
+            </button>
+            <button onclick="setSq3rStep('recite')" id="stepBtn-recite" class="sq3r-step-btn p-2.5 sm:p-3 rounded-xl flex flex-col items-center justify-center gap-1 transition bg-space-850 text-slate-300 font-bold hover:bg-space-800 border border-slate-800">
+              <span class="text-lg sm:text-xl" id="stepIcon-recite">🗣️</span>
+              <span class="text-[11px] sm:text-xs font-black">4. RECITE (ማስታወስ)</span>
+              <span class="text-[9px] opacity-80 hidden sm:inline">Active Recall</span>
+            </button>
+            <button onclick="setSq3rStep('review')" id="stepBtn-review" class="sq3r-step-btn col-span-2 sm:col-span-1 p-2.5 sm:p-3 rounded-xl flex flex-col items-center justify-center gap-1 transition bg-space-850 text-slate-300 font-bold hover:bg-space-800 border border-slate-800">
+              <span class="text-lg sm:text-xl" id="stepIcon-review">⭐</span>
+              <span class="text-[11px] sm:text-xs font-black">5. REVIEW (ፈተና)</span>
+              <span class="text-[9px] opacity-80 hidden sm:inline">AMT Exam Gate (≥80%)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic SQ3R Stage Body Container -->
+        <div id="stepContentContainer" class="min-h-[460px]">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 1.5: MINISTRY EXAM HALL SIMULATOR (የፈተና አዳራሽ)            -->
+      <!-- =============================================================== -->
+      <section id="view-exam-hall" class="tab-view hidden space-y-6">
+        
+        <!-- Mode 1: Exam Configuration & Lobby -->
+        <div id="examHallLobby" class="space-y-6">
+          <div class="glass-crest p-6 sm:p-8 rounded-2xl relative overflow-hidden border border-amber-500/40 bg-gradient-to-br from-space-900 via-amber-950/20 to-space-950">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="px-3 py-0.5 rounded-full text-xs font-black uppercase bg-amber-500/20 text-amber-300 border border-amber-500/40">OFFICIAL SIMULATION</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-emerald-400 font-bold border border-slate-700">7ኛ እና 8ኛ ክፍል (Grade 7 & 8)</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">CBA & MoE CERTIFIED</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight font-display flex items-center gap-3">
+                  <span>🏛️</span> የኢትዮጵያ ሚኒስቴር ፈተና አዳራሽ (Ministry Exam Hall Simulator)
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+                  ከክልላዊ እና ብሔራዊ የትምህርት ሚኒስቴር ፈተናዎች ጋር 100% ተመሳሳይ የሆነ የፈተና አከባቢ። በጊዜ የተገደበ፣ የቀጥታ የጥያቄ መምረጫ ሰሌዳ፣ የፈተና ውጤት ትንተና እና የክብር የምስክር ወረቀት ያካተተ።
+                </p>
+              </div>
+
+              <div class="shrink-0 flex flex-col items-center justify-center p-4 rounded-xl bg-space-950/80 border border-amber-500/30 text-center">
+                <div class="text-3xl font-black text-amber-400 font-display" id="lobbyTotalBankCount">577</div>
+                <div class="text-[10px] text-slate-400 uppercase font-black tracking-widest mt-0.5">የተረጋገጡ ጥያቄዎች (Active Questions)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exam Parameter Setup Card -->
+          <div class="glass-card p-6 sm:p-7 rounded-2xl space-y-6">
+            <h3 class="text-base sm:text-lg font-black text-white flex items-center gap-2 font-display">
+              <span>⚙️</span> የፈተናውን ቅንብሮች ምረጥ (Exam Configuration)
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <!-- Subject Selector -->
+              <div class="space-y-1.5">
+                <label class="block text-xs font-black text-slate-300 uppercase tracking-wider">የትምህርት አይነት (Subject):</label>
+                <select id="examSubjectSelect" class="w-full bg-space-900 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                  <option value="all">🌟 ሁሉንም የትምህርት አይነቶች (Comprehensive Grand Mock)</option>
+                  <option value="math" selected>📐 ሒሳብ (Mathematics)</option>
+                  <option value="science">🔬 አጠቃላይ ሳይንስ (General Science)</option>
+                  <option value="english">📖 እንግሊዝኛ (English)</option>
+                  <option value="social">🌍 ኅብረተሰብ ጥናት (Social Studies)</option>
+                  <option value="citizenship">⚖️ የዜግነት ትምህርት (Citizenship Education)</option>
+                  <option value="it">💻 ኢንፎርሜሽን ቴክኖሎጂ (Information Technology)</option>
+                </select>
+              </div>
+
+              <!-- Grade Selector -->
+              <div class="space-y-1.5">
+                <label class="block text-xs font-black text-slate-300 uppercase tracking-wider">ክፍል (Grade Level):</label>
+                <select id="examGradeSelect" class="w-full bg-space-900 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                  <option value="current" selected>የአሁኑ ክፍል (Current Selected Grade)</option>
+                  <option value="7">7ኛ ክፍል ብቻ (Grade 7 Only)</option>
+                  <option value="8">8ኛ ክፍል ብቻ (Grade 8 Only)</option>
+                  <option value="both">ሁለቱም ክፍሎች (Both Grade 7 & 8 Combined)</option>
+                </select>
+              </div>
+
+              <!-- Question Count Selector -->
+              <div class="space-y-1.5">
+                <label class="block text-xs font-black text-slate-300 uppercase tracking-wider">የጥያቄዎች ብዛት (Questions):</label>
+                <select id="examCountSelect" class="w-full bg-space-900 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                  <option value="10">10 ጥያቄዎች (Quick 10-Min Sprint)</option>
+                  <option value="20" selected>20 ጥያቄዎች (Standard 20-Min Regional Mock)</option>
+                  <option value="40">40 ጥያቄዎች (Full 40-Min Ministry Simulation)</option>
+                  <option value="60">60 ጥያቄዎች (Grand Challenge 60-Min Mock)</option>
+                </select>
+              </div>
+
+              <!-- Timer Setting -->
+              <div class="space-y-1.5">
+                <label class="block text-xs font-black text-slate-300 uppercase tracking-wider">የጊዜ ገደብ (Time Limit):</label>
+                <select id="examTimerSelect" class="w-full bg-space-900 border border-slate-700 text-slate-200 text-xs font-bold rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                  <option value="standard" selected>መደበኛ (1 ደቂቃ በአንድ ጥያቄ • 1 Min/Q)</option>
+                  <option value="strict">ጥብቅ (45 ሰከንድ በአንድ ጥያቄ • Strict 45s/Q)</option>
+                  <option value="relaxed">የተራዘመ (1.5 ደቂቃ በአንድ ጥያቄ • 1.5 Min/Q)</option>
+                  <option value="untimed">ያለ ጊዜ ገደብ (Untimed Practice Mode)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Exam Guidelines & Launch CTA -->
+            <div class="pt-4 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-3 text-xs text-slate-400">
+                <span class="text-amber-400 text-base">⚠️</span>
+                <span>የማለፊያ ነጥብ 80% ነው። 80% እና ከዚያ በላይ ያገኙ ተማሪዎች ይፋዊ የክብር ምስክር ወረቀት (Honors Certificate) ወዲያውኑ ይሰጣቸዋል!</span>
+              </div>
+              <button onclick="launchExamHall()" class="w-full md:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-600 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/20 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2 cursor-pointer">
+                <span>🚀</span> ፈተናውን ጀምር (Start Official Mock Exam)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mode 2: Live Active Exam Room (Hidden initially) -->
+        <div id="examHallActive" class="hidden space-y-6">
+          <!-- Top Sticky HUD -->
+          <div class="glass-card p-4 rounded-2xl border border-amber-500/40 sticky top-14 z-20 shadow-xl bg-space-900/95 backdrop-blur-md">
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <div class="flex items-center gap-3">
+                <span class="text-xl">🏛️</span>
+                <div>
+                  <h3 id="examActiveTitle" class="text-xs sm:text-sm font-black text-white font-display">Ministry Mock Exam</h3>
+                  <div class="text-[11px] text-slate-400 font-mono" id="examProgressTracker">Question 1 of 20</div>
+                </div>
+              </div>
+
+              <!-- Live Countdown Clock -->
+              <div class="flex items-center gap-3">
+                <div id="examClockBadge" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-space-950 border border-slate-700 text-amber-400 font-mono font-black text-sm">
+                  <span>⏱️</span>
+                  <span id="examClockDisplay">20:00</span>
+                </div>
+                <button onclick="toggleExamFlag()" id="examFlagBtn" class="px-3 py-1.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-300 text-xs font-bold flex items-center gap-1 transition cursor-pointer">
+                  <span id="examFlagIcon">🚩</span>
+                  <span class="hidden sm:inline">ለይተህ እሰር (Flag)</span>
+                </button>
+                <button onclick="confirmSubmitExam()" class="px-4 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black transition shadow-md shadow-emerald-600/30 cursor-pointer">
+                  ፈተናውን ጨርስ (Submit Exam)
+                </button>
+              </div>
+            </div>
+
+            <!-- Question Palette Navigator (1 to N) -->
+            <div class="mt-3 pt-3 border-t border-slate-800">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 font-bold mb-1.5">
+                <span>የጥያቄዎች መምረጫ ሰሌዳ (Question Navigator):</span>
+                <span id="examAnsweredCountText">0 / 20 Answered</span>
+              </div>
+              <div id="examPaletteGrid" class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1">
+                <!-- Dynamically populated buttons -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Question Card -->
+          <div id="examQuestionCard" class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-6">
+            <!-- Dynamically populated question content -->
+          </div>
+
+          <!-- Question Controls -->
+          <div class="flex items-center justify-between gap-4">
+            <button onclick="navigateExamQuestion(-1)" id="examPrevBtn" class="px-5 py-2.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-200 text-xs font-bold transition flex items-center gap-2 cursor-pointer">
+              <span>◀</span> ቀዳሚ ጥያቄ (Previous)
+            </button>
+            <button onclick="navigateExamQuestion(1)" id="examNextBtn" class="px-5 py-2.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-200 text-xs font-bold transition flex items-center gap-2 cursor-pointer">
+              ቀጣይ ጥያቄ (Next) <span>▶</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mode 3: Diagnostic Results View (Hidden initially) -->
+        <div id="examHallResults" class="hidden space-y-6">
+          <!-- Dynamically populated score card, diagnostic chapters, and derivations -->
+        </div>
+
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 2: COMPLETE SYLLABUS MATRIX (ALL UNITS & SUBTOPICS)        -->
+      <!-- =============================================================== -->
+      <section id="view-curriculum" class="tab-view hidden space-y-6">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 font-display">
+              <span>📚</span> የኢትዮጵያ ስርዓተ-ትምህርት ሙሉ ማውጫ (Syllabus Matrix)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400">Directly matched with the official Ethiopian Grade 7 & 8 Student Textbooks.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-slate-400">ክፍል (Grade):</span>
+            <span id="matrixGradePill" class="px-3 py-1 rounded-xl bg-emerald-600 font-black text-xs text-white">7ኛ ክፍል (Grade 7)</span>
+          </div>
+        </div>
+
+        <div id="curriculumMatrixContainer" class="space-y-6">
+          <!-- Dynamically populated with all units and subtopics -->
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 3: AMT REGIONAL EXAM MODE (DETAILED BABY-STEP REVEAL)      -->
+      <!-- =============================================================== -->
+      <section id="view-amt-exam" class="tab-view hidden space-y-6">
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-emerald-500/30 space-y-3 bg-gradient-to-br from-emerald-950/30 via-space-950 to-space-950">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-400 border border-amber-500/30">
+              🎯 የክልል ፈተና ማስመሰያ (REGIONAL AMT EXAM ENGINE)
+            </span>
+            <span class="text-xs font-mono text-emerald-400">Step-by-Step Derivation Revealed After Attempting</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-white font-display">Simulated Ethiopian Ministry Examination Practice</h2>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+            Test yourself under real exam conditions! Select your answer first. The full mathematical derivation, conceptual approach ("Way to Do It"), and common traps remain locked until you try.
+          </p>
+        </div>
+
+        <div id="amtExamQuestionsList" class="space-y-6">
+          <!-- Dynamically populated AMT exam questions -->
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 4: WORKING EXAMPLES VAULT                                  -->
+      <!-- =============================================================== -->
+      <section id="view-vault" class="tab-view hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 font-display">
+              <span>💡</span> የተሰሩ ምሳሌዎች ማህደር (Working Examples Vault)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400">Verified step-by-step solutions for every single unit across both grades.</p>
+          </div>
+          <div class="flex items-center gap-2" id="vaultFiltersContainer">
+            <input type="text" id="vaultSearchInput" oninput="filterVault(this.value)" placeholder="Search by topic, formula, or keyword..." class="bg-space-900 border border-slate-700 text-xs font-medium text-white px-3.5 py-2 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none w-64">
+          </div>
+        </div>
+
+        <div id="vaultExamplesList" class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 5: TROPHY ROOM & ACADEMIC HONORS                            -->
+      <!-- =============================================================== -->
+      <section id="view-rewards" class="tab-view hidden space-y-8">
+        <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-br from-emerald-950/40 via-space-900 to-amber-950/20 border border-amber-500/30">
+          <div class="flex items-center gap-5">
+            <div id="trophyAvatarBig" class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-amber-500 to-emerald-600 flex items-center justify-center text-4xl shadow-xl shadow-amber-500/20 gold-glow">
+              🦁
+            </div>
+            <div>
+              <div class="text-xs uppercase font-black tracking-widest text-amber-400">የአካዳሚክ የክብር አዳራሽ (NATIONAL HALL OF HONORS)</div>
+              <h2 id="trophyTitleBig" class="text-xl sm:text-2xl font-black text-white font-display">Apprentice Scholar (ጀማሪ ተማሪ)</h2>
+              <p class="text-xs sm:text-sm text-slate-300 mt-1">Knowledge Gems: <strong class="text-emerald-400" id="trophyGems">340 💎</strong> • Badges: <strong class="text-amber-400" id="trophyBadgeCount">3 / 8</strong></p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button onclick="openCertificateModal()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-black text-xs sm:text-sm shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2 border border-emerald-400/40 cursor-pointer">
+              <span>🎓</span> የምስክር ወረቀት አውርድ (Generate Certificate)
+            </button>
+            <button onclick="claimDailyReward()" id="dailyRewardBtn" class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-amber-500/30 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2 cursor-pointer">
+              <span>🎁</span> Claim Daily Stipend (+75 💎 & +60 XP)
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-base sm:text-lg font-black text-white flex items-center gap-2 font-display">
+            <span>🎖️</span> የላቀ ውጤት ሜዳሊያዎች (Achievement Badges & Historical Honors)
+          </h3>
+          <div id="badgesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Dynamically populated national honors -->
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-base sm:text-lg font-black text-white flex items-center gap-2 font-display">
+            <span>🛒</span> የዕውቀት ዕቃዎች መደብር (Knowledge Gem Shop)
+          </h3>
+          <div id="shopItemsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 6: ANALYTICS & MASTERY RADAR                               -->
+      <!-- =============================================================== -->
+      <section id="view-analytics" class="tab-view hidden space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 font-display">
+              <span>📊</span> የተማሪዎች ውጤት እና የጥናት ሂደት (Mastery & Performance Tracker)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400">Track SQ3R study habits, retention statistics, and syllabus completion across all subjects.</p>
+          </div>
+          <button onclick="exportStateData()" class="px-4 py-2 rounded-xl bg-space-850 hover:bg-space-800 text-xs font-bold text-slate-300 border border-slate-700 flex items-center gap-1.5 transition">
+            <span>💾</span> Export Backup
+          </button>
+        </div>
+
+        <!-- Metric Tiles -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="glass-card p-4 rounded-xl border-l-4 border-emerald-500">
+            <div class="text-xs text-slate-400 font-semibold">Total XP Earned</div>
+            <div id="statTotalXp" class="text-2xl font-black text-white mt-1">450</div>
+            <div class="text-[11px] text-emerald-400 font-medium mt-0.5">Rank: Apprentice Scholar</div>
+          </div>
+          <div class="glass-card p-4 rounded-xl border-l-4 border-amber-500">
+            <div class="text-xs text-slate-400 font-semibold">Active Streak</div>
+            <div id="statStreak" class="text-2xl font-black text-amber-400 mt-1">5 Days</div>
+            <div class="text-[11px] text-amber-300 font-medium mt-0.5">Consistent Daily Study</div>
+          </div>
+          <div class="glass-card p-4 rounded-xl border-l-4 border-cyan-500">
+            <div class="text-xs text-slate-400 font-semibold">Flashcards Mastered</div>
+            <div id="statCardsMastered" class="text-2xl font-black text-cyan-400 mt-1">38</div>
+            <div class="text-[11px] text-cyan-300 font-medium mt-0.5">Active Recall Verified</div>
+          </div>
+          <div class="glass-card p-4 rounded-xl border-l-4 border-purple-500">
+            <div class="text-xs text-slate-400 font-semibold">AMT Quizzes Aced</div>
+            <div id="statQuizzesDone" class="text-2xl font-black text-purple-400 mt-1">12</div>
+            <div class="text-[11px] text-purple-300 font-medium mt-0.5">Score Threshold ≥80%</div>
+          </div>
+        </div>
+
+        <!-- Subject Progress Matrix -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <h3 class="text-sm font-black text-white flex items-center gap-2 font-display">
+              <span>📗</span> 7ኛ ክፍል የትምህርት ሽፋን (Grade 7 Completion)
+            </h3>
+            <div class="space-y-3.5" id="g7MasteryList"></div>
+          </div>
+          <div class="glass-card p-6 rounded-2xl space-y-4">
+            <h3 class="text-sm font-black text-white flex items-center gap-2 font-display">
+              <span>📘</span> 8ኛ ክፍል የትምህርት ሽፋን (Grade 8 Completion)
+            </h3>
+            <div class="space-y-3.5" id="g8MasteryList"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer with Official Attribution -->
+    <footer class="border-t border-slate-800/80 py-4 px-6 text-center text-xs text-slate-500 space-y-1">
+      <div class="flag-ribbon h-0.5 w-24 mx-auto mb-2 opacity-80"></div>
+      <p class="font-bold text-slate-400">የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ የትምህርት ሚኒስቴር • FDRE Ministry of Education</p>
+      <p>Grade 7 & 8 Regional & National Examination Mastery Platform (SQ3R Pedagogical Engine)</p>
+    </footer>
+  </div>
+
+  <!-- Shareable Ministry Honors Certificate Modal -->
+  <div id="certificateModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-space-950/85 backdrop-blur-md overflow-y-auto">
+    <div class="glass-card max-w-3xl w-full p-6 sm:p-7 rounded-3xl border border-amber-500/50 space-y-6 relative bg-space-900 shadow-2xl my-8">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🎓</span>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-white font-display">የብሔራዊ የክብር ምስክር ወረቀት (Official Ministry Honors Certificate)</h3>
+            <p class="text-xs text-slate-400">Generate an authentic, high-resolution certificate with your official ranking and MoE seal.</p>
+          </div>
+        </div>
+        <button onclick="closeCertificateModal()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- Live Canvas Preview Container -->
+      <div class="w-full overflow-hidden rounded-2xl border border-amber-500/30 bg-space-950 flex items-center justify-center p-2 sm:p-4">
+        <canvas id="certCanvas" width="1200" height="840" class="max-w-full h-auto rounded-xl shadow-2xl border border-amber-500/40"></canvas>
+      </div>
+
+      <!-- Student Customization Form Inputs -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="block text-xs font-black text-slate-300">የተማሪው ሙሉ ስም (Student Full Name):</label>
+          <input type="text" id="certStudentName" oninput="updateCertPreview()" placeholder="ለምሳሌ፡ ዳግማዊ ተሾመ (e.g. Dagmawi Teshome)" class="w-full bg-space-950 border border-slate-700 text-white rounded-xl px-3.5 py-2 text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+        </div>
+        <div class="space-y-1">
+          <label class="block text-xs font-black text-slate-300">የትምህርት ቤት / ክልል ስም (School / Region):</label>
+          <input type="text" id="certSchoolName" oninput="updateCertPreview()" placeholder="ለምሳሌ፡ ዳግማዊ ምኒልክ ት/ቤት፣ አዲስ አበባ" class="w-full bg-space-950 border border-slate-700 text-white rounded-xl px-3.5 py-2 text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center justify-end gap-3 pt-3 border-t border-slate-800 flex-wrap">
+        <button onclick="closeCertificateModal()" class="px-4 py-2 rounded-xl bg-space-850 hover:bg-space-800 text-slate-300 text-xs font-bold transition cursor-pointer">
+          ተመለስ (Close)
+        </button>
+        <button onclick="shareCertificateTelegram()" class="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-black transition flex items-center gap-2 shadow-lg shadow-sky-600/30 cursor-pointer">
+          <span>✈️</span> በቴሌግራም አጋራ (Share on Telegram)
+        </button>
+        <button onclick="downloadCertificateImage()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 text-xs font-black transition flex items-center gap-2 shadow-lg shadow-amber-500/30 hover:scale-105 active:scale-95 cursor-pointer">
+          <span>📥</span> ምስሉን አውርድ (Download HD PNG)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zero-Dependency Synthesized Audio Engine -->
+  <script>
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let isSoundMuted = false;
+
+    function playTone(freq, type, duration, delay = 0) {
+      if (isSoundMuted) return;
+      setTimeout(() => {
+        try {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + duration);
+        } catch (e) {}
+      }, delay);
+    }
+
+    function soundClick() { playTone(540, 'sine', 0.05); }
+    function soundFlip() { playTone(680, 'sine', 0.06); }
+    function soundSuccess() {
+      playTone(440, 'triangle', 0.1, 0);
+      playTone(554.37, 'triangle', 0.12, 70);
+      playTone(659.25, 'triangle', 0.18, 140);
+      playTone(880, 'sine', 0.25, 210);
+    }
+    function soundError() {
+      playTone(220, 'sawtooth', 0.14, 0);
+      playTone(175, 'sawtooth', 0.22, 110);
+    }
+    function soundLevelUp() {
+      playTone(523.25, 'triangle', 0.14, 0);
+      playTone(659.25, 'triangle', 0.14, 110);
+      playTone(783.99, 'triangle', 0.14, 220);
+      playTone(1046.50, 'triangle', 0.45, 330);
+    }
+    function toggleSound() {
+      isSoundMuted = !isSoundMuted;
+      document.getElementById('soundIcon').innerText = isSoundMuted ? '🔇' : '🔊';
+      showToast(isSoundMuted ? 'Audio muted' : 'Audio active! 🎵');
+    }
+  </script>
+
+  <!-- Confetti Particle Engine -->
+  <script>
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let confettiPieces = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti() {
+      soundLevelUp();
+      const colors = ['#009A44', '#FED100', '#EF3340', '#0D529C', '#10b981', '#f59e0b'];
+      for (let i = 0; i < 95; i++) {
+        confettiPieces.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          w: Math.random() * 8 + 4,
+          h: Math.random() * 8 + 4,
+          vx: (Math.random() - 0.5) * 18,
+          vy: (Math.random() - 0.7) * 18,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 8,
+          life: 1,
+          decay: Math.random() * 0.015 + 0.01
+        });
+      }
+    }
+
+    function updateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = confettiPieces.length - 1; i >= 0; i--) {
+        const p = confettiPieces[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.35;
+        p.rotation += p.rotationSpeed;
+        p.life -= p.decay;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      requestAnimationFrame(updateConfetti);
+    }
+    updateConfetti();
+  </script>
+
+  <!-- Complete Exhaustive Curriculum Database & Engine -->
+  <script>
+    // =========================================================================
+    // EXHAUSTIVE ETHIOPIAN GRADE 7 & GRADE 8 CURRICULUM SYLLABUS DATABASE
+    // =========================================================================
+    
