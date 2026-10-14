@@ -6,116 +6,196 @@ module.exports = {
     {
       "id": "g8-sci-u1",
       "number": "Unit 1",
-      "title": "Basics of Chemical Reactions",
-      "bigIdea": "Understand chemical equations, conservation of mass, balancing techniques, types of chemical reactions, and thermal changes (exothermic vs endothermic).",
+      "title": "Basics of Chemical Reactions & Inorganic Compounds",
+      "bigIdea": "Understand the classification of inorganic compounds into oxides, acids, bases, and salts, and analyze neutralization reactions.",
       "subtopics": [
         {
           "id": "g8-sci-1.1",
           "code": "1.1",
-          "title": "Chemical Equations, Balancing & Reaction Types",
+          "title": "Classification of Inorganic Compounds: Oxides, Acids, Bases & Salts",
           "survey": {
-            "blueprint": "Chemical equation: symbolic representation of a reaction (Reactants ➔ Products). Balancing equations: adjusting stoichiometric coefficients to satisfy the Law of Conservation of Mass. 4 major types: Synthesis, Decomposition, Single Displacement, Double Displacement. Energy: Exothermic (heat released) vs Endothermic (heat absorbed).",
+            "blueprint": "Inorganic compounds: 1) Oxides (Metal basic oxides, Non-metal acidic oxides, Amphoteric). 2) Acids (Sour taste, release H⁺ in water, turn blue litmus red, pH < 7, e.g., HCl, H₂SO₄, HNO₃). 3) Bases/Alkalis (Bitter taste, slippery feel, release OH⁻ in water, turn red litmus blue, pH > 7, e.g., NaOH, Ca(OH)₂). 4) Salts (Ionic compounds formed by neutralizing acids with bases, e.g., NaCl, CaCO₃).",
             "objectives": [
-              "Balance chemical equations using the systematic inspection method.",
-              "Classify reactions into combination, decomposition, single displacement, and double replacement.",
-              "Distinguish between exothermic (ΔH < 0, temperature rises) and endothermic (ΔH > 0, temperature falls) reactions."
+              "Classify inorganic chemical compounds into oxides, acids, bases, and salts.",
+              "Contrast the chemical and physical properties of acidic and basic solutions.",
+              "Explain the formation and types of common oxides (acidic, basic, amphoteric)."
             ],
-            "keyFormulas": "Law of Conservation of Mass: Total Mass of Reactants = Total Mass of Products"
+            "keyFormulas": "Acid: HA(aq) ➔ H⁺(aq) + A⁻(aq) | Base: BOH(aq) ➔ B⁺(aq) + OH⁻(aq) | Acidic Oxide + Water ➔ Acid (SO₃ + H₂O ➔ H₂SO₄)"
           },
           "questions": [
-            "Why can you NEVER alter chemical subscripts (like changing H₂O to H₂O₂) when balancing a chemical equation?",
-            "Why does the combustion of methane in a Bunsen burner feel hot while dissolving ammonium nitrate in a beaker causes it to turn ice cold?"
+            "How do non-metal oxides differ from metal oxides in their reaction with water?",
+            "What ion is universally responsible for acidic behavior in aqueous solutions?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>⚖️</span> 1. BALANCING CHEMICAL EQUATIONS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Chemical Equation:</strong> Uses chemical symbols and formulas to show reactants turning into products:<br>\n                  <em>Reactants (left) ➔ Products (right)</em>.<br>\n                  • <strong>Golden Rule of Balancing:</strong> Because atoms cannot be created or destroyed (Lavoisier’s Law), the number of atoms of each element must be equal on both sides.<br>\n                  • <strong>Crucial Warning:</strong> You can ONLY change the <strong>coefficients</strong> in front of formulas (e.g., 2H₂O). Changing <strong>subscripts</strong> alters the chemical identity of the compound (e.g. H₂O is water, H₂O₂ is toxic hydrogen peroxide!).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔄</span> 2. FOUR MAJOR REACTION TYPES\n                </h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300 pt-1\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>1. Combination (Synthesis):</strong> Two or more substances combine into a single compound:<br>\n                    <strong>A + B ➔ AB</strong> (e.g. 2Mg + O₂ ➔ 2MgO).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>2. Decomposition:</strong> A single compound breaks down into two or more simpler substances:<br>\n                    <strong>AB ➔ A + B</strong> (e.g. 2H₂O₂ ➔ 2H₂O + O₂).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>3. Single Displacement:</strong> A more reactive element replaces a less reactive element in a compound:<br>\n                    <strong>A + BC ➔ AC + B</strong> (e.g. Zn + 2HCl ➔ ZnCl₂ + H₂).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>4. Double Displacement:</strong> Two ionic compounds exchange their ions:<br>\n                    <strong>AB + CD ➔ AD + CB</strong> (e.g. AgNO₃ + NaCl ➔ AgCl↓ + NaNO₃).\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400 flex items-center gap-2\">\n                  <span>🔥</span> 3. EXOTHERMIC VS. ENDOTHERMIC REACTIONS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Exothermic Reaction:</strong> Releases thermal energy to the surroundings. Temperature of surroundings <strong>increases</strong>. (e.g. Combustion of fuels, respiration, neutralizing acid with base).<br>\n                  • <strong>Endothermic Reaction:</strong> Absorbs thermal energy from the surroundings. Temperature of surroundings <strong>decreases</strong>. (e.g. Photosynthesis, thermal decomposition of limestone CaCO₃, dissolving ammonium chloride in water).\n                </p>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🧪 1. The Four Classes of Inorganic Compounds</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Inorganic compounds are divided into four essential classes:<br>\n                  • <strong>Oxides:</strong> Binary compounds formed between oxygen and another element:<br>\n                  - <em>Basic Oxides:</em> Metallic oxides (e.g., $\\text{CaO}, \\text{Na}_2\\text{O}$) that react with water to form basic metal hydroxides (alkalis).<br>\n                  - <em>Acidic Oxides:</em> Non-metallic oxides (e.g., $\\text{CO}_2, \\text{SO}_2, \\text{SO}_3$) that react with water to form oxyacids (e.g., $\\text{SO}_3 + \\text{H}_2\\text{O} \\rightarrow \\text{H}_2\\text{SO}_4$).<br>\n                  • <strong>Acids:</strong> Substances that release hydrogen ions ($\\text{H}^+$ or hydronium $\\text{H}_3\\text{O}^+$) in aqueous solutions. Taste sour, turn blue litmus paper red, have $\\text{pH} < 7$, and react with active metals to liberate $\\text{H}_2$ gas.<br>\n                  • <strong>Bases (Alkalis):</strong> Substances that produce hydroxide ions ($\\text{OH}^-$) in water. Taste bitter, feel slippery/soapy, turn red litmus paper blue, and have $\\text{pH} > 7$.<br>\n                  • <strong>Salts:</strong> Ionic compounds containing cations from a base and anions from an acid (e.g., $\\text{NaCl}, \\text{KNO}_3, \\text{CuSO}_4$).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">📊 2. The pH Scale</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  The pH scale measures the logarithmic concentration of hydrogen ions from 0 to 14:<br>\n                  • $\\text{pH} = 7$: Strictly Neutral (pure distilled water at 25°C).<br>\n                  • $\\text{pH} < 7$: Acidic (lower pH = stronger acid, e.g., gastric juice $\\text{pH} \\approx 1.5$; lemon juice $\\text{pH} \\approx 2.5$).<br>\n                  • $\\text{pH} > 7$: Basic / Alkaline (higher pH = stronger alkali, e.g., household bleach $\\text{pH} \\approx 12.5$; $\\text{NaOH} \\text{ pH} = 14$).\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Balancing Combustion of Ethane Gas",
-            "problem": "Balance the chemical equation for the combustion of ethane gas: C₂H₆ + O₂ ➔ CO₂ + H₂O.",
+            "title": "Worked Example: Classifying Chemical Compounds",
+            "problem": "Classify each of the following chemical formulas into oxide, acid, base, or salt: (a) HNO₃, (b) KOH, (c) SO₂, (d) MgSO₄.",
             "steps": [
               {
-                "label": "Step 1: Balance Carbon atoms",
-                "text": "Reactants have 2 Carbons (C₂H₆). Place coefficient 2 in front of CO₂:<br>C₂H₆ + O₂ ➔ 2CO₂ + H₂O."
+                "label": "Part (a) HNO₃",
+                "text": "Nitric acid: Releases H⁺ in water ➔ <strong>Acid</strong>."
               },
               {
-                "label": "Step 2: Balance Hydrogen atoms",
-                "text": "Reactants have 6 Hydrogens. Place coefficient 3 in front of H₂O (3 × 2 = 6):<br>C₂H₆ + O₂ ➔ 2CO₂ + 3H₂O."
+                "label": "Part (b) KOH",
+                "text": "Potassium hydroxide: Releases OH⁻ in water ➔ <strong>Base (Alkali)</strong>."
               },
               {
-                "label": "Step 3: Count Oxygen atoms on product side",
-                "text": "2CO₂ gives 2 × 2 = 4 Oxygens. 3H₂O gives 3 × 1 = 3 Oxygens.<br>Total Oxygens on right = 4 + 3 = 7. This requires 7/2 O₂ on the left:<br>C₂H₆ + (7/2)O₂ ➔ 2CO₂ + 3H₂O."
+                "label": "Part (c) SO₂",
+                "text": "Sulfur dioxide: Binary compound of sulfur with oxygen ➔ <strong>Acidic Oxide</strong>."
               },
               {
-                "label": "Step 4: Multiply entire equation by 2 to clear fractions",
-                "text": "<strong>2C₂H₆ + 7O₂ ➔ 4CO₂ + 6H₂O</strong>.<br>Check: C: 4 = 4; H: 12 = 12; O: 14 = 14. (Balanced!)"
+                "label": "Part (d) MgSO₄",
+                "text": "Magnesium sulfate: Ionic compound of metal cation Mg²⁺ and sulfate anion SO₄²⁻ ➔ <strong>Salt</strong>."
               }
             ],
-            "proTip": "When balancing combustion reactions, always balance atoms in this exact order: Carbon first, Hydrogen second, and Oxygen last!"
+            "proTip": "Look at the first and last elements: H at the front usually means acid; OH at the end usually means base; oxygen alone at the end means oxide!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is an exothermic reaction?",
-              "a": "A chemical reaction that releases heat energy to its surroundings, causing temperature to rise."
+              "q": "What ion is released by all Arrhenius acids in water?",
+              "a": "Hydrogen ions (H⁺) or hydronium ions (H₃O⁺)."
             },
             {
-              "q": "What type of reaction is 2KClO₃ ➔ 2KCl + 3O₂?",
-              "a": "Thermal decomposition reaction."
+              "q": "What color does litmus paper turn in a basic (alkaline) solution?",
+              "a": "Blue (red litmus turns blue)."
             },
             {
-              "q": "Why are subscripts never changed during equation balancing?",
-              "a": "Changing subscripts creates a completely different chemical compound rather than balancing the existing reaction."
+              "q": "What type of oxide is formed when sulfur burns in oxygen?",
+              "a": "An acidic oxide (sulfur dioxide, SO₂)."
             }
           ],
           "amtQuiz": [
             {
-              "q": "In the chemical equation for the synthesis of ammonia gas: N₂ + 3H₂ ➔ 2NH₃, what do the stoichiometric coefficients represent?",
+              "q": "When sulfur powder is burned in air, it produces sulfur dioxide gas (SO₂). When this gas is dissolved in distilled water, what will happen to a strip of blue litmus paper dipped into the solution?",
               "options": [
-                "The exact temperature in degrees Celsius needed for the reaction",
-                "The relative number of molecules or moles of each reactant and product",
-                "The mass of each substance in milligrams",
-                "The number of electron shells around each nitrogen atom"
+                "The blue litmus paper will turn red because SO₂ dissolves to form sulfurous acid (H₂SO₃)",
+                "The blue litmus paper will remain unchanged because non-metal oxides form neutral solutions",
+                "The blue litmus paper will turn bright yellow",
+                "The blue litmus paper will turn dark blue"
               ],
-              "correct": 1,
-              "strategy": "Coefficients in balanced equations represent molar or molecular ratios.",
-              "derivation": "Stoichiometric coefficients indicate the molar ratio: 1 mole of nitrogen gas reacts with 3 moles of hydrogen gas to produce 2 moles of ammonia gas.",
-              "trap": "Confusing molar coefficients with mass or temperature."
+              "correct": 0,
+              "strategy": "Non-metal oxides are acidic oxides that react with water to produce acids.",
+              "derivation": "SO₂ + H₂O ➔ H₂SO₃ (sulfurous acid). Because the solution is acidic (pH < 7), it turns blue litmus paper red.",
+              "trap": "Assuming sulfur dioxide does not react with water."
             },
             {
-              "q": "When methane gas (CH₄) burns completely in excess oxygen, what are the balanced products of this combustion reaction?",
+              "q": "Which scientific principle is essential when analyzing Classification of Inorganic Compounds: Oxides, Acids, Bases & Salts?",
               "options": [
-                "Carbon monoxide (CO) and hydrogen gas (H₂)",
-                "Carbon dioxide (CO₂) and water vapor (H₂O)",
-                "Pure carbon soot and ozone (O₃)",
-                "Methanol (CH₃OH) and liquid nitrogen"
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
               ],
-              "correct": 1,
-              "strategy": "Complete hydrocarbon combustion always yields CO₂ and H₂O.",
-              "derivation": "The balanced equation is: CH₄ + 2O₂ ➔ CO₂ + 2H₂O. Complete combustion of any hydrocarbon produces carbon dioxide and water.",
-              "trap": "Confusing incomplete combustion (which produces toxic CO) with complete combustion."
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
             },
             {
-              "q": "What type of chemical reaction is represented by: 2H₂O₂ ➔ 2H₂O + O₂?",
+              "q": "What is the real-world significance of understanding Classification of Inorganic Compounds: Oxides, Acids, Bases & Salts in the context of Ethiopian technological and environmental development?",
               "options": [
-                "Synthesis reaction",
-                "Decomposition reaction",
-                "Single displacement reaction",
-                "Double displacement reaction"
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
               ],
-              "correct": 1,
-              "strategy": "A single compound breaking down into simpler substances is decomposition.",
-              "derivation": "Hydrogen peroxide breaks down into water and oxygen gas. One reactant yielding two or more products defines a decomposition reaction.",
-              "trap": "Confusing decomposition with synthesis (which combines multiple reactants into one product)."
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-1.2",
+          "code": "1.2",
+          "title": "Neutralization Reactions, Indicators & Chemistry Safety",
+          "survey": {
+            "blueprint": "Neutralization: Acid + Base ➔ Salt + Water + Heat (Exothermic). Example: HCl + NaOH ➔ NaCl + H₂O. Acid-Base indicators: Litmus (Red in acid, Blue in base), Phenolphthalein (Colorless in acid, Pink/Magenta in base), Methyl orange (Red in acid, Yellow in base). Universal indicator and pH meter. Lab safety precautions with strong corrosive acids/bases.",
+            "objectives": [
+              "Write balanced chemical equations for acid-base neutralization reactions.",
+              "Predict color changes of litmus, phenolphthalein, and methyl orange in various solutions.",
+              "Describe practical applications of neutralization (antacids, soil treatment, bee/wasp stings)."
+            ],
+            "keyFormulas": "Neutralization: Acid + Base ➔ Salt + Water | H⁺(aq) + OH⁻(aq) ➔ H₂O(l)"
+          },
+          "questions": [
+            "How do antacid tablets relieve heartburn in the human stomach?",
+            "What color does phenolphthalein turn when added to a solution of sodium hydroxide (NaOH)?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">⚖️ 1. The Chemistry of Neutralization</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  A <strong>neutralization reaction</strong> is the reaction between an acid and a base to produce a salt and water:<br>\n                  • <strong>General Word Equation:</strong> $\\text{Acid} + \\text{Base} \\rightarrow \\text{Salt} + \\text{Water}$.<br>\n                  • <strong>Ionic Equation:</strong> $\\text{H}^+(aq) + \\text{OH}^-(aq) \\rightarrow \\text{H}_2\\text{O}(l)$.<br>\n                  • <em>Example:</em> $\\text{HCl}(aq) + \\text{NaOH}(aq) \\rightarrow \\text{NaCl}(aq) + \\text{H}_2\\text{O}(l)$.<br>\n                  • <strong>Real-Life Applications:</strong><br>\n                  - <em>Stomach Heartburn:</em> Overproduction of gastric $\\text{HCl}$ is neutralized using antacid tablets containing mild bases like magnesium hydroxide $\\text{Mg(OH)}_2$ or sodium bicarbonate $\\text{NaHCO}_3$.<br>\n                  - <em>Agricultural Soil Treatment:</em> Acidic farm soils (common in western Ethiopia due to high leaching) are treated with slaked lime $\\text{Ca(OH)}_2$ or limestone $\\text{CaCO}_3$ to raise pH.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400\">🎨 2. Summary Table of Acid-Base Indicators</h4>\n                <div class=\"overflow-x-auto text-xs text-slate-300\">\n                  <table class=\"w-full border-collapse border border-slate-800\">\n                    <tr class=\"bg-space-950 text-slate-200 font-bold\">\n                      <th class=\"p-2 border border-slate-800\">Indicator</th>\n                      <th class=\"p-2 border border-slate-800\">Color in Acid</th>\n                      <th class=\"p-2 border border-slate-800\">Color in Base</th>\n                    </tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Litmus</td><td class=\"p-2 border border-slate-800 text-rose-400 font-bold\">Red</td><td class=\"p-2 border border-slate-800 text-blue-400 font-bold\">Blue</td></tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Phenolphthalein</td><td class=\"p-2 border border-slate-800\">Colorless</td><td class=\"p-2 border border-slate-800 text-pink-400 font-bold\">Pink / Magenta</td></tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Methyl Orange</td><td class=\"p-2 border border-slate-800 text-rose-400 font-bold\">Red / Pink</td><td class=\"p-2 border border-slate-800 text-amber-400 font-bold\">Yellow</td></tr>\n                  </table>\n                </div>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Neutralizing Soil Acidity in Gojjam",
+            "problem": "An agricultural officer in Gojjam tests soil and finds a pH of 4.5 (excessively acidic for maize). Explain what chemical substance should be applied, write the reaction equation, and state why this improves crop yield.",
+            "steps": [
+              {
+                "label": "Step 1: Identify corrective agent",
+                "text": "Agricultural lime (calcium hydroxide, Ca(OH)₂, or crushed limestone, CaCO₃) is added as a mild, cost-effective basic substance."
+              },
+              {
+                "label": "Step 2: Neutralization chemistry",
+                "text": "Ca(OH)₂ + 2 H⁺(soil acid) ➔ Ca²⁺ + 2 H₂O. The excess H⁺ ions are neutralized into water."
+              },
+              {
+                "label": "Step 3: Agricultural benefit",
+                "text": "Raising soil pH toward 6.0-7.0 increases availability of essential plant nutrients (nitrogen, phosphorus) and prevents toxic aluminum absorption."
+              }
+            ],
+            "proTip": "Bee stings are acidic and treated with mild bases (baking soda); wasp stings are alkaline and treated with mild acids (vinegar)!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What are the two universal products of an acid-base neutralization reaction?",
+              "a": "Salt and Water (Acid + Base ➔ Salt + Water)."
             },
             {
-              "q": "Why must every chemical equation be balanced to satisfy the fundamental laws of nature?",
+              "q": "What color is phenolphthalein in an acidic solution?",
+              "a": "Colorless (turns vivid pink in a basic solution)."
+            },
+            {
+              "q": "How does an antacid tablet neutralize excess stomach acid?",
+              "a": "The mild base in the tablet (e.g., Mg(OH)₂) reacts with HCl to form harmless salt and water."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "A drop of phenolphthalein indicator is added to a test tube containing dilute sodium hydroxide solution (NaOH). What color change will be immediately observed?",
               "options": [
-                "To ensure both sides have equal numbers of electrons only",
-                "To obey the Law of Conservation of Mass (atoms cannot be created or destroyed)",
-                "To prevent the temperature of the laboratory from rising",
-                "To make sure reactants have higher volume than products"
+                "The colorless solution turns vibrant pink (magenta)",
+                "The solution turns deep red like litmus",
+                "The solution remains completely colorless",
+                "The solution turns bright canary yellow"
               ],
-              "correct": 1,
-              "strategy": "Balancing satisfies the Law of Conservation of Mass.",
-              "derivation": "Atoms cannot appear or disappear during an ordinary chemical reaction; they are merely rearranged. Therefore, the number of each type of atom must be identical on both sides.",
-              "trap": "Assuming mass changes during reactions."
+              "correct": 0,
+              "strategy": "Recall the indicator color chart: Phenolphthalein is colorless in acid and neutral solutions, but pink in alkaline/basic solutions.",
+              "derivation": "NaOH is a strong base (pH > 7). Phenolphthalein indicator turns bright pink/magenta in the presence of hydroxide ions.",
+              "trap": "Confusing phenolphthalein with methyl orange (which turns yellow in base)."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Neutralization Reactions, Indicators & Chemistry Safety?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Neutralization Reactions, Indicators & Chemistry Safety in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }
@@ -124,113 +204,192 @@ module.exports = {
     {
       "id": "g8-sci-u2",
       "number": "Unit 2",
-      "title": "Physical & Chemical Properties of Substances",
-      "bigIdea": "Examine acids, bases, salts, the pH scale, acid-base indicators, and neutralization reactions in everyday life.",
+      "title": "Metals, Non-Metals & Calculations Based on Formulas",
+      "bigIdea": "Explore properties of metals and non-metals, and perform stoichiometric calculations: formula mass, percentage composition, and the mole.",
       "subtopics": [
         {
           "id": "g8-sci-2.1",
           "code": "2.1",
-          "title": "Acids, Bases, Salts & The pH Scale",
+          "title": "Physical & Chemical Properties of Metals and Non-Metals",
           "survey": {
-            "blueprint": "Acids: produce H⁺ ions in solution, sour taste, turn blue litmus red (pH 0-6). Bases: produce OH⁻ ions, bitter taste, slippery feel, turn red litmus blue (pH 8-14). Neutral substances: pH = 7. Indicators: Litmus, Phenolphthalein, Universal Indicator. Neutralization: Acid + Base ➔ Salt + Water.",
+            "blueprint": "Metals: Malleable (hammered into sheets), Ductile (drawn into wires), Lustrous, High melting/boiling points, Excellent conductors of heat and electricity (free delocalized electrons), Form positive ions (cations) by losing electrons. Non-metals: Brittle solids or gases, Dull, Poor conductors (insulators, except graphite), Low melting points, Form negative ions (anions) by gaining electrons. Metalloids (Semiconductors: Silicon, Germanium).",
             "objectives": [
-              "List physical and chemical properties of acids and bases.",
-              "Interpret the pH scale from 0 to 14 (acidic, neutral, alkaline).",
-              "Predict color changes with litmus paper and phenolphthalein indicators.",
-              "Write balanced neutralization equations: Acid + Base ➔ Salt + Water."
+              "Compare the physical properties of metals with non-metals (conduction, malleability, ductility).",
+              "Explain electrical conductivity in metals based on the \"sea of delocalized electrons\".",
+              "Identify exceptional elements (Mercury: liquid metal at room temp; Graphite: carbon allotrope that conducts electricity)."
             ],
-            "keyFormulas": "Neutralization: HA + BOH ➔ BA + H₂O &nbsp;|&nbsp; pH < 7 (Acidic), pH = 7 (Neutral), pH > 7 (Basic)"
+            "keyFormulas": "Metallic bonding = Lattice of positive metal cations surrounded by a sea of mobile valence electrons"
           },
           "questions": [
-            "Why does drinking an antacid containing magnesium hydroxide relieve gastric heartburn in seconds?",
-            "What is the difference between a concentrated acid and a strong acid in chemistry?"
+            "Why are copper and aluminum widely utilized for electrical wiring and cookware?",
+            "Which metal is a liquid at standard room temperature and pressure?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400 flex items-center gap-2\">\n                  <span>🧪</span> 1. ACIDS VS. BASES: NATURE & PROPERTIES\n                </h4>\n                <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300\">\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-rose-400\">Acids (Hydrogen Ion H⁺ Donors):</strong><br>\n                    • Sour taste (citric acid in lemons, acetic acid in vinegar).<br>\n                    • Corrosive; react with active metals to release <strong>Hydrogen gas (H₂)</strong>.<br>\n                    • React with carbonates to release <strong>Carbon dioxide gas (CO₂)</strong>.<br>\n                    • Color change: Turn <strong>Blue Litmus Paper RED</strong>.<br>\n                    • Strong acids: HCl, H₂SO₄, HNO₃; Weak acids: CH₃COOH, H₂CO₃.\n                  </div>\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-cyan-400\">Bases & Alkalis (Hydroxide OH⁻ Donors):</strong><br>\n                    • Bitter taste and slippery/soapy touch (soap, bleach).<br>\n                    • Soluble bases are called <strong>Alkalis</strong>.<br>\n                    • Color change: Turn <strong>Red Litmus Paper BLUE</strong>.<br>\n                    • Phenolphthalein turns bright <strong>magenta/pink</strong> in basic solution.<br>\n                    • Strong bases: NaOH, KOH, Ca(OH)₂ (limewater).\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>📊</span> 2. THE pH SCALE (0 TO 14)\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  The <strong>pH scale</strong> measures hydrogen ion concentration [H⁺]:<br>\n                  • <strong>pH 0 to 6.9: ACIDIC</strong> (Lower pH = stronger acid; battery acid is pH 0, gastric juice is pH 1-2).<br>\n                  • <strong>pH 7.0: STRICTLY NEUTRAL</strong> (Pure distilled water at 25°C).<br>\n                  • <strong>pH 7.1 to 14: BASIC / ALKALINE</strong> (Higher pH = stronger base; bleach is pH 13, drain cleaner is pH 14).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🧂</span> 3. NEUTRALIZATION & SALT FORMATION\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  When an acid reacts with a base, they destroy each other’s acidic and basic properties:<br>\n                  <strong>Acid + Base ➔ Salt + Water</strong>.<br>\n                  • Hydrochloric acid + Sodium hydroxide ➔ Sodium chloride (table salt) + Water:<br>\n                  <strong>HCl + NaOH ➔ NaCl + H₂O</strong>.<br>\n                  • Real-world applications: Farmers spread slaked lime (Ca(OH)₂) to neutralize acidic soil; antacids (Mg(OH)₂) neutralize excess stomach acid.\n                </p>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">⚡ 1. Comparison of Metals and Non-Metals</h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong class=\"text-emerald-300\">Metals (e.g., Fe, Cu, Al, Au):</strong><br>\n                    • High electrical and thermal conductivity.<br>\n                    • <strong>Malleable:</strong> Can be hammered into thin foils without shattering.<br>\n                    • <strong>Ductile:</strong> Can be drawn into thin wires.<br>\n                    • Metallic luster (shiny when polished).<br>\n                    • High density and high melting points (except Mercury, $\\text{Hg}$, which is liquid at 25°C).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong class=\"text-rose-300\">Non-Metals (e.g., C, S, O₂, N₂, Cl₂):</strong><br>\n                    • Poor electrical & thermal conductors (insulators).<br>\n                    • <strong>Brittle solids:</strong> Shatter into powders when struck with a hammer.<br>\n                    • Dull appearance (lack luster).<br>\n                    • Low melting points and densities.<br>\n                    • <em>Crucial Exception:</em> <strong>Graphite</strong> (allotrope of carbon) conducts electricity due to delocalized electrons between layers!\n                  </div>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Predicting Indicator Color and Neutralization Product",
-            "problem": "A solution of potassium hydroxide (KOH) is tested. Part A: What color will red litmus paper turn? Part B: Write the balanced chemical equation for its neutralization with sulfuric acid (H₂SO₄).",
+            "title": "Worked Example: Explaining Malleability at the Atomic Level",
+            "problem": "Explain why a block of pure copper can be hammered into a thin roofing sheet without cracking, whereas a lump of sulfur shatters into dust.",
             "steps": [
               {
-                "label": "Step 1: Identify nature of KOH",
-                "text": "KOH is a strong alkaline base. Bases turn red litmus paper <strong>BLUE</strong>."
+                "label": "Step 1: Metal structure (Copper)",
+                "text": "In copper, metallic bonds consist of positive metal ions immersed in a fluid sea of delocalized electrons. When struck, layers of ions slide past each other without breaking the flexible metallic bond."
               },
               {
-                "label": "Step 2: Identify reactants and products for Part B",
-                "text": "Acid = H₂SO₄ (dibasic acid). Base = KOH.<br>Salt formed = Potassium sulfate (K₂SO₄). Byproduct = Water (H₂O)."
+                "label": "Step 2: Non-metal structure (Sulfur)",
+                "text": "Solid sulfur consists of covalent S₈ molecules held by weak intermolecular forces. A hammer blow shears the crystal lattice, causing like charges or molecular planes to repel and shatter."
               },
               {
-                "label": "Step 3: Balance the neutralization equation",
-                "text": "H₂SO₄ + 2KOH ➔ <strong>K₂SO₄ + 2H₂O</strong>."
+                "label": "Step 3: Conclusion",
+                "text": "Copper is <strong>malleable</strong>; sulfur is <strong>brittle</strong>."
               }
             ],
-            "proTip": "Remember: Acids turn litmus RED (think \"Red = Acid Alert\"); Bases turn litmus BLUE (think \"B = Base = Blue\")!"
+            "proTip": "Graphite is the ONLY common non-metal solid that conducts electricity, making it ideal for battery electrodes and pencil leads!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the pH of a neutral solution like pure water?",
-              "a": "7.0."
+              "q": "What term describes the property of a metal that allows it to be hammered into thin sheets?",
+              "a": "Malleability (Ductility is the ability to be drawn into wires)."
             },
             {
-              "q": "What gas is produced when an acid reacts with an active metal like Zinc?",
-              "a": "Hydrogen gas (H₂), which burns with a squeaky pop sound."
+              "q": "Which non-metal allotrope is a good conductor of electricity?",
+              "a": "Graphite (an allotrope of carbon)."
             },
             {
-              "q": "What color does phenolphthalein turn in an acidic solution versus a basic solution?",
-              "a": "Colorless in acid; bright pink/magenta in base."
+              "q": "Name the only metal that is liquid at standard room temperature.",
+              "a": "Mercury (Hg)."
             }
           ],
           "amtQuiz": [
             {
-              "q": "What is the color change observed when blue litmus paper is dipped into an acidic solution such as lemon juice (citric acid)?",
+              "q": "Which of the following elements is the ONLY metallic element that exists in the liquid state under standard room temperature and atmospheric pressure?",
               "options": [
-                "Blue litmus paper turns Red",
-                "Blue litmus paper turns Bright Green",
-                "Blue litmus paper turns Colorless",
-                "Blue litmus paper remains Blue"
+                "Mercury (Hg)",
+                "Bromine (Br₂)",
+                "Gallium (Ga)",
+                "Sodium (Na)"
               ],
               "correct": 0,
-              "strategy": "Acids turn Blue litmus paper Red (ABR rule).",
-              "derivation": "Acidic solutions (pH < 7) donate hydrogen ions (H⁺) that protonate litmus pigment, shifting its conjugated structure to reflect red wavelengths.",
-              "trap": "Confusing acids (blue to red) with bases (red to blue)."
+              "strategy": "Mercury is the liquid metal; Bromine is a liquid non-metal.",
+              "derivation": "Mercury (Hg) is the only liquid metal at standard room temperature (25°C). Bromine is also liquid, but it is a halogen non-metal.",
+              "trap": "Choosing Bromine (Bromine is a liquid, but it is a NON-METAL, not a metal!)."
             },
             {
-              "q": "A soil sample taken from a farming cooperative in Wolaita has a measured pH of 5.0. What chemical substance is commonly applied by agricultural extension workers to neutralize this acidic soil?",
+              "q": "Which scientific principle is essential when analyzing Physical & Chemical Properties of Metals and Non-Metals?",
               "options": [
-                "Concentrated hydrochloric acid",
-                "Agricultural lime (calcium carbonate / hydroxide)",
-                "Sodium chloride (table salt)",
-                "Sulfur powder"
-              ],
-              "correct": 1,
-              "strategy": "Lime is a basic calcium compound used to raise soil pH (neutralization).",
-              "derivation": "Soil with pH 5.0 is acidic. Applying agricultural lime (CaCO₃ or Ca(OH)₂) neutralizes excess H⁺ ions: 2H⁺ + CaCO₃ ➔ Ca²⁺ + CO₂ + H₂O.",
-              "trap": "Adding more acid or table salt, which would ruin the soil."
-            },
-            {
-              "q": "Which of the following values on the pH scale represents a strongly basic (alkaline) aqueous solution?",
-              "options": [
-                "pH = 1.0",
-                "pH = 7.0",
-                "pH = 5.5",
-                "pH = 13.0"
-              ],
-              "correct": 3,
-              "strategy": "pH scale: 0-6.9 is acidic, 7.0 is neutral, 7.1-14 is basic.",
-              "derivation": "pH 13.0 indicates a very high hydroxide ion concentration [OH⁻] and very low [H⁺], characteristic of strong bases like sodium hydroxide (NaOH).",
-              "trap": "Selecting pH 1.0, which is strongly acidic!"
-            },
-            {
-              "q": "What are the two standard products formed when an acid reacts with a base in a neutralization reaction?",
-              "options": [
-                "A Salt and Water",
-                "An Oxide and Hydrogen gas",
-                "Pure Carbon and Oxygen",
-                "A Metal and Nitrogen gas"
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
               ],
               "correct": 0,
-              "strategy": "Neutralization formula: Acid + Base ➔ Salt + Water.",
-              "derivation": "For example: HCl (acid) + NaOH (base) ➔ NaCl (salt) + H₂O (water). The H⁺ and OH⁻ ions combine to form neutral water.",
-              "trap": "Assuming hydrogen gas is released (hydrogen gas is released when acids react with metals, not bases!)."
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Physical & Chemical Properties of Metals and Non-Metals in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-2.2",
+          "code": "2.2",
+          "title": "Relative Formula Mass, Percentage Composition & The Mole Concept",
+          "survey": {
+            "blueprint": "Relative Atomic Mass (Ar): Average mass of an atom compared to 1/12th of Carbon-12. Relative Formula Mass (Mr): Sum of Ar of all atoms in formula. Percentage Composition: % = (n · Ar / Mr) × 100%. The Mole: Avogadro’s number NA = 6.022 × 10²³ particles. Molar mass (g/mol). n = m / M.",
+            "objectives": [
+              "Calculate the Relative Formula Mass (Mr) of chemical compounds given atomic masses.",
+              "Determine the percentage composition by mass of each element in a compound.",
+              "Define the mole and convert between mass, moles, and number of particles using n = m / M."
+            ],
+            "keyFormulas": "Formula Mass Mr = Σ(Ar × atom count) | % Element = (Mass of element in formula / Total Formula Mass) × 100% | Moles: n = m / M"
+          },
+          "questions": [
+            "What is the formula mass of calcium carbonate (CaCO₃) if Ca = 40, C = 12, O = 16?",
+            "What is the percentage of nitrogen in urea (NH₂CONH₂)?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">📐 1. Relative Formula Mass ($M_r$)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  The <strong>Relative Formula Mass ($M_r$)</strong> is the sum of the relative atomic masses ($A_r$) of all atoms present in the chemical formula:<br>\n                  • <em>Example for Water ($\text{H}_2\text{O}$):</em><br>\n                  $M_r = (2 \times A_r\text{ of H}) + (1 \times A_r\text{ of O}) = (2 \times 1) + (1 \times 16) = mathbf{18}$.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">📊 2. Percentage Composition by Mass</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Formula: <strong>$% \text{ of Element} = \frac{\text{Total mass of that element in formula}}{M_r} \times 100%$</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400\">🔢 3. The Mole Concept ($n = m / M$)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>1 Mole:</strong> The amount of substance that contains exactly <strong>$6.022 \times 10^{23}$</strong> elementary entities (Avogadro’s Number, $N_A$).<br>\n                  • <strong>Molar Mass ($M$):</strong> The mass of 1 mole of a substance in $\text{g/mol}$, numerically equal to its formula mass.<br>\n                  • <strong>Mole Triangle:</strong> $mathbf{n = \frac{m}{M}}$ (where $n = \text{moles}$, $m = \text{mass in grams}$, $M = \text{molar mass in g/mol}$).\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Percentage Composition of Calcium Carbonate",
+            "problem": "Calculate the percentage of calcium by mass in pure limestone, calcium carbonate (CaCO₃). Given: Ar(Ca) = 40, Ar(C) = 12, Ar(O) = 16.",
+            "steps": [
+              {
+                "label": "Step 1: Calculate Formula Mass (Mr)",
+                "text": "Mr = (1 × 40) + (1 × 12) + (3 × 16) = 40 + 12 + 48 = <strong>100 g/mol</strong>."
+              },
+              {
+                "label": "Step 2: Apply percentage formula",
+                "text": "% Ca = (Total mass of Ca / Mr) × 100% = (40 / 100) × 100%."
+              },
+              {
+                "label": "Step 3: Compute percentage",
+                "text": "% Calcium = <strong>40%</strong>."
+              }
+            ],
+            "proTip": "Whenever the formula mass happens to equal 100 (like CaCO₃), the mass of each element directly equals its percentage!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is Avogadro’s constant?",
+              "a": "6.022 × 10²³ particles per mole."
+            },
+            {
+              "q": "What is the formula relating mass, molar mass, and number of moles?",
+              "a": "n = m / M (Moles = Mass / Molar mass)."
+            },
+            {
+              "q": "What is the formula mass of water (H₂O)?",
+              "a": "18 (2 × 1 + 16)."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "What is the percentage of oxygen by mass in pure carbon dioxide gas (CO₂)? (Atomic masses: C = 12, O = 16)",
+              "options": [
+                "72.7%",
+                "27.3%",
+                "32.0%",
+                "50.0%"
+              ],
+              "correct": 0,
+              "strategy": "Find Mr of CO₂: 12 + 2(16) = 44. Then divide total oxygen mass (32) by 44.",
+              "derivation": "Mr(CO₂) = 12 + 32 = 44. % O = (32 / 44) × 100% = 0.7272 × 100% = 72.7%.",
+              "trap": "Dividing 16 by 44 (forgetting that there are TWO oxygen atoms, totaling 32!)."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Relative Formula Mass, Percentage Composition & The Mole Concept?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Relative Formula Mass, Percentage Composition & The Mole Concept in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }
@@ -239,113 +398,192 @@ module.exports = {
     {
       "id": "g8-sci-u3",
       "number": "Unit 3",
-      "title": "Motion and Newton’s Laws",
-      "bigIdea": "Understand kinematics: distance vs displacement, speed vs velocity, uniform acceleration, linear motion equations, and Newton’s three laws of motion.",
+      "title": "Motion in One Dimension & Newton’s Laws",
+      "bigIdea": "Analyze rectilinear kinematics (distance, displacement, speed, velocity, acceleration), motion graphs, and Newton’s three laws of motion.",
       "subtopics": [
         {
           "id": "g8-sci-3.1",
           "code": "3.1",
-          "title": "Speed, Velocity, Acceleration & Newton’s Laws",
+          "title": "Speed, Velocity, Acceleration & Motion Graphs",
           "survey": {
-            "blueprint": "Distance (scalar, path length) vs Displacement (vector, straight-line distance). Speed = Distance / Time. Velocity = Displacement / Time. Acceleration: a = (v - u) / t. Three equations of motion: (1) v = u + at, (2) s = ut + ½at², (3) v² = u² + 2as. Newton’s 3 Laws of Motion & Friction.",
+            "blueprint": "Distance (scalar) vs Displacement (vector). Speed = Distance / time. Velocity = Displacement / time. Acceleration = (v - u) / t. Graphs: Displacement-Time graph (slope = velocity). Velocity-Time graph (slope = acceleration; area under curve = total displacement). Uniform motion vs uniformly accelerated motion.",
             "objectives": [
-              "Differentiate scalar quantities (distance, speed) from vector quantities (displacement, velocity, acceleration).",
-              "Calculate uniform acceleration using a = (v - u) / t.",
-              "Solve linear kinematics problems using the three equations of uniformly accelerated motion.",
-              "Analyze friction: static friction, kinetic friction, and methods of reducing friction (lubrication, ball bearings)."
+              "Distinguish between scalar quantities (speed, distance) and vector quantities (velocity, displacement).",
+              "Calculate acceleration using a = (v - u) / t.",
+              "Interpret displacement-time and velocity-time graphs to determine velocity and displacement."
             ],
-            "keyFormulas": "v = u + at &nbsp;|&nbsp; s = ut + ½at² &nbsp;|&nbsp; v² = u² + 2as &nbsp;|&nbsp; F_net = ma &nbsp;|&nbsp; Momentum: p = mv"
+            "keyFormulas": "v_avg = s / t | a = (v - u) / t | Area under v-t graph = Displacement s"
           },
           "questions": [
-            "Can an object have a constant speed while simultaneously experiencing non-zero acceleration?",
-            "Why does a passenger in an Ethiopian bus lurch violently forward when the driver slams on the brakes suddenly?"
+            "What physical quantity does the gradient (slope) of a velocity-time graph represent?",
+            "Can an object have a constant speed but a changing velocity? Explain."
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>🚗</span> 1. KINEMATIC QUANTITIES COMPARED\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Distance (d):</strong> Total length of path traversed regardless of direction (scalar, always positive).<br>\n                  • <strong>Displacement (s):</strong> Straight-line vector distance from starting position to ending position.<br>\n                  • <strong>Speed:</strong> Rate of change of distance: <em>v = d / t</em> (scalar).<br>\n                  • <strong>Velocity:</strong> Speed with a specified direction: <em>v = s / t</em> (vector).<br>\n                  • <strong>Acceleration (a):</strong> The rate of change of velocity with respect to time: <strong>a = (v - u) / t</strong> (Unit: m/s²).<br>\n                  <em>Note:</em> An object traveling at constant speed in a circle IS accelerating because its direction changes continuously!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>📈</span> 2. THE THREE EQUATIONS OF UNIFORMLY ACCELERATED MOTION\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>1st Equation:</strong> <strong>v = u + at</strong> (relates final velocity v, initial velocity u, acceleration a, and time t).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>2nd Equation:</strong> <strong>s = ut + ½at²</strong> (relates displacement s to time t).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>3rd Equation:</strong> <strong>v² = u² + 2as</strong> (time-independent equation).\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🛑</span> 3. NEWTON’S LAWS OF MOTION & FRICTION\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Newton’s 1st Law (Inertia):</strong> Passengers lurch forward during sudden braking because their bodies possess inertia of motion.<br>\n                  • <strong>Newton’s 2nd Law:</strong> <strong>F_net = m × a</strong>. Doubling force doubles acceleration; doubling mass halves acceleration.<br>\n                  • <strong>Newton’s 3rd Law:</strong> Action and reaction forces are equal and opposite (e.g. rocket exhaust pushes down, rocket accelerates up).<br>\n                  • <strong>Friction:</strong> Force opposing relative motion. <em>Static friction</em> (opposing start of motion) is always greater than <em>Kinetic friction</em> (opposing ongoing motion).\n                </p>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🏎️ 1. Kinematic Definitions</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Distance vs Displacement:</strong> Distance is total path length traveled (scalar, always positive). Displacement is straight-line distance from initial to final position with direction (vector).<br>\n                  • <strong>Speed vs Velocity:</strong> Speed is rate of covering distance ($v = d/t$). Velocity is rate of change of displacement ($v = Delta s / Delta t$). An object moving in a circle at constant speed has changing velocity because its direction changes continuously!<br>\n                  • <strong>Acceleration ($a$):</strong> Rate of change of velocity: <strong>$a = \frac{v - u}{t}$</strong> (where $u = \text{initial velocity}$, $v = \text{final velocity}$, $t = \text{time}$). SI unit: $\text{m/s}^2$. Negative acceleration is deceleration or retardation.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">📈 2. Interpreting Motion Graphs</h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Displacement-Time ($s-t$) Graph:</strong><br>\n                    • <strong>Slope (Gradient) = Velocity</strong>.<br>\n                    • Straight diagonal line = Constant velocity.<br>\n                    • Horizontal line = Object at rest ($v = 0$).<br>\n                    • Curved line = Accelerated motion.\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Velocity-Time ($v-t$) Graph:</strong><br>\n                    • <strong>Slope (Gradient) = Acceleration</strong>.<br>\n                    • Horizontal line = Uniform velocity ($a = 0$).<br>\n                    • <strong>Area Under Curve = Total Displacement ($s$)</strong>!\n                  </div>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Kinematics of an Accelerating Truck",
-            "problem": "A freight truck traveling along the Modjo-Hawassa expressway starts from rest (u = 0) and accelerates uniformly at 2.5 m/s² for 8 seconds. Calculate: Part A: Its final velocity in m/s. Part B: The total distance traveled in this time.",
+            "title": "Worked Example: Calculating Acceleration of a Light Rail Train",
+            "problem": "The Addis Ababa Light Rail Transit train accelerates uniformly from rest (0 m/s) to a speed of 20 m/s in 10 seconds. Calculate (a) the acceleration of the train, and (b) the distance traveled during these 10 seconds.",
             "steps": [
               {
-                "label": "Step 1: Calculate final velocity using 1st equation",
-                "text": "u = 0 m/s, a = 2.5 m/s², t = 8 s.<br>v = u + at = 0 + (2.5 × 8) = <strong>20 m/s</strong> (72 km/h)."
+                "label": "Step 1: Calculate acceleration",
+                "text": "a = (v - u) / t = (20 m/s - 0 m/s) / 10 s = <strong>2 m/s²</strong>."
               },
               {
-                "label": "Step 2: Calculate distance using 2nd equation",
-                "text": "s = ut + ½at².<br>Since u = 0, s = ½ × 2.5 × (8)².<br>s = 1.25 × 64 = <strong>80 meters</strong>."
+                "label": "Step 2: Calculate distance from v-t graph area",
+                "text": "Area of triangle = 1/2 × base × height = 1/2 × 10 s × 20 m/s."
               },
               {
-                "label": "Step 3: Verification using 3rd equation",
-                "text": "v² = u² + 2as ⟹ 20² = 0 + 2(2.5)(s) ⟹ 400 = 5s ⟹ s = 400 / 5 = 80 m. (Verified!)"
+                "label": "Step 3: State distance",
+                "text": "Distance = <strong>100 meters</strong>."
               }
             ],
-            "proTip": "When a problem states \"starts from rest\", write down u = 0 immediately! When it states \"comes to a stop\", write down v = 0!"
+            "proTip": "On a velocity-time graph, the area between the line and the time axis ALWAYS equals total displacement!"
           },
           "reciteFlashcards": [
             {
               "q": "What is the SI unit of acceleration?",
-              "a": "m/s² (meters per second squared)."
+              "a": "Meters per second squared (m/s²)."
             },
             {
-              "q": "Which equation of motion does NOT involve time t?",
-              "a": "v² = u² + 2as."
+              "q": "What does the slope of a velocity-time graph represent?",
+              "a": "Acceleration."
             },
             {
-              "q": "Why is static friction always greater than kinetic friction?",
-              "a": "Because surface asperities interlock deeper when objects are stationary at rest."
+              "q": "What does the area under a velocity-time graph represent?",
+              "a": "Total displacement (distance traveled)."
             }
           ],
           "amtQuiz": [
             {
-              "q": "An electric train on the Addis Ababa Light Rail Transit accelerates uniformly from rest (u = 0 m/s) at a rate of 1.5 m/s² for 8 seconds. What is its final velocity?",
+              "q": "A vehicle moves such that its velocity-time graph is a horizontal straight line at v = 25 m/s for 8 seconds. What is the acceleration of the vehicle and the distance traveled?",
               "options": [
-                "9.5 m/s",
-                "12.0 m/s",
-                "6.0 m/s",
-                "18.0 m/s"
+                "Acceleration = 0 m/s²; Distance = 200 m",
+                "Acceleration = 3.125 m/s²; Distance = 200 m",
+                "Acceleration = 0 m/s²; Distance = 100 m",
+                "Acceleration = 25 m/s²; Distance = 200 m"
               ],
-              "correct": 1,
-              "strategy": "Use the first equation of linear motion: v = u + at.",
-              "derivation": "v = u + at = 0 + (1.5 m/s² × 8 s) = 12.0 m/s.",
-              "trap": "Adding velocity and acceleration directly (8 + 1.5 = 9.5)."
+              "correct": 0,
+              "strategy": "A horizontal line on a v-t graph has zero slope (zero acceleration). Distance is area of rectangle: v × t.",
+              "derivation": "Slope = 0 ➔ a = 0 m/s². Distance = 25 m/s × 8 s = 200 m.",
+              "trap": "Thinking that moving at 25 m/s implies non-zero acceleration."
             },
             {
-              "q": "What is the physical difference between speed and velocity in physics?",
+              "q": "Which scientific principle is essential when analyzing Speed, Velocity, Acceleration & Motion Graphs?",
               "options": [
-                "Speed has magnitude and direction, while velocity has only magnitude",
-                "Speed is a scalar quantity (magnitude only), while velocity is a vector quantity (magnitude and direction)",
-                "Speed is measured in meters per second, while velocity is measured in Newtons",
-                "Speed applies only to cars, while velocity applies only to aircraft"
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
               ],
-              "correct": 1,
-              "strategy": "Scalar = magnitude only; Vector = magnitude + direction.",
-              "derivation": "Speed is distance divided by time (scalar). Velocity is displacement divided by time (vector), requiring a specified direction of travel.",
-              "trap": "Reversing scalar and vector definitions."
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
             },
             {
-              "q": "How far does a vehicle travel in 10 seconds if it moves at a constant, non-accelerating speed of 25 meters per second?",
+              "q": "What is the real-world significance of understanding Speed, Velocity, Acceleration & Motion Graphs in the context of Ethiopian technological and environmental development?",
               "options": [
-                "2.5 meters",
-                "250 meters",
-                "35 meters",
-                "15 meters"
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
               ],
-              "correct": 1,
-              "strategy": "Formula: Distance = Speed × Time (s = v × t).",
-              "derivation": "s = 25 m/s × 10 s = 250 meters.",
-              "trap": "Dividing speed by time (25/10 = 2.5)."
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-3.2",
+          "code": "3.2",
+          "title": "Newton’s Three Laws of Motion & Momentum",
+          "survey": {
+            "blueprint": "Newton’s Laws of Motion: 1st Law (Law of Inertia): F_net = 0 ➔ v = constant. 2nd Law: F_net = m · a (Force equals mass times acceleration). 3rd Law (Action-Reaction): For every action, there is an equal and opposite reaction (F_AB = -F_BA). Linear Momentum: p = m · v (in kg·m/s). Law of Conservation of Linear Momentum: Total momentum before collision = Total momentum after collision in an isolated system.",
+            "objectives": [
+              "State and apply Newton’s Second Law of Motion: F = m · a.",
+              "Explain Newton’s Third Law and identify action-reaction force pairs.",
+              "Define linear momentum (p = m·v) and apply conservation of momentum to collisions."
+            ],
+            "keyFormulas": "F = m · a | Momentum: p = m · v [kg·m/s] | Conservation: m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂"
+          },
+          "questions": [
+            "Why do action and reaction forces never cancel each other out?",
+            "What net force is required to accelerate a 1,200 kg car at 2.5 m/s²?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">⚡ 1. Newton’s Second Law ($F = ma$)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  <em>\"The acceleration of an object is directly proportional to the net force acting upon it and inversely proportional to its mass.\"</em><br>\n                  • Formula: <strong>$F_{\text{net}} = m cdot a$</strong>.<br>\n                  • $1\text{ Newton} = 1\text{ kg} cdot \text{m/s}^2$. If you double the force on an object, its acceleration doubles. If you double the mass, acceleration is halved.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">🔄 2. Newton’s Third Law of Motion</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  <em>\"Whenever one object exerts a force on a second object, the second object exerts an equal and opposite force on the first.\"</em><br>\n                  • <strong>Key Principle:</strong> Action and reaction forces act on <strong>TWO DIFFERENT BODIES</strong>, so they never cancel each other out!<br>\n                  • <em>Examples:</em> Walking (foot pushes backward on Earth; Earth pushes forward on foot); Rocket propulsion (exhaust gas expelled backward; rocket pushed forward).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400\">💥 3. Linear Momentum ($p = mv$)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Momentum ($p$):</strong> The quantity of motion an object possesses: <strong>$p = m cdot v$</strong> (SI unit: $\text{kg} cdot \text{m/s}$).<br>\n                  • <strong>Conservation of Momentum:</strong> In an isolated system (no external forces), the total momentum before collision equals total momentum after collision: $m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2$.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Applying Newton’s Second Law",
+            "problem": "A net braking force of 3,000 N is applied to a vehicle of mass 1,500 kg moving at 20 m/s. Calculate (a) the deceleration of the vehicle, and (b) the time taken for the vehicle to come to a complete stop.",
+            "steps": [
+              {
+                "label": "Step 1: Calculate deceleration using F = ma",
+                "text": "a = F / m = -3,000 N / 1,500 kg = <strong>-2 m/s²</strong> (deceleration of 2 m/s²)."
+              },
+              {
+                "label": "Step 2: Calculate time to stop using v = u + at",
+                "text": "0 = 20 + (-2) × t ➔ 2t = 20 ➔ t = 20 / 2."
+              },
+              {
+                "label": "Step 3: State time",
+                "text": "Time taken to stop = <strong>10 seconds</strong>."
+              }
+            ],
+            "proTip": "A braking force opposes motion, which is why acceleration is negative (deceleration)!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "State Newton’s Second Law in equation form.",
+              "a": "F = m · a (Force = mass × acceleration)."
             },
             {
-              "q": "If a freely falling stone dropped from the edge of the Blue Nile Gorge experiences gravitational acceleration g = 9.8 m/s² (neglecting air resistance), what is its downward speed after 3 seconds?",
+              "q": "Why do action-reaction force pairs never cancel each other?",
+              "a": "Because they act on two different objects, not on the same object."
+            },
+            {
+              "q": "What is the SI unit of linear momentum?",
+              "a": "kg·m/s (or N·s)."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "A swimmer pushes backward against the water with their hands, and as a result, their body moves forward through the swimming pool. Which law of motion explains this forward propulsion?",
               "options": [
-                "9.8 m/s",
-                "29.4 m/s",
-                "19.6 m/s",
-                "3.26 m/s"
+                "Newton’s Third Law of Motion (Action and Reaction)",
+                "Newton’s First Law of Motion (Inertia)",
+                "The Law of Universal Gravitation",
+                "Hooke’s Law of Elasticity"
               ],
-              "correct": 1,
-              "strategy": "Use v = u + gt where u = 0.",
-              "derivation": "v = 0 + (9.8 m/s² × 3 s) = 29.4 m/s.",
-              "trap": "Assuming terminal velocity without calculation."
+              "correct": 0,
+              "strategy": "The swimmer pushes the water (action), and the water pushes the swimmer forward with equal force (reaction).",
+              "derivation": "According to Newton’s Third Law, every action produces an equal and opposite reaction on the interacting body.",
+              "trap": "Assuming Newton’s First Law because movement is occurring."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Newton’s Three Laws of Motion & Momentum?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Newton’s Three Laws of Motion & Momentum in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }
@@ -354,112 +592,193 @@ module.exports = {
     {
       "id": "g8-sci-u4",
       "number": "Unit 4",
-      "title": "Energy, Work & Simple Machines",
-      "bigIdea": "Understand simple machines: mechanical advantage, velocity ratio, efficiency, three classes of levers, pulleys, and inclined planes.",
+      "title": "Pressure, Work, Energy & Simple Machines",
+      "bigIdea": "Explore liquid pressure, atmospheric pressure, hydraulics, levers, pulleys, mechanical advantage, and efficiency.",
       "subtopics": [
         {
           "id": "g8-sci-4.1",
           "code": "4.1",
-          "title": "Mechanical Advantage, Levers & Pulleys",
+          "title": "Fluid Pressure, Pascal’s Principle & Hydraulics",
           "survey": {
-            "blueprint": "Simple machines multiply force or change direction. Mechanical Advantage: MA = Load / Effort. Velocity Ratio: VR = Distance of Effort / Distance of Load. Efficiency: η = (MA / VR) × 100%. Three classes of levers (1st: Fulcrum middle; 2nd: Load middle; 3rd: Effort middle). Pulleys: single fixed, movable, and block-and-tackle.",
+            "blueprint": "Pressure = Force / Area (P = F / A, in Pascals Pa = N/m²). Liquid pressure: P = ρ · g · h. Depends only on liquid density and depth, not container shape. Pascal’s Principle: Pressure applied to an enclosed liquid is transmitted undiminished to every portion of the fluid. Hydraulic lift: F₁/A₁ = F₂/A₂. Atmospheric pressure: measured with barometer (~101.3 kPa at sea level; decreases with altitude).",
             "objectives": [
-              "Calculate Mechanical Advantage (MA), Velocity Ratio (VR), and Efficiency (η).",
-              "Classify levers into Class 1, Class 2, and Class 3 based on relative position of Fulcrum, Load, and Effort (FLE rule).",
-              "Explain why real machines NEVER achieve 100% efficiency (frictional thermal dissipation)."
+              "Define pressure and calculate pressure using P = F / A.",
+              "Calculate hydrostatic pressure using P = ρ · g · h.",
+              "State Pascal’s Principle and solve hydraulic press mechanical force problems.",
+              "Explain how atmospheric pressure varies with elevation in the Ethiopian highlands."
             ],
-            "keyFormulas": "MA = Load / Effort &nbsp;|&nbsp; VR = d_E / d_L &nbsp;|&nbsp; Efficiency: η = (MA / VR) × 100% &nbsp;|&nbsp; Work Output = Load × d_L"
+            "keyFormulas": "P = F / A [Pa] | Liquid Pressure: P = ρ · g · h | Hydraulic Lift: F₁ / A₁ = F₂ / A₂"
           },
           "questions": [
-            "Why is the Velocity Ratio of a machine purely geometric while its Mechanical Advantage varies with friction?",
-            "Why does a Class 3 lever like a pair of tweezers or a human forearm have an MA less than 1.0?"
+            "Why are the bases of massive dams like the GERD built much thicker than the top?",
+            "Why does water boil at a lower temperature in Addis Ababa (altitude ~2,400 m) than in Djibouti at sea level?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>⚙️</span> 1. THE THREE FUNDAMENTAL RATIOS OF MACHINES\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Mechanical Advantage (MA):</strong> The force multiplier factor:<br>\n                  <strong>MA = Load (L) / Effort (E)</strong> (pure dimensionless number).<br>\n                  • <strong>Velocity Ratio (VR):</strong> The ratio of distances moved in the same time:<br>\n                  <strong>VR = Distance moved by Effort (d_E) / Distance moved by Load (d_L)</strong>.<br>\n                  • <strong>Efficiency (η):</strong> Ratio of useful work output to total work input:<br>\n                  <strong>Efficiency (η) = (Work Output / Work Input) × 100% = (MA / VR) × 100%</strong>.<br>\n                  • <em>100% Rule:</em> In an ideal frictionless machine, MA = VR and η = 100%. In all real machines, friction causes MA < VR, so <strong>η < 100%</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>📐</span> 2. THE THREE CLASSES OF LEVERS (THE FLE RULE)\n                </h4>\n                <p class=\"text-xs text-slate-300 mb-2\">\n                  Remember what is in the <strong>MIDDLE</strong>: <strong>1-F, 2-L, 3-E (FLE)</strong>:\n                </p>\n                <div class=\"grid grid-cols-1 md:grid-cols-3 gap-2.5 text-xs text-slate-300\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Class 1 (Fulcrum in Middle):</strong><br>\n                    • Crowbar, scissors, seesaw.<br>\n                    • MA can be greater than, equal to, or less than 1.\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Class 2 (Load in Middle):</strong><br>\n                    • Wheelbarrow, bottle opener, nutcracker.<br>\n                    • Effort arm always longer than load arm; <strong>MA > 1</strong> (force multiplier).\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong>Class 3 (Effort in Middle):</strong><br>\n                    • Tweezers, fishing rod, human forearm.<br>\n                    • <strong>MA < 1</strong>; sacrifices force to gain speed and distance!\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🏗️</span> 3. PULLEYS & INCLINED PLANES\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Single Fixed Pulley:</strong> VR = 1. Does NOT amplify force (MA ≈ 1), but changes the direction of force (pulling downward is easier).<br>\n                  • <strong>Single Movable Pulley:</strong> VR = 2. Supports load with two rope segments; cuts effort in half.<br>\n                  • <strong>Block and Tackle System:</strong> VR equals the total number of rope segments supporting the movable block.<br>\n                  • <strong>Inclined Plane:</strong> <strong>VR = Length of slope (l) / Vertical height (h)</strong>.\n                </p>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🌊 1. Hydrostatic Liquid Pressure ($P = \rho gh$)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Pressure Definition:</strong> Force acting perpendicularly per unit area: <strong>$P = \frac{F}{A}$</strong>. SI unit: <strong>Pascal (Pa)</strong> ($1\text{ Pa} = 1\text{ N/m}^2$).<br>\n                  • <strong>Pressure in Liquids:</strong> $mathbf{P = \rho cdot g cdot h}$ (where $\rho = \text{density in kg/m}^3$, $g approx 9.8\text{ m/s}^2$, $h = \text{depth in meters}$).<br>\n                  • <em>Key Properties:</em> Liquid pressure increases directly with depth. It acts equally in all directions at a given depth and is independent of the container’s cross-sectional shape. This is why dam walls are built tremendously thick at the base!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">🚗 2. Pascal’s Principle and Hydraulic Machinery</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  <em>\"Pressure exerted anywhere in an enclosed, incompressible liquid is transmitted undiminished in all directions.\"</em><br>\n                  • <strong>Hydraulic Press Formula:</strong> $mathbf{\frac{F_1}{A_1} = \frac{F_2}{A_2}} implies mathbf{F_2 = F_1 \times \frac{A_2}{A_1}}$.<br>\n                  • Applying a small force $F_1$ on a small piston $A_1$ generates a huge lifting force $F_2$ on a large piston $A_2$ (hydraulic car lifts, hydraulic brakes in vehicles).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400\">🏔️ 3. Atmospheric Pressure in Ethiopia</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Atmospheric pressure is caused by the weight of air molecules above. As altitude increases, the column of air above becomes shorter and less dense; therefore, <strong>atmospheric pressure decreases with altitude</strong>.<br>\n                  • At sea level: $approx 101.3\text{ kPa}$ (water boils at $100^circ\text{C}$).<br>\n                  • In Addis Ababa ($2,400\text{ m}$ elevation): $approx 77\text{ kPa}$ (water boils at $approx 92^circ\text{C}$).\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Pulley System MA, VR & Efficiency",
-            "problem": "A block and tackle pulley system consisting of 4 pulleys is used to lift a load of 1,200 N. An effort of 375 N is applied. Calculate: Part A: Mechanical Advantage (MA). Part B: Velocity Ratio (VR). Part C: The Efficiency of the machine.",
+            "title": "Worked Example: Hydraulic Car Lift Calculation",
+            "problem": "In an auto repair garage in Addis Ababa, a hydraulic lift has a small input piston of area A₁ = 0.02 m² and a large output piston of area A₂ = 1.0 m². What input force F₁ must be exerted on the small piston to raise a 2,000 kg automobile? (Take g = 10 m/s²).",
             "steps": [
               {
-                "label": "Step 1: Calculate Mechanical Advantage",
-                "text": "MA = Load / Effort = 1,200 N / 375 N = <strong>3.2</strong>."
+                "label": "Step 1: Calculate output load force F₂",
+                "text": "F₂ = Weight = m × g = 2,000 kg × 10 m/s² = 20,000 N."
               },
               {
-                "label": "Step 2: State Velocity Ratio",
-                "text": "For a block and tackle system with 4 pulleys supporting the load, <strong>VR = 4</strong>."
+                "label": "Step 2: Apply Pascal’s hydraulic formula",
+                "text": "F₁ / A₁ = F₂ / A₂ ➔ F₁ = F₂ × (A₁ / A₂) = 20,000 N × (0.02 / 1.0)."
               },
               {
-                "label": "Step 3: Calculate Efficiency",
-                "text": "Efficiency η = (MA / VR) × 100% = (3.2 / 4) × 100% = 0.8 × 100% = <strong>80%</strong>."
+                "label": "Step 3: Compute required input force",
+                "text": "F₁ = 20,000 × 0.02 = <strong>400 N</strong> (a person can lift a 2,000 kg car with just 400 N of effort!)."
               }
             ],
-            "proTip": "Notice that 20% of the input energy was lost overcoming friction in the pulley axles and lifting the weight of the movable pulleys!"
+            "proTip": "Hydraulic lifts multiply force by the ratio of the piston areas (A₂/A₁ = 50 times force multiplier)!"
           },
           "reciteFlashcards": [
             {
-              "q": "In a Class 2 lever, which element is located in the middle?",
-              "a": "The Load (e.g. wheelbarrow)."
+              "q": "What is the formula for pressure exerted by a liquid at depth h?",
+              "a": "P = ρ · g · h."
             },
+            {
+              "q": "State Pascal’s Principle.",
+              "a": "Pressure applied to an enclosed liquid is transmitted equally and undiminished in all directions."
+            },
+            {
+              "q": "Why does water boil at a lower temperature in the Ethiopian highlands?",
+              "a": "Because atmospheric pressure is lower at higher altitudes."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "A diver descends to a depth of 20 meters in Lake Tana. Taking water density ρ = 1,000 kg/m³ and g = 9.8 m/s², what hydrostatic pressure is exerted by the water alone on the diver?",
+              "options": [
+                "196,000 Pa (196 kPa)",
+                "19,600 Pa",
+                "98,000 Pa",
+                "392,000 Pa"
+              ],
+              "correct": 0,
+              "strategy": "Apply P = ρ · g · h.",
+              "derivation": "P = 1,000 kg/m³ × 9.8 m/s² × 20 m = 196,000 Pascals (196 kPa).",
+              "trap": "Forgetting depth h or using 10 instead of 9.8."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Fluid Pressure, Pascal’s Principle & Hydraulics?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Fluid Pressure, Pascal’s Principle & Hydraulics in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-4.2",
+          "code": "4.2",
+          "title": "Simple Machines: Levers, Pulleys, Mechanical Advantage & Efficiency",
+          "survey": {
+            "blueprint": "Simple machines make work easier by multiplying force, multiplying distance, or changing direction. Six classical simple machines: Lever, Pulley, Wheel and Axle, Inclined Plane, Wedge, Screw. Key parameters: Mechanical Advantage MA = Load / Effort; Velocity Ratio VR = Distance moved by Effort / Distance moved by Load; Efficiency η = (Work Output / Work Input) × 100% = (MA / VR) × 100%. Efficiency is always < 100% due to friction.",
+            "objectives": [
+              "Classify the three classes of levers based on positions of Fulcrum, Load, and Effort.",
+              "Calculate Mechanical Advantage (MA), Velocity Ratio (VR), and Efficiency (η) for simple machines.",
+              "Explain why the efficiency of practical machines is always strictly less than 100%."
+            ],
+            "keyFormulas": "MA = Load / Effort | VR = d_effort / d_load | Efficiency: η = (MA / VR) × 100%"
+          },
+          "questions": [
+            "Why can the efficiency of a real mechanical machine never reach 100%?",
+            "In a Class 1 lever, what component is situated in the middle between Load and Effort?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🏗️ 1. Classes of Levers (FLE Rule)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Use the mnemonic <strong>FLE 1-2-3</strong> (what is in the MIDDLE):<br>\n                  • <strong>Class 1 (Fulcrum in middle):</strong> Crowbar, scissors, seesaw. Can have $\text{MA} > 1$, $\text{MA} = 1$, or $\text{MA} < 1$.<br>\n                  • <strong>Class 2 (Load in middle):</strong> Wheelbarrow, nutcracker, bottle opener. Effort arm is always longer than load arm ➔ $mathbf{\text{MA} > 1}$ (force multiplier).<br>\n                  • <strong>Class 3 (Effort in middle):</strong> Tweezers, fishing rod, human forearm. $mathbf{\text{MA} < 1}$ (speed/distance multiplier).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">⚙️ 2. Machine Performance Metrics</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Mechanical Advantage (MA):</strong> $mathbf{\text{MA} = \frac{\text{Load } (L)}{\text{Effort } (E)}}$.<br>\n                  • <strong>Velocity Ratio (VR):</strong> $mathbf{\text{VR} = \frac{\text{Distance moved by Effort}}{\text{Distance moved by Load}} = \frac{d_E}{d_L}}$. For a pulley system, $\text{VR}$ equals the number of supporting rope segments.<br>\n                  • <strong>Efficiency ($eta$):</strong> $mathbf{eta = \frac{\text{Work Output}}{\text{Work Input}} \times 100% = \frac{\text{MA}}{\text{VR}} \times 100%}$. In real machines, $eta < 100%$ because energy is lost as thermal energy overcoming friction.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Efficiency of a Pulley System",
+            "problem": "A pulley system with a Velocity Ratio VR = 4 is used to lift a load of 600 N by applying an effort of 200 N. Calculate (a) the Mechanical Advantage (MA), and (b) the efficiency of the pulley system.",
+            "steps": [
+              {
+                "label": "Step 1: Calculate MA",
+                "text": "MA = Load / Effort = 600 N / 200 N = <strong>3.0</strong>."
+              },
+              {
+                "label": "Step 2: Calculate efficiency formula",
+                "text": "η = (MA / VR) × 100% = (3.0 / 4) × 100%."
+              },
+              {
+                "label": "Step 3: State efficiency",
+                "text": "η = 0.75 × 100% = <strong>75%</strong> (25% of input energy is lost to friction and lifting pulley blocks)."
+              }
+            ],
+            "proTip": "Velocity Ratio (VR) depends purely on geometry and never changes; Mechanical Advantage (MA) decreases when friction increases!"
+          },
+          "reciteFlashcards": [
             {
               "q": "What is the formula for the efficiency of a machine in terms of MA and VR?",
               "a": "Efficiency = (MA / VR) × 100%."
             },
             {
-              "q": "What is the Velocity Ratio of a block-and-tackle system with 5 pulleys?",
-              "a": "5."
+              "q": "In a wheelbarrow, which component is located in the middle?",
+              "a": "The Load (making it a Class 2 lever)."
+            },
+            {
+              "q": "Why is machine efficiency always strictly less than 100% in practice?",
+              "a": "Because some work input is always lost overcoming friction and air resistance."
             }
           ],
           "amtQuiz": [
             {
-              "q": "A simple crowbar lever is used to lift a heavy stone weighing 1,200 Newtons. The worker applies an effort force of only 300 Newtons. What is the Mechanical Advantage (MA) of this machine?",
+              "q": "A machine has a velocity ratio VR = 5. When an effort of 100 N is applied, it lifts a load of 400 N. What is the mechanical efficiency of this machine?",
               "options": [
-                "0.25",
-                "4.0",
-                "900",
-                "1,500"
-              ],
-              "correct": 1,
-              "strategy": "Formula: Mechanical Advantage = Load / Effort (MA = L / E).",
-              "derivation": "MA = Load ÷ Effort = 1,200 N ÷ 300 N = 4.0 (dimensionless ratio).",
-              "trap": "Inverting the formula (300 / 1200 = 0.25) or subtracting forces."
-            },
-            {
-              "q": "In an inclined plane ramp, the effort moves through a distance of 15 meters along the ramp to raise a crate to a vertical platform height of 3 meters. What is the Velocity Ratio (VR) of the ramp?",
-              "options": [
-                "45",
-                "5.0",
-                "12",
-                "0.2"
-              ],
-              "correct": 1,
-              "strategy": "Formula: Velocity Ratio = Distance moved by Effort / Distance moved by Load (VR = dE / dL).",
-              "derivation": "VR = dE / dL = 15 m / 3 m = 5.0.",
-              "trap": "Dividing load distance by effort distance (3 / 15 = 0.2)."
-            },
-            {
-              "q": "Why is the efficiency of any real-world simple machine always strictly less than 100% (η < 100%)?",
-              "options": [
-                "Because mechanical energy is destroyed during work",
-                "Because some input work is inevitably dissipated as thermal heat due to friction and moving component weights",
-                "Because gravity increases whenever machines are operated",
-                "Because velocity ratio always equals zero in practice"
-              ],
-              "correct": 1,
-              "strategy": "Friction converts useful work into wasted heat.",
-              "derivation": "Efficiency = (Work Output / Work Input) × 100%. In all real machines, friction between moving surfaces and air resistance convert part of the input work into thermal energy.",
-              "trap": "Believing that energy is destroyed, violating conservation of energy."
-            },
-            {
-              "q": "Which class of lever has the fulcrum positioned in the middle, between the effort and the load (e.g. a pair of scissors or a playground seesaw)?",
-              "options": [
-                "First Class Lever",
-                "Second Class Lever",
-                "Third Class Lever",
-                "Fourth Class Lever"
+                "80%",
+                "40%",
+                "100%",
+                "25%"
               ],
               "correct": 0,
-              "strategy": "Remember FLE: 1st class has Fulcrum in middle, 2nd class has Load in middle, 3rd class has Effort in middle.",
-              "derivation": "First class levers have the pivot (fulcrum) between the effort and load. Second class has the load in the center (wheelbarrow). Third class has effort in the center (tweezer/forearm).",
-              "trap": "Confusing 1st class (fulcrum in middle) with 2nd class (load in middle)."
+              "strategy": "Find MA = Load / Effort = 400 / 100 = 4. Then η = (MA / VR) × 100% = (4 / 5) × 100%.",
+              "derivation": "MA = 400 / 100 = 4. Efficiency η = (4 / 5) × 100% = 80%.",
+              "trap": "Inverting MA and VR or forgetting to multiply by 100%."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Simple Machines: Levers, Pulleys, Mechanical Advantage & Efficiency?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Simple Machines: Levers, Pulleys, Mechanical Advantage & Efficiency in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }
@@ -468,113 +787,193 @@ module.exports = {
     {
       "id": "g8-sci-u5",
       "number": "Unit 5",
-      "title": "Electricity and Magnetism",
-      "bigIdea": "Explore electrostatics, electric circuits, Ohm’s law (V = IR), series vs parallel circuit analysis, and electromagnetism.",
+      "title": "Heat Energy, Electricity & Magnetism",
+      "bigIdea": "Analyze thermal physics, heat transfer mechanisms, electric current, Ohm’s law, series/parallel circuits, and electromagnetism.",
       "subtopics": [
         {
           "id": "g8-sci-5.1",
           "code": "5.1",
-          "title": "Electric Circuits, Ohm’s Law & Magnetism",
+          "title": "Heat vs Temperature, Thermal Expansion & Heat Transfer",
           "survey": {
-            "blueprint": "Electric charge: Q = I × t (in Coulombs). Current (I, Amperes), Voltage / Potential Difference (V, Volts), Resistance (R, Ohms Ω). Ohm’s Law: V = I × R. Circuit topologies: Series (same current, voltages add) vs Parallel (same voltage, currents add). Magnetism: poles, magnetic field lines, and electromagnets.",
+            "blueprint": "Heat (thermal energy in transit, in Joules) vs Temperature (average kinetic energy of particles, in °C or K). Heat transfer mechanisms: Conduction (solids, through particle collisions), Convection (fluids, through density currents), Radiation (electromagnetic waves, travels through vacuum). Thermal expansion of solids, liquids, and anomalous expansion of water (maximum density at 4°C). Specific heat capacity Q = m · c · ΔT.",
             "objectives": [
-              "State and apply Ohm’s Law (V = IR) to compute unknown voltage, current, or resistance.",
-              "Calculate equivalent resistance for series (R = R₁ + R₂) and parallel (1/R = 1/R₁ + 1/R₂) circuits.",
-              "Compare advantages of parallel house wiring over series wiring (independent operation, constant 220V).",
-              "Explain how electric current flowing through a coil creates a magnetic field (electromagnet)."
+              "Distinguish between heat energy and temperature.",
+              "Contrast conduction, convection, and radiation with practical everyday examples.",
+              "Explain the anomalous expansion of water and its vital role in aquatic life survival.",
+              "Calculate heat transfer using Q = m · c · ΔT."
             ],
-            "keyFormulas": "Ohm’s Law: V = IR &nbsp;|&nbsp; Series: R_eq = R₁ + R₂ &nbsp;|&nbsp; Parallel: 1/R_eq = 1/R₁ + 1/R₂ &nbsp;|&nbsp; Electric Power: P = VI = I²R"
+            "keyFormulas": "Heat: Q = m · c · ΔT [J] | Temperature conversion: T(K) = T(°C) + 273.15"
           },
           "questions": [
-            "Why are residential homes in Ethiopia wired exclusively in parallel and never in series?",
-            "What happens to the total circuit current if you connect more resistors in parallel?"
+            "Why does ice form on the top surface of a lake rather than freezing from the bottom up?",
+            "Why are solar water heaters painted matte black rather than shiny silver?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>⚡</span> 1. CURRENT, VOLTAGE, RESISTANCE & OHM’S LAW\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Electric Current (I):</strong> The rate of flow of electric charges: <em>I = Q / t</em>. Unit: <strong>Ampere (A)</strong> (measured by Ammeter in series).<br>\n                  • <strong>Voltage / Potential Difference (V):</strong> Work done per unit charge moving between two points: <em>V = W / Q</em>. Unit: <strong>Volt (V)</strong> (measured by Voltmeter in parallel).<br>\n                  • <strong>Resistance (R):</strong> Opposition to current flow. Unit: <strong>Ohm (Ω)</strong>.<br>\n                  • <strong>Ohm’s Law:</strong> At constant temperature, the current flowing through a metallic conductor is directly proportional to the potential difference across it:<br>\n                  <strong>V = I × R</strong> ⟹ <strong>I = V / R</strong> ⟹ <strong>R = V / I</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔌</span> 2. SERIES VS. PARALLEL CIRCUIT ARCHITECTURES\n                </h4>\n                <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300\">\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-amber-400\">Series Circuits (Single Loop):</strong><br>\n                    • Current is <strong>IDENTICAL</strong> through all components: <em>I_total = I₁ = I₂</em>.<br>\n                    • Voltages add up: <em>V_total = V₁ + V₂</em>.<br>\n                    • Total Resistance adds directly: <strong>R_eq = R₁ + R₂ + R₃</strong>.<br>\n                    • <em>Disadvantage:</em> If one bulb burns out, the circuit breaks and all bulbs go out!\n                  </div>\n                  <div class=\"p-3 bg-space-950 rounded-xl border border-slate-850 space-y-1\">\n                    <strong class=\"text-emerald-400\">Parallel Circuits (Multiple Branches):</strong><br>\n                    • Voltage is <strong>IDENTICAL</strong> across all branches: <em>V_total = V₁ = V₂</em>.<br>\n                    • Currents add up: <em>I_total = I₁ + I₂</em>.<br>\n                    • Total Resistance decreases: <strong>1/R_eq = 1/R₁ + 1/R₂</strong>.<br>\n                    • <em>Advantage:</em> Each appliance operates independently with full mains voltage (220V)!\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400 flex items-center gap-2\">\n                  <span>🧲</span> 3. MAGNETISM & ELECTROMAGNETS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Magnetic Poles:</strong> North and South. Like poles repel; unlike poles attract.<br>\n                  • <strong>Magnetic Field Lines:</strong> Continuous loops directed from North pole to South pole outside the magnet.<br>\n                  • <strong>Electromagnet:</strong> A temporary magnet formed by wrapping insulated copper wire (solenoid) around a soft iron core. When current flows, a strong magnetic field is generated instantly; when current is switched off, magnetism disappears immediately (used in electric bells, scrap cranes, relay switches).\n                </p>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🔥 1. Heat Energy vs Temperature</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Heat:</strong> Total thermal energy transferred from a hotter body to a colder body due to temperature difference (SI unit: <strong>Joule, J</strong>).<br>\n                  • <strong>Temperature:</strong> A quantitative measure of the <strong>average kinetic energy</strong> of individual particles in a substance (measured in <strong>Kelvin, K</strong> or degrees Celsius, °C). A cup of boiling water has a higher temperature than Lake Tana, but Lake Tana contains vastly more total heat energy!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">🌡️ 2. Three Modes of Heat Transfer</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Conduction:</strong> Transfer of heat through direct atomic collisions without bulk movement of material (dominant in solids, especially metals).<br>\n                  • <strong>Convection:</strong> Transfer of heat by actual macroscopic movement of heated fluid molecules (convection currents in boiling water, wind, ocean currents).<br>\n                  • <strong>Radiation:</strong> Heat transfer via infrared electromagnetic waves that <strong>requires no physical medium</strong> (how solar energy reaches Earth through the vacuum of space). Dark, matte surfaces are the best absorbers and emitters of radiation!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400\">❄️ 3. Anomalous Expansion of Water</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Most liquids contract continuously upon cooling. Water behaves abnormally between <strong>4°C and 0°C</strong>: as it cools below 4°C, it expands, becoming <em>less dense</em>. Water reaches its <strong>maximum density at 4°C</strong>. Ice ($0^circ\text{C}$) floats on top of liquid water, insulating the deep water below at 4°C and preserving aquatic fish and plant life during winter!\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Parallel Resistors and Current Split",
-            "problem": "Two resistors of 6 Ω and 12 Ω are connected in parallel across a 24V car battery. Calculate: Part A: Equivalent resistance of the circuit. Part B: Total current drawn from the battery.",
+            "title": "Worked Example: Calculating Heat Energy to Boil Water",
+            "problem": "Calculate the heat energy Q required to heat 2 kg of water from 20°C to 100°C. Given specific heat capacity of water c = 4,200 J/(kg·°C).",
             "steps": [
               {
-                "label": "Step 1: Calculate equivalent parallel resistance",
-                "text": "1 / R_eq = 1 / R₁ + 1 / R₂ = 1/6 + 1/12.<br>Common denominator is 12: 1/6 = 2/12.<br>1 / R_eq = 2/12 + 1/12 = 3/12 = 1/4.<br>Invert both sides: <strong>R_eq = 4 Ω</strong>."
+                "label": "Step 1: Calculate temperature change",
+                "text": "ΔT = T_final - T_initial = 100°C - 20°C = 80°C."
               },
               {
-                "label": "Step 2: Calculate total circuit current using Ohm’s Law",
-                "text": "I_total = V / R_eq = 24 V / 4 Ω = <strong>6 Amperes</strong>."
+                "label": "Step 2: Apply formula Q = m · c · ΔT",
+                "text": "Q = 2 kg × 4,200 J/(kg·°C) × 80°C."
               },
               {
-                "label": "Step 3: Check branch currents",
-                "text": "Branch 1: I₁ = 24 / 6 = 4 A.<br>Branch 2: I₂ = 24 / 12 = 2 A.<br>Total current = 4 A + 2 A = 6 A. (Verified!)"
+                "label": "Step 3: Compute heat",
+                "text": "Q = <strong>672,000 Joules = 672 kJ</strong>."
               }
             ],
-            "proTip": "Shortcut for two parallel resistors: Product over Sum: R_eq = (R₁ × R₂) / (R₁ + R₂) = (6 × 12) / (6 + 12) = 72 / 18 = 4 Ω!"
+            "proTip": "Water has an extraordinarily high specific heat capacity (4,200 J/kg·°C), making it the perfect coolant for car engines and power plants!"
           },
           "reciteFlashcards": [
             {
-              "q": "State Ohm’s Law formula relating Voltage, Current, and Resistance.",
-              "a": "V = I × R."
+              "q": "At what temperature does pure liquid water reach its maximum density?",
+              "a": "At 4°C."
             },
             {
-              "q": "What happens to total resistance when more resistors are added in parallel?",
-              "a": "Total equivalent resistance decreases."
+              "q": "Which method of heat transfer can travel through the absolute vacuum of space?",
+              "a": "Thermal Radiation (infrared electromagnetic waves)."
             },
             {
-              "q": "Why is an ammeter always connected in series while a voltmeter is connected in parallel?",
-              "a": "An ammeter has near-zero resistance to measure current flow; a voltmeter has massive resistance to measure voltage without drawing current."
+              "q": "What is the formula for heat absorbed: Q = ?",
+              "a": "Q = m · c · ΔT."
             }
           ],
           "amtQuiz": [
             {
-              "q": "According to Ohm’s Law, what electric current flows through an electric kettle element with a resistance of 44 Ohms connected to a standard 220-Volt mains socket in Addis Ababa?",
+              "q": "Through which process does thermal energy from the Sun travel through the vacuum of interplanetary space to warm planet Earth?",
               "options": [
-                "9,680 Amperes",
-                "5.0 Amperes",
-                "0.2 Amperes",
-                "176 Amperes"
+                "Thermal Radiation",
+                "Thermal Conduction",
+                "Thermal Convection",
+                "Advection"
               ],
-              "correct": 1,
-              "strategy": "Ohm’s Law: I = V / R.",
-              "derivation": "Current I = Voltage V ÷ Resistance R = 220 V ÷ 44 Ω = 5.0 Amperes.",
-              "trap": "Multiplying voltage by resistance (220 × 44 = 9680)."
+              "correct": 0,
+              "strategy": "Space is a vacuum; conduction and convection require a material medium.",
+              "derivation": "Radiation consists of electromagnetic waves that do not require any physical material medium to propagate.",
+              "trap": "Choosing convection because hot air rises on Earth."
             },
             {
-              "q": "In a household electrical wiring circuit, why are electrical appliances always connected in parallel rather than in series?",
+              "q": "Which scientific principle is essential when analyzing Heat vs Temperature, Thermal Expansion & Heat Transfer?",
               "options": [
-                "Parallel circuits increase the overall electrical resistance of the entire house",
-                "Each appliance receives the full supply voltage, and turning off one appliance does not interrupt current to others",
-                "Parallel wiring eliminates the need for circuit breakers and copper wires",
-                "Appliances in parallel use zero electrical energy"
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
               ],
-              "correct": 1,
-              "strategy": "Parallel circuits provide independent branches and equal voltage.",
-              "derivation": "In parallel circuits, every branch experiences the same terminal voltage (220V). If one appliance is switched off or burns out, current continues flowing uninterrupted to the other parallel branches.",
-              "trap": "Selecting series, where one broken bulb shuts off the entire circuit."
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
             },
             {
-              "q": "What device converts mechanical rotational energy into electrical energy using electromagnetic induction?",
+              "q": "What is the real-world significance of understanding Heat vs Temperature, Thermal Expansion & Heat Transfer in the context of Ethiopian technological and environmental development?",
               "options": [
-                "Electric Motor",
-                "Electric Generator (Dynamo)",
-                "Step-down Transformer",
-                "Capacitor"
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
               ],
-              "correct": 1,
-              "strategy": "Generator converts mechanical to electrical; Motor converts electrical to mechanical.",
-              "derivation": "Generators rotate coils of wire in magnetic fields (Faraday’s law of induction) to generate electric current. Motors do the exact reverse.",
-              "trap": "Confusing electric generators with electric motors."
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-5.2",
+          "code": "5.2",
+          "title": "Electric Circuits, Ohm’s Law & Electromagnetism",
+          "survey": {
+            "blueprint": "Electric Current: rate of flow of charge I = Q / t (Amperes A = C/s). Potential difference: V = W / Q (Volts V). Ohm’s Law: V = I · R. Resistance in Series: R_eq = R₁ + R₂ + ... Resistance in Parallel: 1/R_eq = 1/R₁ + 1/R₂ + ... Magnetic fields: North and South poles; opposite poles attract, like poles repel. Electromagnetism: Oersted’s discovery (current produces magnetic field); Solenoid with iron core = Electromagnet.",
+            "objectives": [
+              "State Ohm’s Law and solve circuit problems using V = I · R.",
+              "Calculate equivalent resistance for resistors in series and parallel circuits.",
+              "Explain how an electromagnet works and list factors that increase its strength."
+            ],
+            "keyFormulas": "Ohm’s Law: V = I · R | Series: R_eq = R₁ + R₂ | Parallel: 1/R_eq = 1/R₁ + 1/R₂ | Power: P = V · I"
+          },
+          "questions": [
+            "Why are home appliances in Ethiopia wired in parallel rather than in series?",
+            "How can you increase the magnetic field strength of an electromagnet?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">⚡ 1. Ohm’s Law ($V = IR$)</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  <em>\"At constant temperature, the electric current passing through a conductor is directly proportional to the potential difference across its terminals.\"</em><br>\n                  • Formula: <strong>$V = I cdot R$</strong> (where $V = \text{Voltage in Volts}$, $I = \text{Current in Amperes}$, $R = \text{Resistance in Ohms } Omega$).<br>\n                  • An ammeter (measures current) is always connected in <strong>series</strong>; a voltmeter (measures potential difference) is connected in <strong>parallel</strong>.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">🔌 2. Series vs Parallel Circuits</h4>\n                <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300\">\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong class=\"text-cyan-300\">Series Circuit:</strong><br>\n                    • Single continuous loop.<br>\n                    • Current is identical everywhere: $I_{\text{total}} = I_1 = I_2$.<br>\n                    • $R_{\text{total}} = R_1 + R_2 + R_3$.<br>\n                    • If one lamp burns out, all lamps turn off!\n                  </div>\n                  <div class=\"p-2.5 bg-space-950 rounded-lg border border-slate-850\">\n                    <strong class=\"text-amber-300\">Parallel Circuit:</strong><br>\n                    • Multiple independent branches.<br>\n                    • Voltage is identical across each branch: $V_{\text{total}} = V_1 = V_2$.<br>\n                    • $\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2}$. Total resistance decreases!<br>\n                    • If one appliance is switched off, others continue operating normally.\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400\">🧲 3. Electromagnets</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  A temporary magnet created by winding an insulated copper coil (solenoid) around a soft iron core. When direct current flows, a magnetic field is produced.<br>\n                  • <strong>To Increase Electromagnet Strength:</strong> 1) Increase electric current; 2) Increase number of coil turns; 3) Insert a soft iron core.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Calculating Parallel Equivalent Resistance",
+            "problem": "Two resistors of R₁ = 6 Ω and R₂ = 12 Ω are connected in parallel across a 12 V battery. Calculate (a) the equivalent resistance of the circuit, and (b) the total current drawn from the battery.",
+            "steps": [
+              {
+                "label": "Step 1: Parallel resistance formula",
+                "text": "1/R_eq = 1/R₁ + 1/R₂ = 1/6 + 1/12 = 2/12 + 1/12 = 3/12 = 1/4."
+              },
+              {
+                "label": "Step 2: Invert to find R_eq",
+                "text": "R_eq = 4 / 1 = <strong>4 Ω</strong>."
+              },
+              {
+                "label": "Step 3: Calculate total current using Ohm’s Law",
+                "text": "I = V / R_eq = 12 V / 4 Ω = <strong>3 Amperes (A)</strong>."
+              }
+            ],
+            "proTip": "In a parallel circuit, the equivalent resistance is ALWAYS smaller than the smallest individual branch resistor!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "State Ohm’s Law formula.",
+              "a": "V = I · R (Voltage = Current × Resistance)."
             },
             {
-              "q": "What is the equivalent total resistance of two resistors with resistances of 6 Ohms and 12 Ohms connected in series?",
+              "q": "Why are domestic house circuits wired in parallel?",
+              "a": "So each appliance receives full mains voltage and can be switched on/off independently."
+            },
+            {
+              "q": "Name two ways to make an electromagnet stronger.",
+              "a": "Increase the electric current and increase the number of wire coils."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "A 24 V potential difference is applied across an electric heater with a resistance of 8 Ω. What current flows through the heater element?",
               "options": [
-                "4 Ohms",
-                "18 Ohms",
-                "72 Ohms",
-                "2 Ohms"
+                "3 A",
+                "192 A",
+                "0.33 A",
+                "16 A"
               ],
-              "correct": 1,
-              "strategy": "In series, simply add the resistances: R_total = R1 + R2.",
-              "derivation": "R_total = 6 Ω + 12 Ω = 18 Ohms.",
-              "trap": "Using the parallel formula (which would give 4 Ohms)."
+              "correct": 0,
+              "strategy": "Apply Ohm’s Law: I = V / R.",
+              "derivation": "I = 24 V / 8 Ω = 3 Amperes.",
+              "trap": "Multiplying voltage by resistance (24 × 8 = 192) instead of dividing."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Electric Circuits, Ohm’s Law & Electromagnetism?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Electric Circuits, Ohm’s Law & Electromagnetism in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }
@@ -583,113 +982,193 @@ module.exports = {
     {
       "id": "g8-sci-u6",
       "number": "Unit 6",
-      "title": "Genetics and Heredity",
-      "bigIdea": "Understand chromosomes, DNA, genes, alleles, Gregor Mendel’s laws of inheritance, dominant vs recessive traits, and Punnett square crosses.",
+      "title": "Genetics, Heredity & Cellular Reproduction",
+      "bigIdea": "Explore cell division (mitosis vs meiosis), DNA, Mendelian genetics, Punnett squares, and human reproductive health.",
       "subtopics": [
         {
           "id": "g8-sci-6.1",
           "code": "6.1",
-          "title": "DNA, Chromosomes & Mendelian Inheritance",
+          "title": "Cell Division: Mitosis vs Meiosis",
           "survey": {
-            "blueprint": "Heredity: transmission of traits from parents to offspring. DNA (Deoxyribonucleic Acid): double helix polymer of nucleotides (A-T, C-G base pairing). Genes: functional segments of DNA. Chromosomes: humans have 46 (23 pairs: 22 autosomes + 1 sex chromosome pair XX/XY). Mendel’s Law of Segregation and Monohybrid Punnett Squares.",
+            "blueprint": "Chromosomes: DNA strands carrying genes in cell nucleus (Humans: 46 chromosomes = 23 pairs; diploid 2n). Mitosis: Equational division for growth, tissue repair, asexual reproduction; produces 2 genetically identical diploid daughter cells (Prophase, Metaphase, Anaphase, Telophase). Meiosis: Reduction division in gonads (testes, ovaries); produces 4 genetically diverse haploid gametes (sperm/egg, n = 23) via crossing over.",
             "objectives": [
-              "Describe the structural relationship between DNA, genes, and chromosomes.",
-              "Distinguish between phenotype (physical appearance) and genotype (genetic makeup).",
-              "Differentiate homozygous (pure-breeding, TT or tt) from heterozygous (hybrid, Tt) genotypes.",
-              "Predict offspring genotypic and phenotypic ratios using a monohybrid Punnett square (3:1 ratio)."
+              "Distinguish between diploid (2n) somatic cells and haploid (n) gametes.",
+              "Contrast the biological functions and products of mitosis and meiosis.",
+              "Explain how crossing over in meiosis introduces genetic variation in offspring."
             ],
-            "keyFormulas": "Human karyotype: 46 chromosomes (23 pairs) &nbsp;|&nbsp; Monohybrid F₂ phenotypic ratio: 3 dominant : 1 recessive"
+            "keyFormulas": "Mitosis: 2n ➔ 2 daughter cells (2n each) | Meiosis: 2n ➔ 4 gametes (n each)"
           },
           "questions": [
-            "Why does two brown-eyed parents have a 25% chance of having a blue-eyed child?",
-            "Which parent (mother or father) biologically determines the sex of a human baby and why?"
+            "Why must gametes (sperm and egg cells) have half the chromosome number of normal body cells?",
+            "What is the fundamental difference in the genetic outcome of mitosis compared to meiosis?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400 flex items-center gap-2\">\n                  <span>🧬</span> 1. DNA, GENES & HUMAN CHROMOSOMES\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>DNA:</strong> A double-stranded helical molecule carrying hereditary instructions. Four nitrogenous bases pair specifically: <strong>Adenine with Thymine (A-T)</strong> and <strong>Cytosine with Guanine (C-G)</strong>.<br>\n                  • <strong>Gene:</strong> A specific sequence of DNA nucleotides that codes for a functional protein or trait.<br>\n                  • <strong>Chromosomes:</strong> DNA condensed around histone proteins inside the nucleus. Normal human somatic cells contain <strong>46 chromosomes (23 homologous pairs)</strong>:<br>\n                  - 22 pairs of <em>Autosomes</em>.<br>\n                  - 1 pair of <em>Sex Chromosomes</em>: Females have <strong>XX</strong>; Males have <strong>XY</strong>.<br>\n                  - <em>Sex Determination:</em> Because father's sperm carries either an X or Y chromosome (while mother’s egg always carries X), the <strong>father determines the biological sex</strong> of the child (50% XX girl, 50% XY boy)!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🌱</span> 2. GREGOR MENDEL’S LAWS & GENETIC TERMINOLOGY\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <p>• <strong>Allele:</strong> Alternative versions of a gene (e.g. T for tall, t for short).</p>\n                  <p>• <strong>Dominant Allele (T):</strong> Masks the expression of a recessive allele; expressed in TT and Tt.</p>\n                  <p>• <strong>Recessive Allele (t):</strong> Expressed ONLY when in homozygous state (tt).</p>\n                  <p>• <strong>Genotype:</strong> The genetic allele combination (TT, Tt, or tt).</p>\n                  <p>• <strong>Phenotype:</strong> The physical observable appearance (Tall or Short plant).</p>\n                  <p>• <strong>Homozygous:</strong> Having identical alleles (TT = homozygous dominant; tt = homozygous recessive).<br>\n                  • <strong>Heterozygous:</strong> Having two different alleles (Tt = carrier/hybrid).</p>\n                </div>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>📊</span> 3. MONOHYBRID CROSS & PUNNETT SQUARES\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  When two heterozygous pea plants (Tt × Tt) are crossed:<br>\n                  • Gametes: Each parent produces 50% T and 50% t gametes (Mendel’s Law of Segregation).<br>\n                  • <strong>Punnett Square Results:</strong><br>\n                  - 1 TT (homozygous tall)<br>\n                  - 2 Tt (heterozygous tall)<br>\n                  - 1 tt (homozygous short)<br>\n                  • <strong>Genotypic Ratio:</strong> <strong>1 TT : 2 Tt : 1 tt</strong> (1:2:1).<br>\n                  • <strong>Phenotypic Ratio:</strong> <strong>3 Tall : 1 Short</strong> (75% tall, 25% short).\n                </p>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🧬 1. Chromosomes and the Genetic Blueprint</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Inside the nucleus of eukaryotic cells, DNA is packaged into thread-like structures called <strong>chromosomes</strong>:<br>\n                  • <strong>Diploid number ($2n$):</strong> Full complement of chromosomes in somatic (body) cells (in humans, $2n = 46$ chromosomes).<br>\n                  • <strong>Haploid number ($n$):</strong> Half chromosome count found exclusively in gametes (sperm and ova; in humans, $n = 23$). During fertilization: $n (\text{sperm}) + n (\text{egg}) = 2n (\text{zygote})$, restoring the species chromosome count!\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">⚔️ 2. Mitosis vs Meiosis Comparison</h4>\n                <div class=\"overflow-x-auto text-xs text-slate-300\">\n                  <table class=\"w-full border-collapse border border-slate-800\">\n                    <tr class=\"bg-space-950 font-bold\">\n                      <th class=\"p-2 border border-slate-800\">Feature</th>\n                      <th class=\"p-2 border border-slate-800 text-cyan-400\">Mitosis</th>\n                      <th class=\"p-2 border border-slate-800 text-amber-400\">Meiosis</th>\n                    </tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Location</td><td class=\"p-2 border border-slate-800\">Somatic (body) cells</td><td class=\"p-2 border border-slate-800\">Reproductive organs (gonads)</td></tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Daughter Cells</td><td class=\"p-2 border border-slate-800 font-bold\">2 diploid ($2n$) cells</td><td class=\"p-2 border border-slate-800 font-bold\">4 haploid ($n$) cells</td></tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Genetic Content</td><td class=\"p-2 border border-slate-800\">Genetically identical clones</td><td class=\"p-2 border border-slate-800\">Genetically diverse gametes</td></tr>\n                    <tr><td class=\"p-2 border border-slate-800\">Role</td><td class=\"p-2 border border-slate-800\">Growth, tissue repair</td><td class=\"p-2 border border-slate-800\">Sexual reproduction</td></tr>\n                  </table>\n                </div>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Predicting Human Albinism Inheritance",
-            "problem": "In humans, normal melanin pigmentation is dominant (A) and albinism is recessive (a). Two parents with normal pigmentation both have heterozygous genotypes (Aa). Calculate the probability that their firstborn child will have albinism.",
+            "title": "Worked Example: Chromosome Number Calculations",
+            "problem": "A domestic dog has 78 chromosomes in its skin cells. Calculate the chromosome number in (a) a dog muscle cell after mitosis, and (b) a dog sperm cell produced by meiosis.",
             "steps": [
               {
-                "label": "Step 1: Set up the genetic cross",
-                "text": "Parent 1: Aa × Parent 2: Aa.<br>Possible gametes from each parent: A (50%) and a (50%)."
+                "label": "Step 1: Understand skin cell diploid count",
+                "text": "Skin cell is somatic ➔ 2n = 78 chromosomes."
               },
               {
-                "label": "Step 2: Construct the 2×2 Punnett Square",
-                "text": "Top row: A, a. Left column: A, a.<br>Box 1 (Top-Left): A × A = AA (Normal).<br>Box 2 (Top-Right): A × a = Aa (Normal carrier).<br>Box 3 (Bottom-Left): a × A = Aa (Normal carrier).<br>Box 4 (Bottom-Right): a × a = aa (Albinism)."
+                "label": "Step 2: Muscle cell after mitosis",
+                "text": "Mitosis produces identical diploid cells ➔ <strong>78 chromosomes</strong>."
               },
               {
-                "label": "Step 3: Calculate the probability",
-                "text": "Out of 4 possible offspring combinations, only 1 is homozygous recessive (aa).<br>Probability of albinism = 1 / 4 = <strong>25% (0.25)</strong>."
+                "label": "Step 3: Sperm cell after meiosis",
+                "text": "Meiosis reduces chromosome count by half (haploid n) ➔ 78 / 2 = <strong>39 chromosomes</strong>."
               }
             ],
-            "proTip": "Notice that 75% of offspring will have normal pigmentation, but 2 out of 3 normal children (66%) will be silent genetic carriers (Aa)!"
+            "proTip": "Somatic cells (muscle, skin, liver) always have 2n; only gametes (sperm, egg) have n!"
           },
           "reciteFlashcards": [
             {
-              "q": "How many total chromosomes are in a normal human diploid somatic cell?",
-              "a": "46 chromosomes (23 pairs)."
+              "q": "How many chromosomes are present in a normal human gamete (sperm or egg)?",
+              "a": "23 chromosomes (haploid, n)."
             },
             {
-              "q": "What is the phenotypic ratio in the F₂ generation of a monohybrid cross between two heterozygotes (Tt × Tt)?",
-              "a": "3 : 1 (3 dominant to 1 recessive)."
+              "q": "How many daughter cells are produced by meiosis from one parent cell?",
+              "a": "4 haploid daughter cells."
             },
             {
-              "q": "Which base pairs with Adenine (A) in DNA?",
-              "a": "Thymine (T) via two hydrogen bonds."
+              "q": "What is the biological function of mitosis in multicellular organisms?",
+              "a": "Growth, development, and tissue repair/replacement."
             }
           ],
           "amtQuiz": [
             {
-              "q": "In Gregor Mendel’s genetic experiments on pea plants, when a homozygous dominant tall plant (TT) is crossed with a homozygous recessive dwarf plant (tt), what is the phenotypic ratio of tall to dwarf in the F1 generation?",
+              "q": "If an animal’s somatic body cells contain 36 chromosomes, how many chromosomes will be found in a mature, unfertilized ovum produced by that animal?",
               "options": [
-                "1 Tall : 1 Dwarf",
-                "3 Tall : 1 Dwarf",
-                "100% Tall (All Tall)",
-                "50% Medium : 50% Dwarf"
+                "18",
+                "36",
+                "72",
+                "9"
               ],
-              "correct": 2,
-              "strategy": "All F1 offspring inherit T from one parent and t from the other, giving genotype Tt (all tall).",
-              "derivation": "Punnett square of TT × tt yields 100% heterozygous (Tt) offspring. Since T (tall) is completely dominant over t (dwarf), 100% of the F1 generation are phenotypically tall.",
-              "trap": "Selecting 3:1, which is the phenotypic ratio of the F2 generation, not F1!"
+              "correct": 0,
+              "strategy": "An ovum is a gamete produced by meiosis, having half the somatic chromosome count (n = 2n / 2).",
+              "derivation": "Somatic count 2n = 36. Gamete count n = 36 / 2 = 18 chromosomes.",
+              "trap": "Keeping the same number 36 (confusing mitosis with meiosis)."
             },
             {
-              "q": "Where are genes, the fundamental units of biological heredity, physically located inside a eukaryotic cell?",
+              "q": "Which scientific principle is essential when analyzing Cell Division: Mitosis vs Meiosis?",
               "options": [
-                "Floating freely as carbohydrates inside the cytoplasm vacuole",
-                "Arranged in linear sequence along DNA molecules within chromosomes in the cell nucleus",
-                "Embedded strictly within the lipid outer cell wall",
-                "Dissolved in blood plasma outside the cells"
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
               ],
-              "correct": 1,
-              "strategy": "Genes are segments of DNA packaged into chromosomes inside the nucleus.",
-              "derivation": "A gene is a specific sequence of nucleotides along a deoxyribonucleic acid (DNA) molecule. Chromosomes in the cell nucleus contain these tightly wound DNA strands.",
-              "trap": "Selecting cytoplasm or cell wall."
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
             },
             {
-              "q": "What term describes an organism that has two identical alleles for a specific trait (such as BB or bb)?",
+              "q": "What is the real-world significance of understanding Cell Division: Mitosis vs Meiosis in the context of Ethiopian technological and environmental development?",
               "options": [
-                "Heterozygous",
-                "Homozygous",
-                "Polygenic",
-                "Codominant"
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
               ],
-              "correct": 1,
-              "strategy": "Homo = same (homozygous = identical alleles); Hetero = different.",
-              "derivation": "Homozygous individuals have identical alleles at a given locus (e.g., homozygous dominant BB or homozygous recessive bb). Heterozygous individuals have different alleles (Bb).",
-              "trap": "Confusing homozygous with heterozygous."
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-6.2",
+          "code": "6.2",
+          "title": "Mendelian Genetics, Punnett Squares & Reproductive Health",
+          "survey": {
+            "blueprint": "Gregor Mendel (Father of Genetics): Experiments with garden peas. Alleles: Dominant (expressed in capital letter, e.g., T) vs Recessive (expressed only in homozygous state, e.g., t). Genotype (genetic makeup: TT, Tt, tt) vs Phenotype (physical appearance: tall, short). Monohybrid cross: Tt × Tt gives 3:1 phenotypic ratio and 1:2:1 genotypic ratio. Sex determination in humans: XX (female), XY (male). STI prevention and adolescent reproductive health.",
+            "objectives": [
+              "Define gene, allele, homozygous, heterozygous, genotype, and phenotype.",
+              "Construct and interpret Punnett squares for monohybrid crosses.",
+              "Explain how sex is determined chromosomally in humans (XX vs XY).",
+              "Describe the modes of transmission, symptoms, and prevention of STIs including HIV/AIDS."
+            ],
+            "keyFormulas": "Monohybrid Heterozygous Cross (Tt × Tt): Phenotype = 3 Dominant : 1 Recessive | Genotype = 1 TT : 2 Tt : 1 tt"
+          },
+          "questions": [
+            "Why does a cross between two heterozygous tall pea plants (Tt × Tt) produce short offspring 25% of the time?",
+            "Which human parent’s gamete determines the biological sex of a baby?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🌱 1. Mendel’s Laws of Inheritance</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Gene & Allele:</strong> A gene is a unit of heredity located on DNA. An <strong>allele</strong> is an alternative form of a gene (e.g., allele $T$ for tallness; allele $t$ for dwarfness).<br>\n                  • <strong>Dominant vs Recessive:</strong> A dominant allele masks the expression of a recessive allele in heterozygous condition ($Tt$ appears tall). A recessive trait appears only when homozygous recessive ($tt$).<br>\n                  • <strong>Homozygous vs Heterozygous:</strong> Homozygous has identical alleles ($TT$ or $tt$); heterozygous has two different alleles ($Tt$).<br>\n                  • <strong>Genotype vs Phenotype:</strong> Genotype is the genetic constitution ($TT, Tt, tt$); phenotype is the observable physical characteristic (Tall, Short).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">🚹 2. Human Sex Determination</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Humans have 22 pairs of autosomes and <strong>1 pair of sex chromosomes</strong>:<br>\n                  • Females: Homogametic with two <strong>XX</strong> chromosomes. All ova carry one X chromosome.<br>\n                  • Males: Heterogametic with one <strong>X and one Y</strong> chromosome. Half of sperm carry an X chromosome, half carry a Y chromosome.<br>\n                  • <em>The father’s sperm determines the biological sex:</em> $\text{Egg } X + \text{Sperm } X \rightarrow \text{Female } XX$; $\text{Egg } X + \text{Sperm } Y \rightarrow \text{Male } XY$ (exact 50% probability).\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Monohybrid Pea Plant Punnett Square",
+            "problem": "Two heterozygous tall pea plants (Tt) are crossed. Using a Punnett square, determine (a) the genotypic ratio, and (b) the percentage probability that an offspring will be dwarf (tt).",
+            "steps": [
+              {
+                "label": "Step 1: Set up Punnett square",
+                "text": "Gametes from Parent 1: T and t. Gametes from Parent 2: T and t. Combinations: TT, Tt, Tt, tt."
+              },
+              {
+                "label": "Step 2: Genotypic ratio",
+                "text": "1 TT (homozygous tall) : 2 Tt (heterozygous tall) : 1 tt (homozygous short) = <strong>1 : 2 : 1</strong>."
+              },
+              {
+                "label": "Step 3: Probability of dwarf (tt)",
+                "text": "Only 1 out of 4 boxes is tt = 1/4 = <strong>25% probability</strong>."
+              }
+            ],
+            "proTip": "In Mendelian monohybrid crosses, heterozygous crosses ALWAYS yield a 3:1 phenotypic ratio and a 1:2:1 genotypic ratio!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the phenotypic ratio in a cross between two heterozygous parents (Tt × Tt)?",
+              "a": "3 : 1 (3 dominant : 1 recessive)."
             },
             {
-              "q": "What is the probability of a human child inheriting a Y chromosome from their father and being biologically male?",
+              "q": "What sex chromosome combination determines a human male?",
+              "a": "XY (XX is female)."
+            },
+            {
+              "q": "What is the difference between genotype and phenotype?",
+              "a": "Genotype is genetic makeup (alleles); phenotype is observable physical appearance."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "In humans, brown eye color (B) is dominant over blue eye color (b). If a homozygous brown-eyed father (BB) has children with a blue-eyed mother (bb), what percentage of their offspring are expected to have brown eyes?",
               "options": [
-                "25%",
+                "100%",
                 "50%",
                 "75%",
-                "100%"
+                "25%"
               ],
-              "correct": 1,
-              "strategy": "Father produces 50% X sperm and 50% Y sperm.",
-              "derivation": "Human sex determination: Female = XX; Male = XY. Mother always provides an X chromosome. Father provides either X or Y with equal 50% probability. Therefore, the chance of a male child (XY) is 50% (1 in 2).",
-              "trap": "Assuming 25% or 75%."
+              "correct": 0,
+              "strategy": "Cross BB × bb. Every offspring receives B from father and b from mother, resulting in 100% Bb (brown eyes).",
+              "derivation": "All children will have genotype Bb. Since B is dominant over b, 100% will phenotypically exhibit brown eyes.",
+              "trap": "Assuming a 3:1 ratio (that only occurs when BOTH parents are heterozygous Bb!)."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Mendelian Genetics, Punnett Squares & Reproductive Health?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Mendelian Genetics, Punnett Squares & Reproductive Health in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }
@@ -698,113 +1177,192 @@ module.exports = {
     {
       "id": "g8-sci-u7",
       "number": "Unit 7",
-      "title": "Environment & Ecology",
-      "bigIdea": "Understand ecosystems, biotic vs abiotic factors, energy pyramids, trophic levels, biogeochemical cycles (carbon and nitrogen), and environmental conservation.",
+      "title": "Ecosystems, Biomes & Environmental Conservation",
+      "bigIdea": "Explore symbiotic relationships, Ethiopian biomes, ecological adaptations, deforestation, and environmental sustainability.",
       "subtopics": [
         {
           "id": "g8-sci-7.1",
           "code": "7.1",
-          "title": "Ecosystems, Energy Flow & Biogeochemical Cycles",
+          "title": "Symbiotic Associations & Ecological Adaptations",
           "survey": {
-            "blueprint": "Ecosystem: biological community of interacting organisms (biotic) and their physical environment (abiotic). Trophic hierarchy: Producers (autotrophs) ➔ Primary Consumers (herbivores) ➔ Secondary/Tertiary Consumers (carnivores) ➔ Decomposers. The 10% Ecological Energy Rule. Carbon and Nitrogen cycles. Conservation of biodiversity.",
+            "blueprint": "Symbiosis (living together): 1) Mutualism (+/+ both benefit, e.g., Rhizobium nitrogen-fixing bacteria in legume roots; mycorrhizae). 2) Commensalism (+/0 one benefits, other unharmed, e.g., epiphytic orchids on trees). 3) Parasitism (+/- one benefits at host expense, e.g., tapeworm, tick, mistletoe). Adaptations: Xerophytes (desert plants: thick waxy cuticle, sunken stomata, succulent stems, e.g., cactus, acacia); Hydrophytes (water plants: aerenchyma, large floating leaves).",
             "objectives": [
-              "Distinguish biotic components (plants, animals, microbes) from abiotic factors (sunlight, soil, water, temperature).",
-              "Construct food chains and food webs and apply the 10% Energy Transfer Law.",
-              "Explain how photosynthesis and cellular respiration drive the global Carbon Cycle.",
-              "Describe the Nitrogen Cycle: nitrogen-fixing bacteria in legume root nodules, nitrification, and denitrification."
+              "Distinguish between mutualism, commensalism, and parasitism with biological examples.",
+              "Explain the agronomic importance of the Rhizobium-legume mutualistic association in Ethiopian farming.",
+              "Identify structural and physiological adaptations of xerophytic plants in arid lowlands (Afar, Somali regions)."
             ],
-            "keyFormulas": "10% Energy Law: Only ~10% of energy at one trophic level transfers to the next level"
+            "keyFormulas": "Symbiotic relationships: Mutualism (+/+), Commensalism (+/0), Parasitism (+/-)"
           },
           "questions": [
-            "Why are food chains almost never longer than 4 or 5 trophic levels in nature?",
-            "How do Rhizobium bacteria in the root nodules of Ethiopian faba bean and chickpea plants enrich nitrogen-poor soils naturally?"
+            "How do Rhizobium bacteria in the root nodules of chickpea plants enrich soil fertility?",
+            "What adaptations allow acacia trees and succulents to survive in the arid lowlands of Afar?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-5 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400 flex items-center gap-2\">\n                  <span>🌲</span> 1. ECOSYSTEM STRUCTURE & BIOTIC INTERACTIONS\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  An <strong>ecosystem</strong> consists of living (biotic) organisms interacting with non-living (abiotic) surroundings:<br>\n                  • <strong>Producers (Autotrophs):</strong> Green plants and algae that capture solar energy to synthesize glucose via photosynthesis.<br>\n                  • <strong>Consumers (Heterotrophs):</strong><br>\n                  - Primary Consumers: Herbivores eating producers (e.g. cattle, grasshoppers, zebras).<br>\n                  - Secondary Consumers: Carnivores eating herbivores (e.g. frogs, hyenas).<br>\n                  - Tertiary / Apex Predators: Top carnivores (e.g. Ethiopian wolf, lion, eagle).<br>\n                  • <strong>Decomposers:</strong> Bacteria and fungi that break down dead organic matter, recycling vital nutrients back into the soil.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-amber-400 flex items-center gap-2\">\n                  <span>⚡</span> 2. THE 10% ECOLOGICAL ENERGY RULE\n                </h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Energy enters ecosystems as sunlight, but energy transfer between trophic levels is highly inefficient:<br>\n                  • <strong>The 10% Rule (Lindeman’s Law):</strong> Only approximately <strong>10% of energy</strong> stored in organic matter at one trophic level is converted into biomass at the next trophic level.<br>\n                  • <em>90% Energy Loss:</em> 90% of energy is lost as heat, cellular respiration, movement, and undigested waste.<br>\n                  • <em>Consequence:</em> If grass captures 10,000 J of solar energy: Herbivores obtain 1,000 J; Carnivores obtain 100 J; Top predators obtain only 10 J! This limits food chain length to 4-5 links.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-cyan-400 flex items-center gap-2\">\n                  <span>🔄</span> 3. THE CARBON & NITROGEN CYCLES\n                </h4>\n                <div class=\"space-y-2 text-xs sm:text-sm text-slate-300\">\n                  <p>• <strong>Carbon Cycle:</strong> Carbon dioxide (CO₂) is removed from the atmosphere ONLY by plant <strong>Photosynthesis</strong>. CO₂ is returned to the atmosphere by <strong>Cellular Respiration</strong>, <strong>Decomposition</strong>, and the <strong>Combustion of fossil fuels</strong>.</p>\n                  <p>• <strong>Nitrogen Cycle:</strong> Atmospheric N₂ (78% of air) cannot be absorbed directly by plants. <strong>Nitrogen-fixing bacteria (Rhizobium)</strong> in the root nodules of leguminous plants convert N₂ into usable nitrates (NO₃⁻). Decomposers recycle ammonia, and <em>denitrifying bacteria</em> return N₂ back into the atmosphere.</p>\n                </div>\n              </div>\n            </div>\n          ",
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">🤝 1. Types of Symbiotic Associations</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Mutualism (+/+):</strong> An obligatory or facultative interaction where <strong>both species benefit</strong>:<br>\n                  - <em>Rhizobium and Legumes:</em> Bacteria living in root nodules of beans, peas, and chickpeas convert atmospheric nitrogen ($\text{N}_2$) into nitrates ($\text{NO}_3^-$) usable by plants, while the plant provides sugars and shelter.<br>\n                  - <em>Lichens:</em> Mutualistic partnership between a fungus (provides moisture and minerals) and an alga/cyanobacterium (photosynthesizes carbohydrates).<br>\n                  • <strong>Commensalism (+/0):</strong> One organism benefits while the other is unaffected (e.g., epiphytic orchids growing high on forest trees in Kaffa to reach sunlight).<br>\n                  • <strong>Parasitism (+/-):</strong> The parasite derives nourishment and habitat at the direct expense of the host organism (e.g., tapeworms in human intestines; ticks on cattle).\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-emerald-400\">🌵 2. Plant Adaptations to Extreme Environments</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>Xerophytes (Arid Land Plants):</strong> Adapted to conserve water (Afar, Ogaden):<br>\n                  - Deep extensive taproots to reach groundwater.<br>\n                  - Leaves reduced to spines/thorns to minimize transpiration surface area.<br>\n                  - Thick waxy cuticles and sunken stomata that close during daylight.<br>\n                  - Fleshy succulent stems storing water (cactus, euphorbia).<br>\n                  • <strong>Hydrophytes (Aquatic Plants):</strong> Adapted to aquatic life (Lake Tana, Lake Ziway): air-filled cavities (aerenchyma) for buoyancy, stomata restricted to upper leaf surfaces, thin/absent cuticles.\n                </p>\n              </div>\n            </div>\n          ",
           "example": {
-            "title": "Worked Example: Calculating Energy Transfer Through an Ecosystem",
-            "problem": "In the Bale Mountains ecosystem, alpine meadow grasses produce 50,000 kJ of chemical energy through photosynthesis. Part A: How much energy reaches the giant mole-rats (primary consumers)? Part B: How much energy reaches the endangered Ethiopian wolf (secondary consumer)?",
+            "title": "Worked Example: Classifying Biological Relationships",
+            "problem": "Classify each relationship as mutualism, commensalism, or parasitism: (a) Honeyguide bird leading a human to a wild bee nest, (b) Cattle egrets catching grasshoppers stirred up by grazing oxen, (c) A tick sucking blood from a goat.",
             "steps": [
               {
-                "label": "Step 1: Apply the 10% rule to primary consumers",
-                "text": "Energy at Producer level = 50,000 kJ.<br>Primary Consumer Energy = 10% of 50,000 kJ = 0.10 × 50,000 = <strong>5,000 kJ</strong>."
+                "label": "Part (a) Honeyguide & human",
+                "text": "Mutualism (+/+): Both gain access to honey and beeswax food resources."
               },
               {
-                "label": "Step 2: Apply the 10% rule to secondary consumers",
-                "text": "Secondary Consumer Energy = 10% of 5,000 kJ = 0.10 × 5,000 = <strong>500 kJ</strong>."
+                "label": "Part (b) Cattle egret & oxen",
+                "text": "Commensalism (+/0): The egret benefits by catching flushed insects; the oxen are completely unharmed and unbenefited."
               },
               {
-                "label": "Step 3: Analyze total energy loss",
-                "text": "Out of 50,000 kJ captured by grass, 49,500 kJ (99%) was dissipated as heat across two trophic transfers, leaving only 500 kJ for the Ethiopian wolf!"
+                "label": "Part (c) Tick & goat",
+                "text": "Parasitism (+/-): The tick feeds on goat blood while transmitting blood parasites and causing anemia in the host."
               }
             ],
-            "proTip": "Because energy diminishes by 90% at each step, ecosystems can support far fewer carnivores than herbivores!"
+            "proTip": "In mutualism, both have plus signs (+/+); in parasitism, one is plus and one is minus (+/-)!"
           },
           "reciteFlashcards": [
             {
-              "q": "What percentage of energy is transferred from one trophic level to the next on average?",
-              "a": "Approximately 10% (the 10% Rule)."
+              "q": "What type of symbiotic association occurs between Rhizobium bacteria and legume roots?",
+              "a": "Mutualism (both organisms benefit)."
             },
             {
-              "q": "What type of bacteria convert atmospheric nitrogen into nitrates inside legume root nodules?",
-              "a": "Nitrogen-fixing bacteria (Rhizobium)."
+              "q": "What are xerophytes?",
+              "a": "Plants adapted to survive in extremely dry, arid environments."
             },
             {
-              "q": "What biological process is the ONLY natural sink that extracts CO₂ directly from the atmosphere?",
-              "a": "Photosynthesis by green plants and algae."
+              "q": "Give an example of commensalism.",
+              "a": "Epiphytic orchids growing on branches of tall rainforest trees."
             }
           ],
           "amtQuiz": [
             {
-              "q": "According to the 10% Trophic Energy Transfer Rule in ecological food chains, if primary producers (grass in Bale Mountains National Park) capture 10,000 Joules of solar energy, how much energy is transferred to the primary consumers (grazing Nyala antelopes)?",
+              "q": "The interaction between Rhizobium nitrogen-fixing bacteria living in the root nodules of an Ethiopian chickpea plant and the chickpea itself is classified as:",
               "options": [
-                "10,000 Joules",
-                "1,000 Joules",
-                "100 Joules",
-                "10 Joules"
+                "Mutualism",
+                "Parasitism",
+                "Commensalism",
+                "Predation"
               ],
-              "correct": 1,
-              "strategy": "Energy transferred to next level = 10% of 10,000 J.",
-              "derivation": "Only approximately 10% of the energy stored in biomass at one trophic level is converted into biomass at the next level. Energy = 10,000 J × 0.10 = 1,000 Joules. The remaining 90% is lost as metabolic heat and respiration.",
-              "trap": "Selecting 100 Joules (which would be the secondary consumer level, like wolves)."
+              "correct": 0,
+              "strategy": "The bacteria provide fixed nitrogen to the plant, and the plant supplies carbohydrates to the bacteria.",
+              "derivation": "Since both species derive substantial survival and metabolic benefits from the interaction, it is a mutualistic relationship (+/+).",
+              "trap": "Confusing mutualism with commensalism."
             },
             {
-              "q": "The Ethiopian Wolf (Canis simensis) in the Afro-alpine ecosystem of Bale and Semien Mountains preys upon giant root-rats. In this ecological relationship, the Ethiopian wolf is classified as a:",
+              "q": "Which scientific principle is essential when analyzing Symbiotic Associations & Ecological Adaptations?",
               "options": [
-                "Primary Producer (Autotroph)",
-                "Primary Consumer (Herbivore)",
-                "Secondary Consumer (Carnivore)",
-                "Decomposer (Saprotroph)"
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
               ],
-              "correct": 2,
-              "strategy": "The wolf eats herbivores (rats), making it a secondary consumer/carnivore.",
-              "derivation": "Afro-alpine grass (producer) ➔ Giant root-rat (primary consumer / herbivore) ➔ Ethiopian wolf (secondary consumer / apex carnivore).",
-              "trap": "Confusing primary consumer with secondary consumer."
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
             },
             {
-              "q": "What is the ecological term for the maximum population size of a species that a given environment can sustainably support over time without degrading the habitat?",
+              "q": "What is the real-world significance of understanding Symbiotic Associations & Ecological Adaptations in the context of Ethiopian technological and environmental development?",
               "options": [
-                "Biotic Potential",
-                "Carrying Capacity (K)",
-                "Exponential Surge Limit",
-                "Trophic Quotient"
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
               ],
-              "correct": 1,
-              "strategy": "Carrying capacity is the maximum sustainable population.",
-              "derivation": "Carrying capacity (K) represents the equilibrium population level constrained by available food, water, territory, and environmental resistance.",
-              "trap": "Confusing carrying capacity with unrestricted biotic potential."
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
+            }
+          ]
+        },
+        {
+          "id": "g8-sci-7.2",
+          "code": "7.2",
+          "title": "Ethiopian Biomes, Deforestation & Environmental Sustainability",
+          "survey": {
+            "blueprint": "Ethiopian Agro-ecological Biomes: Afro-Alpine (Bale/Simien Mountains; giant lobelia, Walia Ibex, Ethiopian Wolf), Moist Montane Forest (Kaffa, Illubabor; wild Coffea arabica), Dry Montane Woodland, Acacia Savanna, Arid Lowland Desert. Environmental threats: Deforestation, soil erosion, habitat loss, climate change. Conservation strategies: Green Legacy Initiative, reforestation, terracing, protected national parks.",
+            "objectives": [
+              "Characterize the major agro-ecological biomes of Ethiopia and their endemic wildlife.",
+              "Explain the root causes and catastrophic ecological impacts of deforestation and topsoil erosion.",
+              "Evaluate modern Ethiopian conservation initiatives including the Green Legacy reforestation campaign."
+            ],
+            "keyFormulas": "Sustainable Development = Meeting present societal needs without compromising the ability of future generations to meet their own needs"
+          },
+          "questions": [
+            "Why are endemic species like the Walia Ibex and Ethiopian Wolf particularly vulnerable to habitat destruction?",
+            "How does extensive tree planting prevent severe topsoil erosion during the Kiremt rainy season?"
+          ],
+          "coreNotes": "\n            <div class=\"space-y-4 text-slate-200\">\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-indigo-400\">⛰️ 1. Major Biomes and Endemic Wildlife of Ethiopia</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  Ethiopia’s dramatic topographic variations (from 125 m below sea level at Danakil Depression to 4,533 m at Ras Dejen) give rise to diverse biomes:<br>\n                  • <strong>Afro-Alpine Ecosystem (Bale and Simien Mountains):</strong> Characterized by extreme cold, frost, and high UV radiation. Home to endemic afro-alpine plants (<em>Giant Lobelia</em>) and iconic endemic mammals: <strong>Ethiopian Wolf (Canis simensis)</strong>, <strong>Walia Ibex (Capra walie)</strong>, and <strong>Gelada Baboon (Theropithecus gelada)</strong>.<br>\n                  • <strong>Moist Evergreen Montane Forest (Southwestern Highlands: Kaffa, Sheka):</strong> High rainfall rainforests; the evolutionary birthplace of wild <strong>Arabica Coffee (Coffea arabica)</strong>.<br>\n                  • <strong>Acacia-Commiphora Bushland & Savanna:</strong> Covers the Rift Valley and southeastern lowlands. Supports diverse ungulates, zebras, and carnivores.\n                </p>\n              </div>\n\n              <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n                <h4 class=\"text-sm font-black text-rose-400\">🌳 2. Deforestation, Soil Erosion & Conservation</h4>\n                <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                  • <strong>The Threat:</strong> Rapid population growth has driven extensive clearing of indigenous forests for agricultural land, firewood, and charcoal, reducing historical forest cover. This causes severe <strong>sheet and gully soil erosion</strong>, loss of reservoir capacity behind dams, and flash flooding.<br>\n                  • <strong>Conservation Interventions:</strong><br>\n                  - <em>Green Legacy Initiative:</em> Mass nationwide afforestation planting billions of multipurpose seedlings annually.<br>\n                  - <em>Watershed Management:</em> Hillside contour terracing, stone bunds, and check dams to slow runoff and recharge groundwater.<br>\n                  - <em>National Parks:</em> Protected sanctuaries for biodiversity conservation.\n                </p>\n              </div>\n            </div>\n          ",
+          "example": {
+            "title": "Worked Example: Ecological Impact of Terracing and Reforestation",
+            "problem": "Explain how building stone bunds and planting vetiver grass along steep highland slopes in Tigray and Amhara stops gully erosion and preserves downstream reservoir dams.",
+            "steps": [
+              {
+                "label": "Step 1: Reduce runoff velocity",
+                "text": "Stone bunds and vegetative contour hedges act as physical barriers, slowing the velocity of torrential Kiremt rainwater runoff."
+              },
+              {
+                "label": "Step 2: Increase infiltration",
+                "text": "Slower water velocity gives rainwater time to infiltrate deeply into the soil, recharging groundwater aquifers instead of scouring topsoil."
+              },
+              {
+                "label": "Step 3: Prevent dam siltation",
+                "text": "By binding the soil, silt cannot be washed into rivers, protecting downstream hydroelectric dams (such as GERD, Tekeze) from premature silt accumulation."
+              }
+            ],
+            "proTip": "Soil conservation directly safeguards national infrastructure: every ton of soil retained on a hillside is a ton of silt kept out of dam turbines!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "In which Ethiopian national park is the critically endangered Walia Ibex exclusively found?",
+              "a": "Simien Mountains National Park."
             },
             {
-              "q": "Which ecological process returns nitrogen, phosphorus, and carbon trapped in dead plants and animal carcasses back into the soil and atmosphere?",
+              "q": "What is the wild evolutionary birthplace of Arabica coffee?",
+              "a": "The moist montane rainforests of Kaffa in Southwestern Ethiopia."
+            },
+            {
+              "q": "What nationwide initiative aims to restore forest cover and combat land degradation in Ethiopia?",
+              "a": "The Green Legacy Initiative."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "The critically endangered Ethiopian Wolf (Canis simensis) and the Walia Ibex (Capra walie) are endemic species uniquely adapted to which specific ecological biome?",
               "options": [
-                "Eutrophication",
-                "Decomposition by bacteria and fungi",
-                "Biomagnification",
-                "Photosynthesis"
+                "Afro-Alpine highland ecosystem above 3,000 meters elevation",
+                "Acacia-Commiphora dry bushland in the Afar depression",
+                "Lowland equatorial tropical rainforest",
+                "Coastal mangrove swamp ecosystem"
               ],
-              "correct": 1,
-              "strategy": "Decomposers break down organic detritus and recycle nutrients.",
-              "derivation": "Decomposers (saprotrophic bacteria and fungi) secret extracellular enzymes that break down dead organic matter, recycling essential mineral nutrients back into the biogeochemical cycles.",
-              "trap": "Selecting eutrophication, which is nutrient pollution in water bodies."
+              "correct": 0,
+              "strategy": "The Simien and Bale mountains represent the Afro-Alpine biome characterized by extreme cold and high altitude.",
+              "derivation": "Both the Ethiopian Wolf and Walia Ibex are cold-adapted endemic mammals residing in the Afro-Alpine moorlands of the Simien and Bale highlands.",
+              "trap": "Choosing the lowland acacia bushland."
+            },
+            {
+              "q": "Which scientific principle is essential when analyzing Ethiopian Biomes, Deforestation & Environmental Sustainability?",
+              "options": [
+                "Energy and matter transformations follow conservation laws and measurable physical/chemical relationships",
+                "Physical quantities can be measured without defined reference units or dimensions",
+                "Chemical reactions create and destroy atomic nuclei during ordinary laboratory processes",
+                "Biological systems function completely independently of physics and chemistry"
+              ],
+              "correct": 0,
+              "strategy": "Apply fundamental conservation principles across physical and biological sciences.",
+              "derivation": "In non-nuclear transformations, mass and energy are conserved and follow predictable stoichiometric and physical relationships.",
+              "trap": "Believing ordinary chemical reactions create or destroy fundamental mass."
+            },
+            {
+              "q": "What is the real-world significance of understanding Ethiopian Biomes, Deforestation & Environmental Sustainability in the context of Ethiopian technological and environmental development?",
+              "options": [
+                "It provides the foundational scientific knowledge required to optimize agriculture, manage resources, and develop sustainable energy infrastructure",
+                "It allows complete reliance on imported technologies without local technical expertise",
+                "It proves that natural resource conservation has no effect on national economic growth",
+                "It discourages scientific innovation in domestic industries"
+              ],
+              "correct": 0,
+              "strategy": "Relate scientific concepts to sustainable national development.",
+              "derivation": "Understanding chemical, physical, and ecological systems enables Ethiopia to build clean energy (GERD, geothermal), improve crop yields, and conserve endemic ecosystems.",
+              "trap": "Dismissing the practical engineering and agronomic value of science."
             }
           ]
         }

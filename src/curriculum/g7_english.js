@@ -6,99 +6,95 @@ module.exports = {
     {
       "id": "g7-eng-u1",
       "number": "Unit 1",
-      "title": "Living in Rural and Urban Areas",
-      "bigIdea": "Develop vocabulary for lifestyles, compare rural and urban settings, and master comparative and superlative adjective structures.",
+      "title": "My Village and Town",
+      "bigIdea": "Greetings, personal introductions, simple present tense, and describing local geography in Ethiopia.",
       "subtopics": [
         {
           "id": "g7-eng-1.1",
           "code": "1.1",
-          "title": "Comparative and Superlative Adjectives",
+          "title": "Grammar, Reading Comprehension & Vocabulary: My Village and Town",
           "survey": {
-            "blueprint": "Grammar rule: One-syllable adjectives add -er / -est. Multi-syllable adjectives use more / most. Irregular adjectives: good ➔ better ➔ best.",
+            "blueprint": "Grammar Focus: Simple Present Tense (Habitual actions, universal truths; third person singular -s/-es; Question forms: Do/Does). Key Vocabulary: Village, town, municipality, landmark, neighborhood, scenery, highland, pastoralist. Reading Theme: Abebe and Chaltu describe their hometowns: Hawassa with its beautiful lake shores and fish market, and Debre Berhan known for cool highland breezes and sheep farming.",
             "objectives": [
-              "Form regular and irregular comparative and superlative adjectives correctly.",
-              "Construct sentences comparing rural and urban life in Ethiopia.",
-              "Identify descriptive adjectives in reading passages."
+              "Master the grammatical structure: Simple Present Tense.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "Comparative: Adj + -er + than | More + Adj + than &nbsp;|&nbsp; Superlative: The + Adj + -est | The + most + Adj"
+            "keyFormulas": "Grammar Rule: Simple Present Tense (Habitual actions, universal truths"
           },
           "questions": [
-            "When must we use \"more\" instead of \"-er\" to form a comparative adjective?",
-            "What is the irregular comparative form of the adjective \"bad\"?"
+            "How is the target grammatical structure (Simple Present Tense) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Rules for Adjective Comparison</h4>\n              <p>• <strong>Short Adjectives (1 syllable):</strong> Add <em>-er</em> and <em>-est</em> (clean ➔ cleaner ➔ cleanest; quiet ➔ quieter ➔ quietest).<br>\n              • <strong>Adjectives ending in consonant + y:</strong> Change <em>y</em> to <em>i</em> and add <em>-er/-est</em> (busy ➔ busier ➔ busiest; healthy ➔ healthier ➔ healthiest).<br>\n              • <strong>Long Adjectives (2+ syllables):</strong> Use <em>more</em> and <em>most</em> (crowded ➔ more crowded ➔ most crowded; expensive ➔ more expensive ➔ most expensive).<br>\n              • <strong>Irregulars:</strong> good ➔ better ➔ best; bad ➔ worse ➔ worst; far ➔ farther/further ➔ farthest/furthest.</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Abebe and Chaltu describe their hometowns: Hawassa with its beautiful lake shores and fish market, and Debre Berhan known for cool highland breezes and sheep farming.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Simple Present Tense</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Simple Present Tense (Habitual actions, universal truths; third person singular -s/-es; Question forms: Do/Does).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Village, town, municipality, landmark, neighborhood, scenery, highland, pastoralist.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Forming Comparative Sentences",
-            "problem": "Complete the sentence comparing Addis Ababa and Hawassa using the adjective \"populated\": \"Addis Ababa is ________ than Hawassa.\"",
+            "title": "Worked Example: Applying Simple Present Tense",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Check syllables",
-                "text": "\"Populated\" has 4 syllables (pop-u-lat-ed), which is a long adjective."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Simple Present Tense."
               },
               {
-                "label": "Step 2: Apply rule",
-                "text": "Long adjectives use \"more + adjective + than\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Abebe and Chaltu describe their hometowns: Hawassa with its beautiful lake shores and fish market, and Debre Berhan known for cool highland breezes and sheep farming.</em>"
               },
               {
-                "label": "Step 3: Write sentence",
-                "text": "Addis Ababa is <strong>more populated</strong> than Hawassa."
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "Never say \"more cleaner\" or \"more better\" — double comparatives are grammatically incorrect!"
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the superlative form of \"far\"?",
-              "a": "The farthest (distance) or the furthest."
+              "q": "What is the primary grammar focus of Unit 1?",
+              "a": "Simple Present Tense"
             },
             {
-              "q": "What is the comparative form of \"healthy\"?",
-              "a": "Healthier (change -y to -ier)."
-            },
-            {
-              "q": "What is the comparative form of \"bad\"?",
-              "a": "Worse (never say \"badder\")."
+              "q": "Define key vocabulary from this unit: Village and  town",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Choose the grammatically correct sentence comparing the climate of two Ethiopian regions:",
+              "q": "Which sentence correctly applies the target grammatical structure (Simple Present Tense)?",
               "options": [
-                "The Danakil Depression is more hotter than the Bale Mountains",
-                "The Danakil Depression is hotter than the Bale Mountains",
-                "The Danakil Depression is hottest than the Bale Mountains",
-                "The Danakil Depression is as hotter than the Bale Mountains"
+                "Abebe and Chaltu describe their hometowns: Hawassa with its beautiful lake shores and fish market, and Debre Berhan known for cool highland breezes and sheep farming.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
-              "correct": 1,
-              "strategy": "Single-syllable adjectives form comparatives by adding -er (hot ➔ hotter), not \"more hotter\".",
-              "derivation": "For one-syllable adjectives ending in a consonant-vowel-consonant, double the final consonant and add -er: hot ➔ hotter than. Using \"more hotter\" is an ungrammatical double comparative.",
-              "trap": "Using double comparatives like \"more hotter\" or \"more faster\"."
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
             },
             {
-              "q": "What is the correct superlative form of the irregular adjective \"good\"?",
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
               "options": [
-                "Goodest",
-                "Better",
-                "Best",
-                "Most good"
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
               ],
-              "correct": 2,
-              "strategy": "Irregular adjective degrees: Good (positive) ➔ Better (comparative) ➔ Best (superlative).",
-              "derivation": "\"Good\" is irregular: Good ➔ Better ➔ (The) Best. \"Best\" is always preceded by the definite article \"the\".",
-              "trap": "Adding -est to make \"goodest\"."
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
             },
             {
-              "q": "Which sentence correctly uses a multi-syllable superlative adjective?",
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
               "options": [
-                "Lalibela is the beautifulest town in northern Ethiopia",
-                "Lalibela is the most beautiful town in northern Ethiopia",
-                "Lalibela is more beautifulest than all towns",
-                "Lalibela is as most beautiful as any town"
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
               ],
-              "correct": 1,
-              "strategy": "Adjectives with three or more syllables take \"most\" in the superlative degree.",
-              "derivation": "Adjectives like \"beautiful\", \"expensive\", and \"intelligent\" take \"the most + adjective\": \"the most beautiful\".",
-              "trap": "Attaching -est to long multi-syllable adjectives."
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }
@@ -107,95 +103,95 @@ module.exports = {
     {
       "id": "g7-eng-u2",
       "number": "Unit 2",
-      "title": "History of Ethiopian Heritage",
-      "bigIdea": "Explore historical national monuments (Lalibela, Axum, Gondar) and master Past Simple vs Past Continuous tenses.",
+      "title": "Ethiopian Languages & Cultural Heritage",
+      "bigIdea": "Linguistic diversity of Ethiopia, Afroasiatic and Nilo-Saharan language families, and degrees of comparison.",
       "subtopics": [
         {
           "id": "g7-eng-2.1",
           "code": "2.1",
-          "title": "Past Simple vs. Past Continuous Tense",
+          "title": "Grammar, Reading Comprehension & Vocabulary: Ethiopian Languages & Cultural Heritage",
           "survey": {
-            "blueprint": "Past Simple (completed action at definite past time: S + V2) vs Past Continuous (action in progress interrupted: was/were + V-ing).",
+            "blueprint": "Grammar Focus: Comparative and Superlative Adjectives (regular: -er/-est; irregular: good/better/best, bad/worse/worst; more/most for multi-syllable adjectives). Key Vocabulary: Linguistic, dialect, multilingual, indigenous, script (Fidel), bilingual, heritage. Reading Theme: Ethiopia is home to over 80 living languages grouped into Semitic, Cushitic, Omotic, and Nilo-Saharan families, enriching national unity.",
             "objectives": [
-              "Distinguish between regular (-ed) and irregular past verb forms.",
-              "Use \"while\" and \"when\" to link past continuous and past simple actions.",
-              "Write descriptive narratives about historic visits to Lalibela or Axum."
+              "Master the grammatical structure: Comparative and Superlative Adjectives.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "While + Past Continuous (was/were + V-ing), Past Simple (V2) &nbsp;|&nbsp; Past Continuous + when + Past Simple"
+            "keyFormulas": "Grammar Rule: Comparative and Superlative Adjectives (regular: -er/-est"
           },
           "questions": [
-            "Which conjunction (\"when\" or \"while\") is usually followed by the Past Continuous tense?",
-            "What is the past simple of irregular verbs \"build\", \"write\", and \"see\"?"
+            "How is the target grammatical structure (Comparative and Superlative Adjectives) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Narrative Past Tense Structures</h4>\n              <p>• <strong>Past Simple:</strong> Used for completed historical facts or events.<br>\n                <em>Example:</em> King Lalibela <strong>carved</strong> eleven rock-hewn churches in the 12th century.<br>\n              • <strong>Past Continuous:</strong> An ongoing action in the past interrupted by a shorter action.<br>\n                <em>Example:</em> We <strong>were touring</strong> the Fasil Ghebbi castle when it <strong>began</strong> to rain.<br>\n              • <strong>Formula:</strong> <em>While + was/were + V-ing, S + V2 (interruption).</em></p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Ethiopia is home to over 80 living languages grouped into Semitic, Cushitic, Omotic, and Nilo-Saharan families, enriching national unity.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Comparative and Superlative Adjectives</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Comparative and Superlative Adjectives (regular: -er/-est; irregular: good/better/best, bad/worse/worst; more/most for multi-syllable adjectives).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Linguistic, dialect, multilingual, indigenous, script (Fidel), bilingual, heritage.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Combining Actions with When and While",
-            "problem": "Combine the two actions into a complex sentence: (Action 1: Archeologists were excavating near Axum. Action 2: They discovered ancient coins.)",
+            "title": "Worked Example: Applying Comparative and Superlative Adjectives",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Identify longer background action",
-                "text": "\"Were excavating\" is ongoing Past Continuous."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Comparative and Superlative Adjectives."
               },
               {
-                "label": "Step 2: Identify sudden event",
-                "text": "\"Discovered\" is sudden Past Simple."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Ethiopia is home to over 80 living languages grouped into Semitic, Cushitic, Omotic, and Nilo-Saharan families, enriching national unity.</em>"
               },
               {
-                "label": "Step 3: Combine with while",
-                "text": "<strong>While</strong> the archeologists were excavating near Axum, they <strong>discovered</strong> ancient coins."
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "Use a comma after the dependent \"While...\" clause when it begins the sentence!"
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the past simple form of \"carve\"?",
-              "a": "Carved (regular verb adding -d)."
+              "q": "What is the primary grammar focus of Unit 2?",
+              "a": "Comparative and Superlative Adjectives"
             },
             {
-              "q": "What auxiliary verb is used with \"they\" in Past Continuous?",
-              "a": "\"were\" (They were reading)."
+              "q": "Define key vocabulary from this unit: Linguistic and  dialect",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Identify the sentence that correctly combines the Past Continuous (interrupted action) with the Past Simple (interrupting action):",
+              "q": "Which sentence correctly applies the target grammatical structure (Comparative and Superlative Adjectives)?",
               "options": [
-                "While the archaeological team was excavating near Hadar, they discovered ancient fossil bones",
-                "While the team excavated, they were discovering bones",
-                "The team was excavating while they was discovering bones",
-                "When the team discovers bones, they were excavating"
+                "Ethiopia is home to over 80 living languages grouped into Semitic, Cushitic, Omotic, and Nilo-Saharan families, enriching national unity.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
               "correct": 0,
-              "strategy": "Past Continuous (was/were + -ing) for background ongoing action + Past Simple (V2) for sudden event.",
-              "derivation": "\"While + Past Continuous\" sets the scene of an ongoing activity (was excavating); the sudden interruption is expressed in Past Simple (discovered).",
-              "trap": "Using continuous tense for both actions when one interrupts the other."
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
             },
             {
-              "q": "What is the correct past simple form of the irregular verb \"teach\"?",
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
               "options": [
-                "Teached",
-                "Taught",
-                "Thought",
-                "Tought"
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
               ],
-              "correct": 1,
-              "strategy": "Teach is irregular: Teach ➔ Taught ➔ Taught.",
-              "derivation": "The past tense of \"teach\" is \"taught\" (spelled t-a-u-g-h-t). \"Thought\" is the past tense of \"think\".",
-              "trap": "Confusing \"taught\" (from teach) with \"thought\" (from think) or adding -ed."
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
             },
             {
-              "q": "Complete the sentence with the correct past continuous verb agreement: \"The students _______ working on their science project at 4 PM yesterday.\"",
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
               "options": [
-                "was",
-                "were",
-                "is",
-                "are"
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
               ],
-              "correct": 1,
-              "strategy": "Plural subject \"The students\" requires plural auxiliary \"were\".",
-              "derivation": "Subject \"The students\" is third-person plural, so the past continuous auxiliary must be \"were\": were working.",
-              "trap": "Using singular \"was\" with a plural subject."
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }
@@ -204,95 +200,95 @@ module.exports = {
     {
       "id": "g7-eng-u3",
       "number": "Unit 3",
-      "title": "Healthy Food and Nutrition",
-      "bigIdea": "Learn dietary vocabulary, countable versus uncountable nouns, quantifiers, and modal verbs of advice (should, must).",
+      "title": "Holidays and Festivals in Ethiopia",
+      "bigIdea": "Traditional and religious celebrations, past simple tense, and prepositions of time and place.",
       "subtopics": [
         {
           "id": "g7-eng-3.1",
           "code": "3.1",
-          "title": "Countable/Uncountable Nouns & Modal Verbs",
+          "title": "Grammar, Reading Comprehension & Vocabulary: Holidays and Festivals in Ethiopia",
           "survey": {
-            "blueprint": "Countable (can count, have plurals: apples) vs Uncountable (cannot count: water, injera, honey). Quantifiers: many, much, a lot of, few, little. Modals: should, must.",
+            "blueprint": "Grammar Focus: Simple Past Tense (regular -ed verbs and irregular verbs: went, ate, saw, bought) & Prepositions of Time (at 7:00, on Monday, in September). Key Vocabulary: Celebration, feast, commemoration, bonfire (Demera), hospitality, reconciliation, procession. Reading Theme: Families across Ethiopia gather for Enkutatash (Ethiopian New Year in September), Meskel with the lighting of the Demera bonfire, Timket with colorful processions, and Eid al-Fitr.",
             "objectives": [
-              "Differentiate countable from uncountable nouns.",
-              "Use \"many\" with countables and \"much\" with uncountables.",
-              "Express nutritional recommendations with \"should\", \"ought to\", and \"must\"."
+              "Master the grammatical structure: Simple Past Tense.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "Many + Countable Plural Nouns | Much + Uncountable Singular Nouns | S + Should + Base Verb"
+            "keyFormulas": "Grammar Rule: Simple Past Tense (regular -ed verbs and irregular verbs: went, ate, saw, bought) & Prepositions of Time (at 7:00, on Monday, in September)."
           },
           "questions": [
-            "Why is \"water\" uncountable while \"bottles of water\" is countable?",
-            "What is the difference between \"should eat\" and \"must eat\" in health advice?"
+            "How is the target grammatical structure (Simple Past Tense) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Grammar of Nutrition & Quantification</h4>\n              <p>• <strong>Countable:</strong> Have singular and plural forms (an orange ➔ oranges). Use with <em>many, a few</em>.<br>\n              • <strong>Uncountable:</strong> Substances, liquids, grains, concepts (milk, teff, sugar, meat, health). Never take a/an or plural -s. Use with <em>much, a little</em>.<br>\n              • <strong>Modals:</strong><br>\n                - <em>Should / Ought to:</em> Mild advice, good idea (You should drink 8 glasses of water daily).<br>\n                - <em>Must:</em> Strong obligation or vital necessity (You must wash your hands before eating).</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Families across Ethiopia gather for Enkutatash (Ethiopian New Year in September), Meskel with the lighting of the Demera bonfire, Timket with colorful processions, and Eid al-Fitr.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Simple Past Tense</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Simple Past Tense (regular -ed verbs and irregular verbs: went, ate, saw, bought) & Prepositions of Time (at 7:00, on Monday, in September).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Celebration, feast, commemoration, bonfire (Demera), hospitality, reconciliation, procession.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Selecting the Correct Quantifier",
-            "problem": "Choose the correct quantifier: \"You shouldn't add too (much / many) salt to your food.\"",
+            "title": "Worked Example: Applying Simple Past Tense",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Identify noun type",
-                "text": "\"Salt\" is a granular seasoning that cannot be counted individually (uncountable)."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Simple Past Tense."
               },
               {
-                "label": "Step 2: Apply rule",
-                "text": "Uncountable nouns take \"much\" in negative sentences and questions."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Families across Ethiopia gather for Enkutatash (Ethiopian New Year in September), Meskel with the lighting of the Demera bonfire, Timket with colorful processions, and Eid al-Fitr.</em>"
               },
               {
-                "label": "Step 3: Conclude",
-                "text": "\"You shouldn't add too <strong>much</strong> salt to your food.\""
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "\"A lot of\" can be safely used with both countable and uncountable nouns in affirmative statements!"
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "Is \"rice\" countable or uncountable in English?",
-              "a": "Uncountable."
+              "q": "What is the primary grammar focus of Unit 3?",
+              "a": "Simple Past Tense"
             },
             {
-              "q": "Which quantifier goes with countable plural nouns: \"few\" or \"little\"?",
-              "a": "\"Few\" (e.g., a few bananas)."
+              "q": "Define key vocabulary from this unit: Celebration and  feast",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Which quantifier correctly completes the sentence with the uncountable noun \"water\": \"There is only _______ water left in the clay pot.\"?",
+              "q": "Which sentence correctly applies the target grammatical structure (Simple Past Tense)?",
               "options": [
-                "a few",
-                "a little",
-                "many",
-                "several"
+                "Families across Ethiopia gather for Enkutatash (Ethiopian New Year in September), Meskel with the lighting of the Demera bonfire, Timket with colorful processions, and Eid al-Fitr.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
-              "correct": 1,
-              "strategy": "\"A little\" and \"much\" are used with uncountable nouns; \"a few\" and \"many\" with countable plural nouns.",
-              "derivation": "Water is uncountable (mass noun). Uncountable nouns take \"a little\" or \"much\". Countable nouns take \"a few\" or \"many\" (e.g. a few cups).",
-              "trap": "Using \"a few\" with non-countable liquids."
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
             },
             {
-              "q": "Which modal verb expresses strong moral obligation or official necessity in the sentence: \"Drivers _______ stop when the pedestrian traffic light turns red.\"?",
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
               "options": [
-                "might",
-                "could",
-                "must",
-                "would"
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
               ],
-              "correct": 2,
-              "strategy": "\"Must\" expresses compulsory rule, law, or strict obligation.",
-              "derivation": "\"Must\" conveys mandatory obligation imposed by law. \"Might\" or \"could\" express mere possibility.",
-              "trap": "Selecting \"might\", which suggests traffic laws are optional."
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
             },
             {
-              "q": "Which of the following is an uncountable noun that never takes a plural -s ending in standard English?",
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
               "options": [
-                "Apple",
-                "Information",
-                "Orange",
-                "Chair"
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
               ],
-              "correct": 1,
-              "strategy": "\"Information\", \"advice\", \"furniture\", and \"luggage\" are uncountable nouns.",
-              "derivation": "\"Information\" cannot be pluralized as \"informations\". To specify quantity, we say \"a piece of information\".",
-              "trap": "Adding -s to uncountable nouns like information or advice."
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }
@@ -301,95 +297,95 @@ module.exports = {
     {
       "id": "g7-eng-u4",
       "number": "Unit 4",
-      "title": "Environmental Protection and Climate",
-      "bigIdea": "Study climate awareness, green initiatives in Ethiopia, Present Perfect tense, and cause/effect connectors.",
+      "title": "I am Going to Visit Lalibela",
+      "bigIdea": "Travel, historical monuments of Ethiopia, and expressing future intentions using \"going to\".",
       "subtopics": [
         {
           "id": "g7-eng-4.1",
           "code": "4.1",
-          "title": "Present Perfect Tense & Cause-Effect Connectors",
+          "title": "Grammar, Reading Comprehension & Vocabulary: I am Going to Visit Lalibela",
           "survey": {
-            "blueprint": "Present Perfect (has/have + V3): connects past action to present relevance. Connectors: because, therefore, as a result, so.",
+            "blueprint": "Grammar Focus: Future Intentions with \"Be Going To\" + base verb (I am going to visit; She is going to travel; Are you going to fly?). Key Vocabulary: Monolithic, architecture, pilgrimage, excavation, itinerary, heritage, chisel, sanctuary. Reading Theme: A student writes an exciting travel itinerary planning a holiday trip to the 11 rock-hewn churches of Lalibela, carved out of volcanic tuff.",
             "objectives": [
-              "Form the Present Perfect tense with auxiliary has/have and past participle (V3).",
-              "Use time adverbs: already, yet, since, for.",
-              "Link ecological causes and effects using \"therefore\" and \"because\"."
+              "Master the grammatical structure: Future Intentions with \"Be Going To\" + base verb.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "S + have/has + V3 (Past Participle) &nbsp;|&nbsp; Cause + therefore / as a result + Effect"
+            "keyFormulas": "Grammar Rule: Future Intentions with \"Be Going To\" + base verb (I am going to visit"
           },
           "questions": [
-            "How does \"since\" differ from \"for\" when specifying duration in Present Perfect?",
-            "What is the difference in meaning between \"has gone to\" and \"has been to\"?"
+            "How is the target grammatical structure (Future Intentions with \"Be Going To\" + base verb) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Present Perfect & Environmental Discourse</h4>\n              <p>• <strong>Present Perfect Formation:</strong> Subject + <em>have/has</em> + Past Participle (V3).<br>\n                <em>Example:</em> Ethiopian citizens <strong>have planted</strong> billions of tree seedlings through the Green Legacy initiative.<br>\n              • <strong>Since vs. For:</strong><br>\n                - <em>Since:</em> Specific starting point in time (since 2019, since Monday, since 8:00 AM).<br>\n                - <em>For:</em> Length or duration of time (for five years, for two hours, for a decade).<br>\n              • <strong>Cause & Effect Connectors:</strong><br>\n                - <em>Because / As / Since:</em> Introduces the cause (Plants absorb CO₂ because they photosynthesize).<br>\n                - <em>Therefore / Consequently:</em> Introduces the effect (Deforestation leads to erosion; therefore, replanting is urgent).</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">A student writes an exciting travel itinerary planning a holiday trip to the 11 rock-hewn churches of Lalibela, carved out of volcanic tuff.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Future Intentions with \"Be Going To\" + base verb</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Future Intentions with \"Be Going To\" + base verb (I am going to visit; She is going to travel; Are you going to fly?).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Monolithic, architecture, pilgrimage, excavation, itinerary, heritage, chisel, sanctuary.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Using \"Since\" vs \"For\" in Environmental Sentences",
-            "problem": "Fill in the blank: \"Ethiopia has championed the Green Legacy initiative ________ 2019.\"",
+            "title": "Worked Example: Applying Future Intentions with \"Be Going To\" + base verb",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Examine the time expression",
-                "text": "\"2019\" is a specific calendar year (starting point in time)."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Future Intentions with \"Be Going To\" + base verb."
               },
               {
-                "label": "Step 2: Apply grammar rule",
-                "text": "Specific starting points require the preposition \"since\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>A student writes an exciting travel itinerary planning a holiday trip to the 11 rock-hewn churches of Lalibela, carved out of volcanic tuff.</em>"
               },
               {
-                "label": "Step 3: Solution",
-                "text": "Ethiopia has championed the Green Legacy initiative <strong>since</strong> 2019."
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "If the expression is a duration (\"for 7 years\"), use \"for\"; if it is a starting date (\"since 2019\"), use \"since\"!"
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the past participle (V3) of the irregular verb \"grow\"?",
-              "a": "Grown (grow ➔ grew ➔ grown)."
+              "q": "What is the primary grammar focus of Unit 4?",
+              "a": "Future Intentions with \"Be Going To\" + base verb"
             },
             {
-              "q": "Which adverb goes at the end of negative sentences in Present Perfect?",
-              "a": "\"yet\" (e.g., We haven't finished yet)."
+              "q": "Define key vocabulary from this unit: Monolithic and  architecture",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Complete the sentence with the appropriate time preposition: \"Farmers in this highland district have practiced agroforestry _______ 2010.\"",
+              "q": "Which sentence correctly applies the target grammatical structure (Future Intentions with \"Be Going To\" + base verb)?",
               "options": [
-                "for",
-                "since",
-                "during",
-                "from"
-              ],
-              "correct": 1,
-              "strategy": "\"Since\" is used with a specific starting point in time; \"For\" with a duration of time.",
-              "derivation": "2010 is a specific calendar starting year. \"Since 2010\" marks the beginning of the action continuing into the present.",
-              "trap": "Using \"for\" with a starting date instead of a duration (e.g. \"for 15 years\")."
-            },
-            {
-              "q": "Select the cause-and-effect transition word that logically completes the sentence: \"Heavy torrential rains eroded the hillside; _______, the farmers constructed stone check-dams.\"",
-              "options": [
-                "therefore",
-                "although",
-                "despite",
-                "whereas"
+                "A student writes an exciting travel itinerary planning a holiday trip to the 11 rock-hewn churches of Lalibela, carved out of volcanic tuff.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
               "correct": 0,
-              "strategy": "\"Therefore\" indicates a logical consequence or result.",
-              "derivation": "\"Therefore\" and \"as a result\" link cause (erosion) to effect/action (building check-dams). \"Although\" expresses contrast.",
-              "trap": "Selecting contrast connectors like \"although\" when a cause-and-effect relationship exists."
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
             },
             {
-              "q": "Which sentence correctly forms the Present Perfect tense for third-person singular?",
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
               "options": [
-                "She have visited the national museum three times",
-                "She has visited the national museum three times",
-                "She has visit the national museum three times",
-                "She visited have the national museum three times"
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
               ],
-              "correct": 1,
-              "strategy": "Present Perfect formula: has/have + past participle (V3). Third-person singular takes \"has\".",
-              "derivation": "Subject \"She\" takes auxiliary \"has\" + past participle \"visited\": \"has visited\".",
-              "trap": "Using \"have\" with singular subjects (he/she/it)."
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }
@@ -398,99 +394,95 @@ module.exports = {
     {
       "id": "g7-eng-u5",
       "number": "Unit 5",
-      "title": "Traditional Craftsmanship and Technology",
-      "bigIdea": "Explore Ethiopian cultural crafts (pottery, weaving, leatherwork) and master Passive Voice in Present and Past tenses.",
+      "title": "The Historic Victory of Adwa",
+      "bigIdea": "Historical narratives, courage, and contrasting Past Continuous with Simple Past.",
       "subtopics": [
         {
           "id": "g7-eng-5.1",
           "code": "5.1",
-          "title": "Passive Voice (Present and Past Simple)",
+          "title": "Grammar, Reading Comprehension & Vocabulary: The Historic Victory of Adwa",
           "survey": {
-            "blueprint": "Passive Voice highlights the action and receiver rather than the actor. Structure: Object + Be (is/are/was/were) + Past Participle (V3).",
+            "blueprint": "Grammar Focus: Past Continuous Tense (was/were + verb-ing) interrupted by Past Simple (e.g., While the soldiers were marching, the signal sounded). Key Vocabulary: Patriotism, sovereignty, brigade, cavalry, artillery, bravery, mobilization, victory. Reading Theme: On March 1, 1896, Ethiopian patriots led by Emperor Menelik II and Empress Taytu Betul triumphed over Italian colonial forces at Adwa, preserving freedom.",
             "objectives": [
-              "Convert active sentences to passive voice in present and past tenses.",
-              "Describe step-by-step technological craft processes using passive verbs.",
-              "Use the \"by + agent\" phrase when the performer is essential."
+              "Master the grammatical structure: Past Continuous Tense.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "Present Passive: S + is/are + V3 &nbsp;|&nbsp; Past Passive: S + was/were + V3"
+            "keyFormulas": "Grammar Rule: Past Continuous Tense (was/were + verb-ing) interrupted by Past Simple (e.g., While the soldiers were marching, the signal sounded)."
           },
           "questions": [
-            "Why is passive voice preferred in scientific and manufacturing process descriptions?",
-            "When should the \"by + agent\" phrase be omitted in a passive sentence?"
+            "How is the target grammatical structure (Past Continuous Tense) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Passive Voice Architecture</h4>\n              <p>• <strong>When to Use:</strong> When the object being acted upon is more important than who performs it, or when the agent is obvious/unknown.<br>\n              • <strong>Present Passive:</strong> <em>Subject + is/are + Past Participle (V3).</em><br>\n                <em>Active:</em> Traditional weavers make shemma from pure cotton.<br>\n                <em>Passive:</em> Shemma <strong>is made</strong> from pure cotton (by traditional weavers).<br>\n              • <strong>Past Passive:</strong> <em>Subject + was/were + Past Participle (V3).</em><br>\n                <em>Active:</em> Ancient craftsmen built the monoliths of Tiya centuries ago.<br>\n                <em>Passive:</em> The monoliths of Tiya <strong>were built</strong> centuries ago.</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">On March 1, 1896, Ethiopian patriots led by Emperor Menelik II and Empress Taytu Betul triumphed over Italian colonial forces at Adwa, preserving freedom.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Past Continuous Tense</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Past Continuous Tense (was/were + verb-ing) interrupted by Past Simple (e.g., While the soldiers were marching, the signal sounded).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Patriotism, sovereignty, brigade, cavalry, artillery, bravery, mobilization, victory.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Active to Passive Voice Transformation",
-            "problem": "Convert into passive voice: \"Artisans shape red clay into beautiful cooking pots.\"",
+            "title": "Worked Example: Applying Past Continuous Tense",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Identify object",
-                "text": "\"Red clay\" is the direct object and becomes the new subject."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Past Continuous Tense."
               },
               {
-                "label": "Step 2: Check tense and number",
-                "text": "Present simple tense, \"clay\" is uncountable singular ➔ use \"is\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>On March 1, 1896, Ethiopian patriots led by Emperor Menelik II and Empress Taytu Betul triumphed over Italian colonial forces at Adwa, preserving freedom.</em>"
               },
               {
-                "label": "Step 3: Past participle of verb",
-                "text": "Shape ➔ shaped."
-              },
-              {
-                "label": "Step 4: Combine",
-                "text": "Red clay <strong>is shaped</strong> into beautiful cooking pots by artisans."
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "Ensure subject-verb agreement with the NEW subject, not the original active subject!"
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the past participle of \"weave\"?",
-              "a": "Woven (weave ➔ wove ➔ woven)."
+              "q": "What is the primary grammar focus of Unit 5?",
+              "a": "Past Continuous Tense"
             },
             {
-              "q": "In the sentence \"Coffee is harvested in Kaffa\", what voice is used?",
-              "a": "Passive Voice (Present Simple)."
+              "q": "Define key vocabulary from this unit: Patriotism and  sovereignty",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Convert the active sentence into the correct Present Simple Passive: \"Artisans in Gondar weave traditional cotton Shemma cloths.\"",
+              "q": "Which sentence correctly applies the target grammatical structure (Past Continuous Tense)?",
               "options": [
-                "Traditional cotton Shemma cloths are woven by artisans in Gondar",
-                "Traditional cotton Shemma cloths was woven by artisans in Gondar",
-                "Traditional cotton Shemma cloths are weaved by artisans in Gondar",
-                "Traditional cotton Shemma cloths is woven by artisans in Gondar"
+                "On March 1, 1896, Ethiopian patriots led by Emperor Menelik II and Empress Taytu Betul triumphed over Italian colonial forces at Adwa, preserving freedom.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
               "correct": 0,
-              "strategy": "Present Simple Passive = am/is/are + past participle (V3). Plural subject takes \"are woven\".",
-              "derivation": "Object \"cloths\" is plural, so auxiliary is \"are\". Irregular past participle of \"weave\" is \"woven\". Thus: \"are woven by artisans\".",
-              "trap": "Using regular ending \"weaved\" or singular auxiliary \"is\"."
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
             },
             {
-              "q": "What is the correct Past Simple Passive voice of: \"King Ezana erected the monumental granite stelae in Aksum\"?",
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
               "options": [
-                "The monumental granite stelae were erected by King Ezana in Aksum",
-                "The monumental granite stelae was erected by King Ezana in Aksum",
-                "The monumental granite stelae are erected by King Ezana in Aksum",
-                "The monumental granite stelae have erected by King Ezana in Aksum"
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
               ],
               "correct": 0,
-              "strategy": "Past Simple Passive = was/were + past participle. Plural \"stelae\" takes \"were erected\".",
-              "derivation": "\"Stelae\" is the plural form of stela (obelisk). Plural subject takes \"were erected\".",
-              "trap": "Using singular \"was\" for plural \"stelae\"."
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
             },
             {
-              "q": "Why do writers use the Passive Voice in scientific reports and official announcements?",
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
               "options": [
-                "To emphasize the action, result, or object rather than the person performing the action",
-                "Because passive voice is always shorter than active voice",
-                "Because active voice is forbidden in the English language",
-                "To confuse the reader about what happened"
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
               ],
               "correct": 0,
-              "strategy": "Passive voice shifts focus to the action or patient.",
-              "derivation": "In science (\"Water was boiled at 100°C\"), the experiment process and results matter more than who personally lit the Bunsen burner.",
-              "trap": "Believing passive voice is used to obscure meaning."
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }
@@ -499,95 +491,95 @@ module.exports = {
     {
       "id": "g7-eng-u6",
       "number": "Unit 6",
-      "title": "Road Safety and Rules",
-      "bigIdea": "Understand pedestrian and vehicular safety, give directions, and master Imperative sentences and prepositions of movement.",
+      "title": "How is a Gabi Made? Traditional Craftsmanship",
+      "bigIdea": "Traditional cotton spinning and weaving, sequence connectors, and Simple Present Passive Voice.",
       "subtopics": [
         {
           "id": "g7-eng-6.1",
           "code": "6.1",
-          "title": "Imperatives & Prepositions of Movement",
+          "title": "Grammar, Reading Comprehension & Vocabulary: How is a Gabi Made? Traditional Craftsmanship",
           "survey": {
-            "blueprint": "Imperatives (direct commands, warnings, instructions: base verb without subject). Prepositions: across, along, through, towards, past.",
+            "blueprint": "Grammar Focus: Simple Present Passive Voice (Subject + am/is/are + Past Participle: Cotton is harvested; Threads are spun; A gabi is woven). Key Vocabulary: Weaving, loom, spindle, cotton, shuttle, artisan, embroidery (Tibeb), garment. Reading Theme: Raw cotton is cleaned, carded, and spun into fine thread on a traditional spindle (Inzirt). The skilled weaver (Shemane) uses a wooden foot-loom to weave warm white gabis and netelas.",
             "objectives": [
-              "Form positive and negative imperative commands for road safety.",
-              "Give precise navigational directions using prepositions of movement.",
-              "Interpret traffic signs and pedestrian zebra crossing regulations."
+              "Master the grammatical structure: Simple Present Passive Voice.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "Positive Imperative: [Base Verb] + Object! &nbsp;|&nbsp; Negative Imperative: Don't + [Base Verb]!"
+            "keyFormulas": "Grammar Rule: Simple Present Passive Voice (Subject + am/is/are + Past Participle: Cotton is harvested"
           },
           "questions": [
-            "Why does an imperative sentence not require an explicit subject pronoun \"you\"?",
-            "What is the difference between walking \"across the street\" and \"along the street\"?"
+            "How is the target grammatical structure (Simple Present Passive Voice) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Imperative Commands & Spatial Directions</h4>\n              <p>• <strong>Imperatives:</strong> Start directly with base form verb. Used for orders, safety rules, and instructions.<br>\n                <em>Positive:</em> <strong>Look</strong> both ways before crossing. <strong>Wear</strong> your seatbelt.<br>\n                <em>Negative:</em> <strong>Do not (Don't) cross</strong> the road while looking at a phone.<br>\n              • <strong>Prepositions of Movement:</strong><br>\n                - <em>Across:</em> From one side to the opposite (Walk across the zebra crossing).<br>\n                - <em>Along:</em> Parallel to the edge or length (Walk along the pedestrian sidewalk).<br>\n                - <em>Through:</em> Moving inside a 3D volume or passage (Drive through the roundabout).</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Raw cotton is cleaned, carded, and spun into fine thread on a traditional spindle (Inzirt). The skilled weaver (Shemane) uses a wooden foot-loom to weave warm white gabis and netelas.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Simple Present Passive Voice</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Simple Present Passive Voice (Subject + am/is/are + Past Participle: Cotton is harvested; Threads are spun; A gabi is woven).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Weaving, loom, spindle, cotton, shuttle, artisan, embroidery (Tibeb), garment.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Constructing Negative Safety Imperatives",
-            "problem": "Turn this unsafe habit into a negative safety imperative: \"A student runs across a busy avenue without waiting for green.\"",
+            "title": "Worked Example: Applying Simple Present Passive Voice",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Choose imperative starter",
-                "text": "Use \"Do not\" or contracted \"Don't\"."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Simple Present Passive Voice."
               },
               {
-                "label": "Step 2: Add base verb",
-                "text": "\"run across\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Raw cotton is cleaned, carded, and spun into fine thread on a traditional spindle (Inzirt).</em>"
               },
               {
-                "label": "Step 3: Complete command",
-                "text": "<strong>Don't run across</strong> the busy avenue without checking the pedestrian light!"
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "Never use \"-ing\" or \"-ed\" verbs to start imperative sentences (e.g., saying \"Not running\" is wrong)!"
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "Which preposition means moving from one side of a road to the other?",
-              "a": "Across."
+              "q": "What is the primary grammar focus of Unit 6?",
+              "a": "Simple Present Passive Voice"
             },
             {
-              "q": "How do you form a negative imperative in English?",
-              "a": "Start with \"Don't\" + base verb (e.g., \"Don't run!\")."
+              "q": "Define key vocabulary from this unit: Weaving and  loom",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Which sentence correctly uses an Imperative for giving clear traffic safety instructions?",
+              "q": "Which sentence correctly applies the target grammatical structure (Simple Present Passive Voice)?",
               "options": [
-                "You are always looking both ways before crossing the road",
-                "Look both ways before you cross the busy avenue!",
-                "You will be looking both ways before crossing",
-                "Should you looking both ways before crossing"
-              ],
-              "correct": 1,
-              "strategy": "Imperatives start with the base form of the verb without a stated grammatical subject (implied \"you\").",
-              "derivation": "Imperative sentences issue direct commands, directions, or warnings: \"Look both ways!\", \"Stop!\", \"Do not run!\".",
-              "trap": "Adding unnecessary subject pronouns like \"You are looking\"."
-            },
-            {
-              "q": "Choose the correct preposition of movement: \"The students walked safely _______ the zebra pedestrian crossing to reach the school gate.\"",
-              "options": [
-                "through",
-                "across",
-                "into",
-                "underneath"
-              ],
-              "correct": 1,
-              "strategy": "\"Across\" is used for movement from one side of a surface/street to the other.",
-              "derivation": "\"Across\" denotes movement from one side to the opposite side of a flat boundary (street, river, bridge). \"Through\" is for 3D enclosed spaces (tunnel, forest).",
-              "trap": "Confusing \"across\" with \"through\"."
-            },
-            {
-              "q": "What is the negative imperative form of the instruction \"Cross when the light is red\"?",
-              "options": [
-                "Do not cross when the light is red!",
-                "Not cross when the light is red!",
-                "No crossing when the light is red!",
-                "You cannot crossing when the light is red!"
+                "Raw cotton is cleaned, carded, and spun into fine thread on a traditional spindle (Inzirt).",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
               "correct": 0,
-              "strategy": "Negative imperatives are formed with \"Do not + base verb\" (or \"Don't\").",
-              "derivation": "Standard English negative imperative syntax is: Do not (Don't) + infinitive without to: \"Do not cross!\".",
-              "trap": "Using \"Not cross\" without the auxiliary \"Do\"."
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
+            },
+            {
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
+              "options": [
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
+              ],
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }
@@ -596,95 +588,580 @@ module.exports = {
     {
       "id": "g7-eng-u7",
       "number": "Unit 7",
-      "title": "Hard Work, Careers and Entrepreneurship",
-      "bigIdea": "Explore youth entrepreneurship, career aspirations, Future Tense expressions (will / going to), and First Conditional clauses.",
+      "title": "Have You Ever? Personal Experiences",
+      "bigIdea": "Sharing life experiences, achievements, and mastering the Present Perfect Tense with \"ever\" and \"never\".",
       "subtopics": [
         {
           "id": "g7-eng-7.1",
           "code": "7.1",
-          "title": "Future Forms & First Conditional Sentences",
+          "title": "Grammar, Reading Comprehension & Vocabulary: Have You Ever? Personal Experiences",
           "survey": {
-            "blueprint": "Future: \"Will\" (spontaneous decision/prediction) vs \"Be going to\" (prior plan/evidence). First Conditional: If + Present Simple, will + Base Verb (real possibility).",
+            "blueprint": "Grammar Focus: Present Perfect Tense (have/has + Past Participle) with \"ever\" (in questions) and \"never\" (in negative statements). Key Vocabulary: Experience, achievement, expedition, summit, crater, national park, wildlife. Reading Theme: Students interview each other: \"Have you ever climbed Mount Ras Dejen?\" \"No, I have never climbed it, but I have visited the Blue Nile Falls in Bahir Dar.\"",
             "objectives": [
-              "Differentiate between \"will\" and \"be going to\" for future actions.",
-              "Form First Conditional sentences to express realistic conditions and outcomes.",
-              "Discuss career planning and entrepreneurial ventures in Ethiopia."
+              "Master the grammatical structure: Present Perfect Tense.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
             ],
-            "keyFormulas": "If + Present Simple, S + will + Base Verb &nbsp;|&nbsp; S + will + Base Verb + if + Present Simple"
+            "keyFormulas": "Grammar Rule: Present Perfect Tense (have/has + Past Participle) with \"ever\" (in questions) and \"never\" (in negative statements)."
           },
           "questions": [
-            "Can we use \"will\" in the \"if-clause\" of a First Conditional sentence?",
-            "When should an entrepreneur use \"I am going to\" rather than \"I will\"?"
+            "How is the target grammatical structure (Present Perfect Tense) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Future Ambitions & Conditional Reasoning</h4>\n              <p>• <strong>Will:</strong> Instant decisions, promises, offers, general predictions (I will help you draft the business plan).<br>\n              • <strong>Be going to:</strong> Pre-existing plans, intentions, or predictions based on clear visual evidence (We <strong>are going to open</strong> a bakery next semester).<br>\n              • <strong>First Conditional:</strong> Real, likely possibilities in the future.<br>\n                <em>Formula:</em> <strong>If</strong> + Subject + Present Simple, Subject + <strong>will</strong> + Base Verb.<br>\n                <em>Example:</em> If you <strong>save</strong> your pocket money, you <strong>will start</strong> your small enterprise sooner.</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Students interview each other: \"Have you ever climbed Mount Ras Dejen?\" \"No, I have never climbed it, but I have visited the Blue Nile Falls in Bahir Dar.\"</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Present Perfect Tense</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Present Perfect Tense (have/has + Past Participle) with \"ever\" (in questions) and \"never\" (in negative statements).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Experience, achievement, expedition, summit, crater, national park, wildlife.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Completing a First Conditional Clause",
-            "problem": "Complete the sentence with correct verb tenses: \"If Aster (study) hard, she (pass) the entrance exam with top scores.\"",
+            "title": "Worked Example: Applying Present Perfect Tense",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
             "steps": [
               {
-                "label": "Step 1: Apply rule to If-clause",
-                "text": "If-clause must be in Present Simple: Aster (3rd person singular) ➔ \"studies\"."
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Present Perfect Tense."
               },
               {
-                "label": "Step 2: Apply rule to Main clause",
-                "text": "Main result clause must take \"will + base verb\" ➔ \"will pass\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Students interview each other: \"Have you ever climbed Mount Ras Dejen?\" \"No, I have never climbed it, but I have visited the Blue Nile Falls in Bahir Dar.</em>"
               },
               {
-                "label": "Step 3: Combine sentence",
-                "text": "If Aster <strong>studies</strong> hard, she <strong>will pass</strong> the entrance exam with top scores."
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
               }
             ],
-            "proTip": "Never put \"will\" inside the if-clause! Saying \"If Aster will study\" is a common error."
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
           },
           "reciteFlashcards": [
             {
-              "q": "What tense is used in the \"if\" clause of the First Conditional?",
-              "a": "Present Simple tense."
+              "q": "What is the primary grammar focus of Unit 7?",
+              "a": "Present Perfect Tense"
             },
             {
-              "q": "Which future form expresses a decision made before the moment of speaking?",
-              "a": "\"Be going to\" (planned intention)."
+              "q": "Define key vocabulary from this unit: Experience and  achievement",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Complete the First Conditional sentence with the correct verb tenses: \"If you _______ hard every day, you _______ your national ministry examinations.\"",
+              "q": "Which sentence correctly applies the target grammatical structure (Present Perfect Tense)?",
               "options": [
-                "study / will pass",
-                "will study / pass",
-                "studied / would pass",
-                "studies / will passed"
+                "Students interview each other: \"Have you ever climbed Mount Ras Dejen?\" \"No, I have never climbed it, but I have visited the Blue Nile Falls in Bahir Dar.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
               ],
               "correct": 0,
-              "strategy": "First Conditional rule: If + Present Simple, will + base verb.",
-              "derivation": "The condition clause (if-clause) takes the Present Simple (study). The result clause takes will + base verb (will pass). \"Will\" is NEVER used in the if-clause.",
-              "trap": "Putting \"will\" in the if-clause (\"If you will study\")."
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
             },
             {
-              "q": "When expresses a future intention or planned arrangement made before the moment of speaking, which future form is preferred?",
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
               "options": [
-                "be going to + base verb",
-                "will + base verb",
-                "Past Simple",
-                "Past Continuous"
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
               ],
               "correct": 0,
-              "strategy": "\"Be going to\" expresses prior intentions or plans; \"Will\" expresses spontaneous decisions.",
-              "derivation": "Spontaneous decision made at the moment: \"I will answer the phone.\" Premeditated plan: \"I am going to study medicine next year.\"",
-              "trap": "Using \"will\" for pre-arranged future appointments."
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
             },
             {
-              "q": "What does the First Conditional express about future events?",
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
               "options": [
-                "Impossible fantasy situations in imaginary fairy tales",
-                "Real, likely, and possible future situations and their probable results",
-                "Regrets about events that occurred in the past",
-                "Actions that happened before another past action"
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
               ],
-              "correct": 1,
-              "strategy": "First conditional deals with real and probable future possibilities.",
-              "derivation": "The First Conditional (real conditional) talks about realistic situations that are likely to happen if the condition is fulfilled.",
-              "trap": "Confusing the 1st conditional (real/possible) with the 2nd conditional (hypothetical/unreal)."
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g7-eng-u8",
+      "number": "Unit 8",
+      "title": "How Does It Work? Science and Everyday Gadgets",
+      "bigIdea": "Scientific processes, giving clear technical instructions, and Imperative sentence structures.",
+      "subtopics": [
+        {
+          "id": "g7-eng-8.1",
+          "code": "8.1",
+          "title": "Grammar, Reading Comprehension & Vocabulary: How Does It Work? Science and Everyday Gadgets",
+          "survey": {
+            "blueprint": "Grammar Focus: Imperative Sentences for instructions (e.g., Turn on the power; Do not touch exposed wires) & Sequencing Connectors (First, Second, Then, Next, Finally). Key Vocabulary: Apparatus, procedure, device, switch, terminal, circuit, solar panel, instructions. Reading Theme: A step-by-step technical guide explaining how a solar lantern converts sunlight into electrical energy to illuminate a rural student’s study desk at night.",
+            "objectives": [
+              "Master the grammatical structure: Imperative Sentences for instructions.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
+            ],
+            "keyFormulas": "Grammar Rule: Imperative Sentences for instructions (e.g., Turn on the power"
+          },
+          "questions": [
+            "How is the target grammatical structure (Imperative Sentences for instructions) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">A step-by-step technical guide explaining how a solar lantern converts sunlight into electrical energy to illuminate a rural student’s study desk at night.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Imperative Sentences for instructions</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Imperative Sentences for instructions (e.g., Turn on the power; Do not touch exposed wires) & Sequencing Connectors (First, Second, Then, Next, Finally).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Apparatus, procedure, device, switch, terminal, circuit, solar panel, instructions.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Applying Imperative Sentences for instructions",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Imperative Sentences for instructions."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>A step-by-step technical guide explaining how a solar lantern converts sunlight into electrical energy to illuminate a rural student’s study desk at night.</em>"
+              },
+              {
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
+              }
+            ],
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the primary grammar focus of Unit 8?",
+              "a": "Imperative Sentences for instructions"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Apparatus and  procedure",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which sentence correctly applies the target grammatical structure (Imperative Sentences for instructions)?",
+              "options": [
+                "A step-by-step technical guide explaining how a solar lantern converts sunlight into electrical energy to illuminate a rural student’s study desk at night.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
+            },
+            {
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
+              "options": [
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
+              ],
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g7-eng-u9",
+      "number": "Unit 9",
+      "title": "Traditional Games & Sports in Ethiopia",
+      "bigIdea": "Indigenous sports (Genna, Gugs, Korbo), physical fitness, and Modal Verbs of Ability (can, could, be able to).",
+      "subtopics": [
+        {
+          "id": "g7-eng-9.1",
+          "code": "9.1",
+          "title": "Grammar, Reading Comprehension & Vocabulary: Traditional Games & Sports in Ethiopia",
+          "survey": {
+            "blueprint": "Grammar Focus: Modal Verbs of Ability (Can / Cannot for present ability; Could / Couldn’t for past ability; Be able to for future). Key Vocabulary: Horsemanship, curved stick, leather ball, tournament, stamina, teamwork, referee. Reading Theme: Genna is a traditional hockey-like game played during Christmas with wooden curved sticks (Gennaye) and a wooden ball (Rur). Gugs showcases peerless equestrian skill and spear-throwing bravery.",
+            "objectives": [
+              "Master the grammatical structure: Modal Verbs of Ability.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
+            ],
+            "keyFormulas": "Grammar Rule: Modal Verbs of Ability (Can / Cannot for present ability"
+          },
+          "questions": [
+            "How is the target grammatical structure (Modal Verbs of Ability) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Genna is a traditional hockey-like game played during Christmas with wooden curved sticks (Gennaye) and a wooden ball (Rur). Gugs showcases peerless equestrian skill and spear-throwing bravery.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Modal Verbs of Ability</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Modal Verbs of Ability (Can / Cannot for present ability; Could / Couldn’t for past ability; Be able to for future).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Horsemanship, curved stick, leather ball, tournament, stamina, teamwork, referee.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Applying Modal Verbs of Ability",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Modal Verbs of Ability."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Genna is a traditional hockey-like game played during Christmas with wooden curved sticks (Gennaye) and a wooden ball (Rur).</em>"
+              },
+              {
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
+              }
+            ],
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the primary grammar focus of Unit 9?",
+              "a": "Modal Verbs of Ability"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Horsemanship and  curved stick",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which sentence correctly applies the target grammatical structure (Modal Verbs of Ability)?",
+              "options": [
+                "Genna is a traditional hockey-like game played during Christmas with wooden curved sticks (Gennaye) and a wooden ball (Rur).",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
+            },
+            {
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
+              "options": [
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
+              ],
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g7-eng-u10",
+      "number": "Unit 10",
+      "title": "Taking Care of Animals & Wildlife",
+      "bigIdea": "Animal welfare, livestock care, endemic Ethiopian wildlife, and Countable vs Uncountable Nouns with Quantifiers.",
+      "subtopics": [
+        {
+          "id": "g7-eng-10.1",
+          "code": "10.1",
+          "title": "Grammar, Reading Comprehension & Vocabulary: Taking Care of Animals & Wildlife",
+          "survey": {
+            "blueprint": "Grammar Focus: Countable vs Uncountable Nouns & Quantifiers (many, few with countable; much, little with uncountable; a lot of with both). Key Vocabulary: Livestock, pasture, veterinary, vaccination, endemic, sanctuary, walia ibex, habitat. Reading Theme: Ethiopia holds Africa’s largest livestock population. Caring for farm animals requires clean water, proper fodder, and veterinary vaccinations, alongside protecting endemic wildlife in Bale and Simien.",
+            "objectives": [
+              "Master the grammatical structure: Countable vs Uncountable Nouns & Quantifiers.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
+            ],
+            "keyFormulas": "Grammar Rule: Countable vs Uncountable Nouns & Quantifiers (many, few with countable"
+          },
+          "questions": [
+            "How is the target grammatical structure (Countable vs Uncountable Nouns & Quantifiers) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Ethiopia holds Africa’s largest livestock population. Caring for farm animals requires clean water, proper fodder, and veterinary vaccinations, alongside protecting endemic wildlife in Bale and Simien.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Countable vs Uncountable Nouns & Quantifiers</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Countable vs Uncountable Nouns & Quantifiers (many, few with countable; much, little with uncountable; a lot of with both).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Livestock, pasture, veterinary, vaccination, endemic, sanctuary, walia ibex, habitat.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Applying Countable vs Uncountable Nouns & Quantifiers",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Countable vs Uncountable Nouns & Quantifiers."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Ethiopia holds Africa’s largest livestock population.</em>"
+              },
+              {
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
+              }
+            ],
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the primary grammar focus of Unit 10?",
+              "a": "Countable vs Uncountable Nouns & Quantifiers"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Livestock and  pasture",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which sentence correctly applies the target grammatical structure (Countable vs Uncountable Nouns & Quantifiers)?",
+              "options": [
+                "Ethiopia holds Africa’s largest livestock population.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
+            },
+            {
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
+              "options": [
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
+              ],
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g7-eng-u11",
+      "number": "Unit 11",
+      "title": "Say No to Early Marriage: Civic Advocacy",
+      "bigIdea": "Human rights, advocating for girls’ education, and Modal Verbs of Obligation and Advice (should, must, ought to).",
+      "subtopics": [
+        {
+          "id": "g7-eng-11.1",
+          "code": "11.1",
+          "title": "Grammar, Reading Comprehension & Vocabulary: Say No to Early Marriage: Civic Advocacy",
+          "survey": {
+            "blueprint": "Grammar Focus: Modal Verbs of Obligation and Advice (Must for legal/moral necessity; Should / Ought to for strong recommendations). Key Vocabulary: Advocacy, education, equality, empowerment, legislation, dignity, potential, community. Reading Theme: An inspiring youth debate illustrating how keeping girls in school past age 18 unlocks their potential to become doctors, engineers, and teachers, ending cycles of poverty.",
+            "objectives": [
+              "Master the grammatical structure: Modal Verbs of Obligation and Advice.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
+            ],
+            "keyFormulas": "Grammar Rule: Modal Verbs of Obligation and Advice (Must for legal/moral necessity"
+          },
+          "questions": [
+            "How is the target grammatical structure (Modal Verbs of Obligation and Advice) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">An inspiring youth debate illustrating how keeping girls in school past age 18 unlocks their potential to become doctors, engineers, and teachers, ending cycles of poverty.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Modal Verbs of Obligation and Advice</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Modal Verbs of Obligation and Advice (Must for legal/moral necessity; Should / Ought to for strong recommendations).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Advocacy, education, equality, empowerment, legislation, dignity, potential, community.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Applying Modal Verbs of Obligation and Advice",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Modal Verbs of Obligation and Advice."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>An inspiring youth debate illustrating how keeping girls in school past age 18 unlocks their potential to become doctors, engineers, and teachers, ending cycles of poverty.</em>"
+              },
+              {
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
+              }
+            ],
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the primary grammar focus of Unit 11?",
+              "a": "Modal Verbs of Obligation and Advice"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Advocacy and  education",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which sentence correctly applies the target grammatical structure (Modal Verbs of Obligation and Advice)?",
+              "options": [
+                "An inspiring youth debate illustrating how keeping girls in school past age 18 unlocks their potential to become doctors, engineers, and teachers, ending cycles of poverty.",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
+            },
+            {
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
+              "options": [
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
+              ],
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g7-eng-u12",
+      "number": "Unit 12",
+      "title": "I Have Already Done That: Time and Perfection",
+      "bigIdea": "Reflecting on completed tasks, punctuality, and Present Perfect Tense with \"already\", \"just\", \"yet\", \"since\", and \"for\".",
+      "subtopics": [
+        {
+          "id": "g7-eng-12.1",
+          "code": "12.1",
+          "title": "Grammar, Reading Comprehension & Vocabulary: I Have Already Done That: Time and Perfection",
+          "survey": {
+            "blueprint": "Grammar Focus: Present Perfect Tense with Time Adverbs (Already = sooner than expected; Just = a moment ago; Yet = up to now in negatives/questions; Since + point in time; For + duration). Key Vocabulary: Accomplishment, deadline, assignment, progress, timetable, punctuality, completion. Reading Theme: A diligent student reviews their weekly study schedule: \"I have already finished my mathematics homework, and I have just revised my general science notes!\"",
+            "objectives": [
+              "Master the grammatical structure: Present Perfect Tense with Time Adverbs.",
+              "Apply high-frequency academic vocabulary in reading comprehension and sentence construction.",
+              "Answer reading analysis questions based on Ethiopian cultural and scientific contexts."
+            ],
+            "keyFormulas": "Grammar Rule: Present Perfect Tense with Time Adverbs (Already = sooner than expected"
+          },
+          "questions": [
+            "How is the target grammatical structure (Present Perfect Tense with Time Adverbs) correctly applied in conversation?",
+            "What is the central theme of the reading passage in this unit?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Reading Passage & Context</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">A diligent student reviews their weekly study schedule: \"I have already finished my mathematics homework, and I have just revised my general science notes!\"</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Grammar Focus: Present Perfect Tense with Time Adverbs</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Rule:</strong> Present Perfect Tense with Time Adverbs (Already = sooner than expected; Just = a moment ago; Yet = up to now in negatives/questions; Since + point in time; For + duration).<br>\n                • <strong>Academic Vocabulary:</strong> <code class=\"text-emerald-300 font-mono\">Accomplishment, deadline, assignment, progress, timetable, punctuality, completion.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Applying Present Perfect Tense with Time Adverbs",
+            "problem": "Construct a grammatically flawless sentence applying the target rule to Ethiopian context.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar structure",
+                "text": "Apply the specific grammatical pattern: Present Perfect Tense with Time Adverbs."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>A diligent student reviews their weekly study schedule: \"I have already finished my mathematics homework, and I have just revised my general science notes!\".</em>"
+              },
+              {
+                "label": "Step 3: Verification",
+                "text": "Check subject-verb agreement, verb tense, and spelling."
+              }
+            ],
+            "proTip": "Consistent reading and active speaking practice build natural grammatical fluency!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the primary grammar focus of Unit 12?",
+              "a": "Present Perfect Tense with Time Adverbs"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Accomplishment and  deadline",
+              "a": "Core vocabulary words essential for Grade 7 English mastery."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which sentence correctly applies the target grammatical structure (Present Perfect Tense with Time Adverbs)?",
+              "options": [
+                "A diligent student reviews their weekly study schedule: \"I have already finished my mathematics homework, and I have just revised my general science notes!\".",
+                "The sentence has broken subject-verb concord and wrong tenses.",
+                "Yesterday he will visiting the market place.",
+                "They does not goes to the school."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with correct grammatical syntax and subject-verb agreement.",
+              "derivation": "Option A follows standard English grammar rules perfectly.",
+              "trap": "Choosing options with irregular tense mismatches."
+            },
+            {
+              "q": "Choose the sentence that demonstrates accurate grammatical punctuation and word order:",
+              "options": [
+                "Ethiopian students study hard every day to excel in their national examinations.",
+                "Every day study hard students Ethiopian to national examinations excel.",
+                "Students to excel study hard every day Ethiopian examinations national in.",
+                "Hard study students Ethiopian every day excel to national examinations."
+              ],
+              "correct": 0,
+              "strategy": "Standard English follows Subject-Verb-Object (SVO) word order with proper adverb placement.",
+              "derivation": "Option A correctly positions Subject (Ethiopian students) + Verb (study) + Adverb (hard every day) + Infinitive of purpose (to excel).",
+              "trap": "Selecting jumbled word order."
+            },
+            {
+              "q": "Which word is the closest synonym for the academic vocabulary word emphasized in this unit?",
+              "options": [
+                "Significance / Importance",
+                "Disregard / Neglect",
+                "Triviality / Unimportance",
+                "Obstacle / Barrier"
+              ],
+              "correct": 0,
+              "strategy": "Look for positive academic synonym expressing value.",
+              "derivation": "Academic reading passages emphasize significance, purpose, and constructive impact.",
+              "trap": "Choosing antonyms that convey neglect."
             }
           ]
         }

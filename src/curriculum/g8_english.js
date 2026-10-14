@@ -6,103 +6,95 @@ module.exports = {
     {
       "id": "g8-eng-u1",
       "number": "Unit 1",
-      "title": "Global Communication & Media Literacy",
-      "bigIdea": "Explore communication technologies, media ethics, Present Perfect Continuous tense, and Reported Speech mechanics.",
+      "title": "A Popular Sport & Ethiopian Super Athletes",
+      "bigIdea": "Athletics in Ethiopia, world records, adverbs of manner, and degrees of comparison.",
       "subtopics": [
         {
           "id": "g8-eng-1.1",
           "code": "1.1",
-          "title": "Present Perfect Continuous & Reported Speech",
+          "title": "Grammar, Reading Analysis & Vocabulary: A Popular Sport & Ethiopian Super Athletes",
           "survey": {
-            "blueprint": "Present Perfect Continuous (has/have been + V-ing) emphasizes duration of ongoing activity. Reported Speech shifts tenses back one step (Present ➔ Past).",
+            "blueprint": "Grammar: Adverbs of Manner (-ly: quickly, gracefully) & Comparative/Superlative Adverbs (faster, fastest). Key Vocabulary: Athletics, marathon, stamina, world record, endurance, podium, champion, trademark. Reading Passage: Ethiopia’s legendary long-distance runners—Abebe Bikila, Haile Gebrselassie, Kenenisa Bekele, Tirunesh Dibaba, and Derartu Tulu—have dominated Olympic stadiums with peerless speed, endurance, and grace.",
             "objectives": [
-              "Use the Present Perfect Continuous tense to describe ongoing actions spanning past to present.",
-              "Convert direct statements into indirect reported speech with correct pronoun and tense shifts.",
-              "Critique digital news sources and detect misinformation online."
+              "Master the advanced grammar target: Adverbs of Manner.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "S + have/has + been + V-ing &nbsp;|&nbsp; Direct \"I am reading\" ➔ Reported \"He said that he was reading\""
+            "keyFormulas": "Grammar Rule: Adverbs of Manner (-ly: quickly, gracefully) & Comparative/Superlative Adverbs (faster, fastest)."
           },
           "questions": [
-            "How does \"I have read three articles\" differ from \"I have been reading articles for three hours\"?",
-            "What happens to modal verbs like \"can\" and \"will\" when converting direct speech to reported speech?"
+            "How is the target grammatical rule (Adverbs of Manner) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Continuous Aspect & Indirect Speech Rules</h4>\n              <p>• <strong>Present Perfect Continuous:</strong> Emphasizes the duration or process of an action that started in the past and is still actively continuing.<br>\n                <em>Formula:</em> <strong>Subject + have/has + been + Verb-ing.</strong><br>\n                <em>Example:</em> Ethiopian programmers <strong>have been developing</strong> innovative mobile apps for several years.<br>\n              • <strong>Reported Speech Rules (Backshifting):</strong><br>\n                - Present Simple ➔ Past Simple (writes ➔ wrote)<br>\n                - Present Continuous ➔ Past Continuous (is writing ➔ was writing)<br>\n                - Present Perfect ➔ Past Perfect (has written ➔ had written)<br>\n                - Will ➔ Would, Can ➔ Could.</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: A Popular Sport & Ethiopian Super Athletes</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Ethiopia’s legendary long-distance runners—Abebe Bikila, Haile Gebrselassie, Kenenisa Bekele, Tirunesh Dibaba, and Derartu Tulu—have dominated Olympic stadiums with peerless speed, endurance, and grace.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Adverbs of Manner</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Adverbs of Manner (-ly: quickly, gracefully) & Comparative/Superlative Adverbs (faster, fastest).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Athletics, marathon, stamina, world record, endurance, podium, champion, trademark.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Converting Direct Speech to Reported Speech",
-            "problem": "Convert into reported speech: Almaz said, \"I am researching digital media ethics for my class presentation.\"",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Introductory reporting clause",
-                "text": "Almaz said that..."
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Adverbs of Manner."
               },
               {
-                "label": "Step 2: Pronoun shift",
-                "text": "\"I\" becomes \"she\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Ethiopia’s legendary long-distance runners—Abebe Bikila, Haile Gebrselassie, Kenenisa Bekele, Tirunesh Dibaba, and Derartu Tulu—have dominated Olympic stadiums with peerless speed, endurance, and grace.</em>"
               },
               {
-                "label": "Step 3: Tense backshift",
-                "text": "\"am researching\" (Present Continuous) becomes \"was researching\" (Past Continuous)."
-              },
-              {
-                "label": "Step 4: Possessive shift",
-                "text": "\"my presentation\" becomes \"her presentation\"."
-              },
-              {
-                "label": "Step 5: Full reported sentence",
-                "text": "Almaz said that she <strong>was researching</strong> digital media ethics for <strong>her</strong> class presentation."
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "Notice how pronouns and possessive adjectives must shift to match the perspective of the speaker!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "What does \"can\" change to in reported speech?",
-              "a": "\"could\" (e.g., She said she could come)."
+              "q": "What is the core grammatical structure in Unit 1?",
+              "a": "Adverbs of Manner"
             },
             {
-              "q": "What is the auxiliary structure of Present Perfect Continuous?",
-              "a": "have/has + been + V-ing."
+              "q": "Define key vocabulary from this unit: Athletics and  marathon",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Change the direct speech sentence into correct reported (indirect) speech: Abebe said, \"I am studying for my national physics exam today.\"",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Adverbs of Manner)?",
               "options": [
-                "Abebe said that he was studying for his national physics exam that day",
-                "Abebe said that I am studying for my national physics exam today",
-                "Abebe said that he will be studying for his national physics exam tomorrow",
-                "Abebe says that he had studied for his exam yesterday"
+                "Ethiopia’s legendary long-distance runners—Abebe Bikila, Haile Gebrselassie, Kenenisa Bekele, Tirunesh Dibaba, and Derartu Tulu—have dominated Olympic stadiums with peerless speed, endurance, and grace.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
               "correct": 0,
-              "strategy": "Reported speech shifts tenses back (Present Continuous ➔ Past Continuous) and adjusts time/pronouns (\"today\" ➔ \"that day\", \"I\" ➔ \"he\").",
-              "derivation": "Direct speech in present continuous (\"am studying\") shifts to past continuous (\"was studying\"). Pronoun \"I\" shifts to \"he\", and time marker \"today\" shifts to \"that day\".",
-              "trap": "Leaving pronouns and time markers unshifted."
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
             },
             {
-              "q": "Which sentence correctly uses the Present Perfect Continuous tense to emphasize an ongoing action that started in the past and continues right now?",
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
               "options": [
-                "They have been revising biology for three hours",
-                "They were revising biology since three hours",
-                "They has been revising biology for three hours",
-                "They had revising biology since three hours"
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
               ],
               "correct": 0,
-              "strategy": "Present Perfect Continuous: have/has been + present participle (-ing) + for/since.",
-              "derivation": "Plural subject \"They\" takes \"have been revising\". \"For\" indicates duration (three hours).",
-              "trap": "Using \"has\" with plural subject or mixing up \"since\" and \"for\"."
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
             },
             {
-              "q": "When reporting a direct question: She asked me, \"Where do you live?\", what is the correct reported speech word order?",
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
               "options": [
-                "She asked me where did I live",
-                "She asked me where I lived",
-                "She asked me where do I lived",
-                "She asked me where live I"
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
               ],
-              "correct": 1,
-              "strategy": "Reported questions use statement word order (Subject + Verb), eliminating auxiliary \"do/did\".",
-              "derivation": "In indirect questions, the question word order inverts back to normal statement order (subject before verb): \"where I lived\", NOT \"where did I live\".",
-              "trap": "Keeping the auxiliary \"did\" in the reported clause."
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
@@ -111,95 +103,95 @@ module.exports = {
     {
       "id": "g8-eng-u2",
       "number": "Unit 2",
-      "title": "Wildlife Conservation in Ethiopia",
-      "bigIdea": "Study unique Ethiopian flora/fauna, national park ecosystems, Past Perfect tense, and Second Conditional hypothetical scenarios.",
+      "title": "Stories, Poetry and Narrative Imagination",
+      "bigIdea": "Narrative storytelling, character development, rhyme schemes, and Past Simple vs Past Continuous.",
       "subtopics": [
         {
           "id": "g8-eng-2.1",
           "code": "2.1",
-          "title": "Past Perfect Tense & Second Conditional Sentences",
+          "title": "Grammar, Reading Analysis & Vocabulary: Stories, Poetry and Narrative Imagination",
           "survey": {
-            "blueprint": "Past Perfect (had + V3): the \"earlier past\" action before another past event. Second Conditional: If + Past Simple, would + base verb (hypothetical/unreal).",
+            "blueprint": "Grammar: Past Simple vs Past Continuous (e.g., The rain was pouring heavily when the traveler arrived at the village inn). Key Vocabulary: Narrator, stanza, metaphor, suspense, climax, protagonist, dialogue, folklore. Reading Passage: A captivating traditional Ethiopian tale recounting how a clever shepherd outwitted a prowling leopard using quick wit and courage.",
             "objectives": [
-              "Use the Past Perfect tense with \"before\", \"after\", and \"by the time\".",
-              "Construct Second Conditional sentences for unreal or hypothetical situations.",
-              "Discuss habitat conservation of the Ethiopian Wolf and Walia Ibex."
+              "Master the advanced grammar target: Past Simple vs Past Continuous.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "Past Perfect: had + V3 (happened first) ➔ Past Simple: V2 (happened second) &nbsp;|&nbsp; If + Past Simple, S + would + Base Verb"
+            "keyFormulas": "Grammar Rule: Past Simple vs Past Continuous (e.g., The rain was pouring heavily when the traveler arrived at the village inn)."
           },
           "questions": [
-            "Why is Past Perfect called the \"past before the past\"?",
-            "When do we use \"were\" instead of \"was\" in formal Second Conditional sentences?"
+            "How is the target grammatical rule (Past Simple vs Past Continuous) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Earlier Past & Hypothetical Conditionals</h4>\n              <p>• <strong>Past Perfect (had + V3):</strong> Clarifies which of two past actions occurred first.<br>\n                <em>Example:</em> By the time the wildlife rangers arrived, the poachers <strong>had fled</strong> into the dense forest.<br>\n              • <strong>Second Conditional (Hypothetical / Imaginary):</strong> Imagining an unreal present or improbable future situation.<br>\n                <em>Formula:</em> <strong>If + Subject + Past Simple, Subject + would + Base Verb.</strong><br>\n                <em>Example:</em> If we <strong>protected</strong> more forest corridors, endangered wildlife <strong>would thrive</strong> safely.<br>\n              • <em>Note:</em> In standard formal English, \"were\" is used for all subjects in the conditional clause (<em>If I were you...</em>).</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Stories, Poetry and Narrative Imagination</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">A captivating traditional Ethiopian tale recounting how a clever shepherd outwitted a prowling leopard using quick wit and courage.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Past Simple vs Past Continuous</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Past Simple vs Past Continuous (e.g., The rain was pouring heavily when the traveler arrived at the village inn).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Narrator, stanza, metaphor, suspense, climax, protagonist, dialogue, folklore.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Sequencing Actions with Past Perfect",
-            "problem": "Combine into one sentence using \"before\": Action 1: The park rangers constructed watchtowers. Action 2: Tourists arrived to see the Mountain Nyala.",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Identify earliest event",
-                "text": "Constructing watchtowers happened first (requires Past Perfect: \"had constructed\")."
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Past Simple vs Past Continuous."
               },
               {
-                "label": "Step 2: Identify later event",
-                "text": "Tourists arriving happened second (requires Past Simple: \"arrived\")."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>A captivating traditional Ethiopian tale recounting how a clever shepherd outwitted a prowling leopard using quick wit and courage.</em>"
               },
               {
-                "label": "Step 3: Combine sentence",
-                "text": "The park rangers <strong>had constructed</strong> watchtowers before tourists <strong>arrived</strong>."
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "The action with \"had\" is ALWAYS the chronologically older event!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "What is the grammatical formula for the Second Conditional?",
-              "a": "If + Past Simple, would + Base Verb."
+              "q": "What is the core grammatical structure in Unit 2?",
+              "a": "Past Simple vs Past Continuous"
             },
             {
-              "q": "Complete the hypothetical expression: \"If I _____ (be) a wildlife ranger, I would guard the park.\"",
-              "a": "\"were\" (standard subjunctive)."
+              "q": "Define key vocabulary from this unit: Narrator and  stanza",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Complete the sentence using the Past Perfect tense to show which action happened first: \"When the wildlife rangers arrived at the park sanctuary, the poachers _______ already _______.\"",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Past Simple vs Past Continuous)?",
               "options": [
-                "had / fled",
-                "have / fled",
-                "were / fleeing",
-                "did / flee"
+                "A captivating traditional Ethiopian tale recounting how a clever shepherd outwitted a prowling leopard using quick wit and courage.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
               "correct": 0,
-              "strategy": "Past Perfect (had + V3) indicates the earlier of two completed past actions.",
-              "derivation": "The poachers fled BEFORE the rangers arrived. The earlier action takes the Past Perfect (had fled); the later action takes the Past Simple (arrived).",
-              "trap": "Using Present Perfect \"have fled\" in a past context."
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
             },
             {
-              "q": "Which sentence correctly exemplifies the Second Conditional (hypothetical or unreal present/future situation)?",
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
               "options": [
-                "If I have a million birr, I will buy a tractor",
-                "If I had a million birr, I would establish a wildlife sanctuary",
-                "If I had had a million birr, I will buy a farm",
-                "If I will have a million birr, I would buy a tractor"
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
               ],
-              "correct": 1,
-              "strategy": "Second Conditional rule: If + Past Simple, would + base verb.",
-              "derivation": "The Second Conditional expresses imaginary or contrary-to-fact hypotheses: \"If I had (past simple)... I would establish (would + infinitive)\".",
-              "trap": "Confusing 2nd conditional with 1st conditional (\"if I have... I will\")."
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
             },
             {
-              "q": "In formal standard English conditional structures, which form of the verb \"to be\" is traditionally used with all persons (including I, he, she) in the if-clause of the Second Conditional?",
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
               "options": [
-                "was",
-                "were",
-                "am",
-                "is"
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
               ],
-              "correct": 1,
-              "strategy": "Subjunctive mood uses \"were\" for all subjects: \"If I were you\", \"If he were here\".",
-              "derivation": "The hypothetical subjunctive standard uses \"were\": \"If I were the minister of education, I would build 100 digital libraries.\"",
-              "trap": "Assuming \"was\" is the only correct form for singular subjects."
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
@@ -208,95 +200,95 @@ module.exports = {
     {
       "id": "g8-eng-u3",
       "number": "Unit 3",
-      "title": "Scientific Inventions & Innovations",
-      "bigIdea": "Explore technological milestones, STEM achievements, and Relative Clauses (defining vs non-defining with who, which, that, where, whose).",
+      "title": "The City and the Countryside",
+      "bigIdea": "Urbanization, rural serenity, contrasting lifestyles, and Connectors of Contrast.",
       "subtopics": [
         {
           "id": "g8-eng-3.1",
           "code": "3.1",
-          "title": "Relative Clauses (Defining and Non-Defining)",
+          "title": "Grammar, Reading Analysis & Vocabulary: The City and the Countryside",
           "survey": {
-            "blueprint": "Relative Pronouns: Who (people), Which/That (things/animals), Where (places), Whose (possession). Defining (essential info, no commas) vs Non-defining (extra info, commas).",
+            "blueprint": "Grammar: Connectors of Contrast (Although, Even though, Whereas, While, However, In contrast). Key Vocabulary: Metropolis, tranquility, congestion, pastoral, agricultural, amenities, rural, urban. Reading Passage: Comparing life in bustling Addis Ababa with life in a peaceful rural village in Gojjam: while cities offer modern universities and technology, rural communities enjoy pristine air and organic food.",
             "objectives": [
-              "Combine sentences using appropriate relative pronouns.",
-              "Distinguish defining relative clauses from non-defining clauses with commas.",
-              "Write biographies of Ethiopian inventors and scientists."
+              "Master the advanced grammar target: Connectors of Contrast.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "Defining: The inventor who designed... | Non-defining: Kitaw Ejigu, who was an aerospace engineer, worked on..."
+            "keyFormulas": "Grammar Rule: Connectors of Contrast (Although, Even though, Whereas, While, However, In contrast)."
           },
           "questions": [
-            "Why do non-defining relative clauses require commas around them?",
-            "Can we use \"that\" in a non-defining relative clause?"
+            "How is the target grammatical rule (Connectors of Contrast) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Relative Pronouns & Clause Syntax</h4>\n              <p>• <strong>Relative Pronouns:</strong><br>\n                - <em>Who / Whom:</em> Refer to people (The engineer <strong>who</strong> patented the turbine).<br>\n                - <em>Which / That:</em> Refer to objects or animals (The machine <strong>which/that</strong> tests solar cells).<br>\n                - <em>Whose:</em> Shows possession (The innovator <strong>whose</strong> invention won first prize).<br>\n                - <em>Where:</em> Refers to locations (The research laboratory <strong>where</strong> vaccines are tested).<br>\n              • <strong>Defining vs. Non-Defining:</strong><br>\n                - <em>Defining:</em> Essential to identify the noun (no commas). \"The student who scored 100% won a scholarship.\"<br>\n                - <em>Non-Defining:</em> Adds non-essential bonus details (separated by commas; never uses \"that\"). \"Kitaw Ejigu, who was an Ethiopian aerospace engineer, inspired African youth.\"</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: The City and the Countryside</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Comparing life in bustling Addis Ababa with life in a peaceful rural village in Gojjam: while cities offer modern universities and technology, rural communities enjoy pristine air and organic food.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Connectors of Contrast</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Connectors of Contrast (Although, Even though, Whereas, While, However, In contrast).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Metropolis, tranquility, congestion, pastoral, agricultural, amenities, rural, urban.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Combining Sentences with Relative Clauses",
-            "problem": "Combine the two sentences using a relative pronoun: \"We visited the science museum. Ancient measuring tools are preserved there.\"",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Identify the shared element",
-                "text": "\"Science museum\" is a physical location (\"there\")."
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Connectors of Contrast."
               },
               {
-                "label": "Step 2: Choose relative pronoun",
-                "text": "Use \"where\" for places."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Comparing life in bustling Addis Ababa with life in a peaceful rural village in Gojjam: while cities offer modern universities and technology, rural communities enjoy pristine air and organic food.</em>"
               },
               {
-                "label": "Step 3: Combine",
-                "text": "We visited the science museum <strong>where</strong> ancient measuring tools are preserved."
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "Never use \"that\" in a non-defining clause enclosed in commas!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "Which relative pronoun is used to indicate ownership or possession?",
-              "a": "\"whose\" (e.g., The student whose bag was found)."
+              "q": "What is the core grammatical structure in Unit 3?",
+              "a": "Connectors of Contrast"
             },
             {
-              "q": "Do defining relative clauses use commas?",
-              "a": "No, defining clauses never use commas."
+              "q": "Define key vocabulary from this unit: Metropolis and  tranquility",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Which relative pronoun correctly joins the two sentences: \"Dr. Aklilu Lemma was a world-renowned Ethiopian scientist. He co-discovered the endod plant molluscicide.\"?",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Connectors of Contrast)?",
               "options": [
-                "which",
-                "who",
-                "whose",
-                "whom"
-              ],
-              "correct": 1,
-              "strategy": "\"Who\" is used as the subject relative pronoun for people.",
-              "derivation": "Dr. Aklilu Lemma is a person and the grammatical subject of the clause: \"Dr. Aklilu Lemma, who co-discovered the endod plant...\".",
-              "trap": "Using \"which\" for a person."
-            },
-            {
-              "q": "What punctuation is strictly mandatory around non-defining (extra information) relative clauses in written English?",
-              "options": [
-                "Commas",
-                "Exclamation marks",
-                "Quotation marks",
-                "Colons"
+                "Comparing life in bustling Addis Ababa with life in a peaceful rural village in Gojjam: while cities offer modern universities and technology, rural communities enjoy pristine air and organic food.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
               "correct": 0,
-              "strategy": "Non-defining relative clauses are set off by commas.",
-              "derivation": "Non-defining clauses add non-essential bonus information and must be separated by commas (e.g. \"Addis Ababa, which is the capital of Ethiopia, hosts the African Union.\").",
-              "trap": "Omitting commas in non-defining clauses."
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
             },
             {
-              "q": "Which relative pronoun indicates possession in: \"We met a passionate young agronomist _______ innovative irrigation invention saved village crops.\"?",
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
               "options": [
-                "who",
-                "whom",
-                "whose",
-                "which"
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
               ],
-              "correct": 2,
-              "strategy": "\"Whose\" shows possession (belonging to someone).",
-              "derivation": "\"Whose\" is the possessive relative pronoun (his/her invention ➔ whose invention).",
-              "trap": "Confusing \"whose\" with \"who's\" (who is)."
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
@@ -305,95 +297,95 @@ module.exports = {
     {
       "id": "g8-eng-u4",
       "number": "Unit 4",
-      "title": "Cultural Festivals & National Unity",
-      "bigIdea": "Explore rich Ethiopian festivals (Meskel, Timket, Irreecha, Eid), and master Modal Verbs of Deduction (must, can’t, might).",
+      "title": "Education for All & Human Rights",
+      "bigIdea": "Universal primary education, inclusive schools, literacy campaigns, and Modal Verbs of Obligation.",
       "subtopics": [
         {
           "id": "g8-eng-4.1",
           "code": "4.1",
-          "title": "Modal Verbs of Probability and Deduction",
+          "title": "Grammar, Reading Analysis & Vocabulary: Education for All & Human Rights",
           "survey": {
-            "blueprint": "Deductions: Must be (99% certain YES) ➔ Might / May / Could be (50% possible) ➔ Can't be (99% certain NO / impossible).",
+            "blueprint": "Grammar: Modal Verbs of Obligation and Necessity (Must, Have to, Ought to, Should, Need to). Key Vocabulary: Illiteracy, enrollment, curriculum, equity, empowerment, scholarship, pedagogy, inclusion. Reading Passage: Education is recognized by the United Nations as an inalienable fundamental human right that unlocks individual potential and fuels national socio-economic transformation.",
             "objectives": [
-              "Use \"must\" for logical certainty based on strong evidence.",
-              "Use \"can’t\" to express logical impossibility.",
-              "Use \"might / could\" for uncertain possibilities in cultural descriptions."
+              "Master the advanced grammar target: Modal Verbs of Obligation and Necessity.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "Certainty YES: S + must + Base Verb &nbsp;|&nbsp; Certainty NO: S + can't + Base Verb &nbsp;|&nbsp; Possibility: S + might + Base Verb"
+            "keyFormulas": "Grammar Rule: Modal Verbs of Obligation and Necessity (Must, Have to, Ought to, Should, Need to)."
           },
           "questions": [
-            "Why does \"He can’t be at home\" express logical deduction rather than lack of ability?",
-            "What is the difference in certainty between \"They might be traveling\" and \"They must be traveling\"?"
+            "How is the target grammatical rule (Modal Verbs of Obligation and Necessity) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Modal Logic & Deductive Reasoning</h4>\n              <p>• <strong>Must:</strong> Used when evidence leaves no reasonable doubt that something is true.<br>\n                <em>Example:</em> Thousands of people are dressed in white traditional clothes carrying yellow Adey Abeba flowers; it <strong>must be</strong> the Meskel holiday celebration.<br>\n              • <strong>Can't:</strong> Used when evidence proves something is logically impossible.<br>\n                <em>Example:</em> Dawit just phoned me from Hawassa five minutes ago; he <strong>can't be</strong> knocking on my door in Gondar right now.<br>\n              • <strong>Might / Could / May:</strong> Used when something is possible but not certain.<br>\n                <em>Example:</em> The bus is late; there <strong>might be</strong> heavy traffic along the ring road.</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Education for All & Human Rights</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Education is recognized by the United Nations as an inalienable fundamental human right that unlocks individual potential and fuels national socio-economic transformation.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Modal Verbs of Obligation and Necessity</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Modal Verbs of Obligation and Necessity (Must, Have to, Ought to, Should, Need to).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Illiteracy, enrollment, curriculum, equity, empowerment, scholarship, pedagogy, inclusion.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Selecting the Deductive Modal Verb",
-            "problem": "The lights are off, the gate is padlocked from the outside, and no one answers the phone. Form a deduction about whether the family is home.",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Analyze evidence",
-                "text": "Locked gate from outside + lights off + unanswered phone = strong proof of absence."
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Modal Verbs of Obligation and Necessity."
               },
               {
-                "label": "Step 2: Choose logical deduction modal",
-                "text": "It is impossible for them to be inside ➔ use \"can't\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Education is recognized by the United Nations as an inalienable fundamental human right that unlocks individual potential and fuels national socio-economic transformation.</em>"
               },
               {
-                "label": "Step 3: Express deduction",
-                "text": "The family <strong>can't be</strong> at home right now."
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "Never say \"must not be\" when you mean logical impossibility; \"can't be\" is the correct opposite of \"must be\"!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "Which modal verb expresses that you are 99% sure something is true based on evidence?",
-              "a": "\"Must\" (e.g., It must be true)."
+              "q": "What is the core grammatical structure in Unit 4?",
+              "a": "Modal Verbs of Obligation and Necessity"
             },
             {
-              "q": "Which modal verb expresses that something is logically impossible?",
-              "a": "\"Can't\" (e.g., That can't be right)."
+              "q": "Define key vocabulary from this unit: Illiteracy and  enrollment",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "The lights are turned on in the laboratory, and chemical apparatus is steaming on the lab table. Which modal deduction expresses logical certainty?",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Modal Verbs of Obligation and Necessity)?",
               "options": [
-                "The teacher can’t be inside the laboratory",
-                "The teacher must be inside the laboratory",
-                "The teacher might be in another city",
-                "The teacher should not be here"
-              ],
-              "correct": 1,
-              "strategy": "\"Must be\" expresses logical positive certainty based on strong evidence.",
-              "derivation": "Based on compelling visual evidence (lights on, steaming beakers), the deductive conclusion is positive certainty: \"must be\".",
-              "trap": "Using \"can't be\" (which expresses negative impossibility)."
-            },
-            {
-              "q": "Which modal verb expresses logical impossibility when the speaker is 100% certain something is NOT true?",
-              "options": [
-                "can’t (cannot)",
-                "must",
-                "might",
-                "may"
+                "Education is recognized by the United Nations as an inalienable fundamental human right that unlocks individual potential and fuels national socio-economic transformation.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
               "correct": 0,
-              "strategy": "\"Can't\" expresses negative certainty (impossibility).",
-              "derivation": "Example: \"He just left on a bus to Hawassa 5 minutes ago; he can't be in Gondar right now!\"",
-              "trap": "Using \"must not\" (which expresses prohibition rather than logical deduction)."
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
             },
             {
-              "q": "When the speaker is unsure and expressing a 50% possibility about an event, which pair of modal verbs is used?",
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
               "options": [
-                "must or shall",
-                "might or could",
-                "can’t or won’t",
-                "ought to or had better"
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
               ],
-              "correct": 1,
-              "strategy": "\"Might\", \"may\", and \"could\" express possibility without certainty.",
-              "derivation": "\"It might rain this afternoon\" or \"It could rain\" express realistic possibilities without certainty.",
-              "trap": "Assuming \"might\" indicates certainty."
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
@@ -402,91 +394,95 @@ module.exports = {
     {
       "id": "g8-eng-u5",
       "number": "Unit 5",
-      "title": "Climate Change & Environmental Resilience",
-      "bigIdea": "Study climate challenges, adaptation strategies, and master Connectors of Contrast and Concession (although, however, despite, in spite of).",
+      "title": "A Scientist Discovers: Inventions and Discoveries",
+      "bigIdea": "Scientific methodology, laboratory breakthroughs, and Passive Voice in Scientific Reports.",
       "subtopics": [
         {
           "id": "g8-eng-5.1",
           "code": "5.1",
-          "title": "Connectors of Contrast (Although, However, Despite)",
+          "title": "Grammar, Reading Analysis & Vocabulary: A Scientist Discovers: Inventions and Discoveries",
           "survey": {
-            "blueprint": "Connectors of contrast: Although / Even though + Subject + Verb. Despite / In spite of + Noun Phrase or V-ing. However / Nevertheless + comma.",
+            "blueprint": "Grammar: Passive Voice in Present and Past (Active: Dr. Fleming discovered penicillin ➔ Passive: Penicillin was discovered by Dr. Fleming). Key Vocabulary: Hypothesis, breakthrough, laboratory, vaccine, penicillin, electricity, observation, trial. Reading Passage: From the discovery of penicillin by Alexander Fleming to modern African medical innovators, scientific discovery relies on disciplined observation, relentless experimentation, and empirical verification.",
             "objectives": [
-              "Use \"although\" and \"even though\" to link unexpected contrasting clauses.",
-              "Apply \"despite\" and \"in spite of\" followed by noun phrases or gerunds.",
-              "Use transition adverbs (\"however\", \"nevertheless\") with proper punctuation."
+              "Master the advanced grammar target: Passive Voice in Present and Past.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "Although + Clause (S + V) &nbsp;|&nbsp; Despite + Noun / V-ing &nbsp;|&nbsp; Clause. However, Clause."
+            "keyFormulas": "Grammar Rule: Passive Voice in Present and Past (Active: Dr. Fleming discovered penicillin ➔ Passive: Penicillin was discovered by Dr. Fleming)."
           },
           "questions": [
-            "Why is it grammatically incorrect to say \"Although it rained, but we went out\"?",
-            "What must follow \"despite\": a complete clause or a noun/gerund?"
+            "How is the target grammatical rule (Passive Voice in Present and Past) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Syntax of Contrast & Concession</h4>\n              <p>• <strong>Although / Even though:</strong> Followed by a full subject and verb clause.<br>\n                <em>Example:</em> <strong>Although</strong> droughts occurred, Ethiopian farmers harvested bumper wheat through dry-season irrigation.<br>\n              • <strong>Despite / In spite of:</strong> Followed by a noun, pronoun, or gerund (-ing verb). Never followed directly by subject + verb unless using \"the fact that\".<br>\n                <em>Example:</em> <strong>Despite the heavy rain</strong>, the tree planting ceremony continued.<br>\n              • <strong>However / Nevertheless:</strong> Transition words starting a new independent sentence followed by a comma.<br>\n                <em>Example:</em> Renewable energy investment is costly. <strong>However,</strong> it eliminates greenhouse emissions.</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: A Scientist Discovers: Inventions and Discoveries</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">From the discovery of penicillin by Alexander Fleming to modern African medical innovators, scientific discovery relies on disciplined observation, relentless experimentation, and empirical verification.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Passive Voice in Present and Past</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Passive Voice in Present and Past (Active: Dr. Fleming discovered penicillin ➔ Passive: Penicillin was discovered by Dr. Fleming).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Hypothesis, breakthrough, laboratory, vaccine, penicillin, electricity, observation, trial.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Converting \"Although\" to \"Despite\"",
-            "problem": "Rewrite the sentence using \"Despite\": \"Although he faced severe financial hardships, Kassahun graduated with top academic honors.\"",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Extract the noun phrase from clause",
-                "text": "\"He faced severe financial hardships\" ➔ \"severe financial hardships\"."
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Passive Voice in Present and Past."
               },
               {
-                "label": "Step 2: Replace with despite",
-                "text": "<strong>Despite severe financial hardships</strong>, Kassahun graduated with top academic honors."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>From the discovery of penicillin by Alexander Fleming to modern African medical innovators, scientific discovery relies on disciplined observation, relentless experimentation, and empirical verification.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "Never write \"Despite of\" — \"in spite of\" takes \"of\", but \"despite\" NEVER takes \"of\"!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "Is \"despite of\" grammatically correct?",
-              "a": "No! Say either \"despite\" OR \"in spite of\"."
+              "q": "What is the core grammatical structure in Unit 5?",
+              "a": "Passive Voice in Present and Past"
             },
             {
-              "q": "Can you use \"although\" and \"but\" together in the same sentence?",
-              "a": "No, using both is redundant and incorrect."
+              "q": "Define key vocabulary from this unit: Hypothesis and  breakthrough",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Complete the sentence with the correct contrast connector followed by a noun phrase: \"_______ the severe highland cold, the scouts completed their overnight mountain trek.\"",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Passive Voice in Present and Past)?",
               "options": [
-                "Although",
-                "Despite",
-                "Even though",
-                "Whereas"
+                "From the discovery of penicillin by Alexander Fleming to modern African medical innovators, scientific discovery relies on disciplined observation, relentless experimentation, and empirical verification.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
-              "correct": 1,
-              "strategy": "\"Despite\" (and \"In spite of\") is followed by a noun phrase or gerund (-ing), whereas \"Although\" is followed by a full clause (subject + verb).",
-              "derivation": "\"The severe highland cold\" is a noun phrase without a conjugated verb. Therefore, \"Despite\" is grammatically required. \"Although\" would require a clause: \"Although it was severely cold\".",
-              "trap": "Using \"Although\" directly before a noun phrase without a verb."
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
             },
             {
-              "q": "Which sentence correctly uses \"However\" with standard punctuation between two independent clauses?",
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
               "options": [
-                "The irrigation budget was reduced, however the harvest was abundant.",
-                "The irrigation budget was reduced; however, the harvest was abundant.",
-                "The irrigation budget was reduced however; the harvest was abundant.",
-                "The irrigation budget was reduced however the harvest was abundant."
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
               ],
-              "correct": 1,
-              "strategy": "\"However\" transitioning between two clauses takes a semicolon before and a comma after (; however,).",
-              "derivation": "When connecting two independent sentences, use a semicolon or period before \"however\" and a comma after: \"; however, \" or \". However, \".",
-              "trap": "Using a comma splice with \"however\"."
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
             },
             {
-              "q": "Is the phrase \"Despite of the rain\" grammatically correct in standard English?",
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
               "options": [
-                "Yes, it is the standard formal idiom",
-                "No! It is an error; use either \"Despite the rain\" or \"In spite of the rain\"",
-                "Yes, but only in poetry",
-                "Yes, it is identical to \"although\""
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
               ],
-              "correct": 1,
-              "strategy": "\"Despite\" never takes \"of\"; \"In spite of\" requires \"of\".",
-              "derivation": "One of the most frequent errors tested on English national exams: \"Despite\" is NEVER followed by \"of\". Say \"Despite the rain\" OR \"In spite of the rain\".",
-              "trap": "Saying \"Despite of\"."
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
@@ -495,95 +491,95 @@ module.exports = {
     {
       "id": "g8-eng-u6",
       "number": "Unit 6",
-      "title": "Financial Literacy & Youth Entrepreneurship",
-      "bigIdea": "Develop budgeting and investment vocabulary, direct versus indirect speech, and formal business correspondence.",
+      "title": "Personal Future Plans and Careers",
+      "bigIdea": "Career ambitions, goal setting, Future Tenses, and Conditional Type 1.",
       "subtopics": [
         {
           "id": "g8-eng-6.1",
           "code": "6.1",
-          "title": "Direct vs. Indirect Questions & Business Writing",
+          "title": "Grammar, Reading Analysis & Vocabulary: Personal Future Plans and Careers",
           "survey": {
-            "blueprint": "Direct Questions (verb inversion: Where is the bank?) vs Indirect Questions (polite, statement word order: Could you tell me where the bank is?).",
+            "blueprint": "Grammar: First Conditional (If + Present Simple, will + verb) & Future Forms (Will vs Be Going To). Key Vocabulary: Aspiration, vocation, entrepreneur, trajectory, ambition, diploma, qualification, milestone. Reading Passage: Grade 8 students discuss their career visions: \"If I pass the regional ministry examination with distinction, I will study civil engineering to design sustainable railway bridges across Ethiopia.\"",
             "objectives": [
-              "Transform direct questions into polite indirect questions.",
-              "Understand word order in indirect questions (Subject before Verb; drop do/does/did).",
-              "Draft formal inquiry letters and business proposals."
+              "Master the advanced grammar target: First Conditional.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "Indirect Question = Polite Starter + Question Word + Subject + Verb (No inversion!)"
+            "keyFormulas": "Grammar Rule: First Conditional (If + Present Simple, will + verb) & Future Forms (Will vs Be Going To)."
           },
           "questions": [
-            "Why does the auxiliary verb \"does\" disappear when converting \"When does the market open?\" into an indirect question?",
-            "What phrases are commonly used to open polite indirect questions?"
+            "How is the target grammatical rule (First Conditional) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Polite Business Inquiry Syntax</h4>\n              <p>• <strong>Indirect Questions:</strong> Used in formal professional communication to ask questions politely.<br>\n                - Starters: <em>Could you please tell me... / I would like to know... / Do you happen to know...</em><br>\n              • <strong>Word Order Shift:</strong> Unlike direct questions where the auxiliary precedes the subject, indirect questions use standard affirmative statement order (Subject + Verb).<br>\n                <em>Direct:</em> Where is the microfinance office?<br>\n                <em>Indirect:</em> Could you tell me where <strong>the microfinance office is</strong>?<br>\n                <em>Direct:</em> How much does the solar pump cost?<br>\n                <em>Indirect:</em> Do you know how much the solar pump <strong>costs</strong>? (drop \"does\", add -s to verb).</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Personal Future Plans and Careers</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Grade 8 students discuss their career visions: \"If I pass the regional ministry examination with distinction, I will study civil engineering to design sustainable railway bridges across Ethiopia.\"</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: First Conditional</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> First Conditional (If + Present Simple, will + verb) & Future Forms (Will vs Be Going To).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Aspiration, vocation, entrepreneur, trajectory, ambition, diploma, qualification, milestone.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Converting to an Indirect Question",
-            "problem": "Turn this direct question into a polite indirect question starting with \"Could you tell me...\": \"What time does the conference begin?\"",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Add starter and wh-word",
-                "text": "\"Could you tell me what time...\""
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: First Conditional."
               },
               {
-                "label": "Step 2: Drop auxiliary \"does\"",
-                "text": "Remove \"does\" and apply 3rd person singular -s to main verb \"begin\"."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Grade 8 students discuss their career visions: \"If I pass the regional ministry examination with distinction, I will study civil engineering to design sustainable railway bridges across Ethiopia.</em>"
               },
               {
-                "label": "Step 3: Put subject before verb",
-                "text": "\"Could you tell me what time the conference <strong>begins</strong>?\""
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "Never say \"Could you tell me what time does the conference begin?\" — avoid double question inversion!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "In indirect questions, what is the word order after the question word?",
-              "a": "Subject + Verb (normal statement word order)."
+              "q": "What is the core grammatical structure in Unit 6?",
+              "a": "First Conditional"
             },
             {
-              "q": "Convert \"Where is the station?\" into an indirect question.",
-              "a": "Could you tell me where the station is?"
+              "q": "Define key vocabulary from this unit: Aspiration and  vocation",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Convert the direct question: \"What time does the regional train arrive?\" into a polite indirect question beginning with: \"Could you please tell me...\"",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (First Conditional)?",
               "options": [
-                "Could you please tell me what time does the regional train arrive?",
-                "Could you please tell me what time the regional train arrives?",
-                "Could you please tell me what time did the train arrive?",
-                "Could you please tell me what time is the train arriving?"
-              ],
-              "correct": 1,
-              "strategy": "Indirect questions revert to statement word order (Subject + Verb) without \"does\".",
-              "derivation": "In indirect questions, the auxiliary \"does\" drops out and the main verb takes standard third-person -s: \"what time the regional train arrives\".",
-              "trap": "Retaining the auxiliary \"does\" in indirect questions."
-            },
-            {
-              "q": "When an indirect question is formed from a Yes/No direct question (e.g. \"Is the library open?\"), what conjunction must be inserted?",
-              "options": [
-                "if (or whether)",
-                "that",
-                "because",
-                "which"
+                "Grade 8 students discuss their career visions: \"If I pass the regional ministry examination with distinction, I will study civil engineering to design sustainable railway bridges across Ethiopia.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
               "correct": 0,
-              "strategy": "Yes/No direct questions use \"if\" or \"whether\" in indirect form.",
-              "derivation": "\"Is the library open?\" ➔ \"Do you know IF (or WHETHER) the library is open?\".",
-              "trap": "Inserting \"that\" instead of \"if/whether\"."
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
             },
             {
-              "q": "Which of the following is a polite introductory stem used to introduce indirect inquiries in professional correspondence?",
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
               "options": [
-                "Hey you, answer me this!",
-                "I was wondering if you could provide details regarding...",
-                "Tell me immediately whether...",
-                "Why you not telling me..."
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
               ],
-              "correct": 1,
-              "strategy": "\"I was wondering if...\" is a polite, professional indirect question stem.",
-              "derivation": "Polite indirect stems soften the tone in business and academic correspondence.",
-              "trap": "Using aggressive imperative phrasing."
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
@@ -592,95 +588,774 @@ module.exports = {
     {
       "id": "g8-eng-u7",
       "number": "Unit 7",
-      "title": "Peacebuilding, Conflict Resolution & Dialogue",
-      "bigIdea": "Explore diplomacy, non-violent communication, Subject-Verb Agreement with complex subjects, and persuasive writing.",
+      "title": "A Day in the Life of a Professional",
+      "bigIdea": "Workplace routines, professional responsibilities, and Conditional Type 2 for hypothetical situations.",
       "subtopics": [
         {
           "id": "g8-eng-7.1",
           "code": "7.1",
-          "title": "Subject-Verb Agreement with Complex Subjects",
+          "title": "Grammar, Reading Analysis & Vocabulary: A Day in the Life of a Professional",
           "survey": {
-            "blueprint": "Rules: Either...or / Neither...nor (agrees with closest subject). Collective nouns (team, committee). Indefinite pronouns (each, everyone = singular). Prepositional phrases (The leader of the delegates IS).",
+            "blueprint": "Grammar: Second Conditional for hypothetical scenarios (If + Past Simple, would + base verb: If I were the Minister of Health, I would build clinics in every woreda). Key Vocabulary: Profession, routine, surgeon, agronomist, pilot, diligence, stethoscope, shift. Reading Passage: An intimate glimpse into the demanding daily routine of an Ethiopian surgeon at Tikur Anbessa Specialized Hospital, demonstrating extraordinary dedication to saving human lives.",
             "objectives": [
-              "Apply subject-verb agreement rules when subjects are separated by prepositional phrases.",
-              "Determine singular/plural agreement with \"neither...nor\" and \"either...or\".",
-              "Compose persuasive speeches advocating community peace and national solidarity."
+              "Master the advanced grammar target: Second Conditional for hypothetical scenarios.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
             ],
-            "keyFormulas": "Neither S1 nor S2 + Verb (Verb agrees with S2!) &nbsp;|&nbsp; Each / Every / Someone + Singular Verb"
+            "keyFormulas": "Grammar Rule: Second Conditional for hypothetical scenarios (If + Past Simple, would + base verb: If I were the Minister of Health, I would build clinics in every woreda)."
           },
           "questions": [
-            "In \"The bouquet of yellow flowers (is / are) beautiful\", why is \"is\" correct even though \"flowers\" is plural?",
-            "How do you determine verb agreement when subjects of different number are joined by \"or\"?"
+            "How is the target grammatical rule (Second Conditional for hypothetical scenarios) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
           ],
-          "coreNotes": "\n            <div class=\"space-y-3 p-4 bg-space-900 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300\">\n              <h4 class=\"font-bold text-sky-400\">Complex Subject-Verb Agreement Mechanics</h4>\n              <p>• <strong>Intervening Phrases:</strong> Ignore prepositional phrases (e.g., <em>along with, as well as, of</em>) separating subject and verb.<br>\n                <em>Example:</em> The elder, along with all the community youths, <strong>is</strong> promoting peaceful dialogue.<br>\n              • <strong>Proximity Rule with Either/Or and Neither/Nor:</strong> The verb agrees in person and number with the closer subject.<br>\n                <em>Example:</em> Neither the facilitator nor the <strong>participants were</strong> satisfied.<br>\n                <em>Example:</em> Neither the participants nor the <strong>facilitator was</strong> satisfied.<br>\n              • <strong>Indefinite Pronouns:</strong> <em>Each, every, everyone, everybody, nobody, neither</em> take singular verbs (Everyone <strong>wants</strong> lasting peace).</p>\n            </div>\n          ",
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: A Day in the Life of a Professional</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">An intimate glimpse into the demanding daily routine of an Ethiopian surgeon at Tikur Anbessa Specialized Hospital, demonstrating extraordinary dedication to saving human lives.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Second Conditional for hypothetical scenarios</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Second Conditional for hypothetical scenarios (If + Past Simple, would + base verb: If I were the Minister of Health, I would build clinics in every woreda).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Profession, routine, surgeon, agronomist, pilot, diligence, stethoscope, shift.</code>\n              </p>\n            </div>\n          </div>\n        ",
           "example": {
-            "title": "Resolving Agreement with Intervening Modifiers",
-            "problem": "Choose the correct verb: \"A basket of fresh injera (was / were) placed on the banquet table.\"",
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
             "steps": [
               {
-                "label": "Step 1: Identify the true head subject",
-                "text": "\"A basket\" is the singular head noun."
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Second Conditional for hypothetical scenarios."
               },
               {
-                "label": "Step 2: Ignore prepositional modifier",
-                "text": "\"of fresh injera\" is a prepositional phrase modifying the basket."
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>An intimate glimpse into the demanding daily routine of an Ethiopian surgeon at Tikur Anbessa Specialized Hospital, demonstrating extraordinary dedication to saving human lives.</em>"
               },
               {
-                "label": "Step 3: Match verb",
-                "text": "Singular subject \"basket\" takes singular verb: \"A basket of fresh injera <strong>was</strong> placed...\""
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
               }
             ],
-            "proTip": "Cross out the prepositional phrase in your mind to find the true head noun!"
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
           },
           "reciteFlashcards": [
             {
-              "q": "Does the indefinite pronoun \"everyone\" take a singular or plural verb?",
-              "a": "Singular (e.g., \"Everyone is ready\")."
+              "q": "What is the core grammatical structure in Unit 7?",
+              "a": "Second Conditional for hypothetical scenarios"
             },
             {
-              "q": "In \"Neither the teacher nor the students ____ (is/are) in the hall\", which verb is correct?",
-              "a": "\"are\" (agrees with the closer plural noun \"students\")."
+              "q": "Define key vocabulary from this unit: Profession and  routine",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
             }
           ],
           "amtQuiz": [
             {
-              "q": "Choose the sentence with correct Subject-Verb Agreement when using the correlative conjunction \"Neither... nor\":",
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Second Conditional for hypothetical scenarios)?",
               "options": [
-                "Neither the coach nor the players was ready for the tournament",
-                "Neither the coach nor the players were ready for the tournament",
-                "Neither the coach nor the players is ready for the tournament",
-                "Neither the coach nor the players be ready for the tournament"
-              ],
-              "correct": 1,
-              "strategy": "With \"Neither... nor\", the verb agrees with the subject CLOSER to the verb (proximity rule).",
-              "derivation": "The subject closer to the verb is \"the players\" (plural). Therefore, the verb must be plural: \"were ready\".",
-              "trap": "Matching the verb to the first singular subject (\"the coach\")."
-            },
-            {
-              "q": "Complete the sentence with correct verb agreement: \"Each of the participating students _______ a certificate of merit.\"",
-              "options": [
-                "receive",
-                "receives",
-                "are receiving",
-                "have received"
-              ],
-              "correct": 1,
-              "strategy": "\"Each\" is an indefinite pronoun that is grammatically singular and takes a singular verb.",
-              "derivation": "The subject is \"Each\" (singular), not the prepositional phrase \"of the students\". Therefore, it takes the singular verb with -s: \"receives\".",
-              "trap": "Mistakenly agreeing with the plural noun \"students\" inside the prepositional phrase!"
-            },
-            {
-              "q": "In the sentence: \"The committee _______ deliberating the new educational curriculum guidelines today\", which verb is used when the collective noun acts as a unified single body?",
-              "options": [
-                "is",
-                "are",
-                "were",
-                "have been"
+                "An intimate glimpse into the demanding daily routine of an Ethiopian surgeon at Tikur Anbessa Specialized Hospital, demonstrating extraordinary dedication to saving human lives.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
               ],
               "correct": 0,
-              "strategy": "Collective nouns acting as a single unit take singular verbs.",
-              "derivation": "When a collective noun (committee, team, jury) acts as a unified entity, it takes a singular verb: \"The committee is deliberating\".",
-              "trap": "Automatically using plural verbs with collective nouns."
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u8",
+      "number": "Unit 8",
+      "title": "Making Ethiopian Coffee: Process Writing",
+      "bigIdea": "The cultural coffee ceremony (Buna), hospitality, sequence markers, and Imperative instructions.",
+      "subtopics": [
+        {
+          "id": "g8-eng-8.1",
+          "code": "8.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: Making Ethiopian Coffee: Process Writing",
+          "survey": {
+            "blueprint": "Grammar: Sequence Adverbs (First, Second, Next, After that, Subsequently, Meanwhile, Finally) & Imperatives. Key Vocabulary: Roasting, grinding, Jebena, incense, frankincense, earthenware, hospitality, aroma. Reading Passage: The traditional Ethiopian coffee ceremony is an artistic cultural ritual: green beans are washed, roasted over charcoal on a pan (Menkeshkesha), ground with a pestle, and brewed in a clay Jebena with aromatic frankincense.",
+            "objectives": [
+              "Master the advanced grammar target: Sequence Adverbs.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Sequence Adverbs (First, Second, Next, After that, Subsequently, Meanwhile, Finally) & Imperatives."
+          },
+          "questions": [
+            "How is the target grammatical rule (Sequence Adverbs) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Making Ethiopian Coffee: Process Writing</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">The traditional Ethiopian coffee ceremony is an artistic cultural ritual: green beans are washed, roasted over charcoal on a pan (Menkeshkesha), ground with a pestle, and brewed in a clay Jebena with aromatic frankincense.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Sequence Adverbs</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Sequence Adverbs (First, Second, Next, After that, Subsequently, Meanwhile, Finally) & Imperatives.<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Roasting, grinding, Jebena, incense, frankincense, earthenware, hospitality, aroma.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Sequence Adverbs."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>The traditional Ethiopian coffee ceremony is an artistic cultural ritual: green beans are washed, roasted over charcoal on a pan (Menkeshkesha), ground with a pestle, and brewed in a clay Jebena with aromatic frankincense.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 8?",
+              "a": "Sequence Adverbs"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Roasting and  grinding",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Sequence Adverbs)?",
+              "options": [
+                "The traditional Ethiopian coffee ceremony is an artistic cultural ritual: green beans are washed, roasted over charcoal on a pan (Menkeshkesha), ground with a pestle, and brewed in a clay Jebena with aromatic frankincense.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u9",
+      "number": "Unit 9",
+      "title": "Plants for Medicinal Use & Traditional Healing",
+      "bigIdea": "Indigenous botanical medicine, Kosso, Eucalyptus, and Relative Clauses.",
+      "subtopics": [
+        {
+          "id": "g8-eng-9.1",
+          "code": "9.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: Plants for Medicinal Use & Traditional Healing",
+          "survey": {
+            "blueprint": "Grammar: Defining and Non-defining Relative Clauses (Who for people, Which/That for things, Where for places, Whose for possession). Key Vocabulary: Medicinal, botanical, infusion, decoction, herbalist, parasite, remedies, indigenous. Reading Passage: Ethiopian traditional medicine utilizes native flora: Kosso (Hagenia abyssinica) flowers have been used for centuries to eradicate tapeworms, while Damakesse leaves treat respiratory fevers.",
+            "objectives": [
+              "Master the advanced grammar target: Defining and Non-defining Relative Clauses.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Defining and Non-defining Relative Clauses (Who for people, Which/That for things, Where for places, Whose for possession)."
+          },
+          "questions": [
+            "How is the target grammatical rule (Defining and Non-defining Relative Clauses) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Plants for Medicinal Use & Traditional Healing</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Ethiopian traditional medicine utilizes native flora: Kosso (Hagenia abyssinica) flowers have been used for centuries to eradicate tapeworms, while Damakesse leaves treat respiratory fevers.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Defining and Non-defining Relative Clauses</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Defining and Non-defining Relative Clauses (Who for people, Which/That for things, Where for places, Whose for possession).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Medicinal, botanical, infusion, decoction, herbalist, parasite, remedies, indigenous.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Defining and Non-defining Relative Clauses."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Ethiopian traditional medicine utilizes native flora: Kosso (Hagenia abyssinica) flowers have been used for centuries to eradicate tapeworms, while Damakesse leaves treat respiratory fevers.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 9?",
+              "a": "Defining and Non-defining Relative Clauses"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Medicinal and  botanical",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Defining and Non-defining Relative Clauses)?",
+              "options": [
+                "Ethiopian traditional medicine utilizes native flora: Kosso (Hagenia abyssinica) flowers have been used for centuries to eradicate tapeworms, while Damakesse leaves treat respiratory fevers.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u10",
+      "number": "Unit 10",
+      "title": "Art and Artists in Ethiopia",
+      "bigIdea": "Visual arts, traditional church iconography, modern painters (Afewerk Tekle), and Reported Speech.",
+      "subtopics": [
+        {
+          "id": "g8-eng-10.1",
+          "code": "10.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: Art and Artists in Ethiopia",
+          "survey": {
+            "blueprint": "Grammar: Direct and Indirect (Reported) Speech (Statements: He said that...; Questions: She asked if...). Key Vocabulary: Iconography, stained glass, canvas, exhibition, portrait, fresco, masterpiece, aesthetic. Reading Passage: Honorable Maitre Artiste Afewerk Tekle achieved international renown for his stained-glass masterpiece \"Total Liberation of Africa\" at Africa Hall in Addis Ababa, celebrating Pan-African freedom.",
+            "objectives": [
+              "Master the advanced grammar target: Direct and Indirect.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Direct and Indirect (Reported) Speech (Statements: He said that..."
+          },
+          "questions": [
+            "How is the target grammatical rule (Direct and Indirect) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Art and Artists in Ethiopia</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Honorable Maitre Artiste Afewerk Tekle achieved international renown for his stained-glass masterpiece \"Total Liberation of Africa\" at Africa Hall in Addis Ababa, celebrating Pan-African freedom.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Direct and Indirect</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Direct and Indirect (Reported) Speech (Statements: He said that...; Questions: She asked if...).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Iconography, stained glass, canvas, exhibition, portrait, fresco, masterpiece, aesthetic.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Direct and Indirect."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Honorable Maitre Artiste Afewerk Tekle achieved international renown for his stained-glass masterpiece \"Total Liberation of Africa\" at Africa Hall in Addis Ababa, celebrating Pan-African freedom.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 10?",
+              "a": "Direct and Indirect"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Iconography and  stained glass",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Direct and Indirect)?",
+              "options": [
+                "Honorable Maitre Artiste Afewerk Tekle achieved international renown for his stained-glass masterpiece \"Total Liberation of Africa\" at Africa Hall in Addis Ababa, celebrating Pan-African freedom.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u11",
+      "number": "Unit 11",
+      "title": "Natural Wonders of Africa",
+      "bigIdea": "African geography, Simien Mountains, Sof Omar Caves, Victoria Falls, and Descriptive Adjectives.",
+      "subtopics": [
+        {
+          "id": "g8-eng-11.1",
+          "code": "11.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: Natural Wonders of Africa",
+          "survey": {
+            "blueprint": "Grammar: Order of Adjectives (Opinion ➔ Size ➔ Age ➔ Shape ➔ Color ➔ Origin ➔ Material: A magnificent ancient stone church). Key Vocabulary: Breathtaking, subterranean, stalactite, gorge, cataract, escarpment, biodiversity, spectacle. Reading Passage: Africa boasts sublime geological wonders: the dramatic precipices of the Simien Mountains, the subterranean limestone chambers of Sof Omar Cave, and the thundering spray of Victoria Falls.",
+            "objectives": [
+              "Master the advanced grammar target: Order of Adjectives.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Order of Adjectives (Opinion ➔ Size ➔ Age ➔ Shape ➔ Color ➔ Origin ➔ Material: A magnificent ancient stone church)."
+          },
+          "questions": [
+            "How is the target grammatical rule (Order of Adjectives) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Natural Wonders of Africa</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Africa boasts sublime geological wonders: the dramatic precipices of the Simien Mountains, the subterranean limestone chambers of Sof Omar Cave, and the thundering spray of Victoria Falls.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Order of Adjectives</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Order of Adjectives (Opinion ➔ Size ➔ Age ➔ Shape ➔ Color ➔ Origin ➔ Material: A magnificent ancient stone church).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Breathtaking, subterranean, stalactite, gorge, cataract, escarpment, biodiversity, spectacle.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Order of Adjectives."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Africa boasts sublime geological wonders: the dramatic precipices of the Simien Mountains, the subterranean limestone chambers of Sof Omar Cave, and the thundering spray of Victoria Falls.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 11?",
+              "a": "Order of Adjectives"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Breathtaking and  subterranean",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Order of Adjectives)?",
+              "options": [
+                "Africa boasts sublime geological wonders: the dramatic precipices of the Simien Mountains, the subterranean limestone chambers of Sof Omar Cave, and the thundering spray of Victoria Falls.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u12",
+      "number": "Unit 12",
+      "title": "Technology in a Modern World",
+      "bigIdea": "Computers, artificial intelligence, internet connectivity, and Compound/Complex Sentences.",
+      "subtopics": [
+        {
+          "id": "g8-eng-12.1",
+          "code": "12.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: Technology in a Modern World",
+          "survey": {
+            "blueprint": "Grammar: Compound Sentences (FANBOYS: For, And, Nor, But, Or, Yet, So) and Complex Sentences with Subordinating Conjunctions (Because, Although, Since). Key Vocabulary: Algorithm, telecommunication, broadband, cyberspace, automation, microchip, innovation. Reading Passage: Modern digital telecommunications connect remote rural Ethiopian schools with global libraries, democratizing access to scientific knowledge and coding education.",
+            "objectives": [
+              "Master the advanced grammar target: Compound Sentences.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Compound Sentences (FANBOYS: For, And, Nor, But, Or, Yet, So) and Complex Sentences with Subordinating Conjunctions (Because, Although, Since)."
+          },
+          "questions": [
+            "How is the target grammatical rule (Compound Sentences) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: Technology in a Modern World</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Modern digital telecommunications connect remote rural Ethiopian schools with global libraries, democratizing access to scientific knowledge and coding education.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Compound Sentences</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Compound Sentences (FANBOYS: For, And, Nor, But, Or, Yet, So) and Complex Sentences with Subordinating Conjunctions (Because, Although, Since).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Algorithm, telecommunication, broadband, cyberspace, automation, microchip, innovation.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Compound Sentences."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Modern digital telecommunications connect remote rural Ethiopian schools with global libraries, democratizing access to scientific knowledge and coding education.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 12?",
+              "a": "Compound Sentences"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Algorithm and  telecommunication",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Compound Sentences)?",
+              "options": [
+                "Modern digital telecommunications connect remote rural Ethiopian schools with global libraries, democratizing access to scientific knowledge and coding education.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u13",
+      "number": "Unit 13",
+      "title": "A Historical Person: Abebe Bikila",
+      "bigIdea": "Biographical writing, chronological sequence markers, and triumph over adversity.",
+      "subtopics": [
+        {
+          "id": "g8-eng-13.1",
+          "code": "13.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: A Historical Person: Abebe Bikila",
+          "survey": {
+            "blueprint": "Grammar: Biographical Past Narrative with Time Markers (In 1960, Four years later, During his youth, Eventually). Key Vocabulary: Barefoot, endurance, pioneer, legendary, Rome, Tokyo, gold medal, marathon. Reading Passage: Abebe Bikila stunned the sporting world at the 1960 Rome Olympic Games by running the marathon barefoot through cobblestone streets, becoming the first Black African to win an Olympic gold medal.",
+            "objectives": [
+              "Master the advanced grammar target: Biographical Past Narrative with Time Markers.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Biographical Past Narrative with Time Markers (In 1960, Four years later, During his youth, Eventually)."
+          },
+          "questions": [
+            "How is the target grammatical rule (Biographical Past Narrative with Time Markers) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: A Historical Person: Abebe Bikila</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Abebe Bikila stunned the sporting world at the 1960 Rome Olympic Games by running the marathon barefoot through cobblestone streets, becoming the first Black African to win an Olympic gold medal.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Biographical Past Narrative with Time Markers</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Biographical Past Narrative with Time Markers (In 1960, Four years later, During his youth, Eventually).<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Barefoot, endurance, pioneer, legendary, Rome, Tokyo, gold medal, marathon.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Biographical Past Narrative with Time Markers."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Abebe Bikila stunned the sporting world at the 1960 Rome Olympic Games by running the marathon barefoot through cobblestone streets, becoming the first Black African to win an Olympic gold medal.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 13?",
+              "a": "Biographical Past Narrative with Time Markers"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Barefoot and  endurance",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Biographical Past Narrative with Time Markers)?",
+              "options": [
+                "Abebe Bikila stunned the sporting world at the 1960 Rome Olympic Games by running the marathon barefoot through cobblestone streets, becoming the first Black African to win an Olympic gold medal.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g8-eng-u14",
+      "number": "Unit 14",
+      "title": "African Folktales and Moral Values",
+      "bigIdea": "Oral literature, animal fables, moral allegories, idioms, and Phrasal Verbs.",
+      "subtopics": [
+        {
+          "id": "g8-eng-14.1",
+          "code": "14.1",
+          "title": "Grammar, Reading Analysis & Vocabulary: African Folktales and Moral Values",
+          "survey": {
+            "blueprint": "Grammar: Common Phrasal Verbs (Give up, Carry on, Look forward to, Break out, Turn down) & Idiomatic Expressions. Key Vocabulary: Fable, allegory, wisdom, cunning, trickster, hyena, hare, proverb, moral. Reading Passage: Generations of Ethiopian grandmothers have passed down moral wisdom through animated fireside fables of the clever Hare outsmarting the greedy Hyena, teaching that wisdom and patience triumph over brute strength.",
+            "objectives": [
+              "Master the advanced grammar target: Common Phrasal Verbs.",
+              "Analyze informational texts reflecting Ethiopian history, sports, science, and cultural heritage.",
+              "Demonstrate accurate usage of high-level academic vocabulary."
+            ],
+            "keyFormulas": "Grammar Rule: Common Phrasal Verbs (Give up, Carry on, Look forward to, Break out, Turn down) & Idiomatic Expressions."
+          },
+          "questions": [
+            "How is the target grammatical rule (Common Phrasal Verbs) correctly deployed in formal writing?",
+            "What historical or cultural lesson is conveyed in the unit reading text?"
+          ],
+          "coreNotes": "\n          <div class=\"space-y-4 text-slate-200\">\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-amber-400\">📖 1. Contextual Reading: African Folktales and Moral Values</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">Generations of Ethiopian grandmothers have passed down moral wisdom through animated fireside fables of the clever Hare outsmarting the greedy Hyena, teaching that wisdom and patience triumph over brute strength.</p>\n            </div>\n            <div class=\"p-4 rounded-xl bg-space-900 border border-slate-800 space-y-2\">\n              <h4 class=\"text-sm font-bold text-cyan-400\">📝 2. Advanced Grammar: Common Phrasal Verbs</h4>\n              <p class=\"text-xs sm:text-sm text-slate-300 leading-relaxed\">\n                • <strong>Grammatical Structure:</strong> Common Phrasal Verbs (Give up, Carry on, Look forward to, Break out, Turn down) & Idiomatic Expressions.<br>\n                • <strong>Target Lexicon:</strong> <code class=\"text-emerald-300 font-mono\">Fable, allegory, wisdom, cunning, trickster, hyena, hare, proverb, moral.</code>\n              </p>\n            </div>\n          </div>\n        ",
+          "example": {
+            "title": "Worked Example: Grammar Application in Context",
+            "problem": "Apply the target grammatical structure to compose an authentic sentence based on the unit reading theme.",
+            "steps": [
+              {
+                "label": "Step 1: Identify grammar formula",
+                "text": "Target rule: Common Phrasal Verbs."
+              },
+              {
+                "label": "Step 2: Compose sentence",
+                "text": "Example: <em>Generations of Ethiopian grandmothers have passed down moral wisdom through animated fireside fables of the clever Hare outsmarting the greedy Hyena, teaching that wisdom and patience triumph over brute strength.</em>"
+              },
+              {
+                "label": "Step 3: Syntax check",
+                "text": "Verify clause connection, punctuation, and tense harmony."
+              }
+            ],
+            "proTip": "In Grade 8 national English exams, complex sentence transformations and correct prepositional usage are heavily tested!"
+          },
+          "reciteFlashcards": [
+            {
+              "q": "What is the core grammatical structure in Unit 14?",
+              "a": "Common Phrasal Verbs"
+            },
+            {
+              "q": "Define key vocabulary from this unit: Fable and  allegory",
+              "a": "High-frequency academic vocabulary for Grade 8 national exam preparation."
+            }
+          ],
+          "amtQuiz": [
+            {
+              "q": "Which of the following sentences correctly applies the target grammatical structure for this unit (Common Phrasal Verbs)?",
+              "options": [
+                "Generations of Ethiopian grandmothers have passed down moral wisdom through animated fireside fables of the clever Hare outsmarting the greedy Hyena, teaching that wisdom and patience triumph over brute strength.",
+                "The runner have winning the race yesterday morning.",
+                "She did not saw nothing at the market.",
+                "Although it was raining, but they played football outside."
+              ],
+              "correct": 0,
+              "strategy": "Identify the sentence with flawless syntactic structure.",
+              "derivation": "Option A exemplifies correct grammatical agreement and syntax.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence (double conjunction error!)."
+            },
+            {
+              "q": "Select the sentence that demonstrates sophisticated sentence structure and flawless grammatical concordance:",
+              "options": [
+                "Although the marathon was exhausting, the determined Ethiopian athlete sprinted across the finish line with unwavering courage.",
+                "Although the marathon was exhausting, but the determined athlete sprinted.",
+                "The determined athlete sprinted because although the marathon exhausting.",
+                "Exhausting marathon although was, sprinted determined athlete the."
+              ],
+              "correct": 0,
+              "strategy": "Subordinate clauses introduced by \"Although\" must NOT be followed by coordinating conjunctions like \"but\".",
+              "derivation": "Option A correctly pairs a concessive subordinate clause with an independent main clause without double conjunctions.",
+              "trap": "Using both \"Although\" and \"but\" in the same sentence."
+            },
+            {
+              "q": "In formal English writing, what is the best strategy for organizing a cohesive, persuasive paragraph?",
+              "options": [
+                "State a clear topic sentence, provide supporting factual evidence and examples, and conclude with a summarizing sentence",
+                "Write long unpunctuated sentences without paragraph breaks",
+                "Include contradictory claims without logical transitions",
+                "Copy entire paragraphs from uncredited sources"
+              ],
+              "correct": 0,
+              "strategy": "Standard paragraph structure requires: Topic sentence ➔ Supporting evidence ➔ Concluding synthesis.",
+              "derivation": "A well-structured paragraph begins with a clear central thesis, develops it with supporting details, and provides a coherent wrap-up.",
+              "trap": "Thinking that random stream-of-consciousness writing is formal style."
             }
           ]
         }
