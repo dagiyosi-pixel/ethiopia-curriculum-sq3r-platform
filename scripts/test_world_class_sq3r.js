@@ -24,7 +24,13 @@ const tests = [
   { name: '16. Gizmo-Style Mobile Bottom Navigation Bar (#gizmoBottomNav)', pass: html.includes('id="gizmoBottomNav"') && html.includes('bottomNav-dashboard') },
   { name: '17. One-Click Continue Learning Resumption', pass: html.includes('resumeLastActivity') },
   { name: '18. No AI Chatbot/Assistant Present (Pure Deterministic Fast Pedagogy)', pass: !html.includes('id="studyAssistantFab"') && !html.includes('id="studyAssistantModal"') },
-  { name: '19. No AMT References in User-Facing Content', pass: !html.includes('577 የAMT') && !html.includes('AMT Question Bank') }
+  { name: '19. No AMT References in User-Facing Content', pass: !html.includes('577 የAMT') && !html.includes('AMT Question Bank') },
+  { name: '20. Stage 3 4-Step Baby-Step Derivations (Givens, Formula, Calculation, Verification)', pass: html.includes('ደረጃ 1፦ የተሰጡ መረጃዎችንና የሚፈለገውን መለየት') && html.includes('ደረጃ 4፦ የመጨረሻ መልስ ማረጋገጫና የወጥመዶች ትንተና') },
+  { name: '21. Stage 3 Dynamic Key Vocabulary Table with MoE Definitions', pass: html.includes('KEY VOCABULARY & DEFINITIONS') && html.includes('MoE Standard Glossary') },
+  { name: '22. Global Spotlight Search Modal (#globalSearchModal, performGlobalSearch)', pass: html.includes('id="globalSearchModal"') && html.includes('performGlobalSearch') },
+  { name: '23. Slide-Out Syllabus Drawer (#syllabusDrawerModal, renderSyllabusDrawer)', pass: html.includes('id="syllabusDrawerModal"') && html.includes('renderSyllabusDrawer') },
+  { name: '24. Floating Subtopic Navigation Dock (#subtopicNavDock, goToPrevSubtopic, goToNextSubtopic)', pass: html.includes('id="subtopicNavDock"') && html.includes('goToPrevSubtopic') && html.includes('goToNextSubtopic') },
+  { name: '25. Dual-Grade Search & Global Keyboard Navigation Shortcuts', pass: html.includes('handleGlobalShortcuts') && html.includes("['7', '8']") }
 ];
 
 let allPassed = true;
@@ -35,7 +41,7 @@ tests.forEach(function(t) {
 });
 
 console.log('\n======================================================');
-console.log(allPassed ? 'ALL 19 GIZMO & MOBILE SUITE ACCEPTANCE CRITERIA PASSED 100%!' : 'SOME CRITERIA FAILED!');
+console.log(allPassed ? 'ALL 25 GIZMO & MOBILE SUITE ACCEPTANCE CRITERIA PASSED 100%!' : 'SOME CRITERIA FAILED!');
 console.log('======================================================');
 
 if (!allPassed) process.exit(1);

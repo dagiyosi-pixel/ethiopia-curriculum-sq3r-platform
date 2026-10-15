@@ -321,6 +321,20 @@
             </div>
           </div>
 
+          
+          <!-- Global Search Button -->
+          <button onclick="openGlobalSearchModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-space-850 hover:bg-emerald-600/30 border border-slate-700 hover:border-emerald-500/50 text-slate-200 text-xs font-bold transition shadow-sm cursor-pointer" title="Search all topics & formulas (Ctrl+K)">
+            <span>🔍</span>
+            <span class="hidden md:inline">ፈልግ (Search)</span>
+            <kbd class="hidden lg:inline text-[9px] bg-space-950 px-1.5 py-0.5 rounded border border-slate-700 font-mono text-slate-400">Ctrl+K</kbd>
+          </button>
+
+          <!-- Slide-out Syllabus Drawer Button -->
+          <button onclick="openSyllabusDrawer()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-space-850 hover:bg-amber-600/30 border border-slate-700 hover:border-amber-500/50 text-amber-300 text-xs font-bold transition shadow-sm cursor-pointer" title="Open complete curriculum syllabus drawer">
+            <span>🗺️</span>
+            <span class="hidden sm:inline">ካታሎግ (Syllabus)</span>
+          </button>
+
           <!-- Pomodoro Timer -->
           <button id="pomoBtn" onclick="togglePomodoro()" class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-200 text-xs font-semibold transition" title="25-min Focused Study Session">
             <span id="pomoIcon">⏳</span>
@@ -582,6 +596,27 @@
       <!-- =============================================================== -->
       <section id="view-sq3r" class="tab-view hidden space-y-6">
         
+        
+        <!-- Interactive Breadcrumbs Bar -->
+        <div id="sq3rBreadcrumbsBar" class="p-3.5 rounded-2xl bg-space-950 border border-slate-800/80 flex items-center justify-between text-xs text-slate-400 flex-wrap gap-2">
+          <div class="flex items-center gap-1.5 flex-wrap font-medium">
+            <button onclick="switchTab('dashboard')" class="text-slate-300 hover:text-emerald-400 transition flex items-center gap-1 cursor-pointer">
+              <span>🏠</span> <span>መነሻ</span>
+            </button>
+            <span class="text-slate-600">/</span>
+            <button onclick="openSyllabusDrawer()" class="text-slate-300 hover:text-emerald-400 transition flex items-center gap-1 cursor-pointer" id="crumbSubject">
+              <span>📐</span> <span>ሒሳብ</span>
+            </button>
+            <span class="text-slate-600">/</span>
+            <span class="text-slate-400 font-bold" id="crumbUnit">ምዕራፍ 1</span>
+            <span class="text-slate-600">/</span>
+            <span class="text-emerald-300 font-black" id="crumbSubtopic">1.1 Rational Numbers</span>
+          </div>
+          <button onclick="openSyllabusDrawer()" class="text-[11px] text-amber-400 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+            <span>🗺️ ካታሎግ ክፈት (Open Drawer)</span> <span>➔</span>
+          </button>
+        </div>
+
         <!-- Active Topic Banner & Navigation -->
         <div class="glass-crest p-6 sm:p-7 rounded-2xl relative overflow-hidden border border-emerald-500/30">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 relative z-10">
@@ -682,6 +717,27 @@
         <div id="stepContentContainer" class="min-h-[460px]">
           <!-- Rendered dynamically -->
         </div>
+      
+        <!-- Sticky / Floating Subtopic Navigation Dock -->
+        <div id="subtopicNavDock" class="sticky bottom-16 md:bottom-4 z-20 p-3 sm:p-4 rounded-3xl bg-space-950/95 backdrop-blur-xl border border-emerald-500/40 shadow-2xl flex items-center justify-between gap-3 flex-wrap">
+          <button onclick="goToPrevSubtopic()" id="btnPrevSubtopic" class="px-4 py-2.5 rounded-2xl bg-space-900 hover:bg-space-850 text-slate-300 hover:text-white border border-slate-800 text-xs font-black transition flex items-center gap-2 cursor-pointer shadow-sm">
+            <span>⬅️</span>
+            <span class="hidden sm:inline">የቀደመው ርዕስ (Prev)</span>
+            <span class="sm:hidden">ቀደምት</span>
+          </button>
+
+          <div class="flex items-center gap-2 text-center">
+            <span class="text-xs font-mono font-black text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-xl border border-amber-500/20" id="dockCurrentTopicCode">1.1</span>
+            <span class="text-xs font-bold text-slate-200 truncate max-w-[140px] sm:max-w-xs" id="dockCurrentTopicTitle">Rational Numbers</span>
+          </div>
+
+          <button onclick="goToNextSubtopic()" id="btnNextSubtopic" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white text-xs font-black transition flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-600/30">
+            <span class="hidden sm:inline">ቀጣይ ርዕስ (Next)</span>
+            <span class="sm:hidden">ቀጣይ</span>
+            <span>➡️</span>
+          </button>
+        </div>
+
       </section>
 
       <!-- =============================================================== -->
@@ -1537,6 +1593,89 @@
   </script>
 
 
+
+  
+  <!-- ========================================================================= -->
+  <!-- 1. GLOBAL CURRICULUM SPOTLIGHT SEARCH MODAL (Ctrl+K)                      -->
+  <!-- ========================================================================= -->
+  <div id="globalSearchModal" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4 bg-space-950/80 backdrop-blur-md">
+    <div class="glass-card max-w-2xl w-full p-5 sm:p-6 rounded-3xl border border-emerald-500/40 space-y-4 relative bg-space-900 shadow-2xl animate-fadeIn">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center gap-2.5 flex-1">
+          <span class="text-xl">🔍</span>
+          <input type="text" id="globalSearchInput" oninput="performGlobalSearch(this.value)" placeholder="ርዕስ፣ ቀመር ወይም ፅንሰ-ሀሳብ ፈልግ (ለምሳሌ፦ fraction, photosynthesis, adwa)..." class="w-full bg-transparent text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none font-bold">
+        </div>
+        <button onclick="closeGlobalSearchModal()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer ml-2">
+          ✕
+        </button>
+      </div>
+
+      <!-- Search Results Container -->
+      <div id="globalSearchResults" class="max-h-96 overflow-y-auto space-y-2 pr-1">
+        <div class="text-xs text-slate-500 py-6 text-center">
+          የሚፈልጉትን ርዕስ ወይም ቀመር ከላይ ይተይቡ፤ በፍጥነት ወደሚፈልጉት ትምህርት መዝለል ይችላሉ።
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-800">
+        <span>184 ንዑስ ርዕሶች • 96 ምዕራፎች • 12 የትምህርት አይነቶች</span>
+        <span>Esc ለመዝጋት</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. SLIDE-OUT SYLLABUS NAVIGATOR DRAWER (የትምህርት ካታሎግ)                     -->
+  <!-- ========================================================================= -->
+  <div id="syllabusDrawerModal" class="hidden fixed inset-0 z-50 flex justify-end bg-space-950/80 backdrop-blur-sm">
+    <div class="w-full max-w-md h-full bg-space-900 border-l border-emerald-500/40 p-6 flex flex-col justify-between shadow-2xl overflow-hidden animate-fadeIn">
+      
+      <!-- Drawer Header -->
+      <div class="space-y-4 border-b border-slate-800 pb-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl">🗺️</span>
+            <div>
+              <h3 class="text-base sm:text-lg font-black text-white font-display">የትምህርት ካታሎግ (Syllabus)</h3>
+              <p class="text-xs text-slate-400">ሁሉንም ምዕራፎች እና ርዕሶች በቀላሉ ያስሱ</p>
+            </div>
+          </div>
+          <button onclick="closeSyllabusDrawer()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer">
+            ✕
+          </button>
+        </div>
+
+        <!-- Grade Switcher in Drawer -->
+        <div class="grid grid-cols-2 gap-2 bg-space-950 p-1 rounded-2xl border border-slate-800">
+          <button onclick="setGrade(7); renderSyllabusDrawer();" id="drawerGrade-7" class="py-1.5 rounded-xl text-xs font-black transition cursor-pointer bg-emerald-600 text-white">
+            7ኛ ክፍል (Grade 7)
+          </button>
+          <button onclick="setGrade(8); renderSyllabusDrawer();" id="drawerGrade-8" class="py-1.5 rounded-xl text-xs font-black transition cursor-pointer text-slate-400 hover:text-white">
+            8ኛ ክፍል (Grade 8)
+          </button>
+        </div>
+
+        <!-- Subject Switcher Pills in Drawer -->
+        <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1" id="drawerSubjectPills">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Drawer Content: Units & Subtopics List -->
+      <div id="drawerUnitsContainer" class="flex-1 overflow-y-auto py-4 space-y-3 pr-1">
+        <!-- Dynamically populated with units & subtopics -->
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+        <span id="drawerProgressSummary">Mastery: 24%</span>
+        <button onclick="closeSyllabusDrawer()" class="px-4 py-2 rounded-xl bg-space-850 hover:bg-space-800 text-slate-200 font-bold transition cursor-pointer">
+          ዝጋ (Close)
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ========================================================================= -->
   <!-- GIZMO-STYLE MOBILE BOTTOM NAVIGATION BAR (Thumb-Friendly on all devices)  -->
@@ -19693,6 +19832,7 @@ const SUBJECT_METADATA = {
       renderVault();
       renderAmtExam();
       renderLevelMap();
+      updateSubtopicNavDock();
     }
 
     function populateDropdowns() {
@@ -19776,7 +19916,270 @@ const SUBJECT_METADATA = {
       renderLevelMap();
     }
 
-    function renderActiveUnitView() {
+
+    // =========================================================================
+    // GLOBAL CURRICULUM SPOTLIGHT SEARCH (Ctrl+K)
+    // =========================================================================
+    function openGlobalSearchModal() {
+      soundClick();
+      const modal = document.getElementById('globalSearchModal');
+      const input = document.getElementById('globalSearchInput');
+      if (modal) {
+        modal.classList.remove('hidden');
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+        performGlobalSearch('');
+      }
+    }
+
+    function closeGlobalSearchModal() {
+      const modal = document.getElementById('globalSearchModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function performGlobalSearch(query) {
+      const q = query.trim().toLowerCase();
+      const resultsContainer = document.getElementById('globalSearchResults');
+      if (!resultsContainer) return;
+
+      const matches = [];
+      const gradesToSearch = ['7', '8'];
+
+      gradesToSearch.forEach(gKey => {
+        const subjects = GALACTIC_DATABASE[gKey];
+        if (!subjects) return;
+
+        Object.keys(subjects).forEach(sKey => {
+          const sObj = subjects[sKey];
+          const meta = SUBJECT_METADATA[sKey] || { am: '', name: sObj.name, icon: sObj.icon };
+
+          sObj.units.forEach(u => {
+            if (u.subtopics) {
+              u.subtopics.forEach(st => {
+                const textToSearch = `${gKey} ${meta.name} ${meta.am} ${u.number} ${u.title} ${st.code} ${st.title} ${st.survey.blueprint} ${st.survey.keyFormulas || ''}`.toLowerCase();
+                if (!q || textToSearch.includes(q)) {
+                  matches.push({
+                    grade: gKey,
+                    subjectKey: sKey,
+                    subjectMeta: meta,
+                    unit: u,
+                    subtopic: st
+                  });
+                }
+              });
+            }
+          });
+        });
+      });
+
+      if (matches.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="text-xs text-slate-400 py-8 text-center space-y-1">
+            <span class="text-2xl">🔍</span>
+            <p>"<strong>${query}</strong>" የሚል ርዕስ አልተገኘም። እባክዎ ፊደላቱን አስተካክለው ይሞክሩ።</p>
+          </div>
+        `;
+        return;
+      }
+
+      resultsContainer.innerHTML = matches.slice(0, 20).map(m => `
+        <div onclick="jumpToSubtopicFromSearch('${m.grade}', '${m.subjectKey}', '${m.subtopic.id}')" class="p-3.5 rounded-2xl bg-space-950 border border-slate-800 hover:border-emerald-500/50 hover:bg-space-850 cursor-pointer transition flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl p-2 rounded-xl bg-space-900 border border-slate-800">${m.subjectMeta.icon}</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">${m.grade}ኛ ክፍል</span>
+                <span class="text-xs text-slate-400 font-bold">${m.subjectMeta.name} (${m.subjectMeta.am}) • ${m.unit.number}</span>
+              </div>
+              <h5 class="text-xs sm:text-sm font-black text-white mt-0.5">${m.subtopic.code} ${m.subtopic.title}</h5>
+              <p class="text-[11px] text-slate-400 line-clamp-1 mt-0.5">${m.subtopic.survey.blueprint}</p>
+            </div>
+          </div>
+          <span class="text-emerald-400 text-xs font-black shrink-0">መዝገብ 👉</span>
+        </div>
+      `).join('');
+    }
+
+    function jumpToSubtopicFromSearch(grade, subjectId, stId) {
+      soundClick();
+      closeGlobalSearchModal();
+
+      if (gState.grade !== Number(grade)) {
+        setGrade(Number(grade));
+      }
+      if (gState.activeSubject !== subjectId) {
+        selectSubject(subjectId);
+      }
+      changeSubtopic(stId);
+      switchTab('sq3r');
+      showToast(`ወደ ${stId} ተዘሏል! 🚀`);
+    }
+
+    // =========================================================================
+    // SLIDE-OUT SYLLABUS DRAWER
+    // =========================================================================
+    function openSyllabusDrawer() {
+      soundClick();
+      const modal = document.getElementById('syllabusDrawerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        renderSyllabusDrawer();
+      }
+    }
+
+    function closeSyllabusDrawer() {
+      const modal = document.getElementById('syllabusDrawerModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function renderSyllabusDrawer() {
+      const g7Btn = document.getElementById('drawerGrade-7');
+      const g8Btn = document.getElementById('drawerGrade-8');
+      if (g7Btn && g8Btn) {
+        if (gState.grade === 7) {
+          g7Btn.className = 'py-1.5 rounded-xl text-xs font-black transition cursor-pointer bg-emerald-600 text-white shadow-sm';
+          g8Btn.className = 'py-1.5 rounded-xl text-xs font-black transition cursor-pointer text-slate-400 hover:text-white';
+        } else {
+          g8Btn.className = 'py-1.5 rounded-xl text-xs font-black transition cursor-pointer bg-emerald-600 text-white shadow-sm';
+          g7Btn.className = 'py-1.5 rounded-xl text-xs font-black transition cursor-pointer text-slate-400 hover:text-white';
+        }
+      }
+
+      // Render Subject Pills in Drawer
+      const pillsContainer = document.getElementById('drawerSubjectPills');
+      const subjects = GALACTIC_DATABASE[gState.grade];
+      if (pillsContainer) {
+        pillsContainer.innerHTML = Object.keys(subjects).map(sKey => {
+          const sObj = subjects[sKey];
+          const meta = SUBJECT_METADATA[sKey] || { am: '', name: sObj.name, icon: sObj.icon };
+          const isActive = sKey === gState.activeSubject;
+          return `
+            <button onclick="selectSubject('${sKey}'); renderSyllabusDrawer();" class="px-3 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap flex items-center gap-1.5 ${isActive ? 'bg-emerald-600 text-white shadow-sm' : 'bg-space-950 text-slate-400 hover:text-white border border-slate-800'} cursor-pointer">
+              <span>${meta.icon}</span> <span>${meta.name}</span>
+            </button>
+          `;
+        }).join('');
+      }
+
+      // Render Units & Subtopics
+      const unitsContainer = document.getElementById('drawerUnitsContainer');
+      const activeSub = subjects[gState.activeSubject];
+      if (unitsContainer && activeSub) {
+        unitsContainer.innerHTML = activeSub.units.map(u => {
+          const isCurrentUnit = u.id === gState.activeUnitId;
+          return `
+            <div class="p-3.5 rounded-2xl bg-space-950 border ${isCurrentUnit ? 'border-emerald-500/50' : 'border-slate-800'} space-y-2">
+              <div class="flex items-center justify-between text-xs font-black text-white">
+                <span class="text-amber-400">${u.number}: ${u.title}</span>
+                <span class="text-[10px] text-slate-400">${u.subtopics.length} ርዕሶች</span>
+              </div>
+              <div class="space-y-1.5 pt-1">
+                ${u.subtopics.map(st => {
+                  const isCurrent = st.id === gState.activeSubtopicId;
+                  const mastered = isSubtopicMastered(st.id);
+                  const unlocked = isSubtopicUnlocked(st.id);
+                  const score = getSubtopicScore(st.id);
+
+                  let badge = '<span class="text-[10px] text-slate-500">🔒</span>';
+                  if (mastered) badge = `<span class="text-[10px] text-amber-400 font-bold">⭐ ${score}%</span>`;
+                  else if (unlocked) badge = '<span class="text-[10px] text-emerald-400">🔓</span>';
+
+                  return `
+                    <button onclick="changeSubtopic('${st.id}'); closeSyllabusDrawer(); switchTab('sq3r');" class="w-full text-left p-2.5 rounded-xl text-xs transition flex items-center justify-between gap-2 ${isCurrent ? 'bg-emerald-950/80 border border-emerald-500/60 text-white font-black' : 'bg-space-900/60 text-slate-300 hover:bg-space-850 hover:text-white'} cursor-pointer">
+                      <span class="truncate">${st.code} ${st.title}</span>
+                      ${badge}
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    // =========================================================================
+    // PREV / NEXT SUBTOPIC NAVIGATION & BREADCRUMBS
+    // =========================================================================
+    function getAdjacentSubtopics() {
+      const allSubtopics = getAllSubtopicsForSubject(gState.grade, gState.activeSubject);
+      const curIdx = allSubtopics.findIndex(st => st.id === gState.activeSubtopicId);
+      return {
+        prev: curIdx > 0 ? allSubtopics[curIdx - 1] : null,
+        current: allSubtopics[curIdx],
+        next: curIdx < allSubtopics.length - 1 ? allSubtopics[curIdx + 1] : null,
+        index: curIdx,
+        total: allSubtopics.length
+      };
+    }
+
+    function goToPrevSubtopic() {
+      const { prev } = getAdjacentSubtopics();
+      if (prev) {
+        changeSubtopic(prev.id);
+        showToast(`ወደ ቀደመው ርዕስ ተመልሰሃል፦ ${prev.code} ${prev.title}`);
+      } else {
+        showToast('የመጀመሪያው ርዕስ ላይ ነዎት!');
+      }
+    }
+
+    function goToNextSubtopic() {
+      const { next } = getAdjacentSubtopics();
+      if (!next) {
+        showToast('የመጨረሻው ርዕስ ላይ ነዎት! ፈተናውን በመውሰድ የምስክር ወረቀትዎን ያግኙ 🎓');
+        return;
+      }
+
+      if (!isSubtopicUnlocked(next.id) && !gState.gateBypass) {
+        soundError();
+        showToast('🔒 የደረጃ ቁልፍ፦ ቀጣዩ ርዕስ እንዲከፈት ይህንን ርዕስ በፈተና ≥80% ማለፍ አለብዎት!');
+        return;
+      }
+
+      changeSubtopic(next.id);
+      showToast(`ቀጣይ ርዕስ ተከፍቷል፦ ${next.code} ${next.title} 🚀`);
+    }
+
+    function updateSubtopicNavDock() {
+      const { prev, current, next } = getAdjacentSubtopics();
+      const codeEl = document.getElementById('dockCurrentTopicCode');
+      const titleEl = document.getElementById('dockCurrentTopicTitle');
+      const prevBtn = document.getElementById('btnPrevSubtopic');
+      const nextBtn = document.getElementById('btnNextSubtopic');
+
+      if (codeEl && current) codeEl.innerText = current.code;
+      if (titleEl && current) titleEl.innerText = current.title;
+
+      if (prevBtn) {
+        prevBtn.disabled = !prev;
+        prevBtn.style.opacity = prev ? '1' : '0.4';
+      }
+      if (nextBtn) {
+        const canAdvance = next && (gState.gateBypass || isSubtopicUnlocked(next.id));
+        nextBtn.style.opacity = next ? '1' : '0.4';
+      }
+
+      updateBreadcrumbs();
+    }
+
+    function updateBreadcrumbs() {
+      const st = getActiveSubtopic();
+      const unit = getActiveUnit();
+      const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
+      const meta = SUBJECT_METADATA[gState.activeSubject] || { am: '', name: sub.name, icon: '📖' };
+
+      const cSubj = document.getElementById('crumbSubject');
+      const cUnit = document.getElementById('crumbUnit');
+      const cSt = document.getElementById('crumbSubtopic');
+
+      if (cSubj) cSubj.innerHTML = `<span>${meta.icon}</span> <span>${meta.name} (${gState.grade}ኛ ክፍል)</span>`;
+      if (cUnit) cUnit.innerText = `${unit.number}: ${unit.title}`;
+      if (cSt) cSt.innerText = `${st.code} ${st.title}`;
+    }
+
+        function renderActiveUnitView() {
       const sub = GALACTIC_DATABASE[gState.grade][gState.activeSubject];
       const unit = getActiveUnit();
       const st = getActiveSubtopic();
@@ -19958,44 +20361,341 @@ const SUBJECT_METADATA = {
 
       const intelMap = {
         prereq: {
-          math: `ይህ ርዕስ ከዚህ በፊት የተማርካቸውን የመሠረታዊ ቁጥሮች እና የስሌት ደንቦች (Basic Arithmetic & Fractions) በቀጥታ መሠረት ያደረገ ነው። በቅድሚያ የአሃዞችን ዋጋ እና የክፍልፋይ ስሌቶችን ማስታወስህ ለዚህ ርዕስ ከፍተኛ እገዛ ያደርጋል።`,
-          science: `የሳይንሳዊ ምልከታ እና የሙከራ ደንቦች (Laboratory Safety & Units of Measurement) መነሻ ናቸው። የSI አሃዶችን እና የትንታኔ መርሆችን ማስታወስ ይገባል።`,
-          english: `Requires basic vocabulary, parts of speech (Nouns, Verbs, Adjectives), and basic sentence structures studied in primary grades.`,
-          social: `የካርታ ንባብ መርሆዎች፣ አቅጣጫዎች እና የመልክአ-ምድራዊ አቀማመጥ እውቀትን መነሻ ያደርጋል።`,
-          citizenship: `በህብረተሰብ ውስጥ የሰላማዊ አብሮ መኖር፣ የቤተሰብ እና የትምህርት ቤት ህጎች መነሻ ናቸው።`,
-          it: `የኮምፒውተር መሠረታዊ ክፍሎች (Hardware & Software) እና የቁልፍ ሰሌዳ አጠቃቀም መነሻ ናቸው።`
+          math: `
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-space-900 border border-slate-800 space-y-1">
+                <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">📌 የቀደመ የክፍል መነሻ (Prior Foundation):</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  ይህ ርዕስ በ6ኛ እና 7ኛ ክፍል የተማርካቸውን <strong>የመሠረታዊ ቁጥሮች እና ክፍልፋዮች ስሌት (Fractions, Decimals, & Integers)</strong> በቀጥታ መሠረት ያደረገ ነው።
+                </p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                <div class="p-2.5 rounded-xl bg-space-950 border border-slate-800">
+                  <span class="text-amber-400 font-bold block mb-1">🔑 የሚያስፈልግ ቅድመ-እውቀት፦</span>
+                  <ul class="list-disc list-inside space-y-0.5 text-slate-300">
+                    <li>ክፍልፋዮችን ማባዛትና ማካፈል</li>
+                    <li>አዎንታዊ እና አሉታዊ ቁጥሮች (+/-)</li>
+                    <li>የጋራ አባዢዎችን መለየት (GCF / LCM)</li>
+                  </ul>
+                </div>
+                <div class="p-2.5 rounded-xl bg-space-950 border border-slate-800">
+                  <span class="text-emerald-400 font-bold block mb-1">🎯 የቅድመ-ግንዛቤ ፈተና፦</span>
+                  <p class="text-slate-300">ክፍልፋይን ወደ አስረኛ (Decimal) ለመቀየር አሃዛዊውን ለአካፋዩ ማካፈል እንደምንችል ታስታውሳለህ?</p>
+                </div>
+              </div>
+            </div>
+          `,
+          science: `
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-space-900 border border-slate-800 space-y-1">
+                <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">🔬 ሳይንሳዊ መነሻ (Scientific Foundation):</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  የሳይንሳዊ ምልከታ፣ የቤተ-ሙከራ ደንቦች (Laboratory Safety Rules) እና <strong>መደበኛ የልኬት አሃዶች (SI Units)</strong> የዚህ ትምህርት መነሻ መሰረቶች ናቸው።
+                </p>
+              </div>
+              <div class="p-2.5 rounded-xl bg-space-950 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <span class="text-amber-400 font-bold block">⚖️ ወሳኝ የልኬት አሃዶች፦</span>
+                <p>ርዝመት በሜትር (m)፣ ክብደት በኪሎግራም (kg)፣ ጊዜ በሰከንድ (s) እንደሚለካ ማስታወስ ለቀጣይ ቀመሮች እጅግ ወሳኝ ነው።</p>
+              </div>
+            </div>
+          `,
+          english: `
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-space-900 border border-slate-800 space-y-1">
+                <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">📖 Linguistic Foundation:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  Builds on primary sentence structure (Subject + Verb + Object), basic parts of speech, and regular/irregular verb conjugations.
+                </p>
+              </div>
+            </div>
+          `,
+          social: `
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-space-900 border border-slate-800 space-y-1">
+                <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">🌍 ታሪካዊና መልክአ-ምድራዊ መነሻ:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  የካርታ ንባብ መርሆዎች፣ አቅጣጫዎች (Cardinal Points)፣ እና የዘመናት ቅደም ተከተል (Chronology) ለዚህ ምዕራፍ ዋነኛ መነሻዎች ናቸው።
+                </p>
+              </div>
+            </div>
+          `,
+          citizenship: `
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-space-900 border border-slate-800 space-y-1">
+                <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">⚖️ ማህበረሰባዊ መነሻ:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  በቤተሰብ፣ በትምህርት ቤት እና በህብረተሰብ ውስጥ ሰላማዊ አብሮ መኖር፣ የህግ አክባሪነት እና ግዴታን መወጣት መነሻ መሰረቶች ናቸው።
+                </p>
+              </div>
+            </div>
+          `,
+          it: `
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-space-900 border border-slate-800 space-y-1">
+                <span class="text-xs font-black text-emerald-400 uppercase tracking-wider">💻 የቴክኖሎጂ መነሻ:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  የኮምፒውተር መሰረታዊ ክፍሎች (Hardware vs. Software)፣ የማከማቻ እና የግቤት መሣሪያዎች አሰራር መነሻ ነው።
+                </p>
+              </div>
+            </div>
+          `
         },
         core: {
-          math: `<strong>ዋናው ማዕከላዊ ፅንሰ-ሀሳብ፦</strong> ${bp}<br><br>የዚህ ርዕስ ዋና ዓላማ ተማሪው የሒሳብ መዋቅሮችን፣ ቀመሮችን እና የአሰራር ቅደም ተከተሎችን በአግባቡ ተረድቶ በፈተናም ሆነ በዕለት ተዕለት ኑሮው ተግባራዊ እንዲያደርግ ማስቻል ነው።`,
-          science: `<strong>ዋናው ሳይንሳዊ መርህ፦</strong> ${bp}<br><br>ተፈጥሮአዊ ክስተቶችን በምክንያት እና በውጤት (Cause and Effect) በማገናዘብ ሳይንሳዊ ድምዳሜ ላይ መድረስ።`,
-          english: `<strong>Core Language Competency:</strong> ${bp}<br><br>Mastering authentic linguistic context, active comprehension, and syntactic accuracy.`,
-          social: `<strong>የኅብረተሰብ እና የአካባቢ ግንኙነት፦</strong> ${bp}<br><br>ታሪካዊ፣ ጂኦግራፊያዊ እና ኢኮኖሚያዊ ክስተቶችን ከኢትዮጵያ ነባራዊ ሁኔታ ጋር ማስተሳሰር።`,
-          citizenship: `<strong>የዜግነት መብትና ግዴታ፦</strong> ${bp}<br><br>ዲሞክራሲያዊ ተቋማትን ማክበር፣ የህግ የበላይነት እና ኃላፊነት የሚሰማው ዜጋ መሆን።`,
-          it: `<strong>የዲጂታል ቴክኖሎጂ መርህ፦</strong> ${bp}<br><br>የኮምፒውተር ቴክኖሎጂን ለምርታማነት፣ ለፈጠራ እና ለእውቀት ማበልጸጊያ መጠቀም።`
+          math: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-emerald-500/30 space-y-2">
+                <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">🏛️ ማዕከላዊው የትምህርት ፅንሰ-ሀሳብ፦</div>
+                <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">${bp}</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-space-950 border border-slate-800 space-y-2 text-xs">
+                <span class="text-amber-400 font-bold block">🔍 3ቱ ዋና ዋና ነጥቦች፦</span>
+                <ol class="list-decimal list-inside space-y-1 text-slate-300">
+                  <li><strong>ፍቺና ባህሪ፦</strong> ፅንሰ-ሀሳቡ የሚገልጸውን የቁጥሮች ወይም የጂኦሜትሪ ባህሪ መረዳት።</li>
+                  <li><strong>የስሌት ቅደም ተከተል፦</strong> ቀመሮችን ከመጠቀም በፊት ደረጃዎችን በቅደም ተከተል ማደራጀት።</li>
+                  <li><strong>ማጠቃለያ ድምዳሜ፦</strong> የሚገኘውን ውጤት ከመነሻው ጥያቄ ጋር አዛምዶ ትክክለኛነቱን ማረጋገጥ።</li>
+                </ol>
+              </div>
+            </div>
+          `,
+          science: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-emerald-500/30 space-y-2">
+                <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">🔬 ዋናው ሳይንሳዊ መርህ፦</div>
+                <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">${bp}</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-space-950 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+                ሳይንስ የተፈጥሮን ህግጋት በምክንያት እና በውጤት (Cause & Effect) ይተነትናል። ይህ ርዕስ በፈተና ወቅት ቀጥተኛ ሳይንሳዊ ማብራሪያዎችን ይጠይቃል።
+              </div>
+            </div>
+          `,
+          english: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-emerald-500/30 space-y-2">
+                <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">📖 Core Communicative Competency:</div>
+                <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">${bp}</p>
+              </div>
+            </div>
+          `,
+          social: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-emerald-500/30 space-y-2">
+                <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">🌍 ማህበረሰባዊና ተፈጥሯዊ ትስስር፦</div>
+                <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">${bp}</p>
+              </div>
+            </div>
+          `,
+          citizenship: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-emerald-500/30 space-y-2">
+                <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">⚖️ ዲሞክራሲያዊ እሴቶችና መርሆዎች፦</div>
+                <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">${bp}</p>
+              </div>
+            </div>
+          `,
+          it: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-emerald-500/30 space-y-2">
+                <div class="text-xs font-black text-emerald-300 uppercase tracking-wider">💻 የዲጂታል ቴክኖሎጂ መዋቅር፦</div>
+                <p class="text-xs sm:text-sm text-white font-medium leading-relaxed">${bp}</p>
+              </div>
+            </div>
+          `
         },
         formula: {
-          math: `<strong>ቁልፍ ቀመር / ሕግ፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>ይህ ቀመር በደረጃዎች ተተንትኖ የሚሰራ ሲሆን፣ በክልላዊ ፈተናዎች ላይ ቀጥተኛ ስሌት ይጠየቅበታል።`,
-          science: `<strong>ሳይንሳዊ ሕግ እና እኩልዮሽ፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>የአሃዶች ልኬት (Units) እንዳይዘነጋ ጥንቃቄ ያድርጉ።`,
-          english: `<strong>Grammar Rule / Structural Pattern:</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>Always observe subject-verb agreement and contextual tense continuity.`,
-          social: `<strong>የመልክአ-ምድር ወይም የታሪክ ቀመር / ሕግጋት፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>ካርታዎች እና መረጃዎች የሚሰሉበት መደበኛ መለኪያ።`,
-          citizenship: `<strong>የህገ-መንግስት እና የህግ ድንጋጌዎች፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>መብቶች ከግዴታዎች ጋር ተመጣጣኝ መሆን አለባቸው።`,
-          it: `<strong>የኮምፒውተር ሥርዓት ደንብ፦</strong><br><code class="font-mono text-amber-300 font-bold bg-space-950 px-2 py-1 rounded block my-2">${formula}</code>የመረጃ ሂደት ቅደም ተከተል (Input ➔ Process ➔ Output ➔ Storage)።`
+          math: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">⚡ መደበኛ ቀመር እና ትንታኔ (FORMULA DERIVATION):</span>
+                <code class="font-mono text-sm sm:text-base font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl block border border-amber-500/20">${formula}</code>
+              </div>
+              <div class="p-3.5 rounded-xl bg-space-950 border border-slate-800 text-xs space-y-2">
+                <span class="text-emerald-400 font-bold block">📐 የፊደላት ፍቺ (Variables Definition):</span>
+                <p class="text-slate-300 leading-relaxed">
+                  በቀመሩ ውስጥ ያሉትን እያንዳንዱን ተለዋዋጮች (Variables) ለይቶ ማወቅ ስህተትን ሙሉ በሙሉ ያስቀራል። የተሰጡ ቁጥሮችን በቀመሩ ቦታ በጥንቃቄ ተክተህ አቅልል።
+                </p>
+              </div>
+            </div>
+          `,
+          science: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">⚡ ሳይንሳዊ እኩልዮሽ እና ቀመር:</span>
+                <code class="font-mono text-sm sm:text-base font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl block border border-amber-500/20">${formula}</code>
+              </div>
+              <div class="p-3.5 rounded-xl bg-space-950 border border-slate-800 text-xs text-slate-300">
+                አሃዶች (Units) ሁልጊዜ ወደ መደበኛ SI Unit (m, kg, s, N, J) መቀየር እንዳለባቸው አይዘንጉ!
+              </div>
+            </div>
+          `,
+          english: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">⚡ Structural Rule / Pattern:</span>
+                <code class="font-mono text-sm sm:text-base font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl block border border-amber-500/20">${formula}</code>
+              </div>
+            </div>
+          `,
+          social: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">⚡ የልኬት ወይም የታሪክ መደበኛ መመሪያ:</span>
+                <code class="font-mono text-sm sm:text-base font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl block border border-amber-500/20">${formula}</code>
+              </div>
+            </div>
+          `,
+          citizenship: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">⚡ የህግና የመብት ሚዛን:</span>
+                <code class="font-mono text-sm sm:text-base font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl block border border-amber-500/20">${formula}</code>
+              </div>
+            </div>
+          `,
+          it: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">⚡ የመረጃ ፍሰት ስልተ-ቀመር (Algorithm):</span>
+                <code class="font-mono text-sm sm:text-base font-black text-amber-300 bg-space-950 px-4 py-2 rounded-xl block border border-amber-500/20">${formula}</code>
+              </div>
+            </div>
+          `
         },
         pitfall: {
-          math: `<strong>የሚኒስቴር ፈተና ወጥመድ ራዳር (Exam Pitfall):</strong><br>ተማሪዎች አብዛኛውን ጊዜ በምልክቶች (+/-)፣ በቅደም-ተከተል (Order of Operations) እና ክፍልፋዮችን በማቅለል ወቅት ይሳሳታሉ። ፈታኙ አማራጮች ውስጥ የተሳሳተውን መልስ አስቀድሞ ያስቀምጣል!`,
-          science: `<strong>የሚኒስቴር ፈተና ወጥመድ ራዳር (Exam Pitfall):</strong><br>አሃዶችን (Units) አለመቀየር (ለምሳሌ cm ወደ m፣ ወይም g ወደ kg) እና የሳይንሳዊ ቃላትን ትክክለኛ ፍቺ አለመረዳት ዋና ዋና የስህተት ምንጮች ናቸው።`,
-          english: `<strong>Ministry Exam Pitfall:</strong><br>Watch out for irregular verb forms, false cognates, and prepositions that change meaning in phrasal verbs.`,
-          social: `<strong>የፈተና ወጥመድ፦</strong><br>የዘመናት ቅደም ተከተል (Chronology) ማምታታት እና የመልክአ-ምድራዊ መጋጠሚያዎችን (Coordinates) በስህተት ማንበብ።`,
-          citizenship: `<strong>የፈተና ወጥመድ፦</strong><br>መብትን ከነጻነት፣ እንዲሁም ህጋዊ ግዴታን ከሞራላዊ ግዴታ ጋር ማደባለቅ።`,
-          it: `<strong>የፈተና ወጥመድ፦</strong><br>የማስታወሻ አይነቶችን (RAM vs ROM) እና Input vs Output መሳሪያዎችን ማምታታት።`
+          math: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                <div class="flex items-center gap-2 text-rose-300 text-xs font-black uppercase tracking-wider">
+                  <span>⚠️</span> <span>የሚኒስቴር ፈተና ወጥመድ ራዳር (COMMON EXAM TRAPS):</span>
+                </div>
+                <ul class="list-disc list-inside text-xs sm:text-sm text-slate-200 space-y-1.5 leading-relaxed">
+                  <li><strong>ዜሮን እንደ አካፋይ መጠቀም፦</strong> በዜሮ ማካፈል ያልተተረጎመ (Undefined) እንጂ ዜሮ አይደለም! (a/0 ≠ 0)</li>
+                  <li><strong>የምልክቶች ጥንቃቄ፦</strong> አሉታዊ ቁጥርን በአሉታዊ ቁጥር ስናባዛ ወይም ስናካፍል አዎንታዊ (+) እንደሚሆን መዘንጋት።</li>
+                  <li><strong>የስሌት ቅደም ተከተል (PEMDAS)፦</strong> ማባዛትና ማካፈል ከመደመርና መቀነስ ይቀድማሉ።</li>
+                </ul>
+              </div>
+              <div class="p-3 rounded-xl bg-space-950 border border-slate-800 text-xs text-amber-300">
+                💡 <strong>ፈታኙ የሚያዘጋጀው ወጥመድ፦</strong> ተማሪዎች በስህተት የሚያገኙትን ቁጥር ሁልጊዜ በምርጫ (A) ወይም (B) ላይ ያስቀምጠዋል፤ እንዳትሸወድ!
+              </div>
+            </div>
+          `,
+          science: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                <span class="text-xs font-black text-rose-300 uppercase tracking-wider">⚠️ የተለመዱ ሳይንሳዊ የስህተት ወጥመዶች:</span>
+                <ul class="list-disc list-inside text-xs sm:text-sm text-slate-200 space-y-1.5">
+                  <li><strong>መጠነ-ቁስ (Mass) vs. ክብደት (Weight)፦</strong> መጠነ-ቁስ በኪሎግራም (kg) ይለካል፤ ቦታ ቢቀየር አይለወጥም። ክብደት በኒውተን (N) የሚለካ የመሬት ስበት ኃይል ነው።</li>
+                  <li><strong>የሙቀት መጠን vs. ሙቀት (Heat)፦</strong> ሙቀት የኃይል አይነት ሲሆን በJoule ይለካል፤ የሙቀት መጠን ደግሞ በ°C ወይም Kelvin ይለካል።</li>
+                </ul>
+              </div>
+            </div>
+          `,
+          english: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                <span class="text-xs font-black text-rose-300 uppercase tracking-wider">⚠️ Ministry Exam Traps:</span>
+                <ul class="list-disc list-inside text-xs sm:text-sm text-slate-200 space-y-1.5">
+                  <li>Confusing past simple (e.g., 'wrote') with past participle (e.g., 'written').</li>
+                  <li>Subject-verb disagreement with collective nouns and indefinite pronouns ('everyone', 'neither').</li>
+                </ul>
+              </div>
+            </div>
+          `,
+          social: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                <span class="text-xs font-black text-rose-300 uppercase tracking-wider">⚠️ የፈተና ወጥመዶች:</span>
+                <p class="text-xs sm:text-sm text-slate-200">
+                  የኬክሮስ (Latitude - ሰሜን/ደቡብ) እና የኬንትሮስ (Longitude - ምስራቅ/ምዕራብ) መስመሮችን ሚና ማምታታት። ሰዓት የሚሰላው በኬንትሮስ ዲግሪዎች አማካኝነት ነው።
+                </p>
+              </div>
+            </div>
+          `,
+          citizenship: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                <span class="text-xs font-black text-rose-300 uppercase tracking-wider">⚠️ የፈተና ወጥመዶች:</span>
+                <p class="text-xs sm:text-sm text-slate-200">
+                  መብት ወሰን የለውም ብሎ ማሰብ፤ ዲሞክራሲያዊ መብት የሌሎችን ዜጎች መብት እስካልጣሰ ድረስ ብቻ የሚተገበር ነው።
+                </p>
+              </div>
+            </div>
+          `,
+          it: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                <span class="text-xs font-black text-rose-300 uppercase tracking-wider">⚠️ የፈተና ወጥመዶች:</span>
+                <p class="text-xs sm:text-sm text-slate-200">
+                  RAM (ጊዚያዊ ማህደረ-ትውስታ - ኃይል ሲጠፋ መረጃ ይጠፋል) እና ROM (ቋሚ ማህደረ-ትውስታ) ማምታታት።
+                </p>
+              </div>
+            </div>
+          `
         },
         anchor: {
-          math: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>የኢትዮጵያ ብር የገንዘብ ዝውውር፣ የታላቁ የሕዳሴ ግድብ የኮንክሪት መጠን ስሌት፣ እና የላሊበላ ውቅር አብያተ-ክርስቲያናት ምህንድስና ስሌት የዚህ ርዕስ ቀጥተኛ ተግባራዊ ምሳሌዎች ናቸው።`,
-          science: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>የስምጥ ሸለቆ (Great Rift Valley) መፈጠር፣ የኤርታሌ እሳተ-ጎመራ የጂኦሎጂካል ሂደት፣ እና የአዋሽ ተፋሰስ ስነ-ምህዳር ጥናት።`,
-          english: `<strong>Ethiopian Contextual Connection:</strong><br>Describing Ethiopian historic heritage, tourism in the Simien Mountains, and cultural coffee ceremonies using rich academic English.`,
-          social: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>በአፋር ሃዳር የተገኘችው ድንቅነሽ (Lucy/Australopithecus afarensis)፣ የአክሱም ስልጣኔ የንግድ መስመር፣ እና የዓድዋ ድል ታሪካዊ ፋይዳ።`,
-          citizenship: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>የኢትዮጵያ ባህላዊ የግጭት አፈታት ስልቶች (ሽምግልና)፣ የብሔር ብሔረሰቦች ባህል እና የፌዴራል ስርዓት ግንባታ።`,
-          it: `<strong>የኢትዮጵያ እውነታ ትስስር፦</strong><br>በኢትዮጵያ የቴሌኮም ማስፋፊያ፣ የትምህርት ቤት የኮምፒውተር ላቦራቶሪዎች እና የፊደል (Ge'ez script) ዲጂታይዜሽን።`
+          math: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">🇪🇹 የኢትዮጵያ ነባራዊ እውነታ ትስስር (ETHIOPIAN REAL-WORLD ANCHOR):</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  <strong>የኢትዮጵያ ንግድ ባንክ እና የብር ዝውውር፦</strong> ክፍልፋዮችና አስረኛ ቁጥሮች በየቀኑ በኢትዮጵያ የገንዘብ ግብይት (CBE Birr፣ Telebirr እና ወለድ ስሌት) ውስጥ በቀጥታ ስራ ላይ ይውላሉ።
+                </p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-space-950 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <strong class="text-emerald-400 block">🏗️ የታላቁ ህዳሴ ግድብ እና የላሊበላ ምህንድስና፦</strong>
+                <p>የኮንክሪት ስሌት፣ የውሃ ፍሰት እና የድንጋይ ውቅር አብያተ-ክርስቲያናት ምህንድስና የዚህ ርዕስ ተግባራዊ ማሳያዎች ናቸው።</p>
+              </div>
+            </div>
+          `,
+          science: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">🇪🇹 የኢትዮጵያ ተፈጥሮና ጂኦሎጂ:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  የኢትዮጵያ ስምጥ ሸለቆ (Great Rift Valley)፣ የኤርታሌ እሳተ-ጎመራ ባስልት፣ እና የአዋሽ ተፋሰስ ስነ-ምህዳር ጥናት።
+                </p>
+              </div>
+            </div>
+          `,
+          english: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">🇪🇹 Cultural & Tourism Application:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  Writing and speaking about Ethiopia's world heritage sites (Axum, Lalibela, Semien Mountains) using accurate grammar and academic vocabulary.
+                </p>
+              </div>
+            </div>
+          `,
+          social: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">🇪🇹 የታሪክ እና የቅርስ እውነታ:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  በአፋር ሃዳር የተገኘችው ድንቅነሽ (Lucy)، የአክሱም ስልጣኔ፣ እና የዓድዋ ድል ታሪካዊ ፋይዳ በህብረተሰብ ጥናት ውስጥ ዋነኛ ምሳሌዎች ናቸው።
+                </p>
+              </div>
+            </div>
+          `,
+          citizenship: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">🇪🇹 የሀገር ግንባታ እና ባህላዊ ሽምግልና:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  የኢትዮጵያ ባህላዊ የግጭት አፈታት ስልቶች (ሽምግልና፣ የገዳ ስርዓት) እና የህገ-መንግስታዊ ዲሞክራሲ ግንባታ።
+                </p>
+              </div>
+            </div>
+          `,
+          it: `
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-space-900 border border-amber-500/40 space-y-2">
+                <span class="text-xs font-black text-amber-300 uppercase tracking-wider">🇪🇹 የዲጂታል ኢትዮጵያ ራዕይ:</span>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  የትምህርት ቤቶች የኮምፒውተር ላብራቶሪዎች ማስፋፊያ፣ የኢትዮ-ቴሌኮም የኔትወርክ ዝርጋታ እና የግዕዝ ፊደል ዲጂታይዜሽን።
+                </p>
+              </div>
+            </div>
+          `
         }
       };
 
@@ -20005,7 +20705,6 @@ const SUBJECT_METADATA = {
       return fallback;
     }
 
-    // =========================================================================
     // STAGE 1: SURVEY RECONNAISSANCE ENGINE
     // =========================================================================
     let activeConstellationNode = 'core';
@@ -20628,6 +21327,108 @@ const SUBJECT_METADATA = {
       const userNote = gState.userNotes[st.id] || '';
       const customQs = gState.customQuestions[st.id] || [];
 
+      // Generate the 4 Exhaustive Baby Steps
+      const steps = st.example.steps || [];
+      const problemText = st.example.problem || '';
+      const proTip = st.example.proTip || '';
+      const formula = st.survey.keyFormulas || '';
+
+      let babySteps = [];
+      if (steps.length === 4) {
+        babySteps = [
+          {
+            title: 'ደረጃ 1፦ የተሰጡ መረጃዎችንና የሚፈለገውን መለየት (Givens & Problem Setup)',
+            sublabel: steps[0].label,
+            body: steps[0].text,
+            icon: '1'
+          },
+          {
+            title: 'ደረጃ 2፦ የሚመለከተውን ቀመር ወይም ሕግ መምረጥ (Formula & Governing Principles)',
+            sublabel: steps[1].label,
+            body: steps[1].text,
+            icon: '2'
+          },
+          {
+            title: 'ደረጃ 3፦ ደረጃ በደረጃ የሂሳብና የሳይንስ ስሌት በዝርዝር (Baby-Step Calculation & Substitution)',
+            sublabel: steps[2].label,
+            body: steps[2].text,
+            icon: '3'
+          },
+          {
+            title: 'ደረጃ 4፦ የመጨረሻ መልስ ማረጋገጫና የወጥመዶች ትንተና (Verification & Trap Autopsy)',
+            sublabel: steps[3].label,
+            body: steps[3].text,
+            icon: '4'
+          }
+        ];
+      } else if (steps.length === 3) {
+        babySteps = [
+          {
+            title: 'ደረጃ 1፦ የተሰጡ መረጃዎችንና የሚፈለገውን መለየት (Givens & Problem Setup)',
+            sublabel: steps[0].label,
+            body: steps[0].text,
+            icon: '1'
+          },
+          {
+            title: 'ደረጃ 2፦ የሚመለከተውን ቀመር ወይም ሕግ መምረጥ (Formula & Governing Principles)',
+            sublabel: steps[1].label,
+            body: steps[1].text + (formula ? `<div class="mt-2 font-mono text-emerald-300 text-xs bg-space-950 p-2 rounded-xl border border-emerald-500/30">📐 ደንብ/ቀመር፦ ${formula}</div>` : ''),
+            icon: '2'
+          },
+          {
+            title: 'ደረጃ 3፦ ደረጃ በደረጃ የሂሳብና የሳይንስ ስሌት በዝርዝር (Baby-Step Calculation & Substitution)',
+            sublabel: steps[2].label,
+            body: steps[2].text,
+            icon: '3'
+          },
+          {
+            title: 'ደረጃ 4፦ የመጨረሻ መልስ ማረጋገጫና የወጥመዶች ትንተና (Verification & Trap Autopsy)',
+            sublabel: 'የውጤት ማረጋገጫና የወጥመዶች ትንታኔ (Verification)',
+            body: 'የመጨረሻውን ውጤት ከጥያቄው መስፈርት ጋር ማመሳከር፤ የልኬት አሃዶች (Units) ትክክለኛነት ማረጋገጥ እና የተለመዱ ስህተቶችን መከላከል ነው።' + (proTip ? `<div class="mt-2 text-amber-300 font-bold text-xs bg-amber-500/10 p-2.5 rounded-xl border border-amber-500/20">⚠️ ወሳኝ ማስታወሻ፦ ${proTip}</div>` : ''),
+            icon: '4'
+          }
+        ];
+      } else {
+        babySteps = [
+          {
+            title: 'ደረጃ 1፦ የተሰጡ መረጃዎችንና የሚፈለገውን መለየት (Givens & Problem Setup)',
+            sublabel: 'የጥያቄው መነሻና መስፈርት',
+            body: `በጥያቄው ውስጥ የተሰጡት ቁጥሮች፣ ሁኔታዎችና የሚፈለገው ዋና ግብ፦ <strong class="text-white">${problemText}</strong>`,
+            icon: '1'
+          },
+          {
+            title: 'ደረጃ 2፦ የሚመለከተውን ቀመር ወይም ሕግ መምረጥ (Formula & Governing Principles)',
+            sublabel: steps[0] ? steps[0].label : 'መመሪያ',
+            body: (steps[0] ? steps[0].text : '') + (formula ? `<div class="mt-2 font-mono text-emerald-300 text-xs bg-space-950 p-2 rounded-xl border border-emerald-500/30">📐 ደንብ/ቀመር፦ ${formula}</div>` : ''),
+            icon: '2'
+          },
+          {
+            title: 'ደረጃ 3፦ ደረጃ በደረጃ የሂሳብና የሳይንስ ስሌት በዝርዝር (Baby-Step Calculation & Substitution)',
+            sublabel: steps[1] ? steps[1].label : 'ስሌት',
+            body: steps[1] ? steps[1].text : '',
+            icon: '3'
+          },
+          {
+            title: 'ደረጃ 4፦ የመጨረሻ መልስ ማረጋገጫና የወጥመዶች ትንተና (Verification & Trap Autopsy)',
+            sublabel: 'የውጤት ማረጋገጫና ጥንቃቄ',
+            body: 'ውጤቱ ምክንያታዊ መሆኑንና አሃዱ (Unit/Notation) ትክክል መሆኑን ማረጋገጥ።' + (proTip ? `<div class="mt-2 text-amber-300 font-bold text-xs bg-amber-500/10 p-2.5 rounded-xl border border-amber-500/20">⚠️ ወሳኝ ማስታወሻ፦ ${proTip}</div>` : ''),
+            icon: '4'
+          }
+        ];
+      }
+
+      // Dynamic Key Vocabulary from flashcards & survey
+      const vocabList = (st.reciteFlashcards || []).map((card, idx) => {
+        let term = card.q.replace(/^(what is|what are|define|explain|state|give the definition of|what does the symbol)\s+/i, '').replace(/[?]+$/, '').trim();
+        if (!term) term = `ጽንሰ-ሀሳብ ${idx + 1}`;
+        term = term.charAt(0).toUpperCase() + term.slice(1);
+        return {
+          term: term,
+          def: card.a,
+          fullQ: card.q
+        };
+      });
+
       container.innerHTML = `
         <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-7 animate-fadeIn shadow-2xl">
           
@@ -20636,10 +21437,10 @@ const SUBJECT_METADATA = {
             <div>
               <span class="text-xs uppercase font-black text-emerald-400 tracking-wider">ደረጃ 3 ከ 5 • ጥልቅ ንባብ እና ደረጃ-በደረጃ ምሳሌዎች (STAGE 3: READ)</span>
               <h3 class="text-xl sm:text-2xl font-black text-white mt-1 font-display">ዝርዝር ትንታኔ እና በደረጃ የተሰሉ ማብራሪያዎች</h3>
-              <p class="text-xs sm:text-sm text-slate-300">በጥንቃቄ አንብብ፤ በእያንዳንዱ የሒሳብ ወይም የሳይንስ ስሌት ውስጥ የተከናወኑትን ደረጃዎች አስተውል።</p>
+              <p class="text-xs sm:text-sm text-slate-300">በጥንቃቄ አንብብ፤ በእያንዳንዱ የሒሳብ ወይም የሳይንስ ስሌት ውስጥ የተከናወኑትን 4 ደረጃዎች አስተውል።</p>
             </div>
 
-            <!-- Typography & Focus Mode Controls -->
+            <!-- Typography Controls -->
             <div class="shrink-0 flex items-center gap-2 bg-space-950 p-1.5 rounded-2xl border border-slate-800">
               <span class="text-[11px] font-bold text-slate-400 px-2">ፊደል (Font):</span>
               <button onclick="setReadingFontSize('sm')" class="px-2.5 py-1 rounded-xl text-xs font-black transition ${gState.activeFontSize === 'sm' ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-white'} cursor-pointer">A-</button>
@@ -20651,7 +21452,7 @@ const SUBJECT_METADATA = {
           <!-- Main Reading Content & Side Companion Grid -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
-            <!-- Column 1 & 2: Core Textbook & Step-by-Step Worked Example (2 spans) -->
+            <!-- Column 1 & 2: Core Notes, Vocabulary Table, and 4-Step Worked Example -->
             <div class="lg:col-span-2 space-y-6">
               
               <!-- Core Notes Card -->
@@ -20669,14 +21470,58 @@ const SUBJECT_METADATA = {
                 </div>
               </div>
 
-              <!-- EXTREMELY DETAILED BABY-STEP WORKED EXAMPLE -->
+              <!-- DYNAMIC KEY VOCABULARY TABLE (የቁልፍ ቃላት ዝርዝርና ፍቺ) -->
+              ${vocabList.length > 0 ? `
+                <div class="p-5 sm:p-6 rounded-2xl bg-space-950 border border-slate-800 space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-850 pb-3 flex-wrap gap-2">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xl">📚</span>
+                      <div>
+                        <h4 class="text-xs sm:text-sm font-black text-emerald-300 font-display">
+                          የቁልፍ ቃላት ዝርዝርና ፍቺ (KEY VOCABULARY & DEFINITIONS)
+                        </h4>
+                        <p class="text-[11px] text-slate-400">በዚህ ርዕስ ውስጥ ያሉ ወሳኝ ፅንሰ-ሀሳቦችና መደበኛ የትምህርት ሚኒስቴር ፍቺዎቻቸው</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                      MoE Standard Glossary
+                    </span>
+                  </div>
+
+                  <div class="overflow-x-auto rounded-xl border border-slate-850">
+                    <table class="w-full text-left text-xs text-slate-200">
+                      <thead class="bg-space-900 text-slate-300 font-black uppercase text-[10px] tracking-wider border-b border-slate-800">
+                        <tr>
+                          <th class="px-3.5 py-2.5 w-1/3">ቁልፍ ቃል / ፅንሰ-ሀሳብ (Term)</th>
+                          <th class="px-3.5 py-2.5 w-2/3">መደበኛ ፍቺ (MoE Definition)</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-slate-850 font-sans">
+                        ${vocabList.map(v => `
+                          <tr class="hover:bg-space-900/40 transition">
+                            <td class="px-3.5 py-3 align-top font-bold text-emerald-300">
+                              <span class="block">${v.term}</span>
+                              <span class="text-[10px] text-slate-400 font-normal">${v.fullQ}</span>
+                            </td>
+                            <td class="px-3.5 py-3 align-top text-slate-300 leading-relaxed font-mono text-[11px] sm:text-xs">
+                              ${v.def}
+                            </td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- EXTREMELY DETAILED 4-STEP BABY-STEP WORKED EXAMPLE -->
               <div class="p-5 sm:p-7 rounded-2xl bg-gradient-to-br from-space-950 via-space-900 to-space-950 border border-emerald-500/40 space-y-5 shadow-xl">
                 <div class="flex items-center justify-between border-b border-slate-800 pb-3 flex-wrap gap-2">
                   <span class="text-xs sm:text-sm font-black text-emerald-300 flex items-center gap-2 font-display">
                     <span>💡</span> ደረጃ በደረጃ የተሰራ መደበኛ ምሳሌ (STEP-BY-STEP WORKED EXAMPLE)
                   </span>
                   <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
-                    Official Method
+                    Official Method • 4 Baby Steps
                   </span>
                 </div>
                 
@@ -20685,32 +21530,32 @@ const SUBJECT_METADATA = {
                 <!-- Problem Statement -->
                 <div class="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-1">
                   <div class="text-[10px] font-black uppercase text-amber-400 tracking-wider">የተሰጠው የጥያቄ ፅንሰ-ሀሳብ (Problem):</div>
-                  <p class="text-xs sm:text-sm text-slate-200 font-mono font-medium leading-relaxed">${st.example.problem}</p>
+                  <p class="text-xs sm:text-sm text-slate-200 font-mono font-medium leading-relaxed">${problemText}</p>
                 </div>
 
                 <!-- 4-Step Detailed Baby Step Breakdown -->
                 <div class="space-y-3 pt-2">
-                  ${st.example.steps.map((step, sIdx) => `
-                    <div class="p-4 rounded-xl bg-space-900/80 border border-slate-800/80 space-y-1.5 hover:border-emerald-500/40 transition">
-                      <div class="flex items-center justify-between text-xs font-black">
-                        <span class="text-emerald-400 flex items-center gap-2">
-                          <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[10px] border border-emerald-500/30">${sIdx+1}</span>
-                          <span>${step.label}</span>
+                  ${babySteps.map((bStep) => `
+                    <div class="p-4 rounded-xl bg-space-900/80 border border-slate-800/80 space-y-2 hover:border-emerald-500/40 transition">
+                      <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-black gap-1">
+                        <span class="text-emerald-300 flex items-center gap-2">
+                          <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xs font-bold border border-emerald-500/30 shrink-0">${bStep.icon}</span>
+                          <span>${bStep.title}</span>
                         </span>
-                        <span class="text-[10px] text-slate-500">Verified Step</span>
+                        <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 self-start sm:self-auto">${bStep.sublabel}</span>
                       </div>
-                      <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans pl-7">${step.text}</p>
+                      <div class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans pl-0 sm:pl-8">${bStep.body}</div>
                     </div>
                   `).join('')}
                 </div>
 
                 <!-- Pro-Tip Box -->
-                ${st.example.proTip ? `
+                ${proTip ? `
                   <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm text-amber-300 flex items-start gap-3">
                     <span class="text-xl shrink-0">⚠️</span>
                     <div class="space-y-0.5">
                       <strong class="font-black text-amber-200 uppercase tracking-wide">የፈተና ምክረ-ሀሳብ (Pro-Tip):</strong>
-                      <p class="text-amber-300/90 leading-relaxed">${st.example.proTip}</p>
+                      <p class="text-amber-300/90 leading-relaxed">${proTip}</p>
                     </div>
                   </div>
                 ` : ''}
@@ -20724,9 +21569,9 @@ const SUBJECT_METADATA = {
                     <span class="text-[10px] text-slate-400">Micro-Check</span>
                   </div>
                   <p class="text-xs text-slate-200">
-                    ከላይ በተሰራው ምሳሌ መሰረት፣ ዋናው የስሌት ቁልፍ ደረጃ የትኛው እንደሆነ ተረድተሃል?
+                    ከላይ በተሰራው ምሳሌ መሰረት፣ 4ቱን ደረጃዎች በሚገባ ተረድተሃል?
                   </p>
-                  <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-2 flex-wrap">
                     <button onclick="submitInlineCheck(true)" class="px-4 py-2 rounded-xl bg-space-900 hover:bg-emerald-600/30 border border-slate-800 hover:border-emerald-500 text-xs font-bold text-slate-200 transition cursor-pointer">
                       ✔ አዎ፣ ደረጃዎቹን በሙሉ በሚገባ ተረድቻለሁ
                     </button>
@@ -20755,14 +21600,14 @@ const SUBJECT_METADATA = {
                 </p>
 
                 <div class="space-y-2 max-h-56 overflow-y-auto pr-1">
-                  ${st.questions.map((q, idx) => `
+                  ${st.questions.map((q) => `
                     <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-space-900/60 border border-slate-850 text-xs text-slate-300 cursor-pointer">
                       <input type="checkbox" class="mt-0.5 rounded text-emerald-500 focus:ring-0">
                       <span>${q}</span>
                     </label>
                   `).join('')}
 
-                  ${customQs.map((q, idx) => `
+                  ${customQs.map((q) => `
                     <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-amber-950/20 border border-amber-500/20 text-xs text-amber-200 cursor-pointer">
                       <input type="checkbox" class="mt-0.5 rounded text-amber-500 focus:ring-0">
                       <span>${q}</span>
@@ -20846,10 +21691,9 @@ const SUBJECT_METADATA = {
         addXp(20, 'Understanding Verified');
         showToast('ድንቅ ነው! ደረጃ በደረጃ መስራት ስትችል የትኛውም ፈተና አያግድህም። 🌟');
       } else {
-        showToast('ምሳሌውን በድጋሚ ተመልከት ወይም ዶ/ር ደስታን ጠቅ አድርገህ ተጨማሪ ማብራሪያ ጠይቅ! 🤖');
+        showToast('ምሳሌውን በድጋሚ ተመልከት ወይም የቀደሙትን ፅንሰ-ሀሳቦች ከላይ ከማብራሪያው ከልስ! 📚');
       }
     }
-
     // =========================================================================
     // STAGE 4: GIZMO-STYLE ACTIVE RECALL SUITE (NO AI - FAST, TACTILE & RESPONSIVE)
     // =========================================================================
@@ -23790,6 +24634,18 @@ const SUBJECT_METADATA = {
     });
 
     window.addEventListener('keydown', (e) => {
+      // Ctrl+K or Cmd+K opens global search
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openGlobalSearchModal();
+        return;
+      }
+      if (e.key === 'Escape') {
+        closeGlobalSearchModal();
+        closeSyllabusDrawer();
+        return;
+      }
+
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
 
       // Space flips flashcard in Stage 4
@@ -23820,6 +24676,39 @@ const SUBJECT_METADATA = {
       }
     });
   
+    // GLOBAL KEYBOARD NAVIGATION SHORTCUTS
+    function handleGlobalShortcuts(e) {
+      // Ignore if user is actively typing in an input or textarea
+      const tag = (e.target.tagName || '').toLowerCase();
+      const isInput = tag === 'input' || tag === 'textarea';
+
+      // Ctrl+K or / opens Spotlight Search
+      if ((e.ctrlKey && (e.key === 'k' || e.key === 'K')) || (!isInput && e.key === '/')) {
+        e.preventDefault();
+        openGlobalSearchModal();
+        return;
+      }
+
+      // Esc closes modals
+      if (e.key === 'Escape') {
+        closeGlobalSearchModal();
+        closeSyllabusDrawer();
+        return;
+      }
+
+      // Arrow keys for previous/next subtopic when in SQ3R tab and not in an input
+      if (!isInput && gState.activeTab === 'sq3r') {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goToPrevSubtopic();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goToNextSubtopic();
+        }
+      }
+    }
+    window.addEventListener('keydown', handleGlobalShortcuts);
+
   </script>
 </body>
 </html>
