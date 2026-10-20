@@ -5189,18 +5189,19 @@ const SUBJECT_METADATA = {
       const subjects = GALACTIC_DATABASE[grade];
       if (!subjects) {
         return {
-          totalScore: 78,
-          classification: 'Great Distinction (ከፍተኛ ማዕረግ)',
-          badgeIcon: '🥇',
-          badgeColor: 'text-amber-400 bg-amber-500/20 border-amber-500/30',
-          coveragePoints: 26,
-          accuracyPoints: 32,
-          recallPoints: 12,
-          streakPoints: 8,
+          totalScore: 25,
+          classification: 'የመነሻ ደረጃ (Baseline Guessing)',
+          badgeIcon: '⏳',
+          badgeColor: 'text-slate-400 bg-slate-800/80 border-slate-700',
+          coveragePoints: 0,
+          accuracyPoints: 0,
+          guessingPoints: 25,
+          recallFactor: 1.0,
+          testedAccuracy: 0,
+          coveragePct: 0,
           subjectScores: {},
-          masteredCount: 18,
-          totalCount: 92,
-          avgQuiz: 84
+          masteredCount: 0,
+          totalCount: 92
         };
       }
 
@@ -5239,63 +5240,85 @@ const SUBJECT_METADATA = {
           });
         }
 
-        const coverage = sTotal > 0 ? (sMastered / sTotal) : 0;
-        const avgQuiz = sQuizCount > 0 ? (sQuizSum / sQuizCount) : 70; // baseline prior
-        const streakBonus = Math.min(10, (gState.streak || 1) * 1.5);
-        const subjScore = Math.min(100, Math.max(30, Math.round((coverage * 40) + (avgQuiz * 0.5) + streakBonus)));
+        // Realistic subject score:
+        // Coverage of this subject × Average quiz on this subject + Uncovered × 25% (4-choice chance)
+        const sCoverage = sTotal > 0 ? (sMastered / sTotal) : 0;
+        const sAvgQuiz = sQuizCount > 0 ? (sQuizSum / sQuizCount) : 0;
+        const sScore = sTotal > 0 
+          ? Math.round((sCoverage * sAvgQuiz) + ((1 - sCoverage) * 25))
+          : 25;
 
         subjectScores[sKey] = {
-          score: subjScore,
+          score: Math.min(100, Math.max(25, sScore)),
           mastered: sMastered,
           total: sTotal,
-          avgQuiz: Math.round(avgQuiz)
+          avgQuiz: Math.round(sAvgQuiz),
+          coveragePct: Math.round(sCoverage * 100)
         };
       });
 
-      // Component A: Curriculum Coverage (Max 35 points)
+      // 100% REALISTIC HONEST STATISTICAL MODEL:
+      // In a 100-question multiple-choice exam (4 choices: A, B, C, D):
+      // - On topics the student has mastered, expected accuracy = verified quiz average
+      // - On topics the student has NOT covered, expected accuracy = random chance (25%)
       const coverageRatio = totalSubtopics > 0 ? (masteredSubtopics / totalSubtopics) : 0;
-      const coveragePoints = Math.round(coverageRatio * 35);
+      const testedAccuracy = totalAttemptedCount > 0 ? (totalAttemptedScoreSum / totalAttemptedCount) : 0;
 
-      // Component B: Exam Question Accuracy (Max 40 points)
-      const overallAvgQuiz = totalAttemptedCount > 0 ? (totalAttemptedScoreSum / totalAttemptedCount) : 75;
-      const accuracyPoints = Math.round((overallAvgQuiz / 100) * 40);
-
-      // Component C: Active Recall Retention (Max 15 points)
-      let retainedCards = 0;
-      let totalCardsTracked = 0;
+      // SRS Flashcard Retention Multiplier (0.90 to 1.0)
+      let overdueCount = 0;
+      let totalCards = 0;
       if (gState.flashcardIntervals) {
-        Object.values(gState.flashcardIntervals).forEach(interval => {
-          totalCardsTracked++;
-          if (interval >= 7) retainedCards++;
+        Object.values(gState.flashcardIntervals).forEach(inter => {
+          totalCards++;
+          if (inter < 3) overdueCount++;
         });
       }
-      const recallRatio = totalCardsTracked > 0 ? (retainedCards / totalCardsTracked) : 0.65;
-      const recallPoints = Math.round(recallRatio * 15);
+      const retentionFactor = totalCards > 0 ? Math.max(0.90, 1.0 - (overdueCount / totalCards) * 0.1) : 1.0;
 
-      // Component D: Consistency & Streak Habits (Max 10 points)
-      const streakPoints = Math.min(10, Math.round(((gState.streak || 1) * 1.2) + ((gState.level || 1) * 0.8)));
+      // Streak Test-Stamina Bonus (up to 3 extra points for disciplined study habits)
+      const habitBonus = Math.min(3, Math.round((gState.streak || 0) * 0.5));
 
-      const totalScore = Math.min(100, Math.max(25, coveragePoints + accuracyPoints + recallPoints + streakPoints));
+      let rawPredicted = 25;
+      if (totalAttemptedCount === 0 && masteredSubtopics === 0) {
+        rawPredicted = 25; // Pure guessing baseline when nothing is studied
+      } else {
+        const coveredPoints = coverageRatio * (testedAccuracy * retentionFactor);
+        const guessingPoints = (1 - coverageRatio) * 25;
+        rawPredicted = coveredPoints + guessingPoints + habitBonus;
+      }
 
-      let classification = 'Pass (አጥጋቢ ማለፊያ)';
-      let badgeColor = 'text-blue-400 bg-blue-500/20 border-blue-500/30';
-      let badgeIcon = '🥉';
+      const totalScore = Math.min(100, Math.max(25, Math.round(rawPredicted)));
+
+      let classification = 'የመነሻ ደረጃ (Baseline Guessing)';
+      let badgeColor = 'text-slate-400 bg-slate-800/80 border-slate-700';
+      let badgeIcon = '⏳';
+      let verdict = 'እስካሁን ምንም ርዕስ አላጠናህም። ዛሬ ሙሉ ፈተናውን ብትወስድ በአጋጣሚ ግምት 25% ብቻ ነው የምታገኘው። ማለፊያ (50+) ለማግኘት ቢያንስ 32 ርዕሶችን ማጠናቀቅ አለብህ!';
+
       if (totalScore >= 90) {
         classification = 'Very Great Distinction (እጅግ ከፍተኛ ማዕረግ)';
         badgeColor = 'text-amber-400 bg-amber-500/20 border-amber-500/30';
         badgeIcon = '🏆';
+        verdict = `ድንቅ ውጤት! ሙሉውን ሥርዓተ-ትምህርት በሚገባ አጠናቅቀሃል፤ በ${gState.grade}ኛ ክፍል ብሔራዊ ፈተና እጅግ ከፍተኛ ማዕረግ (${totalScore}%) ለማምጣት ሙሉ በሙሉ ዝግጁ ነህ!`;
       } else if (totalScore >= 80) {
         classification = 'Great Distinction (ከፍተኛ ማዕረግ)';
         badgeColor = 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30';
         badgeIcon = '🥇';
+        verdict = `በጣም ጥሩ የትምህርት ሽፋንና ትክክለኛነት አለህ! በአሁኑ ብቃትህ በ${gState.grade}ኛ ክፍል ፈተና ከፍተኛ ማዕረግ (${totalScore}%) ለማግኘት ተቃርበሃል።`;
       } else if (totalScore >= 65) {
         classification = 'Distinction (ማዕረግ)';
         badgeColor = 'text-teal-400 bg-teal-500/20 border-teal-500/30';
         badgeIcon = '🥈';
-      } else if (totalScore < 50) {
-        classification = 'Needs Urgent Review (አስቸኳይ ክለሳ ያስፈልጋል)';
+        verdict = `ጥሩ እድገት እያሳየህ ነው! የፈተና ውጤትህ ${totalScore}% ደርሷል፤ ጥቂት ተጨማሪ ምዕራፎችን በመጨረስ ወደ ከፍተኛ ማዕረግ (80+) ማደግ ትችላለህ።`;
+      } else if (totalScore >= 50) {
+        classification = 'Pass (አጥጋቢ ማለፊያ)';
+        badgeColor = 'text-blue-400 bg-blue-500/20 border-blue-500/30';
+        badgeIcon = '🥉';
+        verdict = `በአሁኑ የትምህርት ሽፋንህና ውጤትህ ማለፊያውን (${totalScore}%) ደፍረሃል! ነገር ግን ወደ ማዕረግ ለማደግ ያልሸፈንካቸውን ክፍሎች ማጠናቀቅ ይኖርብሃል።`;
+      } else {
+        classification = 'Needs More Coverage (ያልተሟላ ሽፋን)';
         badgeColor = 'text-rose-400 bg-rose-500/20 border-rose-500/30';
         badgeIcon = '⚠️';
+        verdict = `ባጠናሃቸው ርዕሶች ላይ ጥሩ ጅምር ቢኖርህም፣ አብዛኛውን የትምህርት ካታሎግ ገና ስላልሸፈንክ አጠቃላይ የፈተና ውጤትህ ${totalScore}% (ከማለፊያ በታች) ነው። ማለፊያ (50+) ለመድረስ የቀሩትን ርዕሶች አጠናክር!`;
       }
 
       return {
@@ -5303,14 +5326,14 @@ const SUBJECT_METADATA = {
         classification,
         badgeColor,
         badgeIcon,
+        verdict,
         subjectScores,
-        coveragePoints,
-        accuracyPoints,
-        recallPoints,
-        streakPoints,
+        testedAccuracy: Math.round(testedAccuracy),
+        coverageRatio,
+        coveragePct: Math.round(coverageRatio * 100),
         masteredCount: masteredSubtopics,
         totalCount: totalSubtopics,
-        avgQuiz: Math.round(overallAvgQuiz)
+        retentionPct: Math.round(retentionFactor * 100)
       };
     }
 
@@ -5340,8 +5363,14 @@ const SUBJECT_METADATA = {
 
       const verdictEl = document.getElementById('dashPredictedVerdict');
       if (verdictEl) {
-        verdictEl.innerHTML = `በተጨባጭ ባሳየኸው የትምህርት ሽፋን፣ የጥያቄዎች ትክክለኛነት እና የክለሳ ልማድ መሰረት በ${gState.grade}ኛ ክፍል የክልል ፈተና <strong class="text-emerald-300 font-bold">${pred.totalScore}%</strong> ለማስመዝገብ ዝግጁ ነህ!`;
+        verdictEl.innerText = pred.verdict;
       }
+
+      const testedAccEl = document.getElementById('dashTestedAccuracy');
+      if (testedAccEl) testedAccEl.innerText = `${pred.testedAccuracy}%`;
+
+      const covFracEl = document.getElementById('dashCoverageFraction');
+      if (covFracEl) covFracEl.innerText = `${pred.masteredCount} / ${pred.totalCount} ርዕሶች (${pred.coveragePct}%)`;
 
       const stNameEl = document.getElementById('dashPredictorStudentName');
       if (stNameEl) stNameEl.innerText = gState.studentName || 'ዳግማዊ';
@@ -5349,26 +5378,21 @@ const SUBJECT_METADATA = {
       const gradeEl = document.getElementById('dashPredictorGrade');
       if (gradeEl) gradeEl.innerText = `${gState.grade}ኛ ክፍል`;
 
-      // 4-Factors
+      // 4-Factors Realistic
       const fc = document.getElementById('dashFactorCoverage');
-      if (fc) fc.innerText = `${pred.coveragePoints} / 35`;
+      if (fc) fc.innerText = `${pred.masteredCount} / ${pred.totalCount} (${pred.coveragePct}%)`;
       const fcb = document.getElementById('dashFactorCoverageBar');
-      if (fcb) fcb.style.width = `${Math.round((pred.coveragePoints / 35) * 100)}%`;
+      if (fcb) fcb.style.width = `${pred.coveragePct}%`;
 
       const fa = document.getElementById('dashFactorAccuracy');
-      if (fa) fa.innerText = `${pred.accuracyPoints} / 40`;
+      if (fa) fa.innerText = `${pred.testedAccuracy}%`;
       const fab = document.getElementById('dashFactorAccuracyBar');
-      if (fab) fab.style.width = `${Math.round((pred.accuracyPoints / 40) * 100)}%`;
+      if (fab) fab.style.width = `${pred.testedAccuracy}%`;
 
       const fr = document.getElementById('dashFactorRecall');
-      if (fr) fr.innerText = `${pred.recallPoints} / 15`;
+      if (fr) fr.innerText = `${pred.retentionPct}%`;
       const frb = document.getElementById('dashFactorRecallBar');
-      if (frb) frb.style.width = `${Math.round((pred.recallPoints / 15) * 100)}%`;
-
-      const fco = document.getElementById('dashFactorConsistency');
-      if (fco) fco.innerText = `${pred.streakPoints} / 10`;
-      const fcob = document.getElementById('dashFactorConsistencyBar');
-      if (fcob) fcob.style.width = `${Math.round((pred.streakPoints / 10) * 100)}%`;
+      if (frb) frb.style.width = `${pred.retentionPct}%`;
     }
 
     function openPredictorModal() {
@@ -5394,8 +5418,8 @@ const SUBJECT_METADATA = {
         grid.innerHTML = Object.keys(subjects).map(sKey => {
           const sObj = subjects[sKey];
           const meta = SUBJECT_METADATA[sKey] || { am: '', name: sObj.name, icon: sObj.icon };
-          const sInfo = pred.subjectScores[sKey] || { score: 75, mastered: 3, total: 15 };
-          const barColor = sInfo.score >= 80 ? 'bg-emerald-500' : (sInfo.score >= 60 ? 'bg-cyan-500' : 'bg-amber-500');
+          const sInfo = pred.subjectScores[sKey] || { score: 25, mastered: 0, total: 15, avgQuiz: 0, coveragePct: 0 };
+          const barColor = sInfo.score >= 80 ? 'bg-emerald-500' : (sInfo.score >= 50 ? 'bg-cyan-500' : 'bg-amber-500');
           return `
             <div class="p-3.5 rounded-xl bg-space-950 border border-slate-800 space-y-2">
               <div class="flex items-center justify-between">
@@ -5408,7 +5432,7 @@ const SUBJECT_METADATA = {
                 <div class="h-full ${barColor} rounded-full" style="width: ${sInfo.score}%"></div>
               </div>
               <div class="flex justify-between text-[10px] text-slate-400">
-                <span>የተካኑ፦ ${sInfo.mastered}/${sInfo.total}</span>
+                <span>የተካኑ፦ ${sInfo.mastered}/${sInfo.total} (${sInfo.coveragePct}%)</span>
                 <span>${meta.am}</span>
               </div>
             </div>
@@ -5451,15 +5475,18 @@ const SUBJECT_METADATA = {
             <div class="p-3 rounded-xl bg-space-900 border border-slate-800 flex items-center justify-between gap-3 flex-wrap">
               <div>
                 <span class="text-xs font-bold text-white">${w.subtopic.code} ${w.subtopic.title}</span>
-                <span class="text-[10px] text-slate-400 block">${w.unit.number} • የአሁኑ ውጤት፦ <strong class="text-rose-400">${w.score}%</strong></span>
+                <span class="text-[10px] text-slate-400 block">${w.unit.number} • የአሁኑ ውጤት፦ <strong class="${w.score > 0 ? 'text-rose-400' : 'text-slate-500'}">${w.score > 0 ? w.score + '%' : 'ገና አልተጠናም'}</strong></span>
               </div>
               <button onclick="jumpToSubtopicFromSearch('${w.grade}', '${w.subjectKey}', '${w.subtopic.id}'); closePredictorModal();" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition cursor-pointer">
-                ይህን ርዕስ ከልስ ➔
+                ይህን ርዕስ ጀምር ➔
               </button>
             </div>
           `).join('');
         }
       }
+
+      // Initialize What-If Simulator
+      simulateTargetScore(15);
     }
 
     function closePredictorModal() {
@@ -5467,14 +5494,59 @@ const SUBJECT_METADATA = {
       if (modal) modal.classList.add('hidden');
     }
 
+    // Realistic What-If Goal Simulator
+    function simulateTargetScore(additionalTopics) {
+      const addCount = Number(additionalTopics) || 0;
+      const pred = computePredictedExamScore();
+      const totalCount = pred.totalCount || 92;
+      const currentMastered = pred.masteredCount || 0;
+
+      const simulatedMastered = Math.min(totalCount, currentMastered + addCount);
+      const simulatedCoverage = simulatedMastered / totalCount;
+      const targetAccuracy = pred.testedAccuracy > 50 ? pred.testedAccuracy : 85;
+
+      const simulatedScore = Math.min(100, Math.round((simulatedCoverage * targetAccuracy) + ((1 - simulatedCoverage) * 25)));
+      const gain = simulatedScore - pred.totalScore;
+
+      const lbl = document.getElementById('simulatorAddTopicsLabel');
+      if (lbl) lbl.innerText = `+${addCount} ርዕሶች`;
+
+      const pScore = document.getElementById('simulatorProjectedScore');
+      if (pScore) pScore.innerText = `${simulatedScore} / 100`;
+
+      const pGain = document.getElementById('simulatorProjectedGain');
+      if (pGain) pGain.innerText = gain >= 0 ? `(+${gain} ነጥብ ጭማሪ!)` : '';
+
+      const tBadge = document.getElementById('simulatorTargetBadge');
+      if (tBadge) {
+        if (simulatedScore >= 90) {
+          tBadge.className = 'text-xs px-3 py-1.5 rounded-xl font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30';
+          tBadge.innerText = '🏆 ግብ፦ እጅግ ከፍተኛ ማዕረግ (Very Great Distinction) ላይ ትደርሳለህ!';
+        } else if (simulatedScore >= 80) {
+          tBadge.className = 'text-xs px-3 py-1.5 rounded-xl font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+          tBadge.innerText = '🥇 ግብ፦ ከፍተኛ ማዕረግ (Great Distinction) ላይ ትደርሳለህ!';
+        } else if (simulatedScore >= 65) {
+          tBadge.className = 'text-xs px-3 py-1.5 rounded-xl font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30';
+          tBadge.innerText = '🥈 ግብ፦ ማዕረግ (Distinction) ላይ ትደርሳለህ!';
+        } else if (simulatedScore >= 50) {
+          tBadge.className = 'text-xs px-3 py-1.5 rounded-xl font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30';
+          tBadge.innerText = '🥉 ግብ፦ የፈተናውን ማለፊያ (Pass 50+) ትሻገራለህ!';
+        } else {
+          tBadge.className = 'text-xs px-3 py-1.5 rounded-xl font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30';
+          const needed = Math.max(1, Math.round(((50 - 25) / (85 - 25)) * totalCount) - currentMastered);
+          tBadge.innerText = `⚠️ ማለፊያ (50+) ለመድረስ ቢያንስ ${needed} ተጨማሪ ርዕሶችን ማጠናቀቅ አለብህ`;
+        }
+      }
+    }
+
     function checkExamReadinessLive() {
       soundSuccess();
       renderScorePredictor();
       openPredictorModal();
-      showToast('የቀጥታ ብቃት ዳሰሳ ተካሂዷል! ትንበያው አድሷል። 🎯');
+      showToast('እውነተኛው የፈተና ዝግጁነት ዳሰሳ ተካሂዷል! 🎯');
     }
 
-    // Quick 5-Question Readiness Drill
+    // 10-Question Real Diagnostic Checkpoint
     let readinessDrillActive = false;
     let drillQuestions = [];
     let drillCurrentIdx = 0;
@@ -5498,6 +5570,7 @@ const SUBJECT_METADATA = {
                   subjectName: subjects[sKey].name,
                   subtopicCode: st.code,
                   subtopicTitle: st.title,
+                  stId: st.id,
                   q: q
                 });
               });
@@ -5507,7 +5580,7 @@ const SUBJECT_METADATA = {
       });
 
       allQs.sort(() => 0.5 - Math.random());
-      drillQuestions = allQs.slice(0, 5);
+      drillQuestions = allQs.slice(0, 10);
       drillCurrentIdx = 0;
       drillScore = 0;
       readinessDrillActive = true;
@@ -5521,16 +5594,26 @@ const SUBJECT_METADATA = {
 
       if (drillCurrentIdx >= drillQuestions.length) {
         soundCelebration();
-        addXp(50, 'Readiness Drill Completed');
+        addXp(100, '10-Question Diagnostic Checkpoint');
         const pct = Math.round((drillScore / drillQuestions.length) * 100);
+        
+        // Record verified diagnostic performance into gState
+        if (!gState.masteredSubtopics) gState.masteredSubtopics = {};
+        drillQuestions.forEach(item => {
+          if (!gState.masteredSubtopics[item.stId]) {
+            gState.masteredSubtopics[item.stId] = pct;
+          }
+        });
+        saveState();
+
         container.innerHTML = `
           <div class="text-center py-4 space-y-3">
             <span class="text-3xl">🎉</span>
-            <h4 class="text-base font-black text-white">ፍተሻው ተጠናቋል!</h4>
-            <p class="text-xs text-slate-300">ውጤት፦ <strong class="text-emerald-400 font-bold">${drillScore} / ${drillQuestions.length} (${pct}%)</strong></p>
-            <p class="text-[11px] text-amber-300">+50 XP ተጨምሯል፤ የተገመተውን ውጤትህን አሻሽለሃል!</p>
-            <button onclick="document.getElementById('readinessDrillContainer').classList.add('hidden'); renderScorePredictor();" class="px-5 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer">
-              ውጤቴን መዝግብ ➔
+            <h4 class="text-base font-black text-white font-display">የቀጥታ ፍተሻው ተጠናቋል!</h4>
+            <p class="text-xs text-slate-300">እውነተኛ ውጤት፦ <strong class="text-emerald-400 font-bold">${drillScore} / ${drillQuestions.length} (${pct}%)</strong></p>
+            <p class="text-[11px] text-amber-300">+100 XP ተጨምሯል፤ የተገመተው ውጤትህ በእውነተኛው አፈጻጸምህ መሰረት ታድሷል!</p>
+            <button onclick="document.getElementById('readinessDrillContainer').classList.add('hidden'); renderScorePredictor(); openPredictorModal();" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer shadow-lg shadow-emerald-600/30">
+              ውጤቴን መዝግብና ትንበያዬን ተመልከት ➔
             </button>
           </div>
         `;
@@ -5573,7 +5656,6 @@ const SUBJECT_METADATA = {
       renderDrillQuestion();
     }
 
-    // =========================================================================
     // STUDENT PROFILE, MULTI-ACCOUNT & LOCALSTORAGE PERSISTENCE HUB
     // =========================================================================
     function getStoredProfiles() {
