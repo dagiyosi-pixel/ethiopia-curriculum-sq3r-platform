@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('Running Gizmo-Style SQ3R Acceptance Suite (Mobile-First, No AI, Grade 7 & 8)...\n');
+console.log('Running Gizmo-Style SQ3R Acceptance Suite (Mobile-First, No AI, Grade 7 & 8, Score Predictor, Profile Hub)...\n');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 
@@ -30,7 +30,12 @@ const tests = [
   { name: '22. Global Spotlight Search Modal (#globalSearchModal, performGlobalSearch)', pass: html.includes('id="globalSearchModal"') && html.includes('performGlobalSearch') },
   { name: '23. Slide-Out Syllabus Drawer (#syllabusDrawerModal, renderSyllabusDrawer)', pass: html.includes('id="syllabusDrawerModal"') && html.includes('renderSyllabusDrawer') },
   { name: '24. Floating Subtopic Navigation Dock (#subtopicNavDock, goToPrevSubtopic, goToNextSubtopic)', pass: html.includes('id="subtopicNavDock"') && html.includes('goToPrevSubtopic') && html.includes('goToNextSubtopic') },
-  { name: '25. Dual-Grade Search & Global Keyboard Navigation Shortcuts', pass: html.includes('handleGlobalShortcuts') && html.includes("['7', '8']") }
+  { name: '25. Dual-Grade Search & Global Keyboard Navigation Shortcuts', pass: html.includes('handleGlobalShortcuts') && html.includes("['7', '8']") },
+  { name: '26. National Exam Score Predictor Card on Dashboard (#dashScorePredictorCard, #dashPredictedScoreValue)', pass: html.includes('id="dashScorePredictorCard"') && html.includes('id="dashPredictedScoreValue"') && html.includes('computePredictedExamScore') },
+  { name: '27. Score Predictor & Readiness Audit Modal (#predictorAuditModal, checkExamReadinessLive)', pass: html.includes('id="predictorAuditModal"') && html.includes('openPredictorModal') && html.includes('checkExamReadinessLive') },
+  { name: '28. Student Profile & Login Hub Modal (#studentProfileModal, saveStudentProfileForm)', pass: html.includes('id="studentProfileModal"') && html.includes('openStudentProfileModal') && html.includes('saveStudentProfileForm') },
+  { name: '29. Multi-Profile Storage & JSON Progress Backup/Restore (exportStudentProgressJson, importStudentProgressJson)', pass: html.includes('exportStudentProgressJson') && html.includes('importStudentProgressJson') && html.includes('sq3r_student_profiles') },
+  { name: '30. Mobile Bottom Nav Predictor Tab & Header Score Pill (#bottomNav-predictor, #headerScorePredictor)', pass: html.includes('id="bottomNav-predictor"') && html.includes('id="headerScorePredictor"') }
 ];
 
 let allPassed = true;
@@ -41,7 +46,7 @@ tests.forEach(function(t) {
 });
 
 console.log('\n======================================================');
-console.log(allPassed ? 'ALL 25 GIZMO & MOBILE SUITE ACCEPTANCE CRITERIA PASSED 100%!' : 'SOME CRITERIA FAILED!');
+console.log(allPassed ? 'ALL 30 GIZMO & MOBILE SUITE ACCEPTANCE CRITERIA PASSED 100%!' : 'SOME CRITERIA FAILED!');
 console.log('======================================================');
 
 if (!allPassed) process.exit(1);

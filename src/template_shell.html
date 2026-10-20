@@ -322,6 +322,22 @@
           </div>
 
           
+          
+          <!-- Live National Exam Score Predictor Pill (0-100) -->
+          <button onclick="openPredictorModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-space-850 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 text-xs font-bold transition shadow-sm cursor-pointer group" title="National Exam Score Predictor (Press P)">
+            <span class="text-sm">🎯</span>
+            <span class="hidden sm:inline">ትንበያ፦</span>
+            <span id="headerScorePredictor" class="font-mono font-black text-amber-400 group-hover:scale-110 transition">84</span>
+            <span class="text-[10px] text-slate-400">/100</span>
+          </button>
+
+          <!-- Student Profile & Multi-Account Pill -->
+          <button onclick="openStudentProfileModal()" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 hover:border-amber-500/50 text-slate-200 text-xs font-bold transition cursor-pointer" title="Student Profile & Multi-Account Login (Press U)">
+            <span id="headerUserAvatar" class="text-sm">🦁</span>
+            <span id="headerStudentName" class="truncate max-w-[100px] text-amber-300 font-bold hidden md:inline">ዳግማዊ</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded bg-space-950 text-slate-400 border border-slate-800 hidden lg:inline">መገለጫ</span>
+          </button>
+
           <!-- Global Search Button -->
           <button onclick="openGlobalSearchModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-space-850 hover:bg-emerald-600/30 border border-slate-700 hover:border-emerald-500/50 text-slate-200 text-xs font-bold transition shadow-sm cursor-pointer" title="Search all topics & formulas (Ctrl+K)">
             <span>🔍</span>
@@ -490,6 +506,113 @@
             <div class="text-[11px] text-purple-300/90 font-medium flex items-center gap-1">
               <span>🧠</span> <span>Spaced Repetition Active</span>
             </div>
+          </div>
+        </div>
+
+        
+        <!-- =============================================================== -->
+        <!-- NATIONAL EXAMINATION SCORE PREDICTOR & READINESS AUDIT CARD     -->
+        <!-- =============================================================== -->
+        <div id="dashScorePredictorCard" class="glass-card p-6 sm:p-7 rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-space-900 via-space-950 to-space-900 shadow-2xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 relative z-10">
+            
+            <!-- Left: Predicted Score Radial & Official Classification -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+              <div class="relative w-28 h-28 sm:w-32 sm:h-32 shrink-0 flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent"/>
+                  <circle id="dashScoreGaugeCircle" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-emerald-400 transition-all duration-1000" stroke-dasharray="264" stroke-dashoffset="42" stroke-linecap="round" fill="transparent"/>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                  <div class="flex items-baseline">
+                    <span id="dashPredictedScoreValue" class="text-3xl sm:text-4xl font-black text-white font-display">84</span>
+                    <span class="text-xs font-bold text-slate-400 ml-0.5">/100</span>
+                  </div>
+                  <span class="text-[9px] uppercase font-black tracking-widest text-emerald-400">የተገመተ ውጤት</span>
+                </div>
+              </div>
+
+              <div class="space-y-2 text-center sm:text-left">
+                <div class="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                    <span>🇪🇹</span> የብሔራዊ ፈተና ውጤት ትንበያ
+                  </span>
+                  <span id="dashPredictedClassBadge" class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30 flex items-center gap-1">
+                    <span>🥇</span> Great Distinction (ከፍተኛ ማዕረግ)
+                  </span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-black text-white font-display">የአሁኑ የፈተና ብቃት ትንበያ (National Exam Forecast)</h3>
+                <p id="dashPredictedVerdict" class="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+                  በተጨባጭ ባሳየኸው የትምህርት ሽፋን፣ የጥያቄዎች ትክክለኛነት እና የክለሳ ልማድ መሰረት በ7ኛ እና 8ኛ ክፍል የክልል ፈተና <strong class="text-emerald-300 font-bold">84%</strong> ለማስመዝገብ ዝግጁ ነህ!
+                </p>
+                <div class="text-[11px] text-slate-400 flex items-center justify-center sm:justify-start gap-3 pt-1">
+                  <span>ተማሪ፦ <strong class="text-white" id="dashPredictorStudentName">ዳግማዊ</strong></span>
+                  <span>•</span>
+                  <span>ክፍል፦ <strong class="text-amber-400" id="dashPredictorGrade">7ኛ ክፍል</strong></span>
+                  <span>•</span>
+                  <span id="dashPredictorLastAudited">ዛሬ የተሰላ</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: 4-Factor Breakdown & Action Buttons -->
+            <div class="flex flex-col justify-between gap-4 lg:w-80 shrink-0 border-t lg:border-t-0 lg:border-l border-slate-800 pt-4 lg:pt-0 lg:pl-6">
+              
+              <!-- 4-Factor Meters -->
+              <div class="space-y-2 text-xs">
+                <div>
+                  <div class="flex justify-between text-slate-300 mb-1">
+                    <span>📚 የትምህርት ሽፋን (Coverage)</span>
+                    <strong class="text-emerald-400 font-mono" id="dashFactorCoverage">28 / 35</strong>
+                  </div>
+                  <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div id="dashFactorCoverageBar" class="h-full bg-emerald-500 rounded-full" style="width: 80%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-slate-300 mb-1">
+                    <span>🎯 የፈተና ጥያቄዎች ትክክለኛነት (Accuracy)</span>
+                    <strong class="text-cyan-400 font-mono" id="dashFactorAccuracy">34 / 40</strong>
+                  </div>
+                  <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div id="dashFactorAccuracyBar" class="h-full bg-cyan-500 rounded-full" style="width: 85%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-slate-300 mb-1">
+                    <span>🧠 ንቁ ማስታወስ (SRS Retention)</span>
+                    <strong class="text-purple-400 font-mono" id="dashFactorRecall">13 / 15</strong>
+                  </div>
+                  <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div id="dashFactorRecallBar" class="h-full bg-purple-500 rounded-full" style="width: 86%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-slate-300 mb-1">
+                    <span>🔥 ተከታታይነት (Habits & Streak)</span>
+                    <strong class="text-amber-400 font-mono" id="dashFactorConsistency">9 / 10</strong>
+                  </div>
+                  <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div id="dashFactorConsistencyBar" class="h-full bg-amber-500 rounded-full" style="width: 90%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex items-center gap-2 pt-2">
+                <button onclick="openPredictorModal()" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 cursor-pointer">
+                  <span>🔍</span> <span>የዝርዝር ብቃት ትንተና ፈትሽ</span>
+                </button>
+                <button onclick="openStudentProfileModal()" class="p-2.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 text-slate-300 hover:text-white transition cursor-pointer" title="Manage Profile & Save Data">
+                  <span>👤</span>
+                </button>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
@@ -1677,6 +1800,245 @@
     </div>
   </div>
 
+  
+  <!-- ========================================================================= -->
+  <!-- 3. NATIONAL EXAM SCORE PREDICTOR & DIAGNOSTIC AUDIT MODAL                  -->
+  <!-- ========================================================================= -->
+  <div id="predictorAuditModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-space-950/85 backdrop-blur-md">
+    <div class="glass-card max-w-3xl w-full max-h-[92vh] overflow-y-auto p-5 sm:p-7 rounded-3xl border border-emerald-500/40 space-y-6 relative bg-space-900 shadow-2xl animate-fadeIn">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center text-xl shrink-0">
+            🎯
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-white font-display">የብሔራዊ ፈተና ውጤት ትንበያና የብቃት ዳሰሳ</h3>
+            <p class="text-xs text-slate-400">National Examination Grade Predictor & Diagnostic Readiness Engine</p>
+          </div>
+        </div>
+        <button onclick="closePredictorModal()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- Main Score Hero -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-space-950 via-space-900 to-space-950 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-5">
+          <div class="w-24 h-24 rounded-full bg-emerald-500/10 border-4 border-emerald-500 flex flex-col items-center justify-center shrink-0">
+            <span id="modalPredictedScore" class="text-3xl font-black text-white font-display">84</span>
+            <span class="text-[9px] uppercase tracking-wider text-emerald-400">ከ 100</span>
+          </div>
+          <div class="space-y-1">
+            <div id="modalPredictedBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-300 border border-amber-500/30">
+              <span>🥇</span> Great Distinction (ከፍተኛ ማዕረግ)
+            </div>
+            <h4 class="text-sm sm:text-base font-bold text-white">ይህ ውጤት እንዴት ተሰላ? (Scoring Formula)</h4>
+            <p class="text-xs text-slate-300 leading-relaxed max-w-md">
+              ሽፋን (35 ነጥብ) + የፈተናዎች ትክክለኛነት (40 ነጥብ) + የፍላሽ ካርዶች ማስታወስ (15 ነጥብ) + የጥናት ፅናት (10 ነጥብ)።
+            </p>
+          </div>
+        </div>
+
+        <button onclick="checkExamReadinessLive()" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs transition flex items-center gap-2 shrink-0 cursor-pointer shadow-lg shadow-emerald-600/30">
+          <span>⚡</span> <span>ውጤቴን አሁን ገምግም (Re-Audit)</span>
+        </button>
+      </div>
+
+      <!-- Subject-by-Subject Forecast Breakdown -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
+            <span>📊</span> የትምህርት አይነቶች ዝርዝር ትንበያ (Subject Breakdown)
+          </h4>
+          <span class="text-[11px] text-slate-400">እያንዳንዱ ከ 100%</span>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3" id="modalSubjectForecastGrid">
+          <!-- Dynamically populated 6 subjects -->
+        </div>
+      </div>
+
+      <!-- Top Weakest Areas & 1-Click Action Steps -->
+      <div class="p-5 rounded-2xl bg-space-950 border border-amber-500/30 space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">⚠️</span>
+            <h4 class="text-xs sm:text-sm font-black text-amber-300">አስቸኳይ ክለሳ የሚያስፈልጋቸው ርዕሶች (Priority Targets for 90%+)</h4>
+          </div>
+          <span class="text-[10px] text-amber-400 font-mono">Quick Upgrade</span>
+        </div>
+        <p class="text-xs text-slate-300">
+          እነዚህን ርዕሶች በመከለስና የፈተና ጥያቄዎቻቸውን በመስራት የተገመተውን ውጤትህን ወደ <strong>95+ (እጅግ ከፍተኛ ማዕረግ)</strong> ማሳደግ ትችላለህ፦
+        </p>
+        <div class="space-y-2 pt-1" id="modalWeakTopicsContainer">
+          <!-- Dynamically populated weak topics -->
+        </div>
+      </div>
+
+      <!-- Quick 5-Question Readiness Drill Trigger -->
+      <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <span class="text-xs font-black text-white flex items-center gap-1.5">
+            <span>⏱️</span> የ5 ደቂቃ የፈጣን ብቃት ፍተሻ (Quick Readiness Drill)
+          </span>
+          <p class="text-[11px] text-slate-400">5 ድንገተኛ የፈተና ጥያቄዎችን በመመለስ የአሁኑን ዝግጁነትህን ፈትሽ።</p>
+        </div>
+        <button onclick="startReadinessDrill()" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition cursor-pointer">
+          ፍተሻውን ጀምር (+50 XP) ➔
+        </button>
+      </div>
+
+      <!-- Drill Playground Container (Hidden by default) -->
+      <div id="readinessDrillContainer" class="hidden p-5 rounded-2xl bg-space-950 border border-emerald-500/50 space-y-4 animate-fadeIn">
+        <!-- Rendered when drill is started -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs text-slate-400">
+        <span>የውጤት ትንበያው በእውነተኛ የትምህርት ሚኒስቴር ስታንዳርድ የተሰላ ነው</span>
+        <button onclick="closePredictorModal()" class="px-4 py-2 rounded-xl bg-space-850 hover:bg-space-800 text-slate-200 font-bold transition cursor-pointer">
+          ዝጋ (Close)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 4. STUDENT PROFILE, MULTI-ACCOUNT & PROGRESS BACKUP HUB                    -->
+  <!-- ========================================================================= -->
+  <div id="studentProfileModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-space-950/85 backdrop-blur-md">
+    <div class="glass-card max-w-xl w-full max-h-[92vh] overflow-y-auto p-5 sm:p-7 rounded-3xl border border-slate-700 space-y-6 relative bg-space-900 shadow-2xl animate-fadeIn">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center text-xl shrink-0">
+            👤
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-white font-display">የተማሪ መገለጫና መረጃዎች (Student Hub)</h3>
+            <p class="text-xs text-slate-400">Profile, Multi-Student Login & Progress Backup</p>
+          </div>
+        </div>
+        <button onclick="closeStudentProfileModal()" class="w-8 h-8 rounded-full bg-space-850 hover:bg-space-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- Profile Form -->
+      <div class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">የተማሪው ስም (Student Full Name):</label>
+            <input type="text" id="profInputName" class="w-full bg-space-950 border border-slate-800 focus:border-emerald-500 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white focus:outline-none" placeholder="ለምሳሌ፦ ዳግማዊ ተሾመ">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">የትምህርት ቤት ስም (School):</label>
+            <input type="text" id="profInputSchool" class="w-full bg-space-950 border border-slate-800 focus:border-emerald-500 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white focus:outline-none" placeholder="ለምሳሌ፦ ዳግማዊ ምኒልክ ት/ቤት">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">ክልል / ከተማ (Region):</label>
+            <select id="profInputRegion" class="w-full bg-space-950 border border-slate-800 focus:border-emerald-500 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white focus:outline-none cursor-pointer">
+              <option value="አዲስ አበባ">አዲስ አበባ (Addis Ababa)</option>
+              <option value="ኦሮሚያ">ኦሮሚያ (Oromia)</option>
+              <option value="አማራ">አማራ (Amhara)</option>
+              <option value="ሲዳማ">ሲዳማ (Sidama)</option>
+              <option value="ደቡብ ኢትዮጵያ">ደቡብ ኢትዮጵያ (South Ethiopia)</option>
+              <option value="ማዕከላዊ ኢትዮጵያ">ማዕከላዊ ኢትዮጵያ (Central Ethiopia)</option>
+              <option value="ድሬዳዋ">ድሬዳዋ (Dire Dawa)</option>
+              <option value="ትግራይ">ትግራይ (Tigray)</option>
+              <option value="ሶማሌ">ሶማሌ (Somali)</option>
+              <option value="ቤንሻንጉል ጉሙዝ">ቤንሻንጉል ጉሙዝ (Benishangul-Gumuz)</option>
+              <option value="አፋር">አፋር (Afar)</option>
+              <option value="ጋምቤላ">ጋምቤላ (Gambella)</option>
+              <option value="ሐረሪ">ሐረሪ (Harari)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">ክፍል (Grade):</label>
+            <select id="profInputGrade" class="w-full bg-space-950 border border-slate-800 focus:border-emerald-500 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white focus:outline-none cursor-pointer">
+              <option value="7">7ኛ ክፍል (Grade 7)</option>
+              <option value="8">8ኛ ክፍል (Grade 8)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Avatar Selection -->
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">አምሳል ምረጥ (Choose Avatar):</label>
+          <div class="flex items-center gap-2 overflow-x-auto py-1" id="avatarSelectorPills">
+            <button type="button" onclick="selectProfileAvatar('🦁')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="🦁">🦁</button>
+            <button type="button" onclick="selectProfileAvatar('🦅')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="🦅">🦅</button>
+            <button type="button" onclick="selectProfileAvatar('🎓')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="🎓">🎓</button>
+            <button type="button" onclick="selectProfileAvatar('🔬')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="🔬">🔬</button>
+            <button type="button" onclick="selectProfileAvatar('⚡')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="⚡">⚡</button>
+            <button type="button" onclick="selectProfileAvatar('🌟')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="🌟">🌟</button>
+            <button type="button" onclick="selectProfileAvatar('💡')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="💡">💡</button>
+            <button type="button" onclick="selectProfileAvatar('🚀')" class="prof-avatar-btn w-10 h-10 rounded-xl bg-space-950 border border-slate-800 hover:border-emerald-500 text-xl flex items-center justify-center transition cursor-pointer" data-avatar="🚀">🚀</button>
+          </div>
+        </div>
+
+        <button onclick="saveStudentProfileForm()" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-black text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 cursor-pointer">
+          <span>💾</span> <span>መረጃዎችን አስቀምጥ (Save Profile)</span>
+        </button>
+      </div>
+
+      <!-- Multi-Student Account Switcher -->
+      <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-white flex items-center gap-1.5">
+            <span>👥</span> የተመዘገቡ ተማሪዎች (Accounts on this Device)
+          </span>
+          <button onclick="showNewStudentPrompt()" class="text-[11px] text-amber-400 font-bold hover:underline cursor-pointer">
+            + አዲስ ተማሪ መዝግብ
+          </button>
+        </div>
+        <div class="space-y-2 max-h-36 overflow-y-auto pr-1" id="savedProfilesListContainer">
+          <!-- Dynamically populated profiles -->
+        </div>
+      </div>
+
+      <!-- JSON Progress Export & Import (100% Offline Data Portability) -->
+      <div class="p-4 rounded-2xl bg-space-950 border border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-white flex items-center gap-1.5">
+            <span>🔄</span> የጥናት መረጃዎችን አስቀምጥ ወይም መልስ (Data Backup)
+          </span>
+          <span class="text-[10px] text-emerald-400 font-mono">100% Offline</span>
+        </div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          የተማርካቸውን ርዕሶች፣ ማስታወሻዎችህንና የፈተና ውጤቶችህን ወደ ኮምፒውተርህ ወይም ስልክህ በJSON ፋይል አውርደህ ማስቀመጥ ትችላለህ።
+        </p>
+        
+        <div class="flex items-center gap-2 flex-wrap">
+          <button onclick="exportStudentProgressJson()" class="flex-1 px-4 py-2.5 rounded-xl bg-space-900 hover:bg-space-850 border border-slate-800 hover:border-emerald-500/50 text-slate-200 text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer">
+            <span>📥</span> <span>ዳታህን አውርድ (Export Backup)</span>
+          </button>
+          
+          <label class="flex-1 px-4 py-2.5 rounded-xl bg-space-900 hover:bg-space-850 border border-slate-800 hover:border-amber-500/50 text-slate-200 text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer">
+            <span>📤</span> <span>ዳታ መልስ (Restore Backup)</span>
+            <input type="file" id="importJsonFileInput" accept=".json" onchange="importStudentProgressJson(this)" class="hidden">
+          </label>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-500">
+        <span>መረጃዎችህ በሙሉ በስልክህ/ኮምፒውተርህ ላይ በLocalStorage የተጠበቁ ናቸው</span>
+        <button onclick="closeStudentProfileModal()" class="px-4 py-2 rounded-xl bg-space-850 hover:bg-space-800 text-slate-200 font-bold transition cursor-pointer">
+          ዝጋ (Close)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ========================================================================= -->
   <!-- GIZMO-STYLE MOBILE BOTTOM NAVIGATION BAR (Thumb-Friendly on all devices)  -->
   <!-- ========================================================================= -->
@@ -1692,6 +2054,11 @@
     <button onclick="switchTab('exam-hall')" id="bottomNav-exam-hall" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
       <span class="text-xl">🏛️</span>
       <span class="text-[10px] tracking-tight">ፈተና</span>
+    </button>
+    
+    <button onclick="openPredictorModal()" id="bottomNav-predictor" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
+      <span class="text-xl">🎯</span>
+      <span class="text-[10px] tracking-tight">ትንበያ</span>
     </button>
     <button onclick="switchTab('reference')" id="bottomNav-reference" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 transition cursor-pointer p-1">
       <span class="text-xl">📚</span>
